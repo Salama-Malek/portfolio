@@ -83,23 +83,6 @@
     }
   }
 
-/* RTL Support for Experience Section */
-[dir='rtl'] .experience-section .switcher-content .company,
-[dir='rtl'] .experience-section .accordion-content .company {
-  text-align: right;
-  direction: rtl;
-}
-[dir='rtl'] .experience-section .switcher-content .duration,
-[dir='rtl'] .experience-section .accordion-content .duration {
-  text-align: right;
-  direction: rtl;
-}
-[dir='rtl'] .experience-section .switcher-content .content-description,
-[dir='rtl'] .experience-section .accordion-content .content-description {
-  text-align: right;
-  direction: rtl;
-}
-    
     &::before {
       top: -10px;
     }
@@ -998,7 +981,7 @@
       gap: 15px;
     }
   }
-  
+
   .experience-summary-wrapper {
     .summary-card {
       .summary-content {
@@ -1011,14 +994,69 @@
   }
 }
 
-[dir='rtl'] .experience-section .switcher-content .duration {
-  text-align: right;
-  direction: rtl;
-}
+/* RTL Support for Experience Section */
+[dir='rtl'] {
+  .experience-section {
+    .experience-switcher {
+      @media (min-width: 768px) {
+        direction: rtl;
+      }
+    }
 
-[dir='rtl'] .experience-section .switcher-content .content-description,
-[dir='rtl'] .experience-section .accordion-content .content-description {
-  text-align: right;
-  direction: rtl;
+    .switcher-nav {
+      padding-right: 0;
+      padding-left: 10px;
+
+      .nav-item {
+        text-align: right;
+        padding: 15px 30px 15px 20px;
+
+        &::before {
+          left: auto;
+          right: 0;
+        }
+      }
+    }
+
+    .switcher-content {
+      .company,
+      .content-description {
+        text-align: right;
+        direction: rtl;
+      }
+
+      .duration {
+        text-align: right;
+        direction: rtl;
+      }
+    }
+
+    .experience-accordion {
+      .accordion-item {
+        .accordion-header {
+          flex-direction: row-reverse;
+          justify-content: flex-end;
+          text-align: right;
+
+          span {
+            text-align: right;
+          }
+        }
+
+        .accordion-content {
+          .company,
+          .content-description {
+            text-align: right;
+            direction: rtl;
+          }
+
+          .duration {
+            text-align: right;
+            direction: rtl;
+          }
+        }
+      }
+    }
+  }
 }
 
