@@ -543,5 +543,187 @@
         { "title": "Rufen Sie mich direkt an", "tel": "+7 993 287 3992" }
       ]
     }
+  },
+  "a11y": {
+    "skipToContent": "Zum Hauptinhalt springen"
+  },
+  "nav": {
+    "brand": "React Bits",
+    "primary": "Hauptnavigation",
+    "home": "Start",
+    "writing": "Artikel",
+    "projects": "Projekte",
+    "docs": "Doku",
+    "examples": "Beispiele",
+    "blog": "Blog",
+    "language": "Sprache wählen"
+  },
+  "palette": {
+    "trigger": "Befehlspalette",
+    "label": "Befehlspalette",
+    "searchPlaceholder": "Aktion suchen…",
+    "noResults": "Keine Treffer",
+    "groups": {
+      "navigate": "Navigation",
+      "backgrounds": "Hintergründe",
+      "languages": "Sprachen"
+    }
+  },
+  "backgrounds": {
+    "label": "Hintergrund",
+    "liquidEther": "Liquid Ether",
+    "beams": "Beams",
+    "silk": "Silk",
+    "particles": "Particles",
+    "gridMotion": "Grid Motion"
+  },
+  "i18n": {
+    "languages": {
+      "en": "English",
+      "ar": "العربية",
+      "ru": "Русский",
+      "fr": "Français",
+      "de": "Deutsch"
+    }
+  },
+  "writing": {
+    "title": "Schreibzentrum",
+    "subtitle": "Ausgewählte Beiträge zu Motion, Accessibility und Content-Workflows.",
+    "filters": {
+      "label": "Artikel filtern",
+      "search": "In Artikeln suchen",
+      "placeholder": "Nach Thema suchen",
+      "all": "Alle"
+    },
+    "startHere": {
+      "title": "Hier starten",
+      "copy": "Die wichtigsten Beiträge für den Einstieg.",
+      "read": "Artikel lesen"
+    },
+    "allPosts": {
+      "title": "Alle Beiträge",
+      "open": "Öffnen"
+    },
+    "code": {
+      "copy": "Kopieren",
+      "copied": "Kopiert!"
+    },
+    "emailCapture": {
+      "title": "Bleib auf dem Laufenden",
+      "copy": "Wir melden uns bei neuen Deep Dives.",
+      "label": "E-Mail-Adresse",
+      "placeholder": "you@example.com",
+      "submit": "Benachrichtigen",
+      "success": "Abonniert",
+      "error": "Bitte gültige E-Mail eingeben"
+    },
+    "tags": {
+      "backgrounds": "Hintergründe",
+      "performance": "Performance",
+      "motion": "Bewegung",
+      "design": "Design",
+      "a11y": "Barrierefreiheit",
+      "mdx": "MDX",
+      "content": "Inhalt"
+    },
+    "posts": {
+      "liquidEtherInternals": {
+        "title": "Inside Liquid Ether",
+        "excerpt": "Drosseln, Verläufe, Wiederholung.",
+        "body": "### Warum es zählt\n\nDer Liquid-Ether-Hintergrund setzt auf gedrosselte RAF-Aufrufe und GPU-freundliche Verläufe.\n\n```\nimport { useEffect } from 'react';\n\nexport const useLowProfileRaf = (callback) => {\n  useEffect(() => {\n    let raf;\n    let last = 0;\n    const loop = (time) => {\n      if (time - last > 1000 / 24) {\n        callback(time);\n        last = time;\n      }\n      raf = requestAnimationFrame(loop);\n    };\n    raf = requestAnimationFrame(loop);\n    return () => cancelAnimationFrame(raf);\n  }, [callback]);\n};\n```"
+      },
+      "a11yDarkTokens": {
+        "title": "Kontraststarke Dark Tokens",
+        "excerpt": "Tailwind-Farben als CSS-Variablen.",
+        "body": "### Dark Tokens mit Punch\n\nMit Tailwind-Tönen als CSS-Variablen bleibt der Kontrast verlässlich.\n\n```\nconst tokens = {\n  background: 'var(--tw-color-slate-950)',\n  surface: 'var(--tw-color-slate-900)',\n};\n```"
+      },
+      "mdxWorkflows": {
+        "title": "MDX-Workflows",
+        "excerpt": "Story und Code in einem Stream.",
+        "body": "### Content-Pipeline\n\nMDX vereint Erzählung und Code im selben Fluss.\n\n> Lazy Load für Demos hält das 180-KB-Budget ein."
+      }
+    }
+  },
+  "projects": {
+    "title": "Case Studies",
+    "subtitle": "Detailberichte zu ausgelieferten Systemen.",
+    "nav": "Case-Study-Auswahl",
+    "demo": {
+      "loading": "Demo wird geladen..."
+    },
+    "liquidEther": {
+      "title": "Liquid-Ether-Hintergrund",
+      "summary": "Weiche Verläufe bei geringer Last.",
+      "problem": "### GPU-schonende Motion\n\nEin filmischer Hintergrund ohne GPU-Bremse.",
+      "approach": "### Ansatz\n\nPartikel kreisen um eine Gradient-Achse und werden per FPS-Limit gedrosselt.",
+      "code": "```\nconst CAP = 14;\nconst loop = (time) => {\n  if (time - last > 1000 / 28) {\n    draw();\n    last = time;\n  }\n  raf = requestAnimationFrame(loop);\n};\n```",
+      "metrics": {
+        "fps": "Frame-Budget",
+        "fpsValue": "28 fps",
+        "gpu": "GPU-Last",
+        "gpuValue": "< 25 %"
+      },
+      "demoCaption": "Atmosphärische Animation mit minimalem Impact.",
+      "demoAria": "Vorschau Liquid-Ether-Hintergrund"
+    },
+    "mdxPipeline": {
+      "title": "MDX-Content-Pipeline",
+      "summary": "Runtime-MDX mit kuratierten Komponenten.",
+      "problem": "### Sofortige Vorschau\n\nAutor:innen brauchen Feedback ohne Build-Wartezeit.",
+      "approach": "### Ansatz\n\nMDX zur Laufzeit, ausgewählte Komponenten und lazy Demos.",
+      "code": "```\nconst components = useMemo(() => ({ pre: CodeBlock }), []);\nreturn <MDX components={components}>{body}</MDX>;\n```",
+      "metrics": {
+        "time": "Publikationszeit",
+        "timeValue": "-35 %",
+        "bundle": "Initiales Bundle",
+        "bundleValue": "< 180 KB"
+      },
+      "demoTitle": "Highlights",
+      "demoItems": {
+        "0": "MDX zur Laufzeit",
+        "1": "Lazy Demos",
+        "2": "Code per Klick kopieren"
+      },
+      "demoAria": "Highlights der MDX-Pipeline"
+    }
+  },
+  "docs": {
+    "title": "Dokumentation",
+    "description": "Integrationsguides und APIs."
+  },
+  "examples": {
+    "title": "Beispiele",
+    "description": "Praxistaugliche UI-Rezepte."
+  },
+  "blog": {
+    "title": "Blog",
+    "description": "Ankündigungen und Updates."
+  },
+  "seo": {
+    "siteName": "React Bits",
+    "home": {
+      "title": "React Bits Portfolio",
+      "description": "Dark-first Spielwiese für Motion-Systeme."
+    },
+    "writing": {
+      "title": "Schreibzentrum",
+      "description": "Artikel über Motion, Accessibility und MDX."
+    },
+    "projects": {
+      "title": "Case Studies",
+      "description": "Analysen ausgelieferter Systeme."
+    },
+    "docs": {
+      "title": "Dokumentation",
+      "description": "Guides und API-Referenzen."
+    },
+    "examples": {
+      "title": "Beispiele",
+      "description": "Wiederverwendbare Muster."
+    },
+    "blog": {
+      "title": "Blog",
+      "description": "News und Release Notes."
+    }
   }
 }

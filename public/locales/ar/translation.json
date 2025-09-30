@@ -589,5 +589,187 @@
         { "title": "اتصل بي مباشرة", "tel": "+7 993 287 3992" }
       ]
     }
+  },
+  "a11y": {
+    "skipToContent": "تخطَّ إلى المحتوى الرئيسي"
+  },
+  "nav": {
+    "brand": "React Bits",
+    "primary": "التنقل الرئيسي",
+    "home": "الرئيسية",
+    "writing": "الكتابة",
+    "projects": "المشاريع",
+    "docs": "التوثيق",
+    "examples": "الأمثلة",
+    "blog": "المدونة",
+    "language": "اختر اللغة"
+  },
+  "palette": {
+    "trigger": "لوحة الأوامر",
+    "label": "لوحة الأوامر",
+    "searchPlaceholder": "ابحث عن إجراء…",
+    "noResults": "لا توجد نتائج",
+    "groups": {
+      "navigate": "انتقال",
+      "backgrounds": "الخلفيات",
+      "languages": "اللغات"
+    }
+  },
+  "backgrounds": {
+    "label": "الخلفية",
+    "liquidEther": "سائل إيثر",
+    "beams": "أشعة",
+    "silk": "حرير",
+    "particles": "جزيئات",
+    "gridMotion": "شبكة متحركة"
+  },
+  "i18n": {
+    "languages": {
+      "en": "English",
+      "ar": "العربية",
+      "ru": "Русский",
+      "fr": "Français",
+      "de": "Deutsch"
+    }
+  },
+  "writing": {
+    "title": "مركز الكتابة",
+    "subtitle": "مقالات مختارة حول الحركة وإمكانية الوصول وأنظمة المحتوى.",
+    "filters": {
+      "label": "تصفية المقالات",
+      "search": "ابحث في الكتابة",
+      "placeholder": "ابحث حسب الموضوع",
+      "all": "الكل"
+    },
+    "startHere": {
+      "title": "ابدأ هنا",
+      "copy": "اقرأ الأساسيات لتكون على اطلاع.",
+      "read": "قراءة المقال"
+    },
+    "allPosts": {
+      "title": "جميع المقالات",
+      "open": "افتح المقال"
+    },
+    "code": {
+      "copy": "نسخ",
+      "copied": "تم النسخ!"
+    },
+    "emailCapture": {
+      "title": "تابع كل جديد",
+      "copy": "سنخبرك عند صدور تحليلات جديدة.",
+      "label": "البريد الإلكتروني",
+      "placeholder": "you@example.com",
+      "submit": "أبلغني",
+      "success": "تم الاشتراك",
+      "error": "يرجى إدخال بريد صحيح"
+    },
+    "tags": {
+      "backgrounds": "خلفيات",
+      "performance": "الأداء",
+      "motion": "الحركة",
+      "design": "التصميم",
+      "a11y": "إتاحة",
+      "mdx": "MDX",
+      "content": "محتوى"
+    },
+    "posts": {
+      "liquidEtherInternals": {
+        "title": "داخل سائل إيثر",
+        "excerpt": "تحكم وإضاءة وتكرار.",
+        "body": "### لماذا يهم\n\nيعتمد خلفية سائل إيثر على طلبات رسم محدودة وتدرجات صديقة للمعالج الرسومي.\n\n```\nimport { useEffect } from 'react';\n\nexport const useLowProfileRaf = (callback) => {\n  useEffect(() => {\n    let raf;\n    let last = 0;\n    const loop = (time) => {\n      if (time - last > 1000 / 24) {\n        callback(time);\n        last = time;\n      }\n      raf = requestAnimationFrame(loop);\n    };\n    raf = requestAnimationFrame(loop);\n    return () => cancelAnimationFrame(raf);\n  }, [callback]);\n};\n```"
+      },
+      "a11yDarkTokens": {
+        "title": "رموز داكنة ذات تباين",
+        "excerpt": "درجات Tailwind داخل متغيرات CSS.",
+        "body": "### رموز داكنة لافتة\n\nاستخدم درجات Tailwind كمتغيرات CSS للحفاظ على التباين.\n\n```\nconst tokens = {\n  background: 'var(--tw-color-slate-950)',\n  surface: 'var(--tw-color-slate-900)',\n};\n```"
+      },
+      "mdxWorkflows": {
+        "title": "تدفقات عمل MDX",
+        "excerpt": "السرد والكود في مسار واحد.",
+        "body": "### خطوط المحتوى\n\nتمكّن MDX الكتّاب من مزج السرد مع الكود.\n\n> حافظ على تحميل العروض الحية بشكل كسول للبقاء ضمن حد 180 كيلوبايت."
+      }
+    }
+  },
+  "projects": {
+    "title": "دراسات حالة",
+    "subtitle": "تحليلات متعمقة للأنظمة المنجزة.",
+    "nav": "مبدّل دراسات الحالة",
+    "demo": {
+      "loading": "جاري تحميل العرض..."
+    },
+    "liquidEther": {
+      "title": "خلفية سائل إيثر",
+      "summary": "تدرجات ناعمة مع رسوميات خفيفة.",
+      "problem": "### حركة صديقة للمعالج الرسومي\n\nكنا بحاجة لخلفية سينمائية دون استنزاف وحدة الرسوم.",
+      "approach": "### المنهج\n\nجزيئات سائلة تدور حول تدرج وتُخفَّض سرعتها حسب الإطار.",
+      "code": "```\nconst CAP = 14;\nconst loop = (time) => {\n  if (time - last > 1000 / 28) {\n    draw();\n    last = time;\n  }\n  raf = requestAnimationFrame(loop);\n};\n```",
+      "metrics": {
+        "fps": "معدل الإطارات",
+        "fpsValue": "28 إطارًا",
+        "gpu": "حمل GPU",
+        "gpuValue": "أقل من ‎25%‎"
+      },
+      "demoCaption": "رسوميات ناعمة بأثر منخفض.",
+      "demoAria": "معاينة خلفية سائل إيثر"
+    },
+    "mdxPipeline": {
+      "title": "خط محتوى MDX",
+      "summary": "MDX لحظي بمكوّنات مخصصة.",
+      "problem": "### معاينة فورية\n\nاحتاج الكتّاب إلى معاينة فورية دون بناء.",
+      "approach": "### المنهج\n\nاستخدمنا MDX وقت التشغيل مع مكوّنات منسقة وعروض مؤجلة.",
+      "code": "```\nconst components = useMemo(() => ({ pre: CodeBlock }), []);\nreturn <MDX components={components}>{body}</MDX>;\n```",
+      "metrics": {
+        "time": "زمن النشر",
+        "timeValue": "-35%",
+        "bundle": "حجم الحزمة",
+        "bundleValue": "أقل من 180 كيلوبايت"
+      },
+      "demoTitle": "أبرز ما في الخط",
+      "demoItems": {
+        "0": "MDX وقت التشغيل مع مكوّنات خاصة",
+        "1": "عروض مؤجلة",
+        "2": "نسخ الكود بزر واحد"
+      },
+      "demoAria": "أبرز نقاط خط MDX"
+    }
+  },
+  "docs": {
+    "title": "التوثيق",
+    "description": "أدلة التكامل وواجهات البرمجة."
+  },
+  "examples": {
+    "title": "الأمثلة",
+    "description": "وصفات عملية لمعضلات الواجهة."
+  },
+  "blog": {
+    "title": "المدونة",
+    "description": "إعلانات وتحديثات."
+  },
+  "seo": {
+    "siteName": "React Bits",
+    "home": {
+      "title": "محفظة React Bits",
+      "description": "ساحة مظلمة أولاً لأنظمة الحركة."
+    },
+    "writing": {
+      "title": "مركز الكتابة",
+      "description": "مقالات عن الحركة وإمكانية الوصول وMDX."
+    },
+    "projects": {
+      "title": "دراسات حالة",
+      "description": "تحليلات للأنظمة المنفذة."
+    },
+    "docs": {
+      "title": "التوثيق",
+      "description": "أدلة التكامل وواجهات البرمجة."
+    },
+    "examples": {
+      "title": "الأمثلة",
+      "description": "أنماط واجهة قابلة لإعادة الاستخدام."
+    },
+    "blog": {
+      "title": "المدونة",
+      "description": "أخبار وملاحظات إصدار."
+    }
   }
 }

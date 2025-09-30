@@ -543,5 +543,187 @@
         { "title": "Позвоните напрямую", "tel": "+7 993 287 3992" }
       ]
     }
+  },
+  "a11y": {
+    "skipToContent": "Перейти к основному содержимому"
+  },
+  "nav": {
+    "brand": "React Bits",
+    "primary": "Основная навигация",
+    "home": "Главная",
+    "writing": "Статьи",
+    "projects": "Проекты",
+    "docs": "Документация",
+    "examples": "Примеры",
+    "blog": "Блог",
+    "language": "Выбор языка"
+  },
+  "palette": {
+    "trigger": "Панель команд",
+    "label": "Панель команд",
+    "searchPlaceholder": "Найдите действие…",
+    "noResults": "Совпадений нет",
+    "groups": {
+      "navigate": "Навигация",
+      "backgrounds": "Фоны",
+      "languages": "Языки"
+    }
+  },
+  "backgrounds": {
+    "label": "Фон",
+    "liquidEther": "Liquid Ether",
+    "beams": "Beams",
+    "silk": "Silk",
+    "particles": "Particles",
+    "gridMotion": "Grid Motion"
+  },
+  "i18n": {
+    "languages": {
+      "en": "English",
+      "ar": "العربية",
+      "ru": "Русский",
+      "fr": "Français",
+      "de": "Deutsch"
+    }
+  },
+  "writing": {
+    "title": "Центр статей",
+    "subtitle": "Подборка материалов о анимации, доступности и контент-системах.",
+    "filters": {
+      "label": "Фильтрация статей",
+      "search": "Поиск по статьям",
+      "placeholder": "Поиск по теме",
+      "all": "Все"
+    },
+    "startHere": {
+      "title": "Начните здесь",
+      "copy": "Изучите главное, чтобы быстро погрузиться в тему.",
+      "read": "Читать"
+    },
+    "allPosts": {
+      "title": "Все публикации",
+      "open": "Открыть"
+    },
+    "code": {
+      "copy": "Копировать",
+      "copied": "Скопировано!"
+    },
+    "emailCapture": {
+      "title": "Следите за обновлениями",
+      "copy": "Сообщим, когда выйдут новые обзоры.",
+      "label": "Электронная почта",
+      "placeholder": "you@example.com",
+      "submit": "Сообщить",
+      "success": "Подписка оформлена",
+      "error": "Введите корректный e-mail"
+    },
+    "tags": {
+      "backgrounds": "Фоны",
+      "performance": "Производительность",
+      "motion": "Анимация",
+      "design": "Дизайн",
+      "a11y": "Доступность",
+      "mdx": "MDX",
+      "content": "Контент"
+    },
+    "posts": {
+      "liquidEtherInternals": {
+        "title": "Как устроен Liquid Ether",
+        "excerpt": "Троттлинг, градиенты и повтор.",
+        "body": "### Почему это важно\n\nФон Liquid Ether опирается на ограниченные вызовы requestAnimationFrame и градиенты, дружелюбные к GPU.\n\n```\nimport { useEffect } from 'react';\n\nexport const useLowProfileRaf = (callback) => {\n  useEffect(() => {\n    let raf;\n    let last = 0;\n    const loop = (time) => {\n      if (time - last > 1000 / 24) {\n        callback(time);\n        last = time;\n      }\n      raf = requestAnimationFrame(loop);\n    };\n    raf = requestAnimationFrame(loop);\n    return () => cancelAnimationFrame(raf);\n  }, [callback]);\n};\n```"
+      },
+      "a11yDarkTokens": {
+        "title": "Контрастные тёмные токены",
+        "excerpt": "Оттенки Tailwind как CSS-переменные.",
+        "body": "### Токены с характером\n\nИспользуйте оттенки Tailwind в виде CSS-переменных, чтобы держать контраст под контролем.\n\n```\nconst tokens = {\n  background: 'var(--tw-color-slate-950)',\n  surface: 'var(--tw-color-slate-900)',\n};\n```"
+      },
+      "mdxWorkflows": {
+        "title": "MDX-процессы",
+        "excerpt": "История и код в одном потоке.",
+        "body": "### Контент-пайплайн\n\nMDX позволяет объединять повествование и код.\n\n> Ленивая загрузка демо помогает удержаться в пределах 180 КБ."
+      }
+    }
+  },
+  "projects": {
+    "title": "Кейсы",
+    "subtitle": "Подробные истории реализованных систем.",
+    "nav": "Переключатель кейсов",
+    "demo": {
+      "loading": "Загрузка демо..."
+    },
+    "liquidEther": {
+      "title": "Фон Liquid Ether",
+      "summary": "Мягкие градиенты при минимальной нагрузке.",
+      "problem": "### GPU-дружелюбная анимация\n\nНужен был кинематографичный фон без перегрева видеокарты.",
+      "approach": "### Подход\n\nЧастицы вращаются вокруг градиентной оси и ограничены по частоте кадров.",
+      "code": "```\nconst CAP = 14;\nconst loop = (time) => {\n  if (time - last > 1000 / 28) {\n    draw();\n    last = time;\n  }\n  raf = requestAnimationFrame(loop);\n};\n```",
+      "metrics": {
+        "fps": "Цель по FPS",
+        "fpsValue": "28 кадров",
+        "gpu": "Нагрузка GPU",
+        "gpuValue": "< 25%"
+      },
+      "demoCaption": "Мягкая анимация с низким потреблением.",
+      "demoAria": "Превью фона Liquid Ether"
+    },
+    "mdxPipeline": {
+      "title": "Контент-пайплайн MDX",
+      "summary": "MDX в рантайме с кастомными компонентами.",
+      "problem": "### Мгновенный предпросмотр\n\nАвторам нужен результат без длительных сборок.",
+      "approach": "### Подход\n\nИспользуем MDX во время выполнения с подборкой компонентов и ленивыми демо.",
+      "code": "```\nconst components = useMemo(() => ({ pre: CodeBlock }), []);\nreturn <MDX components={components}>{body}</MDX>;\n```",
+      "metrics": {
+        "time": "Время публикации",
+        "timeValue": "-35%",
+        "bundle": "Стартовый бандл",
+        "bundleValue": "< 180 КБ"
+      },
+      "demoTitle": "Особенности пайплайна",
+      "demoItems": {
+        "0": "MDX во время выполнения",
+        "1": "Ленивые демо",
+        "2": "Кнопка копирования кода"
+      },
+      "demoAria": "Особенности пайплайна MDX"
+    }
+  },
+  "docs": {
+    "title": "Документация",
+    "description": "Руководства и API."
+  },
+  "examples": {
+    "title": "Примеры",
+    "description": "Готовые решения для интерфейсов."
+  },
+  "blog": {
+    "title": "Блог",
+    "description": "Новости и обновления."
+  },
+  "seo": {
+    "siteName": "React Bits",
+    "home": {
+      "title": "Портфолио React Bits",
+      "description": "Тёмная площадка для систем анимации."
+    },
+    "writing": {
+      "title": "Центр статей",
+      "description": "Материалы об анимации, доступности и MDX."
+    },
+    "projects": {
+      "title": "Кейсы",
+      "description": "Истории реализованных систем."
+    },
+    "docs": {
+      "title": "Документация",
+      "description": "Руководства и справочники API."
+    },
+    "examples": {
+      "title": "Примеры",
+      "description": "Повторно используемые паттерны."
+    },
+    "blog": {
+      "title": "Блог",
+      "description": "Новости и релизы."
+    }
   }
 }

@@ -723,5 +723,187 @@
         { "title": "Call me directly", "tel": "+7 993 287 3992" }
       ]
     }
+  },
+  "a11y": {
+    "skipToContent": "Skip to main content"
+  },
+  "nav": {
+    "brand": "React Bits",
+    "primary": "Primary navigation",
+    "home": "Home",
+    "writing": "Writing",
+    "projects": "Projects",
+    "docs": "Docs",
+    "examples": "Examples",
+    "blog": "Blog",
+    "language": "Select language"
+  },
+  "palette": {
+    "trigger": "Command palette",
+    "label": "Command palette",
+    "searchPlaceholder": "Search actions…",
+    "noResults": "No matches",
+    "groups": {
+      "navigate": "Navigate",
+      "backgrounds": "Backgrounds",
+      "languages": "Languages"
+    }
+  },
+  "backgrounds": {
+    "label": "Background",
+    "liquidEther": "Liquid Ether",
+    "beams": "Beams",
+    "silk": "Silk",
+    "particles": "Particles",
+    "gridMotion": "Grid Motion"
+  },
+  "i18n": {
+    "languages": {
+      "en": "English",
+      "ar": "العربية",
+      "ru": "Русский",
+      "fr": "Français",
+      "de": "Deutsch"
+    }
+  },
+  "writing": {
+    "title": "Writing hub",
+    "subtitle": "Curated articles on motion, accessibility, and content systems.",
+    "filters": {
+      "label": "Filter writing",
+      "search": "Search writing",
+      "placeholder": "Search by topic",
+      "all": "All"
+    },
+    "startHere": {
+      "title": "Start here",
+      "copy": "Read the essentials to get up to speed.",
+      "read": "Read post"
+    },
+    "allPosts": {
+      "title": "All posts",
+      "open": "Open post"
+    },
+    "code": {
+      "copy": "Copy",
+      "copied": "Copied!"
+    },
+    "emailCapture": {
+      "title": "Stay in the loop",
+      "copy": "Get notified when new deep dives ship.",
+      "label": "Email address",
+      "placeholder": "you@example.com",
+      "submit": "Notify me",
+      "success": "Subscribed",
+      "error": "Please provide a valid email"
+    },
+    "tags": {
+      "backgrounds": "Backgrounds",
+      "performance": "Performance",
+      "motion": "Motion",
+      "design": "Design",
+      "a11y": "Accessibility",
+      "mdx": "MDX",
+      "content": "Content"
+    },
+    "posts": {
+      "liquidEtherInternals": {
+        "title": "Inside Liquid Ether",
+        "excerpt": "Throttle, gradient, repeat.",
+        "body": "### Why it matters\n\nThe Liquid Ether background hinges on throttled RAF and GPU friendly gradients.\n\n```\nimport { useEffect } from 'react';\n\nexport const useLowProfileRaf = (callback) => {\n  useEffect(() => {\n    let raf;\n    let last = 0;\n    const loop = (time) => {\n      if (time - last > 1000 / 24) {\n        callback(time);\n        last = time;\n      }\n      raf = requestAnimationFrame(loop);\n    };\n    raf = requestAnimationFrame(loop);\n    return () => cancelAnimationFrame(raf);\n  }, [callback]);\n};\n```"
+      },
+      "a11yDarkTokens": {
+        "title": "Dark tokens with contrast",
+        "excerpt": "Tailwind hues mapped into CSS variables.",
+        "body": "### Dark tokens that pop\n\nUse Tailwind hues as CSS variables to keep contrast predictable.\n\n```\nconst tokens = {\n  background: 'var(--tw-color-slate-950)',\n  surface: 'var(--tw-color-slate-900)',\n};\n```"
+      },
+      "mdxWorkflows": {
+        "title": "MDX workflows",
+        "excerpt": "Narrative and code in one stream.",
+        "body": "### Content pipelines\n\nMDX lets writers compose narrative and code side by side.\n\n> Keep demos lazy-loaded to stay within the 180KB budget."
+      }
+    }
+  },
+  "projects": {
+    "title": "Case studies",
+    "subtitle": "Deep dives into shipped systems.",
+    "nav": "Case study switcher",
+    "demo": {
+      "loading": "Loading demo..."
+    },
+    "liquidEther": {
+      "title": "Liquid Ether background",
+      "summary": "Soft focus gradients powered by throttled canvas.",
+      "problem": "### GPU friendly motion\n\nWe needed a cinematic background without torching the GPU budget.",
+      "approach": "### Approach\n\nLiquid particles orbit a gradient spine and throttle with RAF cadence awareness.",
+      "code": "```\nconst CAP = 14;\nconst loop = (time) => {\n  if (time - last > 1000 / 28) {\n    draw();\n    last = time;\n  }\n  raf = requestAnimationFrame(loop);\n};\n```",
+      "metrics": {
+        "fps": "Frame budget",
+        "fpsValue": "28fps cap",
+        "gpu": "GPU load",
+        "gpuValue": "< 25%"
+      },
+      "demoCaption": "Low impact, high atmosphere canvas animation.",
+      "demoAria": "Liquid Ether background preview"
+    },
+    "mdxPipeline": {
+      "title": "MDX content pipeline",
+      "summary": "Runtime MDX with curated components.",
+      "problem": "### Instant previews\n\nWriters needed immediate preview without bundler trips.",
+      "approach": "### Approach\n\nWe leaned on runtime MDX with curated components and lazy demos.",
+      "code": "```\nconst components = useMemo(() => ({ pre: CodeBlock }), []);\nreturn <MDX components={components}>{body}</MDX>;\n```",
+      "metrics": {
+        "time": "Publishing time",
+        "timeValue": "-35%",
+        "bundle": "Initial bundle",
+        "bundleValue": "< 180KB"
+      },
+      "demoTitle": "Pipeline highlights",
+      "demoItems": {
+        "0": "MDX runtime with custom components",
+        "1": "Lazy loaded demos",
+        "2": "Copy-to-clipboard code"
+      },
+      "demoAria": "MDX pipeline highlights"
+    }
+  },
+  "docs": {
+    "title": "Documentation",
+    "description": "API references and integration guides."
+  },
+  "examples": {
+    "title": "Examples",
+    "description": "Practical recipes for everyday UI puzzles."
+  },
+  "blog": {
+    "title": "Blog",
+    "description": "Announcements and product updates."
+  },
+  "seo": {
+    "siteName": "React Bits",
+    "home": {
+      "title": "React Bits Portfolio",
+      "description": "A dark-first playground for motion systems."
+    },
+    "writing": {
+      "title": "Writing hub",
+      "description": "Articles on motion, accessibility, and MDX."
+    },
+    "projects": {
+      "title": "Case studies",
+      "description": "Deep dives into shipped systems."
+    },
+    "docs": {
+      "title": "Documentation",
+      "description": "Integration guides and API references."
+    },
+    "examples": {
+      "title": "Examples",
+      "description": "Reusable interface patterns."
+    },
+    "blog": {
+      "title": "Blog",
+      "description": "News and release notes."
+    }
   }
 }

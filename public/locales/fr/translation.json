@@ -543,5 +543,187 @@
         { "title": "Appelez-moi directement", "tel": "+7 993 287 3992" }
       ]
     }
+  },
+  "a11y": {
+    "skipToContent": "Aller au contenu principal"
+  },
+  "nav": {
+    "brand": "React Bits",
+    "primary": "Navigation principale",
+    "home": "Accueil",
+    "writing": "Écrits",
+    "projects": "Projets",
+    "docs": "Docs",
+    "examples": "Exemples",
+    "blog": "Blog",
+    "language": "Choisir la langue"
+  },
+  "palette": {
+    "trigger": "Palette de commandes",
+    "label": "Palette de commandes",
+    "searchPlaceholder": "Rechercher une action…",
+    "noResults": "Aucun résultat",
+    "groups": {
+      "navigate": "Navigation",
+      "backgrounds": "Arrières-plans",
+      "languages": "Langues"
+    }
+  },
+  "backgrounds": {
+    "label": "Arrière-plan",
+    "liquidEther": "Liquid Ether",
+    "beams": "Beams",
+    "silk": "Silk",
+    "particles": "Particles",
+    "gridMotion": "Grid Motion"
+  },
+  "i18n": {
+    "languages": {
+      "en": "English",
+      "ar": "العربية",
+      "ru": "Русский",
+      "fr": "Français",
+      "de": "Deutsch"
+    }
+  },
+  "writing": {
+    "title": "Centre éditorial",
+    "subtitle": "Sélection d'articles sur le mouvement, l'accessibilité et les systèmes de contenu.",
+    "filters": {
+      "label": "Filtrer les articles",
+      "search": "Rechercher dans les écrits",
+      "placeholder": "Rechercher par sujet",
+      "all": "Tous"
+    },
+    "startHere": {
+      "title": "Commencez ici",
+      "copy": "Lisez les essentiels pour vous mettre à jour.",
+      "read": "Lire l'article"
+    },
+    "allPosts": {
+      "title": "Toutes les publications",
+      "open": "Ouvrir"
+    },
+    "code": {
+      "copy": "Copier",
+      "copied": "Copié !"
+    },
+    "emailCapture": {
+      "title": "Restez informé",
+      "copy": "Recevez une alerte pour chaque nouveau dossier.",
+      "label": "Adresse e-mail",
+      "placeholder": "you@example.com",
+      "submit": "Prévenez-moi",
+      "success": "Inscription validée",
+      "error": "Merci d'indiquer un e-mail valide"
+    },
+    "tags": {
+      "backgrounds": "Arrières-plans",
+      "performance": "Performance",
+      "motion": "Mouvement",
+      "design": "Design",
+      "a11y": "Accessibilité",
+      "mdx": "MDX",
+      "content": "Contenu"
+    },
+    "posts": {
+      "liquidEtherInternals": {
+        "title": "Au cœur de Liquid Ether",
+        "excerpt": "Limiter, nuancer, recommencer.",
+        "body": "### Pourquoi c'est important\n\nL'arrière-plan Liquid Ether repose sur un RAF bridé et des dégradés doux pour le GPU.\n\n```\nimport { useEffect } from 'react';\n\nexport const useLowProfileRaf = (callback) => {\n  useEffect(() => {\n    let raf;\n    let last = 0;\n    const loop = (time) => {\n      if (time - last > 1000 / 24) {\n        callback(time);\n        last = time;\n      }\n      raf = requestAnimationFrame(loop);\n    };\n    raf = requestAnimationFrame(loop);\n    return () => cancelAnimationFrame(raf);\n  }, [callback]);\n};\n```"
+      },
+      "a11yDarkTokens": {
+        "title": "Tokens sombres accessibles",
+        "excerpt": "Les teintes Tailwind en variables CSS.",
+        "body": "### Des tokens qui claquent\n\nUtilisez les teintes Tailwind comme variables CSS pour un contraste maîtrisé.\n\n```\nconst tokens = {\n  background: 'var(--tw-color-slate-950)',\n  surface: 'var(--tw-color-slate-900)',\n};\n```"
+      },
+      "mdxWorkflows": {
+        "title": "Flux MDX",
+        "excerpt": "Narration et code réunis.",
+        "body": "### Chaîne de contenu\n\nMDX permet de marier texte et code dans un même flux.\n\n> Chargez les démos en différé pour rester sous 180 Ko." 
+      }
+    }
+  },
+  "projects": {
+    "title": "Études de cas",
+    "subtitle": "Analyses détaillées des systèmes livrés.",
+    "nav": "Sélecteur d'étude de cas",
+    "demo": {
+      "loading": "Chargement de la démo..."
+    },
+    "liquidEther": {
+      "title": "Arrière-plan Liquid Ether",
+      "summary": "Des dégradés doux avec un coût réduit.",
+      "problem": "### Mouvement économe en GPU\n\nObtenir un rendu cinématographique sans saturer la carte graphique.",
+      "approach": "### Approche\n\nDes particules orbitent une colonne de dégradés avec un rafraîchissement limité.",
+      "code": "```\nconst CAP = 14;\nconst loop = (time) => {\n  if (time - last > 1000 / 28) {\n    draw();\n    last = time;\n  }\n  raf = requestAnimationFrame(loop);\n};\n```",
+      "metrics": {
+        "fps": "Budget FPS",
+        "fpsValue": "28 fps",
+        "gpu": "Charge GPU",
+        "gpuValue": "< 25 %"
+      },
+      "demoCaption": "Une animation immersive, impact minimal.",
+      "demoAria": "Aperçu de l'arrière-plan Liquid Ether"
+    },
+    "mdxPipeline": {
+      "title": "Pipeline de contenu MDX",
+      "summary": "MDX en runtime avec composants dédiés.",
+      "problem": "### Aperçu instantané\n\nLes auteurs veulent voir le rendu sans attendre la compilation.",
+      "approach": "### Approche\n\nMDX côté client, composants triés et démos chargées à la demande.",
+      "code": "```\nconst components = useMemo(() => ({ pre: CodeBlock }), []);\nreturn <MDX components={components}>{body}</MDX>;\n```",
+      "metrics": {
+        "time": "Temps de publication",
+        "timeValue": "-35 %",
+        "bundle": "Bundle initial",
+        "bundleValue": "< 180 Ko"
+      },
+      "demoTitle": "Points clés",
+      "demoItems": {
+        "0": "MDX en runtime",
+        "1": "Démos différées",
+        "2": "Bouton de copie de code"
+      },
+      "demoAria": "Points clés du pipeline MDX"
+    }
+  },
+  "docs": {
+    "title": "Documentation",
+    "description": "Guides d'intégration et API."
+  },
+  "examples": {
+    "title": "Exemples",
+    "description": "Recettes prêtes à l'emploi pour l'interface."
+  },
+  "blog": {
+    "title": "Blog",
+    "description": "Annonces et nouveautés."
+  },
+  "seo": {
+    "siteName": "React Bits",
+    "home": {
+      "title": "Portfolio React Bits",
+      "description": "Terrain sombre dédié aux systèmes de mouvement."
+    },
+    "writing": {
+      "title": "Centre éditorial",
+      "description": "Articles sur le mouvement, l'accessibilité et MDX."
+    },
+    "projects": {
+      "title": "Études de cas",
+      "description": "Analyses approfondies de projets livrés."
+    },
+    "docs": {
+      "title": "Documentation",
+      "description": "Guides et références API."
+    },
+    "examples": {
+      "title": "Exemples",
+      "description": "Patrons réutilisables."
+    },
+    "blog": {
+      "title": "Blog",
+      "description": "Actualités et notes de version."
+    }
   }
 }
