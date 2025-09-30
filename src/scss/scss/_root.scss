@@ -1,0 +1,119 @@
+:root {
+  // Light theme variables (Default)
+  --px-theme: #{$px-accent-primary};
+  --px-theme-rgb: #{$px-theme-rgb};
+  --px-primary: #{$px-accent-primary};
+  --px-primary-rgb: #{$px-theme-rgb};
+  
+  // Background Colors
+  --px-bg: #{$px-light-bg-primary};
+  --px-bg-rgb: 255, 255, 255;
+  --px-bg-secondary: #{$px-light-bg-secondary};
+  --px-bg-tertiary: #{$px-light-bg-tertiary};
+  --px-bg-quaternary: #{$px-light-bg-quaternary};
+  
+  // Text Colors
+  --px-text: #{$px-light-text-secondary};
+  --px-text-primary: #{$px-light-text-primary};
+  --px-text-secondary: #{$px-light-text-secondary};
+  --px-text-tertiary: #{$px-light-text-tertiary};
+  --px-text-muted: #{$px-light-text-muted};
+  --px-heading: #{$px-light-text-primary};
+  
+  // Accent Colors
+  --px-accent-primary: #{$px-accent-primary};
+  --px-accent-secondary: #{$px-accent-secondary};
+  --px-accent-success: #{$px-accent-success};
+  --px-accent-warning: #{$px-accent-warning};
+  --px-accent-error: #{$px-accent-error};
+  
+  // Legacy compatibility
+  --px-white: #{$px-light-bg-primary};
+  --px-black: #{$px-light-text-primary};
+  --px-dark: #{$px-light-text-primary};
+  
+  // Gray Scale
+  --px-gray-1: #{$px-light-bg-tertiary};
+  --px-gray-2: #{$px-light-bg-quaternary};
+  --px-gray-3: #cbd5e1;
+  --px-gray-4: #94a3b8;
+  --px-gray-5: #{$px-light-text-tertiary};
+  --px-gray-6: #{$px-light-text-secondary};
+  --px-gray-7: #{$px-light-text-primary};
+  --px-gray-8: #0f172a;
+  --px-gray-9: #020617;
+  
+  // Border & Surface Colors
+  --px-border-primary: rgba(148, 163, 184, 0.3);
+  --px-border-secondary: rgba(148, 163, 184, 0.5);
+  --px-surface-primary: rgba(241, 245, 249, 0.8);
+  --px-surface-secondary: rgba(241, 245, 249, 0.9);
+  --px-surface-hover: rgba(226, 232, 240, 0.8);
+  
+  // Gradients
+  --px-gradient-primary: linear-gradient(135deg, #{$px-accent-primary}, #{$px-accent-secondary});
+  --px-gradient-text: linear-gradient(135deg, #60a5fa, #c084fc);
+  --px-gradient-bg: linear-gradient(135deg, #{$px-light-bg-primary}, #{$px-light-bg-secondary}, #{$px-light-bg-primary});
+
+  // Bootstrap overrides
+  --bs-body-color: var(--px-text);
+  --bs-body-bg: var(--px-bg);
+  --bs-heading-color: var(--px-heading);
+}
+
+[data-theme='dark'] {
+  // Dark theme variables
+  --px-bg: #{$px-bg-primary};
+  --px-bg-rgb: 10, 10, 10;
+  --px-bg-secondary: #{$px-bg-secondary};
+  --px-bg-tertiary: #{$px-bg-tertiary};
+  --px-bg-quaternary: #{$px-bg-quaternary};
+  
+  // Text Colors
+  --px-text: #{$px-text-secondary};
+  --px-text-primary: #{$px-text-primary};
+  --px-text-secondary: #{$px-text-secondary};
+  --px-text-tertiary: #{$px-text-tertiary};
+  --px-text-muted: #{$px-text-muted};
+  --px-heading: #{$px-text-primary};
+  
+  // Accent Colors (same as light mode)
+  --px-accent-primary: #{$px-accent-primary};
+  --px-accent-secondary: #{$px-accent-secondary};
+  --px-accent-success: #{$px-accent-success};
+  --px-accent-warning: #{$px-accent-warning};
+  --px-accent-error: #{$px-accent-error};
+  
+  // Legacy compatibility
+  --px-white: #{$px-text-primary};
+  --px-black: #{$px-bg-primary};
+  --px-dark: #{$px-bg-primary};
+  
+  // Gray Scale
+  --px-gray-1: #{$px-bg-quaternary};
+  --px-gray-2: #374151;
+  --px-gray-3: #4b5563;
+  --px-gray-4: #6b7280;
+  --px-gray-5: #{$px-text-tertiary};
+  --px-gray-6: #d1d5db;
+  --px-gray-7: #e5e7eb;
+  --px-gray-8: #f3f4f6;
+  --px-gray-9: #f9fafb;
+  
+  // Border & Surface Colors
+  --px-border-primary: rgba(55, 65, 81, 0.3);
+  --px-border-secondary: rgba(55, 65, 81, 0.5);
+  --px-surface-primary: rgba(31, 41, 55, 0.3);
+  --px-surface-secondary: rgba(31, 41, 55, 0.5);
+  --px-surface-hover: rgba(31, 41, 55, 0.7);
+  
+  // Gradients
+  --px-gradient-primary: linear-gradient(135deg, #{$px-accent-primary}, #{$px-accent-secondary});
+  --px-gradient-text: linear-gradient(135deg, #60a5fa, #c084fc);
+  --px-gradient-bg: linear-gradient(135deg, #{$px-bg-primary}, #{$px-bg-secondary}, #{$px-bg-primary});
+}
+
+// Add a smooth transition effect when the theme changes
+:root, [data-theme='dark'] {
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
