@@ -11,7 +11,15 @@
     "cta": "تواصل معي"
   },
   "footer": {
-    "copyright": "© 2024 جميع الحقوق محفوظة"
+    "copyright": "© 2024 جميع الحقوق محفوظة",
+    "description": "مطور متكامل شغوف ببناء تطبيقات ويب مبتكرة وسهلة الاستخدام.",
+    "widgets": {
+      "quickLinks": "روابط سريعة",
+      "contact": "تواصل معي"
+    },
+    "cta": {
+      "description": "هل لديك مشروع في ذهنك؟ دعنا نتحدث عنه."
+    }
   },
   "modal": {
     "type": "النوع",
@@ -41,33 +49,52 @@
       "serviceDescription": "وصف الخدمة",
       "keyFeatures": "الميزات الرئيسية",
       "startProject": "بدء المشروع",
-      "downloadPortfolio": "تحميل المحفظة"
+      "downloadPortfolio": "تحميل المحفظة",
+      "defaultCategory": "تطوير",
+      "defaultDelivery": "2-4 أسابيع",
+      "ratingValue": "{{rating}}/5"
     },
     "projectModal": {
       "details": "التفاصيل",
       "liveDemo": "عرض مباشر",
       "sourceCode": "الكود المصدري",
       "technologiesUsed": "التقنيات المستخدمة"
+    },
+    "projectCard": {
+      "details": "التفاصيل",
+      "liveDemo": "عرض مباشر",
+      "additionalTech": "{{count}} تقنية إضافية"
     }
   },
   "contactForm": {
-    "nameLabel": "اسمك",
-    "namePlaceholder": "الاسم *",
-    "emailLabel": "بريدك الإلكتروني",
-    "emailPlaceholder": "البريد الإلكتروني *",
+    "nameLabel": "الاسم الكامل",
+    "namePlaceholder": "اكتب اسمك الكامل",
+    "emailLabel": "البريد الإلكتروني",
+    "emailPlaceholder": "اكتب بريدك الإلكتروني",
     "subjectLabel": "الموضوع",
-    "subjectPlaceholder": "الموضوع *",
-    "messageLabel": "رسالتك",
-    "messagePlaceholder": "رسالتك *",
+    "subjectPlaceholder": "ما موضوع رسالتك؟",
+    "messageLabel": "الرسالة",
+    "messagePlaceholder": "حدثني عن مشروعك...",
     "send": "إرسال الرسالة",
-    "sending": "جاري الإرسال..."
+    "sending": "جاري الإرسال...",
+    "title": "أرسل رسالة",
+    "description": "دعنا نناقش مشروعك ونحول أفكارك إلى واقع",
+    "toast": {
+      "successTitle": "تم إرسال الرسالة",
+      "successMessage": "شكرًا على رسالتك!"
+    }
   },
   "homePage": {
     "hero": {
       "imgUrl": "/images/home-banner.png",
       "name": "سلامة مالك",
       "heading": "مرحباً! أنا سلامة",
-      "typingText": ["مطور برمجيات", 1500, "مستقل", 1500],
+      "typingText": [
+        "مطور برمجيات",
+        1500,
+        "مستقل",
+        1500
+      ],
       "description": "خريج معهد تكنولوجيا المعلومات ومطور ويب متمرس متخصص في تطوير البرمجيات. أبحث عن فرص للعمل في تطوير تطبيقات الويب الكاملة باستخدام تقنيات MEAN stack، والبرمجة الخلفية والأمامية، وتطوير تطبيقات الهاتف المحمول.",
       "btnText": "تواصل معي",
       "btnUrl": "contactus"
@@ -78,10 +105,10 @@
         "iconBgClass": "github",
         "href": "https://github.com/Salama-Malek"
       },
-      { 
-        "icon": "fa-brands:khamsat", 
-        "iconBgClass": "khamsat", 
-        "href": "https://khamsat.com/user/salamamalek" 
+      {
+        "icon": "fa-brands:khamsat",
+        "iconBgClass": "khamsat",
+        "href": "https://khamsat.com/user/salamamalek"
       },
       {
         "icon": "fa-brands:linkedin-in",
@@ -348,7 +375,13 @@
             "subTitle": "مقابلات وهمية في الوقت الفعلي مع الذكاء الاصطناعي، بدون نماذج أو نقرات، فقط محادثات طبيعية ومخصصة.",
             "category": "AI/ML",
             "status": "مباشر",
-            "technologies": ["React", "Node.js", "OpenAI", "WebRTC", "MongoDB"],
+            "technologies": [
+              "React",
+              "Node.js",
+              "OpenAI",
+              "WebRTC",
+              "MongoDB"
+            ],
             "demoUrl": "https://intervueai-demo.vercel.app",
             "githubUrl": "https://github.com/Salama-Malek/IntervueAI",
             "details": {
@@ -367,7 +400,13 @@
             "subTitle": "سوق إلكتروني كامل الميزات مع معالجة متقدمة للمدفوعات وإدارة المخزون.",
             "category": "Full Stack",
             "status": "مباشر",
-            "technologies": ["MongoDB", "Express.js", "Angular", "Node.js", "Stripe"],
+            "technologies": [
+              "MongoDB",
+              "Express.js",
+              "Angular",
+              "Node.js",
+              "Stripe"
+            ],
             "demoUrl": "https://ecommerce-demo.netlify.app",
             "githubUrl": "https://github.com/Salama-Malek/ECommerce-Platform",
             "details": {
@@ -386,7 +425,13 @@
             "subTitle": "أداة إدارة مشاريع تعاونية مع تحديثات في الوقت الفعلي وميزات التواصل الجماعي.",
             "category": "Web App",
             "status": "مباشر",
-            "technologies": ["React", "Socket.io", "PostgreSQL", "Express.js", "Redis"],
+            "technologies": [
+              "React",
+              "Socket.io",
+              "PostgreSQL",
+              "Express.js",
+              "Redis"
+            ],
             "demoUrl": "https://taskflow-manager.herokuapp.com",
             "githubUrl": "https://github.com/Salama-Malek/TaskFlow-Manager",
             "details": {
@@ -405,7 +450,13 @@
             "subTitle": "تصور متقدم لبيانات الطقس مع التحليلات التنبؤية والرسوم البيانية التفاعلية.",
             "category": "Data Viz",
             "status": "مباشر",
-            "technologies": ["D3.js", "Python", "Flask", "Chart.js", "OpenWeather API"],
+            "technologies": [
+              "D3.js",
+              "Python",
+              "Flask",
+              "Chart.js",
+              "OpenWeather API"
+            ],
             "demoUrl": "https://weather-analytics-dashboard.vercel.app",
             "githubUrl": "https://github.com/Salama-Malek/Weather-Analytics",
             "details": {
@@ -424,7 +475,13 @@
             "subTitle": "منصة شاملة لمراقبة وتحليل وسائل التواصل الاجتماعي مع تحليل المشاعر.",
             "category": "Analytics",
             "status": "مباشر",
-            "technologies": ["React", "Python", "Django", "TensorFlow", "PostgreSQL"],
+            "technologies": [
+              "React",
+              "Python",
+              "Django",
+              "TensorFlow",
+              "PostgreSQL"
+            ],
             "demoUrl": "https://social-analytics-platform.netlify.app",
             "githubUrl": "https://github.com/Salama-Malek/Social-Analytics",
             "details": {
@@ -443,7 +500,13 @@
             "subTitle": "تطبيق تتبع اللياقة البدنية متعدد المنصات مع خطط التمارين ومراقبة التقدم.",
             "category": "Mobile",
             "status": "مباشر",
-            "technologies": ["React Native", "Firebase", "Redux", "Expo", "Charts"],
+            "technologies": [
+              "React Native",
+              "Firebase",
+              "Redux",
+              "Expo",
+              "Charts"
+            ],
             "demoUrl": null,
             "githubUrl": "https://github.com/Salama-Malek/Fitness-Tracker-App",
             "details": {
@@ -585,9 +648,68 @@
       },
       "contactImg": "/images/contact-us.png",
       "contactInfo": [
-        { "title": "اكتب بريد إلكتروني", "email": "salamahassanein@gmail.com" },
-        { "title": "اتصل بي مباشرة", "tel": "+7 993 287 3992" }
+        {
+          "title": "اكتب بريد إلكتروني",
+          "email": "salamahassanein@gmail.com"
+        },
+        {
+          "title": "اتصل بي مباشرة",
+          "tel": "+7 993 287 3992"
+        }
       ]
     }
+  },
+  "common": {
+    "logoAlt": "سلامة مالك - مطور متكامل",
+    "backToTop": "الرجوع للأعلى"
+  },
+  "contact": {
+    "followMe": "تابعني",
+    "info": {
+      "heading": "تواصل معي",
+      "description": "هل أنت جاهز لبدء مشروعك القادم؟ دعنا نتحدث عن كيفية مساعدتي لك في تنفيذ أفكارك.",
+      "copy": "نسخ {{field}}",
+      "toastTitle": "تم النسخ",
+      "toastDescription": "تم نسخ {{value}} إلى الحافظة."
+    }
+  },
+  "languageSwitcher": {
+    "selectLanguage": "اختر اللغة",
+    "languageNames": {
+      "en": "الإنجليزية",
+      "ar": "العربية",
+      "ru": "الروسية",
+      "de": "الألمانية",
+      "fr": "الفرنسية"
+    }
+  },
+  "themeSwitcher": {
+    "toggle": "تغيير السمة"
+  },
+  "navigation": {
+    "moreOptions": "خيارات إضافية",
+    "close": "إغلاق",
+    "openMore": "فتح المزيد من الخيارات",
+    "more": "المزيد"
+  },
+  "hero": {
+    "downloadCv": "تحميل السيرة الذاتية"
+  },
+  "social": {
+    "icons": {
+      "fallbackName": "رابط اجتماعي",
+      "open": "فتح {{name}}",
+      "khamsatAlt": "خمسات"
+    }
+  },
+  "loading": {
+    "aria": "جارٍ التحميل",
+    "title": "جارٍ التحميل...",
+    "description": "يرجى الانتظار بينما نعد تجربتك"
+  },
+  "errorBoundary": {
+    "title": "حدث خطأ ما",
+    "description": "نأسف، حدث أمر غير متوقع. يرجى إعادة تحميل الصفحة.",
+    "action": "إعادة تحميل الصفحة"
   }
 }

@@ -45,7 +45,7 @@ export default function Header() {
               <img
                 className="logo-3d-dark"
                 src="/images/tech1.png"
-                alt="Salama Malek - Full Stack Developer"
+                alt={t('common.logoAlt')}
               />
             </Link>
           </div>

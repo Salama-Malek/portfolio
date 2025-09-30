@@ -1,4 +1,5 @@
 import React from 'react';
+import { withTranslation } from 'react-i18next';
 
 class ErrorBoundary extends React.Component {
   constructor(props) {
@@ -6,36 +7,38 @@ class ErrorBoundary extends React.Component {
     this.state = { hasError: false, error: null, errorInfo: null };
   }
 
-  static getDerivedStateFromError(error) {
+  static getDerivedStateFromError() {
     return { hasError: true };
   }
 
   componentDidCatch(error, errorInfo) {
     this.setState({
       error: error,
-      errorInfo: errorInfo
+      errorInfo: errorInfo,
     });
-    
-    // Log error to console in development
+
     if (process.env.NODE_ENV === 'development') {
       console.error('Error caught by boundary:', error, errorInfo);
     }
   }
 
   render() {
+    const { t, children } = this.props;
     if (this.state.hasError) {
       return (
         <div className="error-boundary">
           <div className="container">
             <div className="row justify-content-center">
               <div className="col-md-8 text-center">
-                <h2>Something went wrong</h2>
-                <p>We're sorry, but something unexpected happened. Please try refreshing the page.</p>
-                <button 
+                <h2>{t('errorBoundary.title')}</h2>
+                <p>{t('errorBoundary.description')}</p>
+                <button
+                  type="button"
                   className="px-btn"
                   onClick={() => window.location.reload()}
+                  aria-label={t('errorBoundary.action')}
                 >
-                  Refresh Page
+                  {t('errorBoundary.action')}
                 </button>
               </div>
             </div>
@@ -44,8 +47,8 @@ class ErrorBoundary extends React.Component {
       );
     }
 
-    return this.props.children;
+    return children;
   }
 }
 
-export default ErrorBoundary;
+export default withTranslation()(ErrorBoundary);

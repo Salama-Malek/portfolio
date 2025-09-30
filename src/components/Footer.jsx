@@ -27,38 +27,34 @@ export default function Footer({ socialData = [] }) {
                       <img
                         className="logo-3d-dark"
                         src="/images/tech1.png"
-                        alt="Salama Malek - Full Stack Developer"
+                        alt={t('common.logoAlt')}
                       />
                     </div>
                   </Link>
                 </div>
-                <p className="footer-text">
-                  A passionate full-stack developer dedicated to building innovative and user-friendly web applications.
-                </p>
+                <p className="footer-text">{t('footer.description')}</p>
                 <SocialBtns socialBtns={socialData} />
               </div>
             </div>
             <div className="col-lg-4">
               <div className="footer-widget">
-                <h5 className="widget-title">Quick Links</h5>
+                <h5 className="widget-title">{t('footer.widgets.quickLinks')}</h5>
                 <ul className="footer-nav">
-                  <li><ScrollLink to="home" smooth={true}>Home</ScrollLink></li>
-                  <li><ScrollLink to="about" smooth={true}>About</ScrollLink></li>
-                  <li><ScrollLink to="project" smooth={true}>Projects</ScrollLink></li>
-                  <li><ScrollLink to="experience" smooth={true}>Experience</ScrollLink></li>
-                  <li><ScrollLink to="testimonial" smooth={true}>Testimonials</ScrollLink></li>
-                  <li><ScrollLink to="contactus" smooth={true}>Contact</ScrollLink></li>
+                  <li><ScrollLink to="home" smooth={true}>{t('header.nav.home')}</ScrollLink></li>
+                  <li><ScrollLink to="about" smooth={true}>{t('header.nav.about')}</ScrollLink></li>
+                  <li><ScrollLink to="project" smooth={true}>{t('header.nav.portfolio')}</ScrollLink></li>
+                  <li><ScrollLink to="experience" smooth={true}>{t('header.nav.experience')}</ScrollLink></li>
+                  <li><ScrollLink to="testimonial" smooth={true}>{t('header.nav.testimonials')}</ScrollLink></li>
+                  <li><ScrollLink to="contactus" smooth={true}>{t('header.nav.contact')}</ScrollLink></li>
                 </ul>
               </div>
             </div>
             <div className="col-lg-4">
               <div className="footer-widget">
-                <h5 className="widget-title">Get In Touch</h5>
-                <p className="footer-text">
-                  Have a project in mind? Let's talk about it.
-                </p>
+                <h5 className="widget-title">{t('footer.widgets.contact')}</h5>
+                <p className="footer-text">{t('footer.cta.description')}</p>
                 <ScrollLink to="contactus" smooth={true} className="px-btn">
-                  <span>Let's Talk</span>
+                  <span>{t('header.cta')}</span>
                 </ScrollLink>
               </div>
             </div>
@@ -66,7 +62,12 @@ export default function Footer({ socialData = [] }) {
         </div>
         <div className="footer-bottom">
           <p className="copyright-text">{t('footer.copyright')}</p>
-          <button className="back-to-top" onClick={scrollToTop} title="Back to Top">
+          <button
+            className="back-to-top"
+            onClick={scrollToTop}
+            title={t('common.backToTop')}
+            aria-label={t('common.backToTop')}
+          >
             <i className="bi bi-arrow-up"></i>
           </button>
         </div>

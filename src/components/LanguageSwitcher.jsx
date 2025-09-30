@@ -1,29 +1,30 @@
-
 import React, { useState, useRef, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import 'flag-icons/css/flag-icons.min.css';
 
 const languages = [
-  { code: 'en', name: 'English', flag: 'us' },
-  { code: 'ar', name: 'العربية', flag: 'eg' },
-  { code: 'ru', name: 'Русский', flag: 'ru' },
-  { code: 'de', name: 'Deutsch', flag: 'de' },
-  { code: 'fr', name: 'Français', flag: 'gf' },
+  { code: 'en', flag: 'us' },
+  { code: 'ar', flag: 'eg' },
+  { code: 'ru', flag: 'ru' },
+  { code: 'de', flag: 'de' },
+  { code: 'fr', flag: 'fr' },
 ];
 
 export default function LanguageSwitcher() {
-  const { i18n } = useTranslation();
+  const { i18n, t } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef(null);
 
-  const currentLanguage = languages.find(lang => lang.code === i18n.language) || languages[0];
+  const normalizedLanguage = (i18n.language || 'en').split('-')[0];
+  const currentLanguage = languages.find((lang) => lang.code === normalizedLanguage) || languages[0];
 
   const changeLanguage = (languageCode) => {
-    i18n.changeLanguage(languageCode);
+    if (languageCode !== normalizedLanguage) {
+      i18n.changeLanguage(languageCode);
+    }
     setIsOpen(false);
   };
 
-  // Close dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
@@ -40,28 +41,44 @@ export default function LanguageSwitcher() {
   return (
     <div className="language-switcher-container" ref={dropdownRef}>
       <button
+        type="button"
         className="language-switcher-btn"
-        onClick={() => setIsOpen(!isOpen)}
-        aria-label="Select language"
+        onClick={() => setIsOpen((prev) => !prev)}
+        aria-haspopup="listbox"
+        aria-expanded={isOpen}
+        aria-label={t('languageSwitcher.selectLanguage')}
+        title={t('languageSwitcher.selectLanguage')}
       >
-  <span className={`fi fi-${currentLanguage.flag}`} style={{marginRight: 8}}></span>
+        <span className={`fi fi-${currentLanguage.flag}`} aria-hidden="true"></span>
         <span className="language-code">{currentLanguage.code.toUpperCase()}</span>
-        <span className={`arrow ${isOpen ? 'open' : ''}`}>▼</span>
+        <span className={`arrow ${isOpen ? 'open' : ''}`} aria-hidden="true">
+          {isOpen ? '^' : 'v'}
+        </span>
       </button>
-      
+
       {isOpen && (
-        <div className="language-dropdown">
-          {languages.map(lang => (
-            <button
-              key={lang.code}
-              className={`language-option ${lang.code === i18n.language ? 'active' : ''}`}
-              onClick={() => changeLanguage(lang.code)}
-            >
-              <span className={`fi fi-${lang.flag}`} style={{marginRight: 8}}></span>
-              <span className="language-name">{lang.name}</span>
-              {lang.code === i18n.language && <span className="check">✓</span>}
-            </button>
-          ))}
+        <div
+          className="language-dropdown"
+          role="listbox"
+          aria-label={t('languageSwitcher.selectLanguage')}
+        >
+          {languages.map((lang) => {
+            const isActive = normalizedLanguage === lang.code;
+            return (
+              <button
+                key={lang.code}
+                type="button"
+                className={`language-option ${isActive ? 'active' : ''}`}
+                onClick={() => changeLanguage(lang.code)}
+                role="option"
+                aria-selected={isActive}
+                title={t('languageSwitcher.languageNames.' + lang.code)}
+              >
+                <span className={`fi fi-${lang.flag}`} aria-hidden="true"></span>
+                <span className="language-name">{t(`languageSwitcher.languageNames.${lang.code}`)}</span>
+              </button>
+            );
+          })}
         </div>
       )}
     </div>

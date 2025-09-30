@@ -12,7 +12,7 @@ export default function Timeline({ data = [] }) {
 
   return (
     <div className="timeline-section">
-      <SectionHeading title={t('timeline.sectionHeading.title', 'Education & Experience')} />
+      <SectionHeading title={t('timeline.sectionHeading.title')} />
       <ul className="timeline">
         {data.map((item, index) => (
           <li

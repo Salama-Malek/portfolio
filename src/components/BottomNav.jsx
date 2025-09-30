@@ -12,8 +12,14 @@ const MoreMenuSheet = ({ navLinks, onClose }) => {
     <>
       <div className="more-menu-sheet">
         <div className="more-menu-sheet-header">
-          <h5>More Options</h5>
-          <button onClick={onClose} className="close-btn">
+          <h5>{t('navigation.moreOptions')}</h5>
+          <button
+            type="button"
+            onClick={onClose}
+            className="close-btn"
+            aria-label={t('navigation.close')}
+            title={t('navigation.close')}
+          >
             <Icon icon="bi:x" />
           </button>
         </div>
@@ -56,10 +62,7 @@ export default function BottomNav() {
     { to: 'contactus', label: 'header.nav.contact', icon: 'bi:envelope' },
   ];
 
-  // Extract section IDs for scroll spy
-  const sectionIds = primaryLinks.map(link => link.to);
-  
-  // Use scroll spy to determine active section
+  const sectionIds = primaryLinks.map((link) => link.to);
   const activeIndex = useScrollSpy(sectionIds, -100);
 
   const secondaryLinks = [
@@ -87,11 +90,14 @@ export default function BottomNav() {
           </ScrollLink>
         ))}
         <button
+          type="button"
           className="bottom-nav-link"
           onClick={() => setIsMoreMenuOpen(true)}
+          aria-label={t('navigation.openMore')}
+          title={t('navigation.openMore')}
         >
           <Icon icon="bi:grid-3x3-gap" />
-          <span>More</span>
+          <span>{t('navigation.more')}</span>
         </button>
       </div>
       {isMoreMenuOpen && (

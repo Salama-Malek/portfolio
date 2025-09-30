@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import { Icon } from '@iconify/react';
 import { useToast } from './ToastProvider';
 import { useDebounce } from '../hooks/useDebounce';
+import { useTranslation } from 'react-i18next';
 
 export default function ContactForm() {
+  const { t } = useTranslation();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -20,23 +22,26 @@ export default function ContactForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission logic here
     console.log('Form submitted:', debouncedForm);
-    pushToast({ type: 'success', title: 'Message sent', description: 'Thank you for your message!' });
+    pushToast({
+      type: 'success',
+      title: t('contactForm.toast.successTitle'),
+      description: t('contactForm.toast.successMessage'),
+    });
     setFormData({ name: '', email: '', subject: '', message: '' });
   };
 
   return (
     <form onSubmit={handleSubmit} className="contact-form">
       <div className="form-header">
-        <h4>Send a Message</h4>
-        <p>Let's discuss your project and bring your ideas to life</p>
+        <h4>{t('contactForm.title')}</h4>
+        <p>{t('contactForm.description')}</p>
       </div>
       <div className="form-body">
         <div className="row">
           <div className="col-md-6">
             <div className="form-group">
-              <label htmlFor="name" className="form-label">Full Name</label>
+              <label htmlFor="name" className="form-label">{t('contactForm.nameLabel')}</label>
               <div className="input-wrapper">
                 <Icon icon="bi:person" className="input-icon" />
                 <input
@@ -44,7 +49,7 @@ export default function ContactForm() {
                   id="name"
                   name="name"
                   className="form-control"
-                  placeholder="Enter your full name"
+                  placeholder={t('contactForm.namePlaceholder')}
                   value={formData.name}
                   onChange={handleChange}
                   required
@@ -54,7 +59,7 @@ export default function ContactForm() {
           </div>
           <div className="col-md-6">
             <div className="form-group">
-              <label htmlFor="email" className="form-label">Email Address</label>
+              <label htmlFor="email" className="form-label">{t('contactForm.emailLabel')}</label>
               <div className="input-wrapper">
                 <Icon icon="bi:envelope" className="input-icon" />
                 <input
@@ -62,7 +67,7 @@ export default function ContactForm() {
                   id="email"
                   name="email"
                   className="form-control"
-                  placeholder="Enter your email"
+                  placeholder={t('contactForm.emailPlaceholder')}
                   value={formData.email}
                   onChange={handleChange}
                   required
@@ -72,7 +77,7 @@ export default function ContactForm() {
           </div>
           <div className="col-12">
             <div className="form-group">
-              <label htmlFor="subject" className="form-label">Subject</label>
+              <label htmlFor="subject" className="form-label">{t('contactForm.subjectLabel')}</label>
               <div className="input-wrapper">
                 <Icon icon="bi:tag" className="input-icon" />
                 <input
@@ -80,7 +85,7 @@ export default function ContactForm() {
                   id="subject"
                   name="subject"
                   className="form-control"
-                  placeholder="What's this about?"
+                  placeholder={t('contactForm.subjectPlaceholder')}
                   value={formData.subject}
                   onChange={handleChange}
                   required
@@ -90,14 +95,14 @@ export default function ContactForm() {
           </div>
           <div className="col-12">
             <div className="form-group">
-              <label htmlFor="message" className="form-label">Message</label>
+              <label htmlFor="message" className="form-label">{t('contactForm.messageLabel')}</label>
               <div className="input-wrapper">
                 <Icon icon="bi:chat-dots" className="input-icon textarea-icon" />
                 <textarea
                   id="message"
                   name="message"
                   className="form-control textarea-control"
-                  placeholder="Tell me about your project..."
+                  placeholder={t('contactForm.messagePlaceholder')}
                   value={formData.message}
                   onChange={handleChange}
                   required
@@ -109,7 +114,7 @@ export default function ContactForm() {
           <div className="col-12">
             <button type="submit" className="px-btn form-submit-btn">
               <Icon icon="bi:send" />
-              <span>Send Message</span>
+              <span>{t('contactForm.send')}</span>
               <div className="btn-ripple"></div>
             </button>
           </div>

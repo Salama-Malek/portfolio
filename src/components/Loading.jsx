@@ -1,6 +1,9 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 export default function Loading() {
+  const { t } = useTranslation();
+
   return (
     <div className="loading-container">
       <div className="container">
@@ -8,11 +11,11 @@ export default function Loading() {
           <div className="col-md-8 text-center">
             <div className="loading-spinner">
               <div className="spinner-border text-primary" role="status">
-                <span className="visually-hidden">Loading...</span>
+                <span className="visually-hidden">{t('loading.aria')}</span>
               </div>
             </div>
-            <h4 className="mt-3">Loading...</h4>
-            <p>Please wait while we prepare your experience</p>
+            <h4 className="mt-3">{t('loading.title')}</h4>
+            <p>{t('loading.description')}</p>
           </div>
         </div>
       </div>

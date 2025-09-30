@@ -11,7 +11,15 @@
     "cta": "Lass uns reden"
   },
   "footer": {
-    "copyright": "© 2023 Alle Rechte vorbehalten"
+    "copyright": "© 2023 Alle Rechte vorbehalten",
+    "description": "Leidenschaftlicher Full-Stack-Entwickler, der innovative und benutzerfreundliche Webanwendungen erstellt.",
+    "widgets": {
+      "quickLinks": "Schnellzugriff",
+      "contact": "Kontakt aufnehmen"
+    },
+    "cta": {
+      "description": "Du hast ein Projekt im Kopf? Lass uns darüber sprechen."
+    }
   },
   "modal": {
     "type": "Typ",
@@ -41,51 +49,106 @@
       "serviceDescription": "Service-Beschreibung",
       "keyFeatures": "Hauptfunktionen",
       "startProject": "Projekt starten",
-      "downloadPortfolio": "Portfolio herunterladen"
+      "downloadPortfolio": "Portfolio herunterladen",
+      "defaultCategory": "Entwicklung",
+      "defaultDelivery": "2–4 Wochen",
+      "ratingValue": "{{rating}}/5"
     },
     "projectModal": {
       "details": "Details",
       "liveDemo": "LIVE DEMO",
       "sourceCode": "Quellcode",
       "technologiesUsed": "Verwendete Technologien"
+    },
+    "projectCard": {
+      "details": "Details",
+      "liveDemo": "Live-Demo",
+      "additionalTech": "{{count}} weitere Technologien"
     }
   },
   "contactForm": {
-    "nameLabel": "Ihr Name",
-    "namePlaceholder": "Name *",
-    "emailLabel": "Ihre E-Mail",
-    "emailPlaceholder": "E-Mail *",
+    "nameLabel": "Vollständiger Name",
+    "namePlaceholder": "Gib deinen vollständigen Namen ein",
+    "emailLabel": "E-Mail-Adresse",
+    "emailPlaceholder": "Gib deine E-Mail ein",
     "subjectLabel": "Betreff",
-    "subjectPlaceholder": "Betreff *",
-    "messageLabel": "Ihre Nachricht",
-    "messagePlaceholder": "Ihre Nachricht *",
+    "subjectPlaceholder": "Worum geht es?",
+    "messageLabel": "Nachricht",
+    "messagePlaceholder": "Erzähl mir von deinem Projekt ...",
     "send": "Nachricht senden",
-    "sending": "Senden..."
+    "sending": "Senden...",
+    "title": "Nachricht senden",
+    "description": "Lass uns dein Projekt besprechen und deine Ideen zum Leben erwecken",
+    "toast": {
+      "successTitle": "Nachricht gesendet",
+      "successMessage": "Danke für deine Nachricht!"
+    }
   },
   "homePage": {
     "hero": {
       "imgUrl": "/images/home-banner.png",
       "name": "Salama Malek",
       "heading": "Hallo! Ich bin Salama",
-      "typingText": ["Ich bin Entwickler", 1500, "Ich bin Freiberufler", 1500],
+      "typingText": [
+        "Ich bin Entwickler",
+        1500,
+        "Ich bin Freiberufler",
+        1500
+      ],
       "description": "ITI-Absolvent und versierter Full-Stack-Webentwickler mit Leidenschaft für Softwareentwicklung. Suche Einstiegspositionen, um technische Expertise im MEAN-Stack, in der Back- und Frontend-Programmierung sowie in der mobilen App-Entwicklung einzusetzen.",
       "btnText": "Kontakt aufnehmen",
       "btnUrl": "contactus"
     },
     "socialBtns": [
-      { "icon": "fa-brands:github", "iconBgClass": "github", "href": "https://github.com/Salama-Malek" },
-      { "icon": "fa-brands:khamsat", "iconBgClass": "khamsat", "href": "https://khamsat.com/user/salamamalek" },
-      { "icon": "fa-brands:linkedin-in", "iconBgClass": "linkedin", "href": "https://www.linkedin.com/in/salama-malek" }
+      {
+        "icon": "fa-brands:github",
+        "iconBgClass": "github",
+        "href": "https://github.com/Salama-Malek"
+      },
+      {
+        "icon": "fa-brands:khamsat",
+        "iconBgClass": "khamsat",
+        "href": "https://khamsat.com/user/salamamalek"
+      },
+      {
+        "icon": "fa-brands:linkedin-in",
+        "iconBgClass": "linkedin",
+        "href": "https://www.linkedin.com/in/salama-malek"
+      }
     ],
     "brands": [
-      { "src": "/images/brand-1.svg", "alt": "Logolpsum" },
-      { "src": "/images/brand-2.svg", "alt": "Logolpsum" },
-      { "src": "/images/brand-1.svg", "alt": "Logolpsum" },
-      { "src": "/images/brand-2.svg", "alt": "Logolpsum" },
-      { "src": "/images/brand-1.svg", "alt": "Logolpsum" },
-      { "src": "/images/brand-2.svg", "alt": "Logolpsum" },
-      { "src": "/images/brand-1.svg", "alt": "Logolpsum" },
-      { "src": "/images/brand-2.svg", "alt": "Logolpsum" }
+      {
+        "src": "/images/brand-1.svg",
+        "alt": "Logolpsum"
+      },
+      {
+        "src": "/images/brand-2.svg",
+        "alt": "Logolpsum"
+      },
+      {
+        "src": "/images/brand-1.svg",
+        "alt": "Logolpsum"
+      },
+      {
+        "src": "/images/brand-2.svg",
+        "alt": "Logolpsum"
+      },
+      {
+        "src": "/images/brand-1.svg",
+        "alt": "Logolpsum"
+      },
+      {
+        "src": "/images/brand-2.svg",
+        "alt": "Logolpsum"
+      },
+      {
+        "src": "/images/brand-1.svg",
+        "alt": "Logolpsum"
+      },
+      {
+        "src": "/images/brand-2.svg",
+        "alt": "Logolpsum"
+      }
     ],
     "about": {
       "imgSrc": "/new-images/about5.png",
@@ -93,9 +156,18 @@
       "title": "ICH BIN FÜR <span>FULL STACK</span>-PROJEKTE VERFÜGBAR",
       "description": "ITI-Absolvent und qualifizierter Full-Stack-Webentwickler mit dem Ziel, innovative Lösungen zu liefern und Wachstum in dynamischen, kollaborativen Umgebungen zu fördern. Ich spezialisiere mich auf den MEAN-Stack, bin aber auch in anderen Technologien wie Laravel, Ruby on Rails und Django versiert.",
       "funfacts": [
-        { "title": "Programmiersprachen", "number": 5 },
-        { "title": "Jahre Erfahrung", "number": 2 },
-        { "title": "Frameworks", "number": 7 }
+        {
+          "title": "Programmiersprachen",
+          "number": 5
+        },
+        {
+          "title": "Jahre Erfahrung",
+          "number": 2
+        },
+        {
+          "title": "Frameworks",
+          "number": 7
+        }
       ],
       "btnText": "Kontakt aufnehmen",
       "btnUrl": "contactus"
@@ -303,7 +375,13 @@
             "subTitle": "Echtzeit-Mock-Interviews mit KI, ohne Formulare oder Klicks, nur natürliche, personalisierte Gespräche.",
             "category": "AI/ML",
             "status": "Live",
-            "technologies": ["React", "Node.js", "OpenAI", "WebRTC", "MongoDB"],
+            "technologies": [
+              "React",
+              "Node.js",
+              "OpenAI",
+              "WebRTC",
+              "MongoDB"
+            ],
             "demoUrl": "https://intervueai-demo.vercel.app",
             "githubUrl": "https://github.com/Salama-Malek/IntervueAI",
             "details": {
@@ -322,7 +400,13 @@
             "subTitle": "Vollausgestatteter Online-Marktplatz mit fortschrittlicher Zahlungsabwicklung und Lagerverwaltung.",
             "category": "Full Stack",
             "status": "Live",
-            "technologies": ["MongoDB", "Express.js", "Angular", "Node.js", "Stripe"],
+            "technologies": [
+              "MongoDB",
+              "Express.js",
+              "Angular",
+              "Node.js",
+              "Stripe"
+            ],
             "demoUrl": "https://ecommerce-demo.netlify.app",
             "githubUrl": "https://github.com/Salama-Malek/ECommerce-Platform",
             "details": {
@@ -341,7 +425,13 @@
             "subTitle": "Kollaboratives Projektmanagement-Tool mit Echtzeit-Updates und Team-Kommunikationsfunktionen.",
             "category": "Web App",
             "status": "Live",
-            "technologies": ["React", "Socket.io", "PostgreSQL", "Express.js", "Redis"],
+            "technologies": [
+              "React",
+              "Socket.io",
+              "PostgreSQL",
+              "Express.js",
+              "Redis"
+            ],
             "demoUrl": "https://taskflow-manager.herokuapp.com",
             "githubUrl": "https://github.com/Salama-Malek/TaskFlow-Manager",
             "details": {
@@ -360,7 +450,13 @@
             "subTitle": "Fortgeschrittene Wetterdatenvisualisierung mit prädiktiver Analytik und interaktiven Diagrammen.",
             "category": "Data Viz",
             "status": "Live",
-            "technologies": ["D3.js", "Python", "Flask", "Chart.js", "OpenWeather API"],
+            "technologies": [
+              "D3.js",
+              "Python",
+              "Flask",
+              "Chart.js",
+              "OpenWeather API"
+            ],
             "demoUrl": "https://weather-analytics-dashboard.vercel.app",
             "githubUrl": "https://github.com/Salama-Malek/Weather-Analytics",
             "details": {
@@ -379,7 +475,13 @@
             "subTitle": "Umfassende Social Media Monitoring- und Analytics-Plattform mit Sentiment-Analyse.",
             "category": "Analytics",
             "status": "Live",
-            "technologies": ["React", "Python", "Django", "TensorFlow", "PostgreSQL"],
+            "technologies": [
+              "React",
+              "Python",
+              "Django",
+              "TensorFlow",
+              "PostgreSQL"
+            ],
             "demoUrl": "https://social-analytics-platform.netlify.app",
             "githubUrl": "https://github.com/Salama-Malek/Social-Analytics",
             "details": {
@@ -398,7 +500,13 @@
             "subTitle": "Plattformübergreifende Fitness-Tracking-App mit Trainingsplänen und Fortschrittsüberwachung.",
             "category": "Mobile",
             "status": "Live",
-            "technologies": ["React Native", "Firebase", "Redux", "Expo", "Charts"],
+            "technologies": [
+              "React Native",
+              "Firebase",
+              "Redux",
+              "Expo",
+              "Charts"
+            ],
             "demoUrl": null,
             "githubUrl": "https://github.com/Salama-Malek/Fitness-Tracker-App",
             "details": {
@@ -539,9 +647,68 @@
       },
       "contactImg": "/images/contact-us.png",
       "contactInfo": [
-        { "title": "Schreiben Sie eine E-Mail", "email": "salamahassanein@gmail.com" },
-        { "title": "Rufen Sie mich direkt an", "tel": "+7 993 287 3992" }
+        {
+          "title": "Schreiben Sie eine E-Mail",
+          "email": "salamahassanein@gmail.com"
+        },
+        {
+          "title": "Rufen Sie mich direkt an",
+          "tel": "+7 993 287 3992"
+        }
       ]
     }
+  },
+  "common": {
+    "logoAlt": "Salama Malek – Full-Stack-Entwickler",
+    "backToTop": "Zurück nach oben"
+  },
+  "contact": {
+    "followMe": "Folge mir",
+    "info": {
+      "heading": "Kontakt aufnehmen",
+      "description": "Bereit für dein nächstes Projekt? Lass uns besprechen, wie ich deine Ideen zum Leben erwecken kann.",
+      "copy": "{{field}} kopieren",
+      "toastTitle": "Kopiert",
+      "toastDescription": "{{value}} wurde in die Zwischenablage kopiert."
+    }
+  },
+  "languageSwitcher": {
+    "selectLanguage": "Sprache wählen",
+    "languageNames": {
+      "en": "Englisch",
+      "ar": "Arabisch",
+      "ru": "Russisch",
+      "de": "Deutsch",
+      "fr": "Französisch"
+    }
+  },
+  "themeSwitcher": {
+    "toggle": "Theme wechseln"
+  },
+  "navigation": {
+    "moreOptions": "Weitere Optionen",
+    "close": "Schließen",
+    "openMore": "Weitere Optionen öffnen",
+    "more": "Mehr"
+  },
+  "hero": {
+    "downloadCv": "Lebenslauf herunterladen"
+  },
+  "social": {
+    "icons": {
+      "fallbackName": "Social-Link",
+      "open": "{{name}} öffnen",
+      "khamsatAlt": "Khamsat"
+    }
+  },
+  "loading": {
+    "aria": "Wird geladen",
+    "title": "Wird geladen …",
+    "description": "Bitte warten, wir bereiten dein Erlebnis vor"
+  },
+  "errorBoundary": {
+    "title": "Etwas ist schiefgelaufen",
+    "description": "Es ist ein unerwarteter Fehler aufgetreten. Bitte lade die Seite neu.",
+    "action": "Seite neu laden"
   }
 }

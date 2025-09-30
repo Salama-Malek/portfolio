@@ -84,7 +84,10 @@ export default function ProjectCard({ project, onClick }) {
             </div>
           ))}
           {technologies.length > 4 && (
-            <div className="tech-icon-wrapper more" title={`${technologies.length - 4} more`}>
+            <div
+              className="tech-icon-wrapper more"
+              title={t('portfolioShowcase.projectCard.additionalTech', { count: technologies.length - 4 })}
+            >
               +{technologies.length - 4}
             </div>
           )}
@@ -92,13 +95,13 @@ export default function ProjectCard({ project, onClick }) {
         
         <div className="project-card-actions">
           <button className="project-card-btn">
-            <span>Details</span>
+            <span>{t('portfolioShowcase.projectCard.details')}</span>
             <Icon icon="bi:arrow-right" />
           </button>
           {demoUrl && (
             <button className="project-card-demo" onClick={handleDemoClick}>
               <Icon icon="bi:box-arrow-up-right" />
-              <span>Live Demo</span>
+              <span>{t('portfolioShowcase.projectCard.liveDemo')}</span>
             </button>
           )}
         </div>

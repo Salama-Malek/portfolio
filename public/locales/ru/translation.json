@@ -11,7 +11,15 @@
     "cta": "Давайте поговорим"
   },
   "footer": {
-    "copyright": "© 2023 все права защищены"
+    "copyright": "© 2023 все права защищены",
+    "description": "Увлеченный разработчик полного стека, создающий инновационные и удобные веб-приложения.",
+    "widgets": {
+      "quickLinks": "Быстрые ссылки",
+      "contact": "Связаться"
+    },
+    "cta": {
+      "description": "Есть идея проекта? Давайте обсудим."
+    }
   },
   "modal": {
     "type": "Тип",
@@ -41,51 +49,106 @@
       "serviceDescription": "Описание услуги",
       "keyFeatures": "Ключевые особенности",
       "startProject": "Начать проект",
-      "downloadPortfolio": "Скачать портфолио"
+      "downloadPortfolio": "Скачать портфолио",
+      "defaultCategory": "Разработка",
+      "defaultDelivery": "2–4 недели",
+      "ratingValue": "{{rating}}/5"
     },
     "projectModal": {
       "details": "Детали",
       "liveDemo": "ЖИВАЯ ДЕМО",
       "sourceCode": "Исходный код",
       "technologiesUsed": "Используемые технологии"
+    },
+    "projectCard": {
+      "details": "Подробнее",
+      "liveDemo": "Демо",
+      "additionalTech": "ещё {{count}} технологий"
     }
   },
   "contactForm": {
-    "nameLabel": "Ваше имя",
-    "namePlaceholder": "Имя *",
-    "emailLabel": "Ваш email",
-    "emailPlaceholder": "Email *",
+    "nameLabel": "Полное имя",
+    "namePlaceholder": "Введите полное имя",
+    "emailLabel": "Адрес электронной почты",
+    "emailPlaceholder": "Введите ваш email",
     "subjectLabel": "Тема",
-    "subjectPlaceholder": "Тема *",
-    "messageLabel": "Ваше сообщение",
-    "messagePlaceholder": "Ваше сообщение *",
+    "subjectPlaceholder": "О чём это?",
+    "messageLabel": "Сообщение",
+    "messagePlaceholder": "Расскажите о вашем проекте...",
     "send": "Отправить сообщение",
-    "sending": "Отправка..."
+    "sending": "Отправка...",
+    "title": "Отправить сообщение",
+    "description": "Давайте обсудим ваш проект и воплотим идеи в жизнь",
+    "toast": {
+      "successTitle": "Сообщение отправлено",
+      "successMessage": "Спасибо за ваше сообщение!"
+    }
   },
   "homePage": {
     "hero": {
       "imgUrl": "/images/home-banner.png",
       "name": "Salama Malek",
       "heading": "Привет! Я Салама",
-      "typingText": ["Я разработчик", 1500, "Я фрилансер", 1500],
+      "typingText": [
+        "Я разработчик",
+        1500,
+        "Я фрилансер",
+        1500
+      ],
       "description": "Выпускник ITI и квалифицированный разработчик полного стека с увлечением к программированию. Ищу позиции начального уровня, чтобы применить технические навыки в MEAN стеке, программировании серверной и клиентской части, а также разработке мобильных приложений.",
       "btnText": "Связаться",
       "btnUrl": "contactus"
     },
     "socialBtns": [
-      { "icon": "fa-brands:github", "iconBgClass": "github", "href": "https://github.com/Salama-Malek" },
-      { "icon": "fa-brands:khamsat", "iconBgClass": "khamsat", "href": "https://khamsat.com/user/salamamalek" },
-      { "icon": "fa-brands:linkedin-in", "iconBgClass": "linkedin", "href": "https://www.linkedin.com/in/salama-malek" }
+      {
+        "icon": "fa-brands:github",
+        "iconBgClass": "github",
+        "href": "https://github.com/Salama-Malek"
+      },
+      {
+        "icon": "fa-brands:khamsat",
+        "iconBgClass": "khamsat",
+        "href": "https://khamsat.com/user/salamamalek"
+      },
+      {
+        "icon": "fa-brands:linkedin-in",
+        "iconBgClass": "linkedin",
+        "href": "https://www.linkedin.com/in/salama-malek"
+      }
     ],
     "brands": [
-      { "src": "/images/brand-1.svg", "alt": "Logolpsum" },
-      { "src": "/images/brand-2.svg", "alt": "Logolpsum" },
-      { "src": "/images/brand-1.svg", "alt": "Logolpsum" },
-      { "src": "/images/brand-2.svg", "alt": "Logolpsum" },
-      { "src": "/images/brand-1.svg", "alt": "Logolpsum" },
-      { "src": "/images/brand-2.svg", "alt": "Logolpsum" },
-      { "src": "/images/brand-1.svg", "alt": "Logolpsum" },
-      { "src": "/images/brand-2.svg", "alt": "Logolpsum" }
+      {
+        "src": "/images/brand-1.svg",
+        "alt": "Logolpsum"
+      },
+      {
+        "src": "/images/brand-2.svg",
+        "alt": "Logolpsum"
+      },
+      {
+        "src": "/images/brand-1.svg",
+        "alt": "Logolpsum"
+      },
+      {
+        "src": "/images/brand-2.svg",
+        "alt": "Logolpsum"
+      },
+      {
+        "src": "/images/brand-1.svg",
+        "alt": "Logolpsum"
+      },
+      {
+        "src": "/images/brand-2.svg",
+        "alt": "Logolpsum"
+      },
+      {
+        "src": "/images/brand-1.svg",
+        "alt": "Logolpsum"
+      },
+      {
+        "src": "/images/brand-2.svg",
+        "alt": "Logolpsum"
+      }
     ],
     "about": {
       "imgSrc": "/new-images/about5.png",
@@ -93,9 +156,18 @@
       "title": "Я ГОТОВ К <span>FULL STACK</span> ПРОЕКТАМ",
       "description": "Выпускник ITI и квалифицированный разработчик полного стека с стремлением к созданию программного обеспечения. Стремлюсь предоставлять инновационные решения и способствовать росту в динамичных и совместных средах. Специализируюсь на MEAN стеке, но также владею другими технологиями, такими как Laravel, Ruby on Rails и Django.",
       "funfacts": [
-        { "title": "Языки программирования", "number": 5 },
-        { "title": "Годы опыта", "number": 2 },
-        { "title": "Фреймворки", "number": 7 }
+        {
+          "title": "Языки программирования",
+          "number": 5
+        },
+        {
+          "title": "Годы опыта",
+          "number": 2
+        },
+        {
+          "title": "Фреймворки",
+          "number": 7
+        }
       ],
       "btnText": "Связаться",
       "btnUrl": "contactus"
@@ -303,7 +375,13 @@
             "subTitle": "Мок-интервью в реальном времени с ИИ, без форм или кликов, только естественные, персонализированные разговоры.",
             "category": "AI/ML",
             "status": "Активно",
-            "technologies": ["React", "Node.js", "OpenAI", "WebRTC", "MongoDB"],
+            "technologies": [
+              "React",
+              "Node.js",
+              "OpenAI",
+              "WebRTC",
+              "MongoDB"
+            ],
             "demoUrl": "https://intervueai-demo.vercel.app",
             "githubUrl": "https://github.com/Salama-Malek/IntervueAI",
             "details": {
@@ -322,7 +400,13 @@
             "subTitle": "Полнофункциональный онлайн-рынок с продвинутой обработкой платежей и управлением запасами.",
             "category": "Full Stack",
             "status": "Активно",
-            "technologies": ["MongoDB", "Express.js", "Angular", "Node.js", "Stripe"],
+            "technologies": [
+              "MongoDB",
+              "Express.js",
+              "Angular",
+              "Node.js",
+              "Stripe"
+            ],
             "demoUrl": "https://ecommerce-demo.netlify.app",
             "githubUrl": "https://github.com/Salama-Malek/ECommerce-Platform",
             "details": {
@@ -341,7 +425,13 @@
             "subTitle": "Инструмент совместного управления проектами с обновлениями в реальном времени и функциями командного общения.",
             "category": "Web App",
             "status": "Активно",
-            "technologies": ["React", "Socket.io", "PostgreSQL", "Express.js", "Redis"],
+            "technologies": [
+              "React",
+              "Socket.io",
+              "PostgreSQL",
+              "Express.js",
+              "Redis"
+            ],
             "demoUrl": "https://taskflow-manager.herokuapp.com",
             "githubUrl": "https://github.com/Salama-Malek/TaskFlow-Manager",
             "details": {
@@ -360,7 +450,13 @@
             "subTitle": "Продвинутая визуализация данных о погоде с прогнозной аналитикой и интерактивными графиками.",
             "category": "Data Viz",
             "status": "Активно",
-            "technologies": ["D3.js", "Python", "Flask", "Chart.js", "OpenWeather API"],
+            "technologies": [
+              "D3.js",
+              "Python",
+              "Flask",
+              "Chart.js",
+              "OpenWeather API"
+            ],
             "demoUrl": "https://weather-analytics-dashboard.vercel.app",
             "githubUrl": "https://github.com/Salama-Malek/Weather-Analytics",
             "details": {
@@ -379,7 +475,13 @@
             "subTitle": "Комплексная платформа мониторинга и аналитики социальных сетей с анализом настроений.",
             "category": "Analytics",
             "status": "Активно",
-            "technologies": ["React", "Python", "Django", "TensorFlow", "PostgreSQL"],
+            "technologies": [
+              "React",
+              "Python",
+              "Django",
+              "TensorFlow",
+              "PostgreSQL"
+            ],
             "demoUrl": "https://social-analytics-platform.netlify.app",
             "githubUrl": "https://github.com/Salama-Malek/Social-Analytics",
             "details": {
@@ -398,7 +500,13 @@
             "subTitle": "Кроссплатформенное приложение для отслеживания фитнеса с планами тренировок и мониторингом прогресса.",
             "category": "Mobile",
             "status": "Активно",
-            "technologies": ["React Native", "Firebase", "Redux", "Expo", "Charts"],
+            "technologies": [
+              "React Native",
+              "Firebase",
+              "Redux",
+              "Expo",
+              "Charts"
+            ],
             "demoUrl": null,
             "githubUrl": "https://github.com/Salama-Malek/Fitness-Tracker-App",
             "details": {
@@ -539,9 +647,68 @@
       },
       "contactImg": "/images/contact-us.png",
       "contactInfo": [
-        { "title": "Напишите письмо", "email": "salamahassanein@gmail.com" },
-        { "title": "Позвоните напрямую", "tel": "+7 993 287 3992" }
+        {
+          "title": "Напишите письмо",
+          "email": "salamahassanein@gmail.com"
+        },
+        {
+          "title": "Позвоните напрямую",
+          "tel": "+7 993 287 3992"
+        }
       ]
     }
+  },
+  "common": {
+    "logoAlt": "Салама Малек — разработчик полного стека",
+    "backToTop": "Наверх"
+  },
+  "contact": {
+    "followMe": "Подписывайтесь",
+    "info": {
+      "heading": "Связаться",
+      "description": "Готовы начать новый проект? Давайте обсудим, как я могу помочь воплотить ваши идеи.",
+      "copy": "Скопировать {{field}}",
+      "toastTitle": "Скопировано",
+      "toastDescription": "{{value}} скопировано в буфер."
+    }
+  },
+  "languageSwitcher": {
+    "selectLanguage": "Выберите язык",
+    "languageNames": {
+      "en": "Английский",
+      "ar": "Арабский",
+      "ru": "Русский",
+      "de": "Немецкий",
+      "fr": "Французский"
+    }
+  },
+  "themeSwitcher": {
+    "toggle": "Переключить тему"
+  },
+  "navigation": {
+    "moreOptions": "Дополнительные опции",
+    "close": "Закрыть",
+    "openMore": "Открыть дополнительные опции",
+    "more": "Еще"
+  },
+  "hero": {
+    "downloadCv": "Скачать резюме"
+  },
+  "social": {
+    "icons": {
+      "fallbackName": "социальную ссылку",
+      "open": "Открыть {{name}}",
+      "khamsatAlt": "Khamsat"
+    }
+  },
+  "loading": {
+    "aria": "Загрузка",
+    "title": "Загрузка…",
+    "description": "Пожалуйста, подождите, мы подготавливаем ваш опыт"
+  },
+  "errorBoundary": {
+    "title": "Что-то пошло не так",
+    "description": "Произошла непредвиденная ошибка. Попробуйте обновить страницу.",
+    "action": "Обновить страницу"
   }
 }

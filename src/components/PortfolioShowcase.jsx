@@ -274,15 +274,15 @@ export default function PortfolioShowcase({ data = {} }) {
                 <div className="service-info">
                   <div className="info-item">
                     <Icon icon="bi:code-slash" />
-                    <span><strong>{t('portfolioShowcase.serviceModal.category')}:</strong> {selectedService.category || 'Development'}</span>
+                    <span><strong>{t('portfolioShowcase.serviceModal.category')}:</strong> {selectedService.category || t('portfolioShowcase.serviceModal.defaultCategory')}</span>
                   </div>
                   <div className="info-item">
                     <Icon icon="bi:star-fill" />
-                    <span><strong>{t('portfolioShowcase.serviceModal.rating')}:</strong> {selectedService.ratings}/5</span>
+                    <span><strong>{t('portfolioShowcase.serviceModal.rating')}:</strong> {t('portfolioShowcase.serviceModal.ratingValue', { rating: selectedService.ratings ?? 0 })}</span>
                   </div>
                   <div className="info-item">
                     <Icon icon="bi:clock" />
-                    <span><strong>{t('portfolioShowcase.serviceModal.delivery')}:</strong> {selectedService.deliveryTime || '2-4 weeks'}</span>
+                    <span><strong>{t('portfolioShowcase.serviceModal.delivery')}:</strong> {selectedService.deliveryTime || t('portfolioShowcase.serviceModal.defaultDelivery')}</span>
                   </div>
                 </div>
                 

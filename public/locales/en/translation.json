@@ -11,7 +11,15 @@
     "cta": "Let's Talk"
   },
   "footer": {
-    "copyright": "© 2024 All rights reserved"
+    "copyright": "© 2024 All rights reserved",
+    "description": "A passionate full-stack developer dedicated to building innovative and user-friendly web applications.",
+    "widgets": {
+      "quickLinks": "Quick Links",
+      "contact": "Get In Touch"
+    },
+    "cta": {
+      "description": "Have a project in mind? Let's talk about it."
+    }
   },
   "modal": {
     "type": "Type",
@@ -41,33 +49,52 @@
       "serviceDescription": "Service Description",
       "keyFeatures": "Key Features",
       "startProject": "Start Project",
-      "downloadPortfolio": "Download Portfolio"
+      "downloadPortfolio": "Download Portfolio",
+      "defaultCategory": "Development",
+      "defaultDelivery": "2-4 weeks",
+      "ratingValue": "{{rating}}/5"
     },
     "projectModal": {
       "details": "Details",
       "liveDemo": "LIVE DEMO",
       "sourceCode": "Source Code",
       "technologiesUsed": "Technologies Used"
+    },
+    "projectCard": {
+      "details": "Details",
+      "liveDemo": "Live Demo",
+      "additionalTech": "{{count}} more technologies"
     }
   },
   "contactForm": {
-    "nameLabel": "Your Name",
-    "namePlaceholder": "Name *",
-    "emailLabel": "Your Email",
-    "emailPlaceholder": "Email *",
+    "nameLabel": "Full Name",
+    "namePlaceholder": "Enter your full name",
+    "emailLabel": "Email Address",
+    "emailPlaceholder": "Enter your email",
     "subjectLabel": "Subject",
-    "subjectPlaceholder": "Subject *",
-    "messageLabel": "Your Message",
-    "messagePlaceholder": "Your message *",
+    "subjectPlaceholder": "What's this about?",
+    "messageLabel": "Message",
+    "messagePlaceholder": "Tell me about your project...",
     "send": "Send Message",
-    "sending": "Sending..."
+    "sending": "Sending...",
+    "title": "Send a Message",
+    "description": "Let's discuss your project and bring your ideas to life",
+    "toast": {
+      "successTitle": "Message sent",
+      "successMessage": "Thank you for your message!"
+    }
   },
   "homePage": {
     "hero": {
       "imgUrl": "/images/home-banner.png",
       "name": "Salama Malek",
       "heading": "Hey! I'm Salama",
-      "typingText": ["I'm a Developer", 1500, "I'm a Freelancer", 1500],
+      "typingText": [
+        "I'm a Developer",
+        1500,
+        "I'm a Freelancer",
+        1500
+      ],
       "description": "ITI graduate and skilled Full Stack Web Developer with a passion for software development. Seeking entry-level opportunities to apply technical expertise in MEAN stack, back-end and front-end programming, and mobile app development.",
       "btnText": "Get in touch",
       "btnUrl": "contactus"
@@ -78,10 +105,10 @@
         "iconBgClass": "github",
         "href": "https://github.com/Salama-Malek"
       },
-      { 
-        "icon": "fa-brands:khamsat", 
-        "iconBgClass": "khamsat", 
-        "href": "https://khamsat.com/user/salamamalek" 
+      {
+        "icon": "fa-brands:khamsat",
+        "iconBgClass": "khamsat",
+        "href": "https://khamsat.com/user/salamamalek"
       },
       {
         "icon": "fa-brands:linkedin-in",
@@ -157,7 +184,13 @@
           "subTitle": "Web Development, Full Stack",
           "category": "full-stack",
           "status": "Live",
-          "technologies": ["MongoDB", "Express.js", "Angular", "Node.js", "TypeScript"],
+          "technologies": [
+            "MongoDB",
+            "Express.js",
+            "Angular",
+            "Node.js",
+            "TypeScript"
+          ],
           "demoUrl": "https://demo.example.com",
           "githubUrl": "https://github.com/username/project",
           "details": {
@@ -176,7 +209,12 @@
           "subTitle": "Mobile Development, Front-End",
           "category": "mobile",
           "status": "Live",
-          "technologies": ["React Native", "JavaScript", "Redux", "Firebase"],
+          "technologies": [
+            "React Native",
+            "JavaScript",
+            "Redux",
+            "Firebase"
+          ],
           "demoUrl": "https://app.example.com",
           "githubUrl": "https://github.com/username/mobile-app",
           "details": {
@@ -195,7 +233,13 @@
           "subTitle": "Web Development, Front-End",
           "category": "frontend",
           "status": "Live",
-          "technologies": ["Angular", "TypeScript", "SCSS", "RxJS", "Chart.js"],
+          "technologies": [
+            "Angular",
+            "TypeScript",
+            "SCSS",
+            "RxJS",
+            "Chart.js"
+          ],
           "demoUrl": "https://dashboard.example.com",
           "githubUrl": "https://github.com/username/dashboard",
           "details": {
@@ -214,7 +258,13 @@
           "subTitle": "Web Development, Back-End",
           "category": "backend",
           "status": "Live",
-          "technologies": ["Laravel", "PHP", "MySQL", "Vue.js", "Bootstrap"],
+          "technologies": [
+            "Laravel",
+            "PHP",
+            "MySQL",
+            "Vue.js",
+            "Bootstrap"
+          ],
           "demoUrl": "https://edu.example.com",
           "githubUrl": "https://github.com/username/edu-platform",
           "details": {
@@ -233,7 +283,13 @@
           "subTitle": "Web Development, Full Stack",
           "category": "full-stack",
           "status": "Live",
-          "technologies": ["MongoDB", "Express.js", "React", "Node.js", "JWT"],
+          "technologies": [
+            "MongoDB",
+            "Express.js",
+            "React",
+            "Node.js",
+            "JWT"
+          ],
           "demoUrl": "https://blog.example.com",
           "githubUrl": "https://github.com/username/blog-platform",
           "details": {
@@ -252,7 +308,13 @@
           "subTitle": "Web Development, CMS",
           "category": "cms",
           "status": "Live",
-          "technologies": ["WordPress", "PHP", "MySQL", "JavaScript", "CSS"],
+          "technologies": [
+            "WordPress",
+            "PHP",
+            "MySQL",
+            "JavaScript",
+            "CSS"
+          ],
           "demoUrl": "https://corporate.example.com",
           "githubUrl": "https://github.com/username/wordpress-theme",
           "details": {
@@ -482,7 +544,13 @@
             "subTitle": "Real-time mock interviews with AI, no forms or clicks just natural, personalized conversations.",
             "category": "AI/ML",
             "status": "Live",
-            "technologies": ["React", "Node.js", "OpenAI", "WebRTC", "MongoDB"],
+            "technologies": [
+              "React",
+              "Node.js",
+              "OpenAI",
+              "WebRTC",
+              "MongoDB"
+            ],
             "demoUrl": "https://intervueai-demo.vercel.app",
             "githubUrl": "https://github.com/Salama-Malek/IntervueAI",
             "details": {
@@ -501,7 +569,13 @@
             "subTitle": "Full-featured online marketplace with advanced payment processing and inventory management.",
             "category": "Full Stack",
             "status": "Live",
-            "technologies": ["MongoDB", "Express.js", "Angular", "Node.js", "Stripe"],
+            "technologies": [
+              "MongoDB",
+              "Express.js",
+              "Angular",
+              "Node.js",
+              "Stripe"
+            ],
             "demoUrl": "https://ecommerce-demo.netlify.app",
             "githubUrl": "https://github.com/Salama-Malek/ECommerce-Platform",
             "details": {
@@ -520,7 +594,13 @@
             "subTitle": "Collaborative project management tool with real-time updates and team communication features.",
             "category": "Web App",
             "status": "Live",
-            "technologies": ["React", "Socket.io", "PostgreSQL", "Express.js", "Redis"],
+            "technologies": [
+              "React",
+              "Socket.io",
+              "PostgreSQL",
+              "Express.js",
+              "Redis"
+            ],
             "demoUrl": "https://taskflow-manager.herokuapp.com",
             "githubUrl": "https://github.com/Salama-Malek/TaskFlow-Manager",
             "details": {
@@ -539,7 +619,13 @@
             "subTitle": "Advanced weather data visualization with predictive analytics and interactive charts.",
             "category": "Data Viz",
             "status": "Live",
-            "technologies": ["D3.js", "Python", "Flask", "Chart.js", "OpenWeather API"],
+            "technologies": [
+              "D3.js",
+              "Python",
+              "Flask",
+              "Chart.js",
+              "OpenWeather API"
+            ],
             "demoUrl": "https://weather-analytics-dashboard.vercel.app",
             "githubUrl": "https://github.com/Salama-Malek/Weather-Analytics",
             "details": {
@@ -558,7 +644,13 @@
             "subTitle": "Comprehensive social media monitoring and analytics platform with sentiment analysis.",
             "category": "Analytics",
             "status": "Live",
-            "technologies": ["React", "Python", "Django", "TensorFlow", "PostgreSQL"],
+            "technologies": [
+              "React",
+              "Python",
+              "Django",
+              "TensorFlow",
+              "PostgreSQL"
+            ],
             "demoUrl": "https://social-analytics-platform.netlify.app",
             "githubUrl": "https://github.com/Salama-Malek/Social-Analytics",
             "details": {
@@ -577,7 +669,13 @@
             "subTitle": "Cross-platform fitness tracking app with workout plans and progress monitoring.",
             "category": "Mobile",
             "status": "Live",
-            "technologies": ["React Native", "Firebase", "Redux", "Expo", "Charts"],
+            "technologies": [
+              "React Native",
+              "Firebase",
+              "Redux",
+              "Expo",
+              "Charts"
+            ],
             "demoUrl": null,
             "githubUrl": "https://github.com/Salama-Malek/Fitness-Tracker-App",
             "details": {
@@ -719,9 +817,68 @@
       },
       "contactImg": "/images/contact-us.png",
       "contactInfo": [
-        { "title": "Write an e-mail", "email": "salamahassanein@gmail.com" },
-        { "title": "Call me directly", "tel": "+7 993 287 3992" }
+        {
+          "title": "Write an e-mail",
+          "email": "salamahassanein@gmail.com"
+        },
+        {
+          "title": "Call me directly",
+          "tel": "+7 993 287 3992"
+        }
       ]
     }
+  },
+  "common": {
+    "logoAlt": "Salama Malek - Full Stack Developer",
+    "backToTop": "Back to top"
+  },
+  "contact": {
+    "followMe": "Follow Me",
+    "info": {
+      "heading": "Get In Touch",
+      "description": "Ready to start your next project? Let's discuss how I can help bring your ideas to life.",
+      "copy": "Copy {{field}}",
+      "toastTitle": "Copied",
+      "toastDescription": "{{value}} copied to clipboard."
+    }
+  },
+  "languageSwitcher": {
+    "selectLanguage": "Select language",
+    "languageNames": {
+      "en": "English",
+      "ar": "Arabic",
+      "ru": "Russian",
+      "de": "German",
+      "fr": "French"
+    }
+  },
+  "themeSwitcher": {
+    "toggle": "Toggle theme"
+  },
+  "navigation": {
+    "moreOptions": "More Options",
+    "close": "Close",
+    "openMore": "Open more options",
+    "more": "More"
+  },
+  "hero": {
+    "downloadCv": "Download CV"
+  },
+  "social": {
+    "icons": {
+      "fallbackName": "social link",
+      "open": "Open {{name}}",
+      "khamsatAlt": "Khamsat"
+    }
+  },
+  "loading": {
+    "aria": "Loading",
+    "title": "Loading...",
+    "description": "Please wait while we prepare your experience"
+  },
+  "errorBoundary": {
+    "title": "Something went wrong",
+    "description": "We're sorry, but something unexpected happened. Please try refreshing the page.",
+    "action": "Refresh Page"
   }
 }

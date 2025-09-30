@@ -3,12 +3,15 @@ import { Icon } from '@iconify/react';
 import Tooltip from './Tooltip';
 import { useCopyToClipboard } from '../hooks/useCopyToClipboard';
 import { useToast } from './ToastProvider';
+import { useTranslation } from 'react-i18next';
 
 export default function ContactInfo({ contactInfoData }) {
+  const { t } = useTranslation();
   const { copy } = useCopyToClipboard();
   const { pushToast } = useToast();
-  const getIcon = (title) => {
-    switch (title.toLowerCase()) {
+  const getIcon = (item) => {
+    const key = (item.type || item.title || '').toLowerCase();
+    switch (key) {
       case 'email':
         return 'bi:envelope';
       case 'phone':
@@ -23,8 +26,8 @@ export default function ContactInfo({ contactInfoData }) {
   return (
     <div className="contact-info">
       <div className="contact-info-header">
-        <h4>Get In Touch</h4>
-        <p>Ready to start your next project? Let's discuss how I can help bring your ideas to life.</p>
+        <h4>{t('contact.info.heading')}</h4>
+        <p>{t('contact.info.description')}</p>
       </div>
       <div className="contact-info-list">
         {contactInfoData.map((item, index) => (
@@ -36,13 +39,19 @@ export default function ContactInfo({ contactInfoData }) {
             data-aos-delay={index * 100}
           >
             <div className="contact-info-icon">
-              <Tooltip content={`Copy ${item.title.toLowerCase()}`}>
+              <Tooltip content={t('contact.info.copy', { field: item.title })}>
                 <span
                   onClick={async () => {
                     const text = item.email || item.tel || item.address || '';
                     if (!text) return;
                     const ok = await copy(text);
-                    if (ok) pushToast({ type: 'info', title: 'Copied', description: text });
+                    if (ok) {
+                      pushToast({
+                        type: 'info',
+                        title: t('contact.info.toastTitle'),
+                        description: t('contact.info.toastDescription', { value: text }),
+                      });
+                    }
                   }}
                   role="button"
                   tabIndex={0}
@@ -50,7 +59,7 @@ export default function ContactInfo({ contactInfoData }) {
                     if (e.key === 'Enter') e.currentTarget.click();
                   }}
                 >
-                  <Icon icon={getIcon(item.title)} />
+                  <Icon icon={getIcon(item)} />
                 </span>
               </Tooltip>
             </div>

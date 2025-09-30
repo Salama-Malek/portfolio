@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import { TypeAnimation } from 'react-type-animation';
 import { Icon } from '@iconify/react';
 import SocialBtns from './SocialBtns';
+import { useTranslation } from 'react-i18next';
 import Particles from './Particles';
 import LiquidEther from './LiquidEther';
 
@@ -17,6 +18,7 @@ export default function Hero({ data = {}, socialData = [] }) {
     imgUrl,
   } = data;
   const heroImgRef = useRef(null);
+  const { t } = useTranslation();
 
   // Removed parallax effect for hero image to keep it stationary
   // Background animations (Particles and LiquidEther) will continue to move
@@ -82,7 +84,7 @@ export default function Hero({ data = {}, socialData = [] }) {
                 {cvUrl && (
                   <a href={cvUrl} className="px-btn-outline" download>
                     <Icon icon="bi:download" />
-                    <span>Download CV</span>
+                    <span>{t('hero.downloadCv')}</span>
                   </a>
                 )}
               </div>

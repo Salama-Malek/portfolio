@@ -74,21 +74,31 @@
     top: 0;
     bottom: 0;
     width: 4px;
-    background: linear-gradient(180deg, var(--px-theme) 0%, #00d4ff 100%);
-    transform: translateX(-50%);
-    border-radius: 2px;
-    
-    &::before,
-    &::after {
-      content: '';
-      position: absolute;
-      left: 50%;
-      width: 20px;
-      height: 20px;
-      background: var(--px-theme);
-      border-radius: 50%;
-      transform: translateX(-50%);
+    .duration {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.9rem;
+      color: var(--px-text);
     }
+  }
+
+/* RTL Support for Experience Section */
+[dir='rtl'] .experience-section .switcher-content .company,
+[dir='rtl'] .experience-section .accordion-content .company {
+  text-align: right;
+  direction: rtl;
+}
+[dir='rtl'] .experience-section .switcher-content .duration,
+[dir='rtl'] .experience-section .accordion-content .duration {
+  text-align: right;
+  direction: rtl;
+}
+[dir='rtl'] .experience-section .switcher-content .content-description,
+[dir='rtl'] .experience-section .accordion-content .content-description {
+  text-align: right;
+  direction: rtl;
+}
     
     &::before {
       top: -10px;
@@ -354,7 +364,7 @@
       }
     }
   }
-}
+
 
 /* Experience Summary */
 .experience-summary-wrapper {
@@ -1000,3 +1010,15 @@
     }
   }
 }
+
+[dir='rtl'] .experience-section .switcher-content .duration {
+  text-align: right;
+  direction: rtl;
+}
+
+[dir='rtl'] .experience-section .switcher-content .content-description,
+[dir='rtl'] .experience-section .accordion-content .content-description {
+  text-align: right;
+  direction: rtl;
+}
+

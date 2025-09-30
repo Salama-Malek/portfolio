@@ -28,7 +28,7 @@ export default function MobileMenu({ isOpen, navLinks, onClose }) {
             <img
               className="logo-3d-dark"
               src="/images/tech1.png"
-              alt="Salama Malek - Full Stack Developer"
+              alt={t('common.logoAlt')}
             />
           </div>
           <ul className="mobile-nav-list">
