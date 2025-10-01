@@ -2,38 +2,105 @@
 
 $px-font: 'Space Grotesk', sans-serif !default;
 
-// Modern Dark Portfolio Design System
-// Primary Color Palette
-$px-bg-primary: #0a0a0a;
-$px-bg-secondary: #1a1a1a;
-$px-bg-tertiary: #111827;
-$px-bg-quaternary: #1f2937;
+// Dark mode palette (unchanged)
+$dark-bg: #0a0a0a;
+$dark-surface: #1a1a1a;
+$dark-surface-alt: #111827;
+$dark-surface-strong: #1f2937;
+$dark-text-primary: #ffffff;
+$dark-text-secondary: #a0a0a0;
+$dark-text-tertiary: #9ca3af;
+$dark-text-muted: #6b7280;
+$dark-accent: #3b82f6;
+$dark-accent-hover: lighten($dark-accent, 10%);
 
-// Text Colors
-$px-text-primary: #ffffff;
-$px-text-secondary: #a0a0a0;
-$px-text-tertiary: #9ca3af;
-$px-text-muted: #6b7280;
+// Light mode palette (requirements)
+$light-bg: #ffffff;
+$light-surface: #f8f9fa;
+$light-surface-alt: #f1f5f9;
+$light-surface-strong: #e2e8f0;
+$light-border: #e0e0e0;
+$light-text-primary: #212529;
+$light-text-secondary: #6c757d;
+$light-text-tertiary: lighten($light-text-secondary, 18%);
+$light-text-muted: lighten($light-text-secondary, 28%);
+$light-accent: #0d6efd;
+$light-accent-hover: lighten($light-accent, 10%);
 
-// Accent Colors
-$px-accent-primary: #3b82f6;
-$px-accent-secondary: #8b5cf6;
-$px-accent-success: #10b981;
-$px-accent-warning: #f59e0b;
-$px-accent-error: #ef4444;
+// Shared accent palette
+$accent-secondary: #8b5cf6;
+$accent-success: #10b981;
+$accent-warning: #f59e0b;
+$accent-error: #ef4444;
 
-// Light Mode Colors (Complementary)
-$px-light-bg-primary: #ffffff;
-$px-light-bg-secondary: #f8fafc;
-$px-light-bg-tertiary: #f1f5f9;
-$px-light-bg-quaternary: #e2e8f0;
+// Utility colors and gradients
+$highlight-cyan: #00d4ff;
+$highlight-magenta: #ff77c6;
+$highlight-purple: #7877c6;
+$highlight-violet: #6f42c1;
+$highlight-pink: #e83e8c;
+$highlight-green: #28a745;
+$highlight-teal: #20c997;
+$highlight-orange: #fd7e14;
+$highlight-amber: #ffc107;
+$highlight-sky: #17a2b8;
+$highlight-steel: #6c757d;
+$highlight-charcoal: #495057;
+$neutral-muted: #e9ecef;
+$neutral-soft: #f8f9fa;
+$neutral-line: #dee2e6;
+$glow-space-start: #1a1a2e;
+$glow-space-end: #16213e;
+$brand-secondary: #667eea;
+$brand-secondary-alt: #764ba2;
+$brand-surface-soft: #e0e7ff;
+$brand-hero-primary: #5227ff;
+$brand-hero-secondary: #ff9ffc;
+$brand-hero-tertiary: #b19eef;
+$brand-robot-primary: #00d4ff;
+$brand-robot-secondary: #ff6b6b;
+$brand-robot-tertiary: #4ecdc4;
+$brand-robot-base: #2c3e50;
+$brand-robot-base-alt: #34495e;
+$brand-robot-glow: #00ffff;
+$brand-dribbble-start: #f26798;
+$brand-dribbble-end: #ff6b9d;
+$brand-facebook-start: #1877f2;
+$brand-facebook-end: #42a5f5;
+$brand-linkedin-start: #1275b1;
+$brand-linkedin-end: #42a5f5;
+$brand-github-start: #333333;
+$brand-github-end: #555555;
+$brand-producthunt-start: #ff6b35;
+$brand-producthunt-end: #f7931e;
+$brand-twitter-start: #1da1f2;
+$brand-twitter-end: #42a5f5;
+$brand-contact-primary: #0788ff;
+$brand-react: #61dafb;
+$brand-typescript: #3178c6;
+$brand-next: #000000;
+$brand-tailwind: #06b6d4;
+$brand-three: #000000;
+$brand-node: #339933;
+$brand-python: #3776ab;
+$brand-mongodb: #47a248;
+$brand-docker: #2496ed;
+$brand-aws: #ff9900;
 
-$px-light-text-primary: #0f172a;
-$px-light-text-secondary: #475569;
-$px-light-text-tertiary: #64748b;
-$px-light-text-muted: #94a3b8;
-
-// Legacy variables for compatibility
+// Legacy compatibility aliases
+$px-bg-primary: $dark-bg;
+$px-bg-secondary: $dark-surface;
+$px-bg-tertiary: $dark-surface-alt;
+$px-bg-quaternary: $dark-surface-strong;
+$px-text-primary: $dark-text-primary;
+$px-text-secondary: $dark-text-secondary;
+$px-text-tertiary: $dark-text-tertiary;
+$px-text-muted: $dark-text-muted;
+$px-accent-primary: $dark-accent;
+$px-accent-secondary: $accent-secondary;
+$px-accent-success: $accent-success;
+$px-accent-warning: $accent-warning;
+$px-accent-error: $accent-error;
 $px-theme: $px-accent-primary;
 $px-theme-rgb: 59, 130, 246;
 $px-white: $px-text-primary;

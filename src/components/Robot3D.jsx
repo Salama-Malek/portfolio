@@ -2,35 +2,57 @@ import React, { useRef, useState, useEffect, useMemo } from 'react';
 import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import { Stars, OrbitControls } from '@react-three/drei';
 import * as THREE from 'three';
+import { useThemeContext } from '../ThemeProvider';
+import { getCssVariableValue } from '../utils/themeTokens';
 
 // Tech stack for orbiting around the robot
 const techStack = [
-  { name: 'React', icon: '⚛️', color: '#61DAFB' },
-  { name: 'TypeScript', icon: '🔷', color: '#3178C6' },
-  { name: 'Next.js', icon: '▲', color: '#000000' },
-  { name: 'Tailwind', icon: '🎨', color: '#06B6D4' },
-  { name: 'Three.js', icon: '🎮', color: '#000000' },
-  { name: 'Node.js', icon: '🟢', color: '#339933' },
-  { name: 'Python', icon: '🐍', color: '#3776AB' },
-  { name: 'MongoDB', icon: '🍃', color: '#47A248' },
-  { name: 'Docker', icon: '🐳', color: '#2496ED' },
-  { name: 'AWS', icon: '☁️', color: '#FF9900' },
+  { name: 'React', icon: '⚛️', colorToken: '--brand-react', fallback: '#61dafb' },
+  { name: 'TypeScript', icon: '🔷', colorToken: '--brand-typescript', fallback: '#3178c6' },
+  { name: 'Next.js', icon: '▲', colorToken: '--brand-next', fallback: '#000000' },
+  { name: 'Tailwind', icon: '🎨', colorToken: '--brand-tailwind', fallback: '#06b6d4' },
+  { name: 'Three.js', icon: '🎮', colorToken: '--brand-three', fallback: '#000000' },
+  { name: 'Node.js', icon: '🟢', colorToken: '--brand-node', fallback: '#339933' },
+  { name: 'Python', icon: '🐍', colorToken: '--brand-python', fallback: '#3776ab' },
+  { name: 'MongoDB', icon: '🍃', colorToken: '--brand-mongodb', fallback: '#47a248' },
+  { name: 'Docker', icon: '🐳', colorToken: '--brand-docker', fallback: '#2496ed' },
+  { name: 'AWS', icon: '☁️', colorToken: '--brand-aws', fallback: '#ff9900' },
 ];
 
-// Futuristic color scheme for space scene
-const colors = {
-  primary: '#00d4ff',
-  secondary: '#ff6b6b',
-  accent: '#4ecdc4',
-  robot: '#2c3e50',
-  robotAccent: '#34495e',
-  glow: '#00ffff',
-  space: '#0a0a0a',
-  stars: '#ffffff'
+const paletteTokens = {
+  primary: { token: '--brand-robot-primary', fallback: '#00d4ff' },
+  secondary: { token: '--brand-robot-secondary', fallback: '#ff6b6b' },
+  accent: { token: '--brand-robot-tertiary', fallback: '#4ecdc4' },
+  robot: { token: '--brand-robot-base', fallback: '#2c3e50' },
+  robotAccent: { token: '--brand-robot-base-alt', fallback: '#34495e' },
+  glow: { token: '--brand-robot-glow', fallback: '#00ffff' },
+  space: { token: '--bg', fallback: '#0a0a0a' },
+  stars: { token: '--px-white', fallback: '#ffffff' }
+};
+
+const hexToRgba = (hex, alpha) => {
+  if (!hex || typeof hex !== 'string') {
+    return `rgba(0, 0, 0, ${alpha})`;
+  }
+  if (!hex.startsWith('#')) {
+    return hex;
+  }
+  let normalized = hex.slice(1);
+  if (normalized.length === 3) {
+    normalized = normalized.split('').map((char) => char + char).join('');
+  }
+  if (normalized.length !== 6) {
+    return hex;
+  }
+  const value = parseInt(normalized, 16);
+  const r = (value >> 16) & 255;
+  const g = (value >> 8) & 255;
+  const b = value & 255;
+  return `rgba(${r}, ${g}, ${b}, ${alpha})`;
 };
 
 // Futuristic Robot Component
-function Robot({ isHovered }) {
+function Robot({ isHovered, palette }) {
   const robotRef = useRef();
   const headRef = useRef();
   const leftEyeRef = useRef();
@@ -70,10 +92,10 @@ function Robot({ isHovered }) {
       <mesh position={[0, -0.5, 0]} scale={[1.2, 1.8, 0.8]}>
         <boxGeometry args={[1, 1, 1]} />
         <meshStandardMaterial
-          color={colors.robot}
+          color={palette.robot}
           metalness={0.9}
           roughness={0.1}
-          emissive={colors.robotAccent}
+          emissive={palette.robotAccent}
           emissiveIntensity={0.1}
         />
       </mesh>
@@ -83,10 +105,10 @@ function Robot({ isHovered }) {
         <mesh scale={[0.8, 0.8, 0.8]}>
           <boxGeometry args={[1, 1, 1]} />
           <meshStandardMaterial
-            color={colors.robot}
+            color={palette.robot}
             metalness={0.9}
             roughness={0.1}
-            emissive={colors.robotAccent}
+            emissive={palette.robotAccent}
             emissiveIntensity={0.2}
           />
         </mesh>
@@ -95,8 +117,8 @@ function Robot({ isHovered }) {
         <mesh ref={leftEyeRef} position={[-0.25, 0.1, 0.4]} scale={[0.1, 0.1, 0.1]}>
           <sphereGeometry args={[1, 16, 16]} />
           <meshStandardMaterial
-            color={colors.glow}
-            emissive={colors.glow}
+            color={palette.glow}
+            emissive={palette.glow}
             emissiveIntensity={1.0}
             metalness={0.8}
             roughness={0.1}
@@ -106,8 +128,8 @@ function Robot({ isHovered }) {
         <mesh ref={rightEyeRef} position={[0.25, 0.1, 0.4]} scale={[0.1, 0.1, 0.1]}>
           <sphereGeometry args={[1, 16, 16]} />
           <meshStandardMaterial
-            color={colors.glow}
-            emissive={colors.glow}
+            color={palette.glow}
+            emissive={palette.glow}
             emissiveIntensity={1.0}
             metalness={0.8}
             roughness={0.1}
@@ -119,10 +141,10 @@ function Robot({ isHovered }) {
       <mesh position={[-1.1, 0.2, 0]} rotation={[0, 0, Math.PI/6]} scale={[0.2, 1.2, 0.2]}>
         <cylinderGeometry args={[1, 1, 1, 12]} />
         <meshStandardMaterial
-          color={colors.robotAccent}
+          color={palette.robotAccent}
           metalness={0.8}
           roughness={0.2}
-          emissive={colors.robotAccent}
+          emissive={palette.robotAccent}
           emissiveIntensity={0.1}
         />
       </mesh>
@@ -130,10 +152,10 @@ function Robot({ isHovered }) {
       <mesh position={[1.1, 0.2, 0]} rotation={[0, 0, -Math.PI/6]} scale={[0.2, 1.2, 0.2]}>
         <cylinderGeometry args={[1, 1, 1, 12]} />
         <meshStandardMaterial
-          color={colors.robotAccent}
+          color={palette.robotAccent}
           metalness={0.8}
           roughness={0.2}
-          emissive={colors.robotAccent}
+          emissive={palette.robotAccent}
           emissiveIntensity={0.1}
         />
       </mesh>
@@ -142,8 +164,8 @@ function Robot({ isHovered }) {
       <mesh position={[0, 0, 0]} scale={[0.3, 0.3, 0.3]}>
         <sphereGeometry args={[1, 16, 16]} />
         <meshStandardMaterial
-          color={colors.primary}
-          emissive={colors.primary}
+          color={palette.primary}
+          emissive={palette.primary}
           emissiveIntensity={0.8}
           metalness={0.9}
           roughness={0.1}
@@ -156,7 +178,7 @@ function Robot({ isHovered }) {
 }
 
 // Tech Orbit Component - Tech logos orbiting around the robot
-function TechOrbit({ techStack }) {
+function TechOrbit({ techStack, textColor }) {
   const orbitRef = useRef();
   
   useFrame((state) => {
@@ -180,6 +202,7 @@ function TechOrbit({ techStack }) {
             tech={tech}
             position={[x, y, z]}
             index={index}
+            textColor={textColor}
           />
         );
       })}
@@ -188,7 +211,7 @@ function TechOrbit({ techStack }) {
 }
 
 // Individual Tech Icon Component
-function TechIcon({ tech, position, index }) {
+function TechIcon({ tech, position, index, textColor }) {
   const meshRef = useRef();
   
   useFrame((state) => {
@@ -234,7 +257,7 @@ function TechIcon({ tech, position, index }) {
       <mesh position={[0, 0, 0.06]}>
         <planeGeometry args={[0.4, 0.4]} />
         <meshBasicMaterial
-          color="#ffffff"
+          color={textColor}
           transparent
           opacity={0.9}
         />
@@ -244,17 +267,19 @@ function TechIcon({ tech, position, index }) {
 }
 
 // Space Particles Component
-function SpaceParticles() {
-  const particles = useMemo(() =>
-    Array.from({ length: 50 }, () => ({
-      position: [
-        (Math.random() - 0.5) * 20,
-        (Math.random() - 0.5) * 20,
-        (Math.random() - 0.5) * 20
-      ],
-      scale: Math.random() * 0.02 + 0.005,
-      color: Math.random() > 0.5 ? colors.primary : colors.accent
-    })), []
+function SpaceParticles({ palette }) {
+  const particles = useMemo(
+    () =>
+      Array.from({ length: 50 }, () => ({
+        position: [
+          (Math.random() - 0.5) * 20,
+          (Math.random() - 0.5) * 20,
+          (Math.random() - 0.5) * 20
+        ],
+        scale: Math.random() * 0.02 + 0.005,
+        color: Math.random() > 0.5 ? palette.primary : palette.accent
+      })),
+    [palette.primary, palette.accent]
   );
 
   return (
@@ -296,9 +321,9 @@ function Particle({ position, scale, color }) {
 
 
 // Main 3D Scene Component
-function Scene() {
+function Scene({ palette, techStack, textColor }) {
   const [isHovered] = useState(false);
-  
+
   return (
     <>
       {/* Space Background */}
@@ -314,21 +339,21 @@ function Scene() {
       
       {/* Lighting */}
       <ambientLight intensity={0.2} />
-      <directionalLight 
-        position={[10, 10, 5]} 
-        intensity={0.8} 
-        color={colors.primary}
+      <directionalLight
+        position={[10, 10, 5]}
+        intensity={0.8}
+        color={palette.primary}
       />
-      <pointLight 
-        position={[0, 0, 5]} 
+      <pointLight
+        position={[0, 0, 5]}
         intensity={0.5}
-        color={colors.glow}
+        color={palette.glow}
       />
       
       {/* Scene Elements */}
-      <Robot isHovered={isHovered} />
-      <TechOrbit techStack={techStack} />
-      <SpaceParticles />
+      <Robot isHovered={isHovered} palette={palette} />
+      <TechOrbit techStack={techStack} textColor={textColor} />
+      <SpaceParticles palette={palette} />
       
       {/* Orbit Controls with limits */}
       <OrbitControls
@@ -347,9 +372,30 @@ function Scene() {
 // Main Tech Stack Section - Futuristic Space Scene
 function TechStackSection() {
   const [isLoaded, setIsLoaded] = useState(false);
+  const { theme } = useThemeContext();
+  const palette = useMemo(
+    () =>
+      Object.fromEntries(
+        Object.entries(paletteTokens).map(([key, { token, fallback }]) => [
+          key,
+          getCssVariableValue(token, fallback)
+        ])
+      ),
+    [theme]
+  );
+  const resolvedTechStack = useMemo(
+    () =>
+      techStack.map((tech) => ({
+        ...tech,
+        color: getCssVariableValue(tech.colorToken, tech.fallback)
+      })),
+    [theme]
+  );
+  const badgeBackground = useMemo(() => hexToRgba(palette.primary, 0.1), [palette.primary]);
+  const badgeBorder = useMemo(() => `1px solid ${hexToRgba(palette.primary, 0.18)}`, [palette.primary]);
+  const highlightShadow = useMemo(() => `0 0 40px ${hexToRgba(palette.primary, 0.18)}`, [palette.primary]);
 
   useEffect(() => {
-    // Trigger load animation
     setTimeout(() => setIsLoaded(true), 100);
   }, []);
 
@@ -357,7 +403,7 @@ function TechStackSection() {
     <section style={{
       width: '100%',
       height: '100vh',
-      background: `linear-gradient(135deg, ${colors.space} 0%, #1a1a2e 50%, #16213e 100%)`,
+      background: 'var(--gradient-space)',
       position: 'relative',
       display: 'flex',
       flexDirection: 'column',
@@ -366,7 +412,6 @@ function TechStackSection() {
       overflow: 'hidden',
       fontFamily: 'Inter, system-ui, -apple-system, sans-serif'
     }}>
-      {/* Section Header */}
       <div style={{
         textAlign: 'center',
         marginBottom: '40px',
@@ -379,37 +424,37 @@ function TechStackSection() {
           display: 'inline-block',
           padding: '12px 24px',
           borderRadius: '50px',
-          background: 'rgba(0, 212, 255, 0.1)',
+          background: badgeBackground,
           backdropFilter: 'blur(10px)',
-          border: `1px solid ${colors.primary}30`,
+          border: badgeBorder,
           marginBottom: '24px',
           fontSize: '14px',
           fontWeight: '600',
-          color: colors.stars,
+          color: palette.stars,
           letterSpacing: '0.5px',
           textTransform: 'uppercase'
         }}>
           🚀 Full-Stack Developer
         </div>
-        
+
         <h1 style={{
           fontSize: 'clamp(3rem, 10vw, 6rem)',
           fontWeight: '900',
           margin: 0,
-          background: `linear-gradient(135deg, ${colors.primary}, ${colors.secondary}, ${colors.accent})`,
+          background: `linear-gradient(135deg, ${palette.primary}, ${palette.secondary}, ${palette.accent})`,
           WebkitBackgroundClip: 'text',
           WebkitTextFillColor: 'transparent',
           backgroundClip: 'text',
           letterSpacing: '-0.03em',
           lineHeight: 1.1,
-          textShadow: `0 0 40px ${colors.primary}30`
+          textShadow: highlightShadow
         }}>
           Tech Universe
         </h1>
-        
+
         <p style={{
           fontSize: '1.4rem',
-          color: colors.stars,
+          color: palette.stars,
           margin: '24px 0 0 0',
           fontWeight: '400',
           maxWidth: '600px',
@@ -419,11 +464,10 @@ function TechStackSection() {
           Explore my technology ecosystem orbiting in digital space
         </p>
       </div>
-      
-      {/* 3D Canvas */}
-      <div style={{ 
-        width: '100%', 
-        height: '70vh', 
+
+      <div style={{
+        width: '100%',
+        height: '70vh',
         maxWidth: '1200px',
         position: 'relative',
         opacity: isLoaded ? 1 : 0,
@@ -432,28 +476,27 @@ function TechStackSection() {
       }}>
         <Canvas
           camera={{ position: [0, 0, 10], fov: 60 }}
-          style={{ 
-            width: '100%', 
+          style={{
+            width: '100%',
             height: '100%',
             borderRadius: '20px',
             background: 'transparent'
           }}
         >
-          <Scene />
+          <Scene palette={palette} techStack={resolvedTechStack} textColor={palette.stars} />
         </Canvas>
       </div>
-      
-      {/* Floating UI Elements */}
+
       <div style={{
         position: 'absolute',
         top: '20px',
         right: '20px',
         padding: '12px 20px',
         borderRadius: '25px',
-        background: 'rgba(0, 212, 255, 0.1)',
+        background: badgeBackground,
         backdropFilter: 'blur(10px)',
-        border: `1px solid ${colors.primary}30`,
-        color: colors.stars,
+        border: badgeBorder,
+        color: palette.stars,
         fontSize: '14px',
         fontWeight: '600',
         opacity: isLoaded ? 1 : 0,

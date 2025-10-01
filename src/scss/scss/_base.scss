@@ -134,14 +134,14 @@ img {
     span {
       background: linear-gradient(
         135deg,
-        rgba(120, 119, 198, 0.2) 0%,
-        rgba(255, 119, 198, 0.2) 100%
+        rgba($highlight-purple, 0.2) 0%,
+        rgba($highlight-magenta, 0.2) 100%
       );
-      border: 1px solid rgba(120, 119, 198, 0.3);
+      border: 1px solid rgba($highlight-purple, 0.3);
       border-radius: 2rem;
       padding: 0.5rem 1.25rem;
       display: inline-block;
-      color: #7877c6;
+      color: var(--tone-purple);
       font-weight: 600;
       font-size: 0.75rem;
       line-height: 1;
@@ -153,12 +153,12 @@ img {
       &:hover {
         background: linear-gradient(
           135deg,
-          rgba(120, 119, 198, 0.3) 0%,
-          rgba(255, 119, 198, 0.3) 100%
+          rgba($highlight-purple, 0.3) 0%,
+          rgba($highlight-magenta, 0.3) 100%
         );
-        border-color: rgba(120, 119, 198, 0.5);
+        border-color: rgba($highlight-purple, 0.5);
         transform: translateY(-2px);
-        box-shadow: 0 8px 25px rgba(120, 119, 198, 0.2);
+        box-shadow: 0 8px 25px rgba($highlight-purple, 0.2);
       }
     }
   }
@@ -168,7 +168,7 @@ img {
     font-weight: 800;
     font-size: clamp(2rem, 5vw, 3.5rem);
     line-height: 1.2;
-    background: linear-gradient(135deg, #ffffff 0%, #e0e0e0 50%, #ffffff 100%);
+    background: linear-gradient(135deg, var(--bg) 0%, var(--border) 50%, var(--bg) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -176,7 +176,7 @@ img {
     position: relative;
 
     span {
-      background: linear-gradient(135deg, #7877c6 0%, #ff77c6 100%);
+      background: var(--gradient-highlight-magenta);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -189,7 +189,7 @@ img {
         left: 0;
         right: 0;
         height: 3px;
-        background: linear-gradient(135deg, #7877c6 0%, #ff77c6 100%);
+        background: var(--gradient-highlight-magenta);
         border-radius: 2px;
         opacity: 0.6;
       }
@@ -224,7 +224,7 @@ img {
 }
 
 .about-section {
-  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+  background: var(--gradient-space);
   position: relative;
   overflow: hidden;
 
@@ -534,7 +534,7 @@ img {
       }
     }
     .col-4 {
-      color: #111;
+      color: var(--text-primary);
     }
   }
 }
@@ -562,7 +562,7 @@ img {
   h4 {
     margin-bottom: 12px;
     padding-bottom: 12px;
-    color: #111;
+    color: var(--text-primary);
     border-bottom: 1px solid var(--bs-border-color);
   }
 }

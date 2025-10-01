@@ -1,7 +1,10 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useMemo, useRef } from 'react';
 import * as THREE from 'three';
+import { useThemeContext } from '../ThemeProvider';
+import { resolvePalette } from '../utils/themeTokens';
 
-const defaultColors = ['#5227FF', '#FF9FFC', '#B19EEF'];
+const defaultColors = ['--brand-hero-primary', '--brand-hero-secondary', '--brand-hero-tertiary'];
+const heroFallback = ['#5227FF', '#FF9FFC', '#B19EEF'];
 
 export default function LiquidEther({
   mouseForce = 20,
@@ -31,6 +34,12 @@ export default function LiquidEther({
   const intersectionObserverRef = useRef(null);
   const isVisibleRef = useRef(true);
   const resizeRafRef = useRef(null);
+  const { theme } = useThemeContext();
+
+  const paletteStops = useMemo(() => {
+    void theme;
+    return resolvePalette(colors, heroFallback);
+  }, [colors, theme]);
 
   useEffect(() => {
     if (!mountRef.current) return;
@@ -61,7 +70,7 @@ export default function LiquidEther({
       return tex;
     }
 
-    const paletteTex = makePaletteTexture(colors);
+    const paletteTex = makePaletteTexture(paletteStops);
     const bgVec4 = new THREE.Vector4(0, 0, 0, 0);
 
     class CommonClass {
@@ -912,7 +921,7 @@ export default function LiquidEther({
       if (webglRef.current) { webglRef.current.dispose(); }
       webglRef.current = null;
     };
-  }, [BFECC, cursorSize, dt, isBounce, isViscous, iterationsPoisson, iterationsViscous, mouseForce, resolution, viscous, colors, autoDemo, autoSpeed, autoIntensity, takeoverDuration, autoResumeDelay, autoRampDuration]);
+  }, [BFECC, cursorSize, dt, isBounce, isViscous, iterationsPoisson, iterationsViscous, mouseForce, resolution, viscous, paletteStops, autoDemo, autoSpeed, autoIntensity, takeoverDuration, autoResumeDelay, autoRampDuration]);
 
   useEffect(() => {
     const webgl = webglRef.current;
