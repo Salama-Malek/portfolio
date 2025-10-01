@@ -1,31 +1,21 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 export const useTheme = () => {
-  const [theme, setTheme] = useState('light');
-
-  const setMode = (mode) => {
-    window.localStorage.setItem('theme', mode);
-    setTheme(mode);
-  };
-
-  const toggleTheme = () => {
-    setMode(theme === 'light' ? 'dark' : 'light');
-  };
+  const [theme, setTheme] = useState('dark');
 
   useEffect(() => {
-    const localTheme = window.localStorage.getItem('theme');
-    if (localTheme) {
-      setTheme(localTheme);
-    } else {
-      // Set theme based on user's OS preference
-      const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      setMode(prefersDarkMode ? 'dark' : 'light');
-    }
+    const applyDarkMode = () => {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      window.localStorage.setItem('theme', 'dark');
+      setTheme('dark');
+    };
+
+    applyDarkMode();
   }, []);
 
-  useEffect(() => {
-    document.documentElement.setAttribute('data-theme', theme);
-  }, [theme]);
+  const toggleTheme = () => {
+    // Light mode has been removed intentionally. This noop maintains backward compatibility.
+  };
 
   return [theme, toggleTheme];
 };

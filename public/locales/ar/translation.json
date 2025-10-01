@@ -684,7 +684,7 @@
     }
   },
   "themeSwitcher": {
-    "toggle": "تغيير السمة"
+    "darkModeLabel": "الوضع الداكن مُفعّل"
   },
   "navigation": {
     "moreOptions": "خيارات إضافية",

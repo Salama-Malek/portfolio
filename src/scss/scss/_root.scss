@@ -1,26 +1,28 @@
 :root {
-  color-scheme: light;
+  color-scheme: dark;
+}
 
-  // Core palette tokens
-  --bg: #{$light-bg};
-  --surface: #{$light-surface};
-  --surface-alt: #{$light-surface-alt};
-  --surface-strong: #{$light-surface-strong};
-  --border: #{$light-border};
-  --border-muted: rgba(224, 224, 224, 0.6);
-  --text-primary: #{$light-text-primary};
-  --text-secondary: #{$light-text-secondary};
-  --text-tertiary: #{$light-text-tertiary};
-  --text-muted: #{$light-text-muted};
-  --accent: #{$light-accent};
-  --accent-hover: #{$light-accent-hover};
+:root,
+[data-theme='dark'] {
+  --bg: #{$dark-bg};
+  --surface: #{$dark-surface};
+  --surface-alt: #{$dark-surface-alt};
+  --surface-strong: #{$dark-surface-strong};
+  --border: rgba(49, 46, 140, 0.45);
+  --border-muted: rgba(49, 46, 140, 0.25);
+  --text-primary: #{$dark-text-primary};
+  --text-secondary: #{$dark-text-secondary};
+  --text-tertiary: #{$dark-text-tertiary};
+  --text-muted: #{$dark-text-muted};
+  --accent: #{$dark-accent};
+  --accent-hover: #{$dark-accent-hover};
 
-  // Extended palette
   --accent-secondary: #{$accent-secondary};
   --accent-success: #{$accent-success};
   --accent-warning: #{$accent-warning};
   --accent-error: #{$accent-error};
-  --status-green: #{$highlight-green};
+
+  --status-green: #{$accent-success};
   --status-teal: #{$highlight-teal};
   --status-orange: #{$highlight-orange};
   --status-amber: #{$highlight-amber};
@@ -33,24 +35,22 @@
   --tone-soft: #{$neutral-soft};
   --tone-line: #{$neutral-line};
 
-  // Gradient tokens
   --gradient-accent: linear-gradient(135deg, var(--accent), var(--accent-secondary));
-  --gradient-accent-soft: linear-gradient(135deg, var(--accent), #{$highlight-cyan});
-  --gradient-accent-horizontal: linear-gradient(90deg, var(--accent), #{$highlight-cyan});
+  --gradient-accent-soft: linear-gradient(135deg, var(--accent), #{$palette-cyan});
+  --gradient-accent-horizontal: linear-gradient(90deg, var(--accent), #{$accent-secondary});
   --gradient-highlight-magenta: linear-gradient(135deg, #{$highlight-purple}, #{$highlight-magenta});
   --gradient-highlight-magenta-horizontal: linear-gradient(90deg, #{$highlight-purple}, #{$highlight-magenta});
-  --gradient-danger: linear-gradient(135deg, #dc3545, #c82333);
-  --gradient-success: linear-gradient(135deg, var(--status-green), var(--status-teal));
+  --gradient-danger: linear-gradient(135deg, var(--accent-error), #{mix($accent-error, $palette-indigo, 55%)});
+  --gradient-success: linear-gradient(135deg, var(--accent-success), #{$palette-cyan});
   --gradient-secondary: linear-gradient(135deg, var(--accent-secondary), #{$highlight-pink});
-  --gradient-warning: linear-gradient(135deg, var(--status-amber), var(--status-orange));
-  --gradient-sky-violet: linear-gradient(135deg, var(--status-sky), var(--accent-secondary));
+  --gradient-warning: linear-gradient(135deg, var(--accent-warning), var(--accent));
+  --gradient-sky-violet: linear-gradient(135deg, #{$highlight-sky}, var(--accent));
   --gradient-steel: linear-gradient(135deg, var(--tone-steel), var(--tone-charcoal));
   --gradient-brand: linear-gradient(135deg, var(--brand-secondary), var(--brand-secondary-alt));
-  --gradient-brand-soft: linear-gradient(45deg, #ffffff, var(--brand-surface-soft));
-  --gradient-neutral: linear-gradient(135deg, var(--surface), var(--tone-muted));
-  --gradient-space: linear-gradient(135deg, #0a0a0a 0%, #{$glow-space-start} 50%, #{$glow-space-end} 100%);
+  --gradient-brand-soft: linear-gradient(45deg, rgba(119, 74, 217, 0.12), var(--brand-surface-soft));
+  --gradient-neutral: linear-gradient(135deg, var(--surface), var(--surface-alt));
+  --gradient-space: linear-gradient(135deg, var(--bg) 0%, #{$glow-space-start} 50%, #{$glow-space-end} 100%);
 
-  // Brand tokens
   --brand-secondary: #{$brand-secondary};
   --brand-secondary-alt: #{$brand-secondary-alt};
   --brand-surface-soft: #{$brand-surface-soft};
@@ -82,9 +82,9 @@
   --brand-producthunt-border: #{$brand-producthunt-start};
   --brand-twitter-border: #{$brand-twitter-start};
   --brand-contact-primary: #{$brand-contact-primary};
-  --gradient-contact: linear-gradient(135deg, var(--brand-contact-primary), #{$highlight-cyan});
-  --loader-overlay: rgba(0, 0, 0, 0.8);
-  --loader-spinner-track: rgba($light-accent, 0.3);
+  --gradient-contact: linear-gradient(135deg, var(--brand-contact-primary), #{$accent-secondary});
+  --loader-overlay: rgba(0, 0, 0, 0.82);
+  --loader-spinner-track: rgba($dark-accent, 0.28);
   --loader-spinner-border: var(--accent);
   --brand-react: #{$brand-react};
   --brand-typescript: #{$brand-typescript};
@@ -96,147 +96,18 @@
   --brand-mongodb: #{$brand-mongodb};
   --brand-docker: #{$brand-docker};
   --brand-aws: #{$brand-aws};
-  --toast-success-bg: #0b7a40;
-  --toast-error-bg: #a12222;
-  --toast-info-bg: #2d3e50;
-  --toast-surface: rgba(17, 17, 17, 0.9);
 
-  // Legacy aliases
+  --toast-success-bg: #{mix($accent-success, $dark-bg, 60%)};
+  --toast-error-bg: #{mix($accent-error, $dark-bg, 55%)};
+  --toast-info-bg: #{mix($accent-secondary, $dark-bg, 65%)};
+  --toast-surface: rgba(13, 13, 13, 0.92);
+
   --px-theme: var(--accent);
   --px-theme-rgb: #{$px-theme-rgb};
   --px-primary: var(--accent);
   --px-primary-rgb: #{$px-theme-rgb};
   --px-bg: var(--bg);
-  --px-bg-rgb: 255, 255, 255;
-  --px-bg-secondary: var(--surface);
-  --px-bg-tertiary: var(--surface-alt);
-  --px-bg-quaternary: var(--surface-strong);
-  --px-text: var(--text-secondary);
-  --px-text-primary: var(--text-primary);
-  --px-text-secondary: var(--text-secondary);
-  --px-text-tertiary: var(--text-tertiary);
-  --px-text-muted: var(--text-muted);
-  --px-heading: var(--text-primary);
-  --px-accent-primary: var(--accent);
-  --px-accent-secondary: var(--accent-secondary);
-  --px-accent-success: var(--accent-success);
-  --px-accent-warning: var(--accent-warning);
-  --px-accent-error: var(--accent-error);
-  --px-white: #ffffff;
-  --px-black: var(--text-primary);
-  --px-dark: var(--text-primary);
-  --px-border-primary: rgba(224, 224, 224, 0.3);
-  --px-border-secondary: rgba(224, 224, 224, 0.5);
-  --px-surface-primary: rgba(248, 249, 250, 0.8);
-  --px-surface-secondary: rgba(248, 249, 250, 0.9);
-  --px-surface-hover: rgba(226, 232, 240, 0.8);
-  --px-gray-1: var(--surface-alt);
-  --px-gray-2: var(--surface-strong);
-  --px-gray-3: #cbd5e1;
-  --px-gray-4: #94a3b8;
-  --px-gray-5: var(--text-tertiary);
-  --px-gray-6: var(--text-secondary);
-  --px-gray-7: var(--text-primary);
-  --px-gray-8: #0f172a;
-  --px-gray-9: #020617;
-  --px-gradient-primary: var(--gradient-accent);
-  --px-gradient-text: linear-gradient(135deg, #60a5fa, #c084fc);
-  --px-gradient-bg: var(--gradient-neutral);
-
-  // Bootstrap overrides
-  --bs-body-color: var(--text-secondary);
-  --bs-body-bg: var(--bg);
-  --bs-heading-color: var(--text-primary);
-}
-
-[data-theme='dark'] {
-  color-scheme: dark;
-
-  --bg: #{$dark-bg};
-  --surface: #{$dark-surface};
-  --surface-alt: #{$dark-surface-alt};
-  --surface-strong: #{$dark-surface-strong};
-  --border: rgba(55, 65, 81, 0.5);
-  --border-muted: rgba(55, 65, 81, 0.3);
-  --text-primary: #{$dark-text-primary};
-  --text-secondary: #{$dark-text-secondary};
-  --text-tertiary: #{$dark-text-tertiary};
-  --text-muted: #{$dark-text-muted};
-  --accent: #{$dark-accent};
-  --accent-hover: #{$dark-accent-hover};
-
-  --accent-secondary: #{$accent-secondary};
-  --accent-success: #{$accent-success};
-  --accent-warning: #{$accent-warning};
-  --accent-error: #{$accent-error};
-  --status-green: #{$highlight-green};
-  --status-teal: #{$highlight-teal};
-  --status-orange: #{$highlight-orange};
-  --status-amber: #{$highlight-amber};
-  --status-sky: #{$highlight-sky};
-  --tone-steel: #{$highlight-steel};
-  --tone-charcoal: #{$highlight-charcoal};
-  --tone-purple: #{$highlight-purple};
-  --tone-magenta: #{$highlight-magenta};
-  --tone-muted: #{$neutral-muted};
-  --tone-soft: #{$neutral-soft};
-  --tone-line: #{$neutral-line};
-
-  --gradient-accent: linear-gradient(135deg, var(--accent), var(--accent-secondary));
-  --gradient-accent-soft: linear-gradient(135deg, var(--accent), #{$highlight-cyan});
-  --gradient-accent-horizontal: linear-gradient(90deg, var(--accent), #{$highlight-cyan});
-  --gradient-highlight-magenta: linear-gradient(135deg, #{$highlight-purple}, #{$highlight-magenta});
-  --gradient-highlight-magenta-horizontal: linear-gradient(90deg, #{$highlight-purple}, #{$highlight-magenta});
-  --gradient-danger: linear-gradient(135deg, #dc3545, #c82333);
-  --gradient-success: linear-gradient(135deg, var(--status-green), var(--status-teal));
-  --gradient-secondary: linear-gradient(135deg, var(--accent-secondary), #{$highlight-pink});
-  --gradient-warning: linear-gradient(135deg, var(--status-amber), var(--status-orange));
-  --gradient-sky-violet: linear-gradient(135deg, var(--status-sky), var(--accent-secondary));
-  --gradient-steel: linear-gradient(135deg, var(--tone-steel), var(--tone-charcoal));
-  --gradient-brand: linear-gradient(135deg, var(--brand-secondary), var(--brand-secondary-alt));
-  --gradient-brand-soft: linear-gradient(45deg, #ffffff, var(--brand-surface-soft));
-  --gradient-brand-dribbble: linear-gradient(135deg, #{$brand-dribbble-start}, #{$brand-dribbble-end});
-  --gradient-brand-dribbble-reverse: linear-gradient(135deg, #{$brand-dribbble-end}, #{$brand-dribbble-start});
-  --gradient-brand-facebook: linear-gradient(135deg, #{$brand-facebook-start}, #{$brand-facebook-end});
-  --gradient-brand-facebook-reverse: linear-gradient(135deg, #{$brand-facebook-end}, #{$brand-facebook-start});
-  --gradient-brand-linkedin: linear-gradient(135deg, #{$brand-linkedin-start}, #{$brand-linkedin-end});
-  --gradient-brand-linkedin-reverse: linear-gradient(135deg, #{$brand-linkedin-end}, #{$brand-linkedin-start});
-  --gradient-brand-github: linear-gradient(135deg, #{$brand-github-start}, #{$brand-github-end});
-  --gradient-brand-github-reverse: linear-gradient(135deg, #{$brand-github-end}, #{$brand-github-start});
-  --gradient-brand-producthunt: linear-gradient(135deg, #{$brand-producthunt-start}, #{$brand-producthunt-end});
-  --gradient-brand-producthunt-reverse: linear-gradient(135deg, #{$brand-producthunt-end}, #{$brand-producthunt-start});
-  --gradient-brand-twitter: linear-gradient(135deg, #{$brand-twitter-start}, #{$brand-twitter-end});
-  --gradient-brand-twitter-reverse: linear-gradient(135deg, #{$brand-twitter-end}, #{$brand-twitter-start});
-  --brand-dribbble-border: #{$brand-dribbble-start};
-  --brand-facebook-border: #{$brand-facebook-start};
-  --brand-linkedin-border: #{$brand-linkedin-start};
-  --brand-github-border: #{$brand-github-start};
-  --brand-producthunt-border: #{$brand-producthunt-start};
-  --brand-twitter-border: #{$brand-twitter-start};
-  --brand-contact-primary: #{$brand-contact-primary};
-  --gradient-contact: linear-gradient(135deg, var(--brand-contact-primary), #{$highlight-cyan});
-  --loader-overlay: rgba(0, 0, 0, 0.8);
-  --loader-spinner-track: rgba($dark-accent, 0.3);
-  --loader-spinner-border: var(--accent);
-  --brand-react: #{$brand-react};
-  --brand-typescript: #{$brand-typescript};
-  --brand-next: #{$brand-next};
-  --brand-tailwind: #{$brand-tailwind};
-  --brand-three: #{$brand-three};
-  --brand-node: #{$brand-node};
-  --brand-python: #{$brand-python};
-  --brand-mongodb: #{$brand-mongodb};
-  --brand-docker: #{$brand-docker};
-  --brand-aws: #{$brand-aws};
-  --gradient-neutral: linear-gradient(135deg, var(--surface), var(--surface-alt));
-  --gradient-space: linear-gradient(135deg, var(--bg) 0%, #{$glow-space-start} 50%, #{$glow-space-end} 100%);
-  --toast-success-bg: #0b7a40;
-  --toast-error-bg: #a12222;
-  --toast-info-bg: #2d3e50;
-  --toast-surface: rgba(17, 17, 17, 0.9);
-
-  --px-bg: var(--bg);
-  --px-bg-rgb: 10, 10, 10;
+  --px-bg-rgb: 13, 13, 13;
   --px-bg-secondary: var(--surface);
   --px-bg-tertiary: var(--surface-alt);
   --px-bg-quaternary: var(--surface-strong);
@@ -254,26 +125,27 @@
   --px-white: var(--text-primary);
   --px-black: var(--bg);
   --px-dark: var(--bg);
-  --px-border-primary: rgba(55, 65, 81, 0.3);
-  --px-border-secondary: rgba(55, 65, 81, 0.5);
-  --px-surface-primary: rgba(31, 41, 55, 0.3);
-  --px-surface-secondary: rgba(31, 41, 55, 0.5);
-  --px-surface-hover: rgba(31, 41, 55, 0.7);
+  --px-border-primary: rgba(49, 46, 140, 0.35);
+  --px-border-secondary: rgba(49, 46, 140, 0.55);
+  --px-surface-primary: rgba($dark-surface, 0.6);
+  --px-surface-secondary: rgba($dark-surface-alt, 0.65);
+  --px-surface-hover: rgba($dark-surface-strong, 0.75);
   --px-gray-1: var(--surface-strong);
-  --px-gray-2: #374151;
-  --px-gray-3: #4b5563;
-  --px-gray-4: #6b7280;
+  --px-gray-2: #{mix($palette-indigo, $dark-bg, 55%)};
+  --px-gray-3: #{mix($palette-indigo, $dark-bg, 45%)};
+  --px-gray-4: #{mix($palette-indigo, $dark-bg, 35%)};
   --px-gray-5: var(--text-tertiary);
-  --px-gray-6: #d1d5db;
-  --px-gray-7: #e5e7eb;
-  --px-gray-8: #f3f4f6;
-  --px-gray-9: #f9fafb;
+  --px-gray-6: var(--text-secondary);
+  --px-gray-7: var(--text-primary);
+  --px-gray-8: #{mix(#f5f4ff, $palette-indigo, 92%)};
+  --px-gray-9: #{mix(#f5f4ff, $palette-indigo, 96%)};
   --px-gradient-primary: var(--gradient-accent);
-  --px-gradient-text: linear-gradient(135deg, #60a5fa, #c084fc);
-  --px-gradient-bg: var(--gradient-neutral);
-}
+  --px-gradient-text: linear-gradient(135deg, #{$palette-violet}, #{$palette-cyan});
+  --px-gradient-bg: linear-gradient(135deg, var(--surface), var(--surface-alt));
 
-:root,
-[data-theme='dark'] {
+  --bs-body-color: var(--text-secondary);
+  --bs-body-bg: var(--bg);
+  --bs-heading-color: var(--text-primary);
+
   transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
 }

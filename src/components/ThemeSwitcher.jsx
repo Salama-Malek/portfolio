@@ -1,25 +1,18 @@
 import React from 'react';
-import { useTheme } from '../hooks/useTheme';
 import { Icon } from '@iconify/react';
 import { useTranslation } from 'react-i18next';
 
 export default function ThemeSwitcher() {
   const { t } = useTranslation();
-  const [theme, toggleTheme] = useTheme();
 
   return (
-    <button
-      type="button"
-      className="theme-switcher"
-      onClick={toggleTheme}
-      aria-label={t('themeSwitcher.toggle')}
-      title={t('themeSwitcher.toggle')}
+    <span
+      className="theme-switcher theme-switcher--static"
+      role="img"
+      aria-label={t('themeSwitcher.darkModeLabel')}
+      title={t('themeSwitcher.darkModeLabel')}
     >
-      {theme === 'light' ? (
-        <Icon icon="ph:moon-bold" />
-      ) : (
-        <Icon icon="ph:sun-bold" />
-      )}
-    </button>
+      <Icon icon="ph:moon-bold" />
+    </span>
   );
 }

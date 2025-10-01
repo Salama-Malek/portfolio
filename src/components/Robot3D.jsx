@@ -7,27 +7,27 @@ import { getCssVariableValue } from '../utils/themeTokens';
 
 // Tech stack for orbiting around the robot
 const techStack = [
-  { name: 'React', icon: '⚛️', colorToken: '--brand-react', fallback: '#61dafb' },
-  { name: 'TypeScript', icon: '🔷', colorToken: '--brand-typescript', fallback: '#3178c6' },
-  { name: 'Next.js', icon: '▲', colorToken: '--brand-next', fallback: '#000000' },
-  { name: 'Tailwind', icon: '🎨', colorToken: '--brand-tailwind', fallback: '#06b6d4' },
-  { name: 'Three.js', icon: '🎮', colorToken: '--brand-three', fallback: '#000000' },
-  { name: 'Node.js', icon: '🟢', colorToken: '--brand-node', fallback: '#339933' },
-  { name: 'Python', icon: '🐍', colorToken: '--brand-python', fallback: '#3776ab' },
-  { name: 'MongoDB', icon: '🍃', colorToken: '--brand-mongodb', fallback: '#47a248' },
-  { name: 'Docker', icon: '🐳', colorToken: '--brand-docker', fallback: '#2496ed' },
-  { name: 'AWS', icon: '☁️', colorToken: '--brand-aws', fallback: '#ff9900' },
+  { name: 'React', icon: '⚛️', colorToken: '--brand-react', fallback: '#23b7d9' },
+  { name: 'TypeScript', icon: '🔷', colorToken: '--brand-typescript', fallback: '#3d90d9' },
+  { name: 'Next.js', icon: '▲', colorToken: '--brand-next', fallback: '#0d0d0d' },
+  { name: 'Tailwind', icon: '🎨', colorToken: '--brand-tailwind', fallback: '#23b7d9' },
+  { name: 'Three.js', icon: '🎮', colorToken: '--brand-three', fallback: '#312e8c' },
+  { name: 'Node.js', icon: '🟢', colorToken: '--brand-node', fallback: '#774ad9' },
+  { name: 'Python', icon: '🐍', colorToken: '--brand-python', fallback: '#3d90d9' },
+  { name: 'MongoDB', icon: '🍃', colorToken: '--brand-mongodb', fallback: '#312e8c' },
+  { name: 'Docker', icon: '🐳', colorToken: '--brand-docker', fallback: '#23b7d9' },
+  { name: 'AWS', icon: '☁️', colorToken: '--brand-aws', fallback: '#774ad9' },
 ];
 
 const paletteTokens = {
-  primary: { token: '--brand-robot-primary', fallback: '#00d4ff' },
-  secondary: { token: '--brand-robot-secondary', fallback: '#ff6b6b' },
-  accent: { token: '--brand-robot-tertiary', fallback: '#4ecdc4' },
-  robot: { token: '--brand-robot-base', fallback: '#2c3e50' },
-  robotAccent: { token: '--brand-robot-base-alt', fallback: '#34495e' },
-  glow: { token: '--brand-robot-glow', fallback: '#00ffff' },
-  space: { token: '--bg', fallback: '#0a0a0a' },
-  stars: { token: '--px-white', fallback: '#ffffff' }
+  primary: { token: '--brand-robot-primary', fallback: '#3d90d9' },
+  secondary: { token: '--brand-robot-secondary', fallback: '#774ad9' },
+  accent: { token: '--brand-robot-tertiary', fallback: '#23b7d9' },
+  robot: { token: '--brand-robot-base', fallback: '#312e8c' },
+  robotAccent: { token: '--brand-robot-base-alt', fallback: '#4639a6' },
+  glow: { token: '--brand-robot-glow', fallback: '#23b7d9' },
+  space: { token: '--bg', fallback: '#0d0d0d' },
+  stars: { token: '--px-white', fallback: '#f5f4ff' }
 };
 
 const hexToRgba = (hex, alpha) => {

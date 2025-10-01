@@ -23,11 +23,11 @@ const Robot3DLoader = ({ onLoad }) => {
     [theme]
   );
   const spinnerTrack = useMemo(
-    () => getCssVariableValue('--loader-spinner-track', 'rgba(59, 130, 246, 0.3)'),
+    () => getCssVariableValue('--loader-spinner-track', 'rgba(119, 74, 217, 0.28)'),
     [theme]
   );
   const spinnerBorder = useMemo(
-    () => getCssVariableValue('--loader-spinner-border', '#3b82f6'),
+    () => getCssVariableValue('--loader-spinner-border', '#774ad9'),
     [theme]
   );
   const textColor = useMemo(

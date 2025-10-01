@@ -683,7 +683,7 @@
     }
   },
   "themeSwitcher": {
-    "toggle": "Переключить тему"
+    "darkModeLabel": "Тёмный режим включён"
   },
   "navigation": {
     "moreOptions": "Дополнительные опции",
