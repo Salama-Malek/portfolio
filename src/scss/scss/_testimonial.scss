@@ -1,5 +1,5 @@
 .testimonial-section {
-  --section-bg: var(--px-gradient-brand);
+  --section-bg: var(--px-bg);
   --section-label-color: rgba(224, 231, 255, 0.85);
   --section-label-text: #c7d2fe;
   --section-label-gradient: var(--px-surface-primary);
@@ -10,7 +10,7 @@
   --section-title-gradient: var(--px-gradient-alt);
   --section-title-highlight: var(--px-gradient-brand);
   --section-title-shadow: 0 24px 58px rgba(61, 144, 217, 0.35);
-  background: var(--section-bg);
+  background: var(--px-bg);
   position: relative;
   overflow: hidden;
 }

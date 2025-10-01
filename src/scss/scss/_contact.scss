@@ -20,7 +20,7 @@
       justify-content: center;
       color: var(--px-white);
       font-size: 32px;
-      margin: 0 auto 25px;
+        background: var(--px-bg-secondary);
       transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
       box-shadow: 0 15px 35px rgba(7, 136, 255, 0.3);
       position: relative;
@@ -456,7 +456,7 @@ textarea.form-control {
 }
 
 .contact-section {
-  --section-bg: var(--px-gradient-alt);
+  // --section-bg: var(--px-gradient-alt);
   --section-label-color: rgba(224, 231, 255, 0.85);
   --section-label-text: #c7d2fe;
   --section-label-gradient: var(--px-surface-primary);
