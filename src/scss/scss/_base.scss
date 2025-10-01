@@ -1,3 +1,6 @@
+// Fallback for highlight color if variables partial is missing
+$highlight-magenta: #FF3CAC !default;
+$highlight-purple: #774AD9 !default;
 @media (prefers-reduced-motion: no-preference) {
   :root {
     scroll-behavior: smooth;
@@ -96,8 +99,22 @@ img {
 /* Section
 ---------------------*/
 .section {
+  --section-bg: transparent;
+  --section-label-color: rgba(255, 255, 255, 0.8);
+  --section-label-text: var(--tone-purple, rgba($highlight-purple, 0.9));
+  --section-label-gradient: linear-gradient(135deg, rgba($highlight-purple, 0.2) 0%, rgba($highlight-magenta, 0.2) 100%);
+  --section-label-border: rgba($highlight-purple, 0.3);
+  --section-label-hover-gradient: linear-gradient(135deg, rgba($highlight-purple, 0.3) 0%, rgba($highlight-magenta, 0.3) 100%);
+  --section-label-hover-border: rgba($highlight-purple, 0.5);
+  --section-label-hover-shadow: 0 8px 25px rgba($highlight-purple, 0.2);
+  --section-title-color: transparent;
+  --section-title-gradient: var(--px-gradient-text);
+  --section-title-highlight: linear-gradient(135deg, rgba($highlight-magenta, 0.9) 0%, rgba($highlight-purple, 0.9) 100%);
+  --section-title-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+
   padding: 100px 0;
   position: relative;
+  background: var(--section-bg);
 }
 
 @include down-lg {
@@ -127,21 +144,17 @@ img {
     margin: 0 0 1rem;
     font-size: 0.875rem;
     font-weight: 600;
-    color: rgba(255, 255, 255, 0.8);
+    color: var(--section-label-color);
     text-transform: uppercase;
     letter-spacing: 0.1em;
 
     span {
-      background: linear-gradient(
-        135deg,
-        rgba($highlight-purple, 0.2) 0%,
-        rgba($highlight-magenta, 0.2) 100%
-      );
-      border: 1px solid rgba($highlight-purple, 0.3);
+      background: var(--section-label-gradient);
+      border: 1px solid var(--section-label-border);
       border-radius: 2rem;
       padding: 0.5rem 1.25rem;
       display: inline-block;
-      color: var(--tone-purple);
+      color: var(--section-label-text);
       font-weight: 600;
       font-size: 0.75rem;
       line-height: 1;
@@ -151,14 +164,10 @@ img {
       transition: all 0.3s ease;
 
       &:hover {
-        background: linear-gradient(
-          135deg,
-          rgba($highlight-purple, 0.3) 0%,
-          rgba($highlight-magenta, 0.3) 100%
-        );
-        border-color: rgba($highlight-purple, 0.5);
+        background: var(--section-label-hover-gradient);
+        border-color: var(--section-label-hover-border);
         transform: translateY(-2px);
-        box-shadow: 0 8px 25px rgba($highlight-purple, 0.2);
+        box-shadow: var(--section-label-hover-shadow);
       }
     }
   }
@@ -168,15 +177,16 @@ img {
     font-weight: 800;
     font-size: clamp(2rem, 5vw, 3.5rem);
     line-height: 1.2;
-    background: linear-gradient(135deg, var(--bg) 0%, var(--border) 50%, var(--bg) 100%);
+    color: var(--section-title-color);
+    background: var(--section-title-gradient);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    text-shadow: var(--section-title-shadow);
     position: relative;
 
     span {
-      background: var(--gradient-highlight-magenta);
+      background: var(--section-title-highlight);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -189,7 +199,7 @@ img {
         left: 0;
         right: 0;
         height: 3px;
-        background: var(--gradient-highlight-magenta);
+        background: var(--section-title-highlight);
         border-radius: 2px;
         opacity: 0.6;
       }
@@ -223,8 +233,21 @@ img {
   }
 }
 
+
 .about-section {
-  background: var(--gradient-space);
+  --section-bg: var(--gradient-space);
+  --section-label-color: rgba(229, 231, 235, 0.8);
+  --section-label-text: #e9d5ff;
+  --section-label-gradient: linear-gradient(135deg, rgba(124, 58, 237, 0.18) 0%, rgba(59, 130, 246, 0.18) 100%);
+  --section-label-hover-gradient: linear-gradient(135deg, rgba(124, 58, 237, 0.28) 0%, rgba(59, 130, 246, 0.28) 100%);
+  --section-label-border: rgba(124, 58, 237, 0.4);
+  --section-label-hover-border: rgba(59, 130, 246, 0.55);
+  --section-label-hover-shadow: 0 16px 40px rgba(59, 130, 246, 0.35);
+  --section-title-gradient: linear-gradient(135deg, #8b5cf6 0%, #3b82f6 100%);
+  --section-title-highlight: linear-gradient(135deg, rgba(139, 92, 246, 0.95) 0%, rgba(59, 130, 246, 0.95) 100%);
+  --section-title-shadow: 0 22px 48px rgba(37, 99, 235, 0.35);
+
+  background: var(--section-bg);
   position: relative;
   overflow: hidden;
 
@@ -298,15 +321,6 @@ img {
       color: rgba(255, 255, 255, 0.8);
     }
 
-    .section-heading {
-      h6 {
-        color: rgba(255, 255, 255, 0.8);
-      }
-
-      h2 {
-        color: white;
-      }
-    }
   }
 
   .about-details {

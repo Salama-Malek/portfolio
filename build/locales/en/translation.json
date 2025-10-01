@@ -1,0 +1,884 @@
+{
+  "header": {
+    "nav": {
+      "home": "Home",
+      "about": "About Me",
+      "portfolio": "Portfolio",
+      "experience": "Experience",
+      "testimonials": "Testimonials",
+      "contact": "Contact"
+    },
+    "cta": "Let's Talk"
+  },
+  "footer": {
+    "copyright": "© 2024 All rights reserved",
+    "description": "A passionate full-stack developer dedicated to building innovative and user-friendly web applications.",
+    "widgets": {
+      "quickLinks": "Quick Links",
+      "contact": "Get In Touch"
+    },
+    "cta": {
+      "description": "Have a project in mind? Let's talk about it."
+    }
+  },
+  "modal": {
+    "type": "Type",
+    "languages": "Languages",
+    "platform": "Platform",
+    "country": "Country",
+    "url": "Live URL"
+  },
+  "portfolioShowcase": {
+    "tabs": {
+      "projects": "Projects",
+      "services": "Services",
+      "certificates": "Certificates",
+      "techStack": "Tech Stack"
+    },
+    "emptyStates": {
+      "projects": "No projects available",
+      "services": "No services available",
+      "certificates": "No certificates available",
+      "techStack": "No tech stack available"
+    },
+    "serviceModal": {
+      "viewDetails": "View Details",
+      "category": "Category",
+      "rating": "Rating",
+      "delivery": "Delivery",
+      "serviceDescription": "Service Description",
+      "keyFeatures": "Key Features",
+      "startProject": "Start Project",
+      "downloadPortfolio": "Download Portfolio",
+      "defaultCategory": "Development",
+      "defaultDelivery": "2-4 weeks",
+      "ratingValue": "{{rating}}/5"
+    },
+    "projectModal": {
+      "details": "Details",
+      "liveDemo": "LIVE DEMO",
+      "sourceCode": "Source Code",
+      "technologiesUsed": "Technologies Used"
+    },
+    "projectCard": {
+      "details": "Details",
+      "liveDemo": "Live Demo",
+      "additionalTech": "{{count}} more technologies"
+    }
+  },
+  "contactForm": {
+    "nameLabel": "Full Name",
+    "namePlaceholder": "Enter your full name",
+    "emailLabel": "Email Address",
+    "emailPlaceholder": "Enter your email",
+    "subjectLabel": "Subject",
+    "subjectPlaceholder": "What's this about?",
+    "messageLabel": "Message",
+    "messagePlaceholder": "Tell me about your project...",
+    "send": "Send Message",
+    "sending": "Sending...",
+    "title": "Send a Message",
+    "description": "Let's discuss your project and bring your ideas to life",
+    "toast": {
+      "successTitle": "Message sent",
+      "successMessage": "Thank you for your message!"
+    }
+  },
+  "homePage": {
+    "hero": {
+      "imgUrl": "/images/home-banner.png",
+      "name": "Salama Malek",
+      "heading": "Hey! I'm Salama",
+      "typingText": [
+        "I'm a Developer",
+        1500,
+        "I'm a Freelancer",
+        1500
+      ],
+      "description": "ITI graduate and skilled Full Stack Web Developer with a passion for software development. Seeking entry-level opportunities to apply technical expertise in MEAN stack, back-end and front-end programming, and mobile app development.",
+      "btnText": "Get in touch",
+      "btnUrl": "contactus"
+    },
+    "socialBtns": [
+      {
+        "icon": "fa-brands:github",
+        "iconBgClass": "github",
+        "href": "https://github.com/Salama-Malek"
+      },
+      {
+        "icon": "fa-brands:khamsat",
+        "iconBgClass": "khamsat",
+        "href": "https://khamsat.com/user/salamamalek"
+      },
+      {
+        "icon": "fa-brands:linkedin-in",
+        "iconBgClass": "linkedin",
+        "href": "https://www.linkedin.com/in/salama-malek"
+      }
+    ],
+    "brands": [
+      {
+        "src": "/images/brand-1.svg",
+        "alt": "Brand Logo"
+      },
+      {
+        "src": "/images/brand-2.svg",
+        "alt": "Brand Logo"
+      },
+      {
+        "src": "/images/brand-1.svg",
+        "alt": "Brand Logo"
+      },
+      {
+        "src": "/images/brand-2.svg",
+        "alt": "Brand Logo"
+      },
+      {
+        "src": "/images/brand-1.svg",
+        "alt": "Brand Logo"
+      },
+      {
+        "src": "/images/brand-2.svg",
+        "alt": "Brand Logo"
+      },
+      {
+        "src": "/images/brand-1.svg",
+        "alt": "Brand Logo"
+      },
+      {
+        "src": "/images/brand-2.svg",
+        "alt": "Brand Logo"
+      }
+    ],
+    "about": {
+      "imgSrc": "/new-images/about4.png",
+      "miniTitle": "About Me",
+      "title": "Available for <span>Full Stack</span> Projects",
+      "description": "ITI graduate and skilled Full Stack Web Developer with a passion for software development. Committed to delivering innovative solutions and fostering growth in dynamic and collaborative environments. I specialize in MEAN stack development, but I'm also proficient in other technologies like Laravel, Ruby on Rails, and Django.",
+      "funfacts": [
+        {
+          "title": "Programming Languages",
+          "number": 5
+        },
+        {
+          "title": "Years Experience",
+          "number": 2
+        },
+        {
+          "title": "Frameworks",
+          "number": 7
+        }
+      ],
+      "btnText": "Get in touch",
+      "btnUrl": "contactus"
+    },
+    "projects": {
+      "sectionHeading": {
+        "miniTitle": "My Work",
+        "title": "Recent <span>Projects</span>"
+      },
+      "allProjects": [
+        {
+          "thumbUrl": "/images/popup-project-1.jpg",
+          "title": "MEAN Stack Application",
+          "subTitle": "Web Development, Full Stack",
+          "category": "full-stack",
+          "status": "Live",
+          "technologies": [
+            "MongoDB",
+            "Express.js",
+            "Angular",
+            "Node.js",
+            "TypeScript"
+          ],
+          "demoUrl": "https://demo.example.com",
+          "githubUrl": "https://github.com/username/project",
+          "details": {
+            "title": "E-commerce Platform using MEAN Stack",
+            "description": "Developed a full-featured e-commerce platform using MongoDB, Express.js, Angular, and Node.js. Implemented features including user authentication, product catalog, shopping cart, and payment processing integration.",
+            "type": "Web Application",
+            "languages": "JavaScript, TypeScript, HTML, CSS",
+            "platform": "MEAN Stack",
+            "country": "Egypt",
+            "url": "https://demo.example.com"
+          }
+        },
+        {
+          "thumbUrl": "/images/popup-project-2.jpg",
+          "title": "React Native Mobile App",
+          "subTitle": "Mobile Development, Front-End",
+          "category": "mobile",
+          "status": "Live",
+          "technologies": [
+            "React Native",
+            "JavaScript",
+            "Redux",
+            "Firebase"
+          ],
+          "demoUrl": "https://app.example.com",
+          "githubUrl": "https://github.com/username/mobile-app",
+          "details": {
+            "title": "Cross-platform Mobile Application",
+            "description": "Built a cross-platform mobile application using React Native that allows users to track their fitness goals, record workouts, and connect with fitness trainers.",
+            "type": "Mobile Application",
+            "languages": "JavaScript, React Native",
+            "platform": "iOS, Android",
+            "country": "Egypt",
+            "url": "https://app.example.com"
+          }
+        },
+        {
+          "thumbUrl": "/images/popup-project-3.jpg",
+          "title": "Dashboard Design",
+          "subTitle": "Web Development, Front-End",
+          "category": "frontend",
+          "status": "Live",
+          "technologies": [
+            "Angular",
+            "TypeScript",
+            "SCSS",
+            "RxJS",
+            "Chart.js"
+          ],
+          "demoUrl": "https://dashboard.example.com",
+          "githubUrl": "https://github.com/username/dashboard",
+          "details": {
+            "title": "Admin Dashboard for Content Management",
+            "description": "Created an intuitive admin dashboard using Angular for content management with features including user management, content creation, analytics, and reporting tools.",
+            "type": "Web Application",
+            "languages": "TypeScript, HTML, CSS, Angular",
+            "platform": "Web",
+            "country": "Egypt",
+            "url": "https://dashboard.example.com"
+          }
+        },
+        {
+          "thumbUrl": "/images/popup-project-4.jpg",
+          "title": "Laravel Web Application",
+          "subTitle": "Web Development, Back-End",
+          "category": "backend",
+          "status": "Live",
+          "technologies": [
+            "Laravel",
+            "PHP",
+            "MySQL",
+            "Vue.js",
+            "Bootstrap"
+          ],
+          "demoUrl": "https://edu.example.com",
+          "githubUrl": "https://github.com/username/edu-platform",
+          "details": {
+            "title": "Educational Platform with Laravel",
+            "description": "Developed an educational platform using Laravel that allows instructors to create courses, upload learning materials, and interact with students.",
+            "type": "Web Application",
+            "languages": "PHP, HTML, CSS, JS",
+            "platform": "Laravel",
+            "country": "Egypt",
+            "url": "https://edu.example.com"
+          }
+        },
+        {
+          "thumbUrl": "/images/popup-project-5.jpg",
+          "title": "MERN Stack Blog",
+          "subTitle": "Web Development, Full Stack",
+          "category": "full-stack",
+          "status": "Live",
+          "technologies": [
+            "MongoDB",
+            "Express.js",
+            "React",
+            "Node.js",
+            "JWT"
+          ],
+          "demoUrl": "https://blog.example.com",
+          "githubUrl": "https://github.com/username/blog-platform",
+          "details": {
+            "title": "Blog Platform using MERN Stack",
+            "description": "Created a blogging platform using MongoDB, Express.js, React, and Node.js with features including user authentication, content creation, commenting, and social sharing.",
+            "type": "Web Application",
+            "languages": "JavaScript, React, Node.js",
+            "platform": "MERN Stack",
+            "country": "Egypt",
+            "url": "https://blog.example.com"
+          }
+        },
+        {
+          "thumbUrl": "/images/popup-project-6.jpg",
+          "title": "WordPress Website",
+          "subTitle": "Web Development, CMS",
+          "category": "cms",
+          "status": "Live",
+          "technologies": [
+            "WordPress",
+            "PHP",
+            "MySQL",
+            "JavaScript",
+            "CSS"
+          ],
+          "demoUrl": "https://corporate.example.com",
+          "githubUrl": "https://github.com/username/wordpress-theme",
+          "details": {
+            "title": "Corporate Website using WordPress",
+            "description": "Designed and developed a corporate website using WordPress with custom themes and plugins to meet specific business requirements.",
+            "type": "Website",
+            "languages": "PHP, HTML, CSS, JS",
+            "platform": "WordPress",
+            "country": "Egypt",
+            "url": "https://corporate.example.com"
+          }
+        }
+      ]
+    },
+    "service": {
+      "sectionHeading": {
+        "miniTitle": "Services",
+        "title": "Development <span>Services</span> I Provide"
+      },
+      "allService": [
+        {
+          "imgUrl": "/images/service-01.jpg",
+          "title": "Full Stack Development",
+          "subTitle": "Expert in MEAN stack development, building complete web applications with MongoDB, Express.js, Angular, and Node.js.",
+          "icon": "bi:code-square",
+          "ratings": 5,
+          "category": "development",
+          "deliveryTime": "3-6 weeks",
+          "features": [
+            "Database Design & Management",
+            "API Development & Integration",
+            "User Authentication & Security",
+            "Performance Optimization",
+            "Deployment & DevOps"
+          ]
+        },
+        {
+          "imgUrl": "/images/service-02.jpg",
+          "title": "Front-End Development",
+          "subTitle": "Creating responsive, interactive user interfaces using React, Angular, Vue.js, and other modern front-end technologies.",
+          "icon": "bi:laptop",
+          "ratings": 5,
+          "category": "development",
+          "deliveryTime": "2-4 weeks",
+          "features": [
+            "Responsive Design",
+            "Modern UI/UX",
+            "Performance Optimization",
+            "Cross-browser Compatibility",
+            "Accessibility Standards"
+          ]
+        },
+        {
+          "imgUrl": "/images/service-03.jpg",
+          "title": "Mobile App Development",
+          "subTitle": "Building cross-platform mobile applications using React Native with focus on performance and user experience.",
+          "icon": "bi:phone",
+          "ratings": 4.5,
+          "category": "mobile",
+          "deliveryTime": "4-8 weeks",
+          "features": [
+            "Cross-platform Development",
+            "Native Performance",
+            "Offline Functionality",
+            "Push Notifications",
+            "App Store Deployment"
+          ]
+        },
+        {
+          "imgUrl": "/images/service-04.jpg",
+          "title": "Content Management",
+          "subTitle": "Implementing CMS solutions using WordPress with custom themes and plugins to meet specific client requirements.",
+          "icon": "bi:file-earmark-text",
+          "ratings": 4.5,
+          "category": "development",
+          "deliveryTime": "2-3 weeks",
+          "features": [
+            "Custom Theme Development",
+            "Plugin Development",
+            "SEO Optimization",
+            "Content Strategy",
+            "Training & Support"
+          ]
+        },
+        {
+          "imgUrl": "/images/service-01.jpg",
+          "title": "UI/UX Design",
+          "subTitle": "Creating intuitive and engaging user experiences through modern design principles, wireframing, and prototyping.",
+          "icon": "bi:palette",
+          "ratings": 4.8,
+          "category": "design",
+          "deliveryTime": "1-3 weeks",
+          "features": [
+            "User Research & Analysis",
+            "Wireframing & Prototyping",
+            "Visual Design & Branding",
+            "User Testing & Iteration",
+            "Design System Creation"
+          ]
+        }
+      ]
+    },
+    "experience": {
+      "sectionHeading": {
+        "miniTitle": "Experience",
+        "title": "My Work <span>Experience</span>"
+      },
+      "allExperience": [
+        {
+          "designation": "Senior Full-Stack Developer",
+          "company": "Innovatech Solutions | REMOTE",
+          "duration": "JAN 2022 - PRESENT",
+          "jobType": "Full-time",
+          "companyDescription": "Leading the development of scalable web applications using the MERN stack. Responsible for architecting and implementing new features, mentoring junior developers, and ensuring code quality and performance."
+        },
+        {
+          "designation": "Mid-Level Developer",
+          "company": "Creative Minds Agency",
+          "duration": "JUN 2020 - DEC 2021",
+          "jobType": "Full-time",
+          "companyDescription": "Developed and maintained client websites and web applications using React, Node.js, and GraphQL. Collaborated with designers and project managers to deliver high-quality digital products."
+        },
+        {
+          "designation": "Junior Web Developer",
+          "company": "Tech Pioneers Inc.",
+          "duration": "MAY 2019 - MAY 2020",
+          "jobType": "Full-time",
+          "companyDescription": "Assisted in the development of front-end components and back-end APIs for various web projects. Gained hands-on experience with modern JavaScript frameworks and agile development methodologies."
+        },
+        {
+          "designation": "Software Engineer Intern",
+          "company": "DataDriven Corp.",
+          "duration": "JUN 2018 - AUG 2018",
+          "jobType": "Internship",
+          "companyDescription": "Worked with the data engineering team to build and maintain data pipelines. Developed scripts for data processing and analysis, contributing to the improvement of data quality and accessibility."
+        },
+        {
+          "designation": "Lead Frontend Developer",
+          "company": "NextGen Startups",
+          "duration": "JAN 2017 - APR 2019",
+          "jobType": "Full-time",
+          "companyDescription": "Specialized in creating responsive and interactive user interfaces using React and Vue.js. Led a small team of frontend developers, focusing on code quality, performance, and UI/UX best practices."
+        },
+        {
+          "designation": "Backend Developer",
+          "company": "ServerSide Experts",
+          "duration": "MAR 2015 - DEC 2016",
+          "jobType": "Full-time",
+          "companyDescription": "Focused on server-side logic, database management, and API development using Node.js, Express, and MongoDB. Ensured the scalability and reliability of the back-end infrastructure."
+        },
+        {
+          "designation": "Freelance Developer",
+          "company": "Khamsat | REMOTE",
+          "duration": "MAR 2015 - PRESENT",
+          "jobType": "Freelance",
+          "companyTitle": "About Company",
+          "companyDescription": "Successfully completed various web development and software projects on Khamsat, providing tailored digital solutions to clients with a focus on quality, communication, and client satisfaction. Key contributions include collaborating with clients to understand requirements and deliver customized solutions, developing websites, applications, and other services across different technologies, and ensuring timely delivery and high client satisfaction through efficient processes and clear communication."
+        },
+        {
+          "designation": "Assistant Project Manager",
+          "company": "Intern in Moscow",
+          "duration": "NOV 2024 - JAN 2025",
+          "jobType": "Internship",
+          "companyTitle": "About Position",
+          "companyDescription": "Supported project management tasks, combining programming expertise with client communication to deliver IT solutions. Collaborated with teams to ensure project milestones were achieved efficiently and effectively."
+        },
+        {
+          "designation": "Freelance Coach",
+          "company": "EYOUTH Learning Company",
+          "duration": "DEC 2023 - JUN 2024",
+          "jobType": "Part-time",
+          "companyTitle": "About Position",
+          "companyDescription": "Conducted coaching sessions to enhance IT students' skills in programming and development frameworks, providing practical project guidance and career advice for job readiness."
+        }
+      ]
+    },
+    "testimonial": {
+      "sectionHeading": {
+        "miniTitle": "Testimonials",
+        "title": "Client <span>Feedback</span>"
+      },
+      "allTestimonial": [
+        {
+          "reviewText": "Salama's expertise in full-stack development was instrumental in the success of our project. His ability to translate complex requirements into a functional and elegant solution is truly impressive. A top-tier developer.",
+          "avatarImg": "/images/avatar-1.jpg",
+          "avatarName": "John Doe",
+          "avatarCompany": "Innovatech Solutions",
+          "rating": 5
+        },
+        {
+          "reviewText": "Working with Salama was a great experience. He was responsive, professional, and attentive to details. His technical skills are impressive, and he was able to recommend solutions that we hadn't considered. We'll definitely work with him again on future projects.",
+          "avatarImg": "/images/avatar-2.jpg",
+          "avatarName": "Jane Smith",
+          "avatarCompany": "Creative Minds Agency",
+          "rating": 5
+        },
+        {
+          "reviewText": "As a coach, Salama has helped many of our students develop practical skills that are highly valued in the industry. His teaching approach combines theory with hands-on projects, which has resulted in improved job placement rates for our graduates.",
+          "avatarImg": "/images/avatar-3.jpg",
+          "avatarName": "Mahmoud Saleh",
+          "avatarCompany": "EYOUTH Learning",
+          "rating": 4.5
+        },
+        {
+          "reviewText": "Salama is a reliable and talented developer. He consistently delivers high-quality work and is always willing to go the extra mile to ensure the project's success. I highly recommend him.",
+          "avatarImg": "/images/avatar-4.jpg",
+          "avatarName": "Emily Johnson",
+          "avatarCompany": "Tech Pioneers Inc.",
+          "rating": 5
+        }
+      ]
+    },
+    "portfolioShowcase": {
+      "sectionHeading": {
+        "miniTitle": "Portfolio Showcase",
+        "title": "Discover my work, skills, and achievements in one comprehensive showcase."
+      },
+      "projects": {
+        "sectionHeading": {
+          "miniTitle": "My Work",
+          "title": "Recent <span>Projects</span>"
+        },
+        "allProjects": [
+          {
+            "thumbUrl": "/images/popup-project-1.jpg",
+            "title": "IntervueAI",
+            "subTitle": "Real-time mock interviews with AI, no forms or clicks just natural, personalized conversations.",
+            "category": "AI/ML",
+            "status": "Live",
+            "technologies": [
+              "React",
+              "Node.js",
+              "OpenAI",
+              "WebRTC",
+              "MongoDB"
+            ],
+            "demoUrl": "https://intervueai-demo.vercel.app",
+            "githubUrl": "https://github.com/Salama-Malek/IntervueAI",
+            "details": {
+              "title": "AI-Powered Interview Platform",
+              "description": "An innovative platform that conducts real-time mock interviews using AI. Features natural conversation flow, personalized feedback, and comprehensive interview analytics. Built with modern web technologies and integrated with OpenAI's GPT models for realistic interview scenarios.",
+              "type": "Web Application",
+              "languages": "JavaScript, TypeScript, HTML, CSS",
+              "platform": "React, Node.js",
+              "country": "Egypt",
+              "url": "https://intervueai-demo.vercel.app"
+            }
+          },
+          {
+            "thumbUrl": "/images/popup-project-2.jpg",
+            "title": "E-Commerce Platform",
+            "subTitle": "Full-featured online marketplace with advanced payment processing and inventory management.",
+            "category": "Full Stack",
+            "status": "Live",
+            "technologies": [
+              "MongoDB",
+              "Express.js",
+              "Angular",
+              "Node.js",
+              "Stripe"
+            ],
+            "demoUrl": "https://ecommerce-demo.netlify.app",
+            "githubUrl": "https://github.com/Salama-Malek/ECommerce-Platform",
+            "details": {
+              "title": "MEAN Stack E-Commerce Solution",
+              "description": "A comprehensive e-commerce platform built with the MEAN stack. Features include user authentication, product catalog, shopping cart, payment processing with Stripe, order management, and admin dashboard. Includes real-time notifications and responsive design.",
+              "type": "Web Application",
+              "languages": "JavaScript, TypeScript, HTML, CSS",
+              "platform": "MEAN Stack",
+              "country": "Egypt",
+              "url": "https://ecommerce-demo.netlify.app"
+            }
+          },
+          {
+            "thumbUrl": "/images/popup-project-3.jpg",
+            "title": "TaskFlow Manager",
+            "subTitle": "Collaborative project management tool with real-time updates and team communication features.",
+            "category": "Web App",
+            "status": "Live",
+            "technologies": [
+              "React",
+              "Socket.io",
+              "PostgreSQL",
+              "Express.js",
+              "Redis"
+            ],
+            "demoUrl": "https://taskflow-manager.herokuapp.com",
+            "githubUrl": "https://github.com/Salama-Malek/TaskFlow-Manager",
+            "details": {
+              "title": "Real-time Project Management Platform",
+              "description": "A modern project management tool that enables teams to collaborate effectively. Features include real-time updates, task assignment, progress tracking, team chat, file sharing, and comprehensive reporting. Built with React frontend and Node.js backend with WebSocket integration.",
+              "type": "Web Application",
+              "languages": "JavaScript, TypeScript, HTML, CSS",
+              "platform": "React, Node.js",
+              "country": "Egypt",
+              "url": "https://taskflow-manager.herokuapp.com"
+            }
+          },
+          {
+            "thumbUrl": "/images/popup-project-4.jpg",
+            "title": "Weather Analytics Dashboard",
+            "subTitle": "Advanced weather data visualization with predictive analytics and interactive charts.",
+            "category": "Data Viz",
+            "status": "Live",
+            "technologies": [
+              "D3.js",
+              "Python",
+              "Flask",
+              "Chart.js",
+              "OpenWeather API"
+            ],
+            "demoUrl": "https://weather-analytics-dashboard.vercel.app",
+            "githubUrl": "https://github.com/Salama-Malek/Weather-Analytics",
+            "details": {
+              "title": "Interactive Weather Data Visualization",
+              "description": "A sophisticated weather analytics dashboard that provides comprehensive weather data visualization. Features include interactive charts, predictive analytics, historical data comparison, and real-time weather updates. Built with D3.js for advanced data visualization.",
+              "type": "Web Application",
+              "languages": "JavaScript, Python, HTML, CSS",
+              "platform": "Flask, D3.js",
+              "country": "Egypt",
+              "url": "https://weather-analytics-dashboard.vercel.app"
+            }
+          },
+          {
+            "thumbUrl": "/images/popup-project-5.jpg",
+            "title": "Social Media Analytics",
+            "subTitle": "Comprehensive social media monitoring and analytics platform with sentiment analysis.",
+            "category": "Analytics",
+            "status": "Live",
+            "technologies": [
+              "React",
+              "Python",
+              "Django",
+              "TensorFlow",
+              "PostgreSQL"
+            ],
+            "demoUrl": "https://social-analytics-platform.netlify.app",
+            "githubUrl": "https://github.com/Salama-Malek/Social-Analytics",
+            "details": {
+              "title": "AI-Powered Social Media Analytics",
+              "description": "An advanced social media analytics platform that monitors multiple platforms and provides insights through AI-powered sentiment analysis. Features include trend analysis, competitor tracking, engagement metrics, and automated reporting. Built with React frontend and Django backend.",
+              "type": "Web Application",
+              "languages": "JavaScript, Python, HTML, CSS",
+              "platform": "Django, React",
+              "country": "Egypt",
+              "url": "https://social-analytics-platform.netlify.app"
+            }
+          },
+          {
+            "thumbUrl": "/images/popup-project-6.jpg",
+            "title": "Mobile Fitness Tracker",
+            "subTitle": "Cross-platform fitness tracking app with workout plans and progress monitoring.",
+            "category": "Mobile",
+            "status": "Live",
+            "technologies": [
+              "React Native",
+              "Firebase",
+              "Redux",
+              "Expo",
+              "Charts"
+            ],
+            "demoUrl": null,
+            "githubUrl": "https://github.com/Salama-Malek/Fitness-Tracker-App",
+            "details": {
+              "title": "Cross-platform Fitness Tracking App",
+              "description": "A comprehensive fitness tracking mobile application built with React Native. Features include workout tracking, progress monitoring, nutrition logging, social features, and personalized workout plans. Includes offline functionality and real-time synchronization.",
+              "type": "Mobile Application",
+              "languages": "JavaScript, React Native",
+              "platform": "iOS, Android",
+              "country": "Egypt",
+              "url": "https://github.com/Salama-Malek/Fitness-Tracker-App"
+            }
+          }
+        ]
+      },
+      "services": {
+        "sectionHeading": {
+          "miniTitle": "Services",
+          "title": "Development <span>Services</span> I Provide"
+        },
+        "allService": [
+          {
+            "imgUrl": "/images/service-01.jpg",
+            "title": "Full Stack Development",
+            "subTitle": "Expert in MEAN stack development, building complete web applications with MongoDB, Express.js, Angular, and Node.js.",
+            "icon": "bi:code-square",
+            "ratings": 5,
+            "category": "development",
+            "deliveryTime": "3-6 weeks",
+            "features": [
+              "Database Design & Management",
+              "API Development & Integration",
+              "User Authentication & Security",
+              "Performance Optimization",
+              "Deployment & DevOps"
+            ]
+          },
+          {
+            "imgUrl": "/images/service-02.jpg",
+            "title": "Front-End Development",
+            "subTitle": "Creating responsive, interactive user interfaces using React, Angular, Vue.js, and other modern front-end technologies.",
+            "icon": "bi:laptop",
+            "ratings": 5,
+            "category": "development",
+            "deliveryTime": "2-4 weeks",
+            "features": [
+              "Responsive Design",
+              "Modern UI/UX",
+              "Performance Optimization",
+              "Cross-browser Compatibility",
+              "Accessibility Standards"
+            ]
+          },
+          {
+            "imgUrl": "/images/service-03.jpg",
+            "title": "Mobile App Development",
+            "subTitle": "Building cross-platform mobile applications using React Native with focus on performance and user experience.",
+            "icon": "bi:phone",
+            "ratings": 4.5,
+            "category": "mobile",
+            "deliveryTime": "4-8 weeks",
+            "features": [
+              "Cross-platform Development",
+              "Native Performance",
+              "Offline Functionality",
+              "Push Notifications",
+              "App Store Deployment"
+            ]
+          }
+        ]
+      },
+      "certificates": [
+        {
+          "title": "Full Stack Web Development",
+          "issuer": "Information Technology Institute (ITI)",
+          "date": "2023",
+          "image": "/images/certificate-1.jpg",
+          "credentialId": "ITI-FSWD-2023-001"
+        },
+        {
+          "title": "MEAN Stack Development",
+          "issuer": "Coursera",
+          "date": "2023",
+          "image": "/images/certificate-2.jpg",
+          "credentialId": "COURSERA-MEAN-2023-002"
+        },
+        {
+          "title": "React Development",
+          "issuer": "Meta",
+          "date": "2022",
+          "image": "/images/certificate-3.jpg",
+          "credentialId": "META-REACT-2022-003"
+        },
+        {
+          "title": "Node.js Backend Development",
+          "issuer": "Udemy",
+          "date": "2022",
+          "image": "/images/certificate-4.jpg",
+          "credentialId": "UDEMY-NODE-2022-004"
+        }
+      ],
+      "techStack": [
+        {
+          "name": "JavaScript",
+          "level": 95,
+          "description": "Advanced proficiency in modern JavaScript ES6+ features, async programming, and functional programming concepts."
+        },
+        {
+          "name": "React",
+          "level": 90,
+          "description": "Expert in React ecosystem including hooks, context, state management, and performance optimization."
+        },
+        {
+          "name": "Node.js",
+          "level": 85,
+          "description": "Strong backend development skills with Express.js, RESTful APIs, and server-side JavaScript."
+        },
+        {
+          "name": "MongoDB",
+          "level": 80,
+          "description": "Database design, query optimization, and NoSQL data modeling expertise."
+        },
+        {
+          "name": "Angular",
+          "level": 75,
+          "description": "Proficient in Angular framework, TypeScript, and component-based architecture."
+        },
+        {
+          "name": "Python",
+          "level": 70,
+          "description": "Backend development with Django and Flask, data processing, and automation scripts."
+        }
+      ]
+    },
+    "contact": {
+      "sectionHeading": {
+        "miniTitle": "Contact",
+        "title": "Let's Discuss Your <span>Project</span>",
+        "subTitle": "Available for freelancing if the right project comes along. Feel free to contact me to discuss your web development needs."
+      },
+      "contactImg": "/images/contact-us.png",
+      "contactInfo": [
+        {
+          "title": "Write an e-mail",
+          "email": "salamahassanein@gmail.com"
+        },
+        {
+          "title": "Call me directly",
+          "tel": "+7 993 287 3992"
+        }
+      ]
+    }
+  },
+  "common": {
+    "logoAlt": "Salama Malek - Full Stack Developer",
+    "backToTop": "Back to top"
+  },
+  "contact": {
+    "followMe": "Follow Me",
+    "info": {
+      "heading": "Get In Touch",
+      "description": "Ready to start your next project? Let's discuss how I can help bring your ideas to life.",
+      "copy": "Copy {{field}}",
+      "toastTitle": "Copied",
+      "toastDescription": "{{value}} copied to clipboard."
+    }
+  },
+  "languageSwitcher": {
+    "selectLanguage": "Select language",
+    "languageNames": {
+      "en": "English",
+      "ar": "Arabic",
+      "ru": "Russian",
+      "de": "German",
+      "fr": "French"
+    }
+  },
+  "themeSwitcher": {
+    "darkModeLabel": "Dark mode active"
+  },
+  "navigation": {
+    "moreOptions": "More Options",
+    "close": "Close",
+    "openMore": "Open more options",
+    "more": "More"
+  },
+  "hero": {
+    "downloadCv": "Download CV"
+  },
+  "social": {
+    "icons": {
+      "fallbackName": "social link",
+      "open": "Open {{name}}",
+      "khamsatAlt": "Khamsat"
+    }
+  },
+  "loading": {
+    "aria": "Loading",
+    "title": "Loading...",
+    "description": "Please wait while we prepare your experience"
+  },
+  "errorBoundary": {
+    "title": "Something went wrong",
+    "description": "We're sorry, but something unexpected happened. Please try refreshing the page.",
+    "action": "Refresh Page"
+  }
+}

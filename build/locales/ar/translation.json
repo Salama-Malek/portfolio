@@ -1,0 +1,715 @@
+{
+  "header": {
+    "nav": {
+      "home": "الرئيسية",
+      "about": "عني",
+      "portfolio": "المحفظة",
+      "experience": "الخبرة",
+      "testimonials": "التوصيات",
+      "contact": "التواصل"
+    },
+    "cta": "تواصل معي"
+  },
+  "footer": {
+    "copyright": "© 2024 جميع الحقوق محفوظة",
+    "description": "مطور متكامل شغوف ببناء تطبيقات ويب مبتكرة وسهلة الاستخدام.",
+    "widgets": {
+      "quickLinks": "روابط سريعة",
+      "contact": "تواصل معي"
+    },
+    "cta": {
+      "description": "هل لديك مشروع في ذهنك؟ دعنا نتحدث عنه."
+    }
+  },
+  "modal": {
+    "type": "النوع",
+    "languages": "اللغات",
+    "platform": "المنصة",
+    "country": "البلد",
+    "url": "الرابط المباشر"
+  },
+  "portfolioShowcase": {
+    "tabs": {
+      "projects": "المشاريع",
+      "services": "الخدمات",
+      "certificates": "الشهادات",
+      "techStack": "التقنيات"
+    },
+    "emptyStates": {
+      "projects": "لا توجد مشاريع متاحة",
+      "services": "لا توجد خدمات متاحة",
+      "certificates": "لا توجد شهادات متاحة",
+      "techStack": "لا توجد تقنيات متاحة"
+    },
+    "serviceModal": {
+      "viewDetails": "عرض التفاصيل",
+      "category": "الفئة",
+      "rating": "التقييم",
+      "delivery": "التسليم",
+      "serviceDescription": "وصف الخدمة",
+      "keyFeatures": "الميزات الرئيسية",
+      "startProject": "بدء المشروع",
+      "downloadPortfolio": "تحميل المحفظة",
+      "defaultCategory": "تطوير",
+      "defaultDelivery": "2-4 أسابيع",
+      "ratingValue": "{{rating}}/5"
+    },
+    "projectModal": {
+      "details": "التفاصيل",
+      "liveDemo": "عرض مباشر",
+      "sourceCode": "الكود المصدري",
+      "technologiesUsed": "التقنيات المستخدمة"
+    },
+    "projectCard": {
+      "details": "التفاصيل",
+      "liveDemo": "عرض مباشر",
+      "additionalTech": "{{count}} تقنية إضافية"
+    }
+  },
+  "contactForm": {
+    "nameLabel": "الاسم الكامل",
+    "namePlaceholder": "اكتب اسمك الكامل",
+    "emailLabel": "البريد الإلكتروني",
+    "emailPlaceholder": "اكتب بريدك الإلكتروني",
+    "subjectLabel": "الموضوع",
+    "subjectPlaceholder": "ما موضوع رسالتك؟",
+    "messageLabel": "الرسالة",
+    "messagePlaceholder": "حدثني عن مشروعك...",
+    "send": "إرسال الرسالة",
+    "sending": "جاري الإرسال...",
+    "title": "أرسل رسالة",
+    "description": "دعنا نناقش مشروعك ونحول أفكارك إلى واقع",
+    "toast": {
+      "successTitle": "تم إرسال الرسالة",
+      "successMessage": "شكرًا على رسالتك!"
+    }
+  },
+  "homePage": {
+    "hero": {
+      "imgUrl": "/images/home-banner.png",
+      "name": "سلامة مالك",
+      "heading": "مرحباً! أنا سلامة",
+      "typingText": [
+        "مطور برمجيات",
+        1500,
+        "مستقل",
+        1500
+      ],
+      "description": "خريج معهد تكنولوجيا المعلومات ومطور ويب متمرس متخصص في تطوير البرمجيات. أبحث عن فرص للعمل في تطوير تطبيقات الويب الكاملة باستخدام تقنيات MEAN stack، والبرمجة الخلفية والأمامية، وتطوير تطبيقات الهاتف المحمول.",
+      "btnText": "تواصل معي",
+      "btnUrl": "contactus"
+    },
+    "socialBtns": [
+      {
+        "icon": "fa-brands:github",
+        "iconBgClass": "github",
+        "href": "https://github.com/Salama-Malek"
+      },
+      {
+        "icon": "fa-brands:khamsat",
+        "iconBgClass": "khamsat",
+        "href": "https://khamsat.com/user/salamamalek"
+      },
+      {
+        "icon": "fa-brands:linkedin-in",
+        "iconBgClass": "linkedin",
+        "href": "https://www.linkedin.com/in/salama-malek"
+      }
+    ],
+    "brands": [
+      {
+        "src": "/images/brand-1.svg",
+        "alt": "شعار العلامة التجارية"
+      },
+      {
+        "src": "/images/brand-2.svg",
+        "alt": "شعار العلامة التجارية"
+      },
+      {
+        "src": "/images/brand-1.svg",
+        "alt": "شعار العلامة التجارية"
+      },
+      {
+        "src": "/images/brand-2.svg",
+        "alt": "شعار العلامة التجارية"
+      },
+      {
+        "src": "/images/brand-1.svg",
+        "alt": "شعار العلامة التجارية"
+      },
+      {
+        "src": "/images/brand-2.svg",
+        "alt": "شعار العلامة التجارية"
+      },
+      {
+        "src": "/images/brand-1.svg",
+        "alt": "شعار العلامة التجارية"
+      },
+      {
+        "src": "/images/brand-2.svg",
+        "alt": "شعار العلامة التجارية"
+      }
+    ],
+    "about": {
+      "imgSrc": "/new-images/about5.png",
+      "miniTitle": "عني",
+      "title": "متاح للمشاريع <span>الكاملة</span>",
+      "description": "خريج معهد تكنولوجيا المعلومات ومطور ويب متمرس متخصص في تطوير البرمجيات. ملتزم بتقديم حلول مبتكرة وتعزيز النمو في بيئات ديناميكية وتعاونية. أتخصص في تطوير MEAN stack، كما أنني بارع في تقنيات أخرى مثل Laravel و Ruby on Rails و Django.",
+      "funfacts": [
+        {
+          "title": "لغات البرمجة",
+          "number": 5
+        },
+        {
+          "title": "سنوات الخبرة",
+          "number": 2
+        },
+        {
+          "title": "أطر العمل",
+          "number": 7
+        }
+      ],
+      "btnText": "تواصل معي",
+      "btnUrl": "contactus"
+    },
+    "projects": {
+      "sectionHeading": {
+        "miniTitle": "عملي",
+        "title": "المشاريع الحديثة"
+      },
+      "allProjects": [
+        {
+          "thumbUrl": "/images/popup-project-1.jpg",
+          "title": "تطبيق MEAN Stack",
+          "subTitle": "تطوير الويب، تطوير كامل",
+          "details": {
+            "title": "منصة التجارة الإلكترونية باستخدام MEAN Stack",
+            "description": "طورت منصة تجارة إلكترونية كاملة الميزات باستخدام MongoDB و Express.js و Angular و Node.js. نفذت ميزات تشمل مصادقة المستخدمين وفهرس المنتجات وسلة التسوق وتكامل معالجة الدفع.",
+            "type": "تطبيق ويب",
+            "langages": "JavaScript, TypeScript, HTML, CSS",
+            "platform": "MEAN Stack",
+            "country": "مصر",
+            "url": "www.example.com"
+          }
+        },
+        {
+          "thumbUrl": "/images/popup-project-2.jpg",
+          "title": "تطبيق React Native للهاتف المحمول",
+          "subTitle": "تطوير الهاتف المحمول، الواجهة الأمامية",
+          "details": {
+            "title": "تطبيق هاتف محمول متعدد المنصات",
+            "description": "بنيت تطبيق هاتف محمول متعدد المنصات باستخدام React Native يتيح للمستخدمين تتبع أهدافهم الرياضية وتسجيل التمارين والاتصال بمدربي اللياقة البدنية.",
+            "type": "تطبيق هاتف محمول",
+            "langages": "JavaScript, React Native",
+            "platform": "iOS, Android",
+            "country": "مصر",
+            "url": "www.example.com"
+          }
+        },
+        {
+          "thumbUrl": "/images/popup-project-3.jpg",
+          "title": "تصميم لوحة التحكم",
+          "subTitle": "تطوير الويب، الواجهة الأمامية",
+          "details": {
+            "title": "لوحة تحكم إدارية لإدارة المحتوى",
+            "description": "أنشأت لوحة تحكم إدارية بديهية باستخدام Angular لإدارة المحتوى مع ميزات تشمل إدارة المستخدمين وإنشاء المحتوى والتحليلات وأدوات التقارير.",
+            "type": "تطبيق ويب",
+            "langages": "TypeScript, HTML, CSS, Angular",
+            "platform": "الويب",
+            "country": "مصر",
+            "url": "www.example.com"
+          }
+        },
+        {
+          "thumbUrl": "/images/popup-project-4.jpg",
+          "title": "تطبيق ويب Laravel",
+          "subTitle": "تطوير الويب، الخلفية",
+          "details": {
+            "title": "منصة تعليمية باستخدام Laravel",
+            "description": "طورت منصة تعليمية باستخدام Laravel تتيح للمدربين إنشاء دورات وتحميل المواد التعليمية والتفاعل مع الطلاب.",
+            "type": "تطبيق ويب",
+            "langages": "PHP, HTML, CSS, JS",
+            "platform": "Laravel",
+            "country": "مصر",
+            "url": "www.example.com"
+          }
+        },
+        {
+          "thumbUrl": "/images/popup-project-5.jpg",
+          "title": "مدونة MERN Stack",
+          "subTitle": "تطوير الويب، تطوير كامل",
+          "details": {
+            "title": "منصة مدونة باستخدام MERN Stack",
+            "description": "أنشأت منصة مدونة باستخدام MongoDB و Express.js و React و Node.js مع ميزات تشمل مصادقة المستخدمين وإنشاء المحتوى والتعليقات والمشاركة الاجتماعية.",
+            "type": "تطبيق ويب",
+            "langages": "JavaScript, React, Node.js",
+            "platform": "MERN Stack",
+            "country": "مصر",
+            "url": "www.example.com"
+          }
+        },
+        {
+          "thumbUrl": "/images/popup-project-6.jpg",
+          "title": "موقع WordPress",
+          "subTitle": "تطوير الويب، نظام إدارة المحتوى",
+          "details": {
+            "title": "موقع شركات باستخدام WordPress",
+            "description": "صممت وطورت موقع شركات باستخدام WordPress مع سمات وملحقات مخصصة لتلبية متطلبات العمل المحددة.",
+            "type": "موقع ويب",
+            "langages": "PHP, HTML, CSS, JS",
+            "platform": "WordPress",
+            "country": "مصر",
+            "url": "www.example.com"
+          }
+        }
+      ]
+    },
+    "service": {
+      "sectionHeading": {
+        "miniTitle": "الخدمات",
+        "title": "خدمات التطوير <span>التي أقدمها</span>"
+      },
+      "allService": [
+        {
+          "imgUrl": "/images/service-01.jpg",
+          "title": "التطوير الكامل",
+          "subTitle": "خبير في تطوير MEAN stack، بناء تطبيقات ويب كاملة باستخدام MongoDB و Express.js و Angular و Node.js.",
+          "icon": "bi:code-square",
+          "ratings": 5
+        },
+        {
+          "imgUrl": "/images/service-02.jpg",
+          "title": "تطوير الواجهة الأمامية",
+          "subTitle": "إنشاء واجهات مستخدم تفاعلية ومتجاوبة باستخدام React و Angular و Vue.js وتقنيات الواجهة الأمامية الحديثة الأخرى.",
+          "icon": "bi:laptop",
+          "ratings": 5
+        },
+        {
+          "imgUrl": "/images/service-03.jpg",
+          "title": "تطوير تطبيقات الهاتف المحمول",
+          "subTitle": "بناء تطبيقات هاتف محمول متعددة المنصات باستخدام React Native مع التركيز على الأداء وتجربة المستخدم.",
+          "icon": "bi:phone",
+          "ratings": 4.5
+        },
+        {
+          "imgUrl": "/images/service-04.jpg",
+          "title": "إدارة المحتوى",
+          "subTitle": "تنفيذ حلول نظام إدارة المحتوى باستخدام WordPress مع سمات وملحقات مخصصة لتلبية متطلبات العميل المحددة.",
+          "icon": "bi:file-earmark-text",
+          "ratings": 4.5
+        }
+      ]
+    },
+    "experience": {
+      "sectionHeading": {
+        "miniTitle": "الخبرة",
+        "title": "خبرتي <span>العملية</span>"
+      },
+      "allExperience": [
+        {
+          "designation": "مطور مستقل",
+          "company": "خمسات | عن بُعد",
+          "duration": "أبريل 2023 - الحالي",
+          "jobType": "عمل مستقل",
+          "companyTitle": "عن الشركة",
+          "companyDescription": "أكملت بنجاح مشاريع تطوير ويب وبرمجيات متنوعة على خمسات، مقدماً حلول رقمية مخصصة للعملاء مع التركيز على الجودة والتواصل ورضا العميل. المساهمات الرئيسية تشمل التعاون مع العملاء لفهم المتطلبات وتقديم حلول مخصصة، تطوير المواقع والتطبيقات والخدمات الأخرى عبر تقنيات مختلفة، وضمان التسليم في الوقت المحدد ورضا العميل العالي من خلال عمليات فعالة وتواصل واضح."
+        },
+        {
+          "designation": "مساعد مدير المشروع",
+          "company": "متدرب في موسكو",
+          "duration": "نوفمبر 2024 - يناير 2025",
+          "jobType": "تدريب",
+          "companyTitle": "عن المنصب",
+          "companyDescription": "دعم مهام إدارة المشروع، دمج الخبرة البرمجية مع التواصل مع العملاء لتقديم حلول تكنولوجيا المعلومات. تعاون مع الفرق لضمان تحقيق معالم المشروع بكفاءة وفعالية."
+        },
+        {
+          "designation": "مدرب مستقل",
+          "company": "شركة يوث للتعليم",
+          "duration": "ديسمبر 2023 - يونيو 2024",
+          "jobType": "دوام جزئي",
+          "companyTitle": "عن المنصب",
+          "companyDescription": "أجريت جلسات تدريبية لتعزيز مهارات طلاب تكنولوجيا المعلومات في البرمجة وأطر العمل، مقدماً إرشادات عملية للمشاريع ونصائح مهنية للاستعداد للعمل."
+        }
+      ]
+    },
+    "testimonial": {
+      "sectionHeading": {
+        "miniTitle": "آراء العملاء",
+        "title": "تعليقات <span>العملاء</span> <br /> من عملي"
+      },
+      "allTestimonial": [
+        {
+          "reviewText": "سلم سلامة تطبيق الويب في الوقت المحدد وبجودة استثنائية. خبرته في MEAN stack وقدرته على فهم متطلبات عملنا أدت إلى منتج تجاوز توقعاتنا. أوصي به بشدة لأي مشروع تطوير ويب.",
+          "avatarImg": "/images/avatar-1.jpg",
+          "avatarName": "أحمد حسن",
+          "avatarCompany": "شركة ناشئة تقنية"
+        },
+        {
+          "reviewText": "العمل مع سلامة كان تجربة رائعة. كان متجاوباً ومهنياً ومنتبهاً للتفاصيل. مهاراته التقنية مثيرة للإعجاب، وكان قادراً على اقتراح حلول لم نفكر فيها. سنعمل معه بالتأكيد في مشاريع مستقبلية.",
+          "avatarImg": "/images/avatar-2.jpg",
+          "avatarName": "ماريا إيفانوفا",
+          "avatarCompany": "شركة التجارة الإلكترونية"
+        },
+        {
+          "reviewText": "كمدرب، ساعد سلامة العديد من طلابنا في تطوير مهارات عملية عالية القيمة في الصناعة. نهجه التعليمي يجمع بين النظرية والمشاريع العملية، مما أدى إلى تحسين معدلات التوظيف لخريجينا.",
+          "avatarImg": "/images/avatar-3.jpg",
+          "avatarName": "محمود صالح",
+          "avatarCompany": "شركة يوث للتعليم"
+        }
+      ]
+    },
+    "portfolioShowcase": {
+      "sectionHeading": {
+        "miniTitle": "عرض المحفظة",
+        "title": "اكتشف أعمالي ومهاراتي وإنجازاتي في عرض شامل واحد."
+      },
+      "projects": {
+        "sectionHeading": {
+          "miniTitle": "أعمالي",
+          "title": "المشاريع <span>الحديثة</span>"
+        },
+        "allProjects": [
+          {
+            "thumbUrl": "/images/popup-project-1.jpg",
+            "title": "IntervueAI",
+            "subTitle": "مقابلات وهمية في الوقت الفعلي مع الذكاء الاصطناعي، بدون نماذج أو نقرات، فقط محادثات طبيعية ومخصصة.",
+            "category": "AI/ML",
+            "status": "مباشر",
+            "technologies": [
+              "React",
+              "Node.js",
+              "OpenAI",
+              "WebRTC",
+              "MongoDB"
+            ],
+            "demoUrl": "https://intervueai-demo.vercel.app",
+            "githubUrl": "https://github.com/Salama-Malek/IntervueAI",
+            "details": {
+              "title": "منصة مقابلات مدعومة بالذكاء الاصطناعي",
+              "description": "منصة مبتكرة تجري مقابلات وهمية في الوقت الفعلي باستخدام الذكاء الاصطناعي. تتضمن تدفق محادثة طبيعي، تعليقات مخصصة، وتحليلات شاملة للمقابلات. تم بناؤها بتقنيات الويب الحديثة ومتكاملة مع نماذج GPT من OpenAI.",
+              "type": "تطبيق ويب",
+              "languages": "JavaScript, TypeScript, HTML, CSS",
+              "platform": "React, Node.js",
+              "country": "مصر",
+              "url": "https://intervueai-demo.vercel.app"
+            }
+          },
+          {
+            "thumbUrl": "/images/popup-project-2.jpg",
+            "title": "منصة التجارة الإلكترونية",
+            "subTitle": "سوق إلكتروني كامل الميزات مع معالجة متقدمة للمدفوعات وإدارة المخزون.",
+            "category": "Full Stack",
+            "status": "مباشر",
+            "technologies": [
+              "MongoDB",
+              "Express.js",
+              "Angular",
+              "Node.js",
+              "Stripe"
+            ],
+            "demoUrl": "https://ecommerce-demo.netlify.app",
+            "githubUrl": "https://github.com/Salama-Malek/ECommerce-Platform",
+            "details": {
+              "title": "حل تجارة إلكترونية باستخدام MEAN Stack",
+              "description": "منصة تجارة إلكترونية شاملة مبنية بـ MEAN stack. تتضمن المصادقة، كتالوج المنتجات، سلة التسوق، معالجة المدفوعات مع Stripe، إدارة الطلبات، ولوحة تحكم إدارية. تتضمن إشعارات في الوقت الفعلي وتصميم متجاوب.",
+              "type": "تطبيق ويب",
+              "languages": "JavaScript, TypeScript, HTML, CSS",
+              "platform": "MEAN Stack",
+              "country": "مصر",
+              "url": "https://ecommerce-demo.netlify.app"
+            }
+          },
+          {
+            "thumbUrl": "/images/popup-project-3.jpg",
+            "title": "مدير TaskFlow",
+            "subTitle": "أداة إدارة مشاريع تعاونية مع تحديثات في الوقت الفعلي وميزات التواصل الجماعي.",
+            "category": "Web App",
+            "status": "مباشر",
+            "technologies": [
+              "React",
+              "Socket.io",
+              "PostgreSQL",
+              "Express.js",
+              "Redis"
+            ],
+            "demoUrl": "https://taskflow-manager.herokuapp.com",
+            "githubUrl": "https://github.com/Salama-Malek/TaskFlow-Manager",
+            "details": {
+              "title": "منصة إدارة مشاريع في الوقت الفعلي",
+              "description": "أداة إدارة مشاريع حديثة تمكن الفرق من التعاون بفعالية. تتضمن تحديثات في الوقت الفعلي، تعيين المهام، تتبع التقدم، دردشة جماعية، مشاركة الملفات، وتقارير شاملة. مبنية بـ React frontend و Node.js backend مع تكامل WebSocket.",
+              "type": "تطبيق ويب",
+              "languages": "JavaScript, TypeScript, HTML, CSS",
+              "platform": "React, Node.js",
+              "country": "مصر",
+              "url": "https://taskflow-manager.herokuapp.com"
+            }
+          },
+          {
+            "thumbUrl": "/images/popup-project-4.jpg",
+            "title": "لوحة تحليل الطقس",
+            "subTitle": "تصور متقدم لبيانات الطقس مع التحليلات التنبؤية والرسوم البيانية التفاعلية.",
+            "category": "Data Viz",
+            "status": "مباشر",
+            "technologies": [
+              "D3.js",
+              "Python",
+              "Flask",
+              "Chart.js",
+              "OpenWeather API"
+            ],
+            "demoUrl": "https://weather-analytics-dashboard.vercel.app",
+            "githubUrl": "https://github.com/Salama-Malek/Weather-Analytics",
+            "details": {
+              "title": "تصور تفاعلي لبيانات الطقس",
+              "description": "لوحة تحليل طقس متطورة توفر تصور شامل لبيانات الطقس. تتضمن رسوم بيانية تفاعلية، تحليلات تنبؤية، مقارنة البيانات التاريخية، وتحديثات الطقس في الوقت الفعلي. مبنية بـ D3.js للتصور المتقدم للبيانات.",
+              "type": "تطبيق ويب",
+              "languages": "JavaScript, Python, HTML, CSS",
+              "platform": "Flask, D3.js",
+              "country": "مصر",
+              "url": "https://weather-analytics-dashboard.vercel.app"
+            }
+          },
+          {
+            "thumbUrl": "/images/popup-project-5.jpg",
+            "title": "تحليلات وسائل التواصل الاجتماعي",
+            "subTitle": "منصة شاملة لمراقبة وتحليل وسائل التواصل الاجتماعي مع تحليل المشاعر.",
+            "category": "Analytics",
+            "status": "مباشر",
+            "technologies": [
+              "React",
+              "Python",
+              "Django",
+              "TensorFlow",
+              "PostgreSQL"
+            ],
+            "demoUrl": "https://social-analytics-platform.netlify.app",
+            "githubUrl": "https://github.com/Salama-Malek/Social-Analytics",
+            "details": {
+              "title": "تحليلات وسائل التواصل الاجتماعي مدعومة بالذكاء الاصطناعي",
+              "description": "منصة تحليلات وسائل تواصل اجتماعي متطورة تراقب منصات متعددة وتوفر رؤى من خلال تحليل المشاعر المدعوم بالذكاء الاصطناعي. تتضمن تحليل الاتجاهات، تتبع المنافسين، مقاييس التفاعل، والتقارير الآلية. مبنية بـ React frontend و Django backend.",
+              "type": "تطبيق ويب",
+              "languages": "JavaScript, Python, HTML, CSS",
+              "platform": "Django, React",
+              "country": "مصر",
+              "url": "https://social-analytics-platform.netlify.app"
+            }
+          },
+          {
+            "thumbUrl": "/images/popup-project-6.jpg",
+            "title": "تطبيق تتبع اللياقة البدنية",
+            "subTitle": "تطبيق تتبع اللياقة البدنية متعدد المنصات مع خطط التمارين ومراقبة التقدم.",
+            "category": "Mobile",
+            "status": "مباشر",
+            "technologies": [
+              "React Native",
+              "Firebase",
+              "Redux",
+              "Expo",
+              "Charts"
+            ],
+            "demoUrl": null,
+            "githubUrl": "https://github.com/Salama-Malek/Fitness-Tracker-App",
+            "details": {
+              "title": "تطبيق تتبع اللياقة البدنية متعدد المنصات",
+              "description": "تطبيق شامل لتتبع اللياقة البدنية للهاتف المحمول مبنية بـ React Native. تتضمن تتبع التمارين، مراقبة التقدم، تسجيل التغذية، ميزات اجتماعية، وخطط تمارين مخصصة. تتضمن وظائف دون اتصال ومزامنة في الوقت الفعلي.",
+              "type": "تطبيق الهاتف المحمول",
+              "languages": "JavaScript, React Native",
+              "platform": "iOS, Android",
+              "country": "مصر",
+              "url": "https://github.com/Salama-Malek/Fitness-Tracker-App"
+            }
+          }
+        ]
+      },
+      "services": {
+        "sectionHeading": {
+          "miniTitle": "الخدمات",
+          "title": "خدمات التطوير <span>التي أقدمها</span>"
+        },
+        "allService": [
+          {
+            "imgUrl": "/images/service-01.jpg",
+            "title": "تطوير المكدس الكامل",
+            "subTitle": "خبير في تطوير MEAN stack، بناء تطبيقات ويب كاملة باستخدام MongoDB و Express.js و Angular و Node.js.",
+            "icon": "bi:code-square",
+            "ratings": 5,
+            "category": "development",
+            "deliveryTime": "3-6 أسابيع",
+            "features": [
+              "تصميم وإدارة قاعدة البيانات",
+              "تطوير وتكامل API",
+              "المصادقة والأمان",
+              "تحسين الأداء",
+              "النشر و DevOps"
+            ]
+          },
+          {
+            "imgUrl": "/images/service-02.jpg",
+            "title": "تطوير الواجهة الأمامية",
+            "subTitle": "إنشاء واجهات مستخدم تفاعلية ومتجاوبة باستخدام React و Angular و Vue.js وتقنيات الواجهة الأمامية الحديثة الأخرى.",
+            "icon": "bi:laptop",
+            "ratings": 5,
+            "category": "development",
+            "deliveryTime": "2-4 أسابيع",
+            "features": [
+              "التصميم المتجاوب",
+              "UI/UX حديث",
+              "تحسين الأداء",
+              "التوافق مع المتصفحات",
+              "معايير إمكانية الوصول"
+            ]
+          },
+          {
+            "imgUrl": "/images/service-03.jpg",
+            "title": "تطوير تطبيقات الهاتف المحمول",
+            "subTitle": "بناء تطبيقات الهاتف المحمول متعددة المنصات باستخدام React Native مع التركيز على الأداء وتجربة المستخدم.",
+            "icon": "bi:phone",
+            "ratings": 4.5,
+            "category": "mobile",
+            "deliveryTime": "4-8 أسابيع",
+            "features": [
+              "التطوير متعدد المنصات",
+              "الأداء الأصلي",
+              "الوظائف دون اتصال",
+              "الإشعارات الفورية",
+              "نشر متجر التطبيقات"
+            ]
+          }
+        ]
+      },
+      "certificates": [
+        {
+          "title": "تطوير الويب المكدس الكامل",
+          "issuer": "معهد تكنولوجيا المعلومات (ITI)",
+          "date": "2023",
+          "image": "/images/certificate-1.jpg",
+          "credentialId": "ITI-FSWD-2023-001"
+        },
+        {
+          "title": "تطوير MEAN Stack",
+          "issuer": "Coursera",
+          "date": "2023",
+          "image": "/images/certificate-2.jpg",
+          "credentialId": "COURSERA-MEAN-2023-002"
+        },
+        {
+          "title": "تطوير React",
+          "issuer": "Meta",
+          "date": "2022",
+          "image": "/images/certificate-3.jpg",
+          "credentialId": "META-REACT-2022-003"
+        },
+        {
+          "title": "تطوير Node.js الخلفي",
+          "issuer": "Udemy",
+          "date": "2022",
+          "image": "/images/certificate-4.jpg",
+          "credentialId": "UDEMY-NODE-2022-004"
+        }
+      ],
+      "techStack": [
+        {
+          "name": "JavaScript",
+          "level": 95,
+          "description": "إتقان متقدم في ميزات JavaScript ES6+ الحديثة والبرمجة غير المتزامنة ومفاهيم البرمجة الوظيفية."
+        },
+        {
+          "name": "React",
+          "level": 90,
+          "description": "خبير في نظام React البيئي بما في ذلك hooks والسياق وإدارة الحالة وتحسين الأداء."
+        },
+        {
+          "name": "Node.js",
+          "level": 85,
+          "description": "مهارات تطوير خلفية قوية مع Express.js و RESTful APIs و JavaScript من جانب الخادم."
+        },
+        {
+          "name": "MongoDB",
+          "level": 80,
+          "description": "خبرة في تصميم قاعدة البيانات وتحسين الاستعلامات ونمذجة البيانات NoSQL."
+        },
+        {
+          "name": "Angular",
+          "level": 75,
+          "description": "متمرس في إطار Angular و TypeScript والهندسة المعمارية القائمة على المكونات."
+        },
+        {
+          "name": "Python",
+          "level": 70,
+          "description": "تطوير خلفي مع Django و Flask ومعالجة البيانات ونصوص الأتمتة."
+        }
+      ]
+    },
+    "contact": {
+      "sectionHeading": {
+        "miniTitle": "التواصل",
+        "title": "دعنا نناقش <span>مشروعك</span>",
+        "subTitle": "متاح للعمل المستقل إذا جاء المشروع المناسب. لا تتردد في التواصل معي لمناقشة احتياجاتك في تطوير الويب."
+      },
+      "contactImg": "/images/contact-us.png",
+      "contactInfo": [
+        {
+          "title": "اكتب بريد إلكتروني",
+          "email": "salamahassanein@gmail.com"
+        },
+        {
+          "title": "اتصل بي مباشرة",
+          "tel": "+7 993 287 3992"
+        }
+      ]
+    }
+  },
+  "common": {
+    "logoAlt": "سلامة مالك - مطور متكامل",
+    "backToTop": "الرجوع للأعلى"
+  },
+  "contact": {
+    "followMe": "تابعني",
+    "info": {
+      "heading": "تواصل معي",
+      "description": "هل أنت جاهز لبدء مشروعك القادم؟ دعنا نتحدث عن كيفية مساعدتي لك في تنفيذ أفكارك.",
+      "copy": "نسخ {{field}}",
+      "toastTitle": "تم النسخ",
+      "toastDescription": "تم نسخ {{value}} إلى الحافظة."
+    }
+  },
+  "languageSwitcher": {
+    "selectLanguage": "اختر اللغة",
+    "languageNames": {
+      "en": "الإنجليزية",
+      "ar": "العربية",
+      "ru": "الروسية",
+      "de": "الألمانية",
+      "fr": "الفرنسية"
+    }
+  },
+  "themeSwitcher": {
+    "darkModeLabel": "الوضع الداكن مُفعّل"
+  },
+  "navigation": {
+    "moreOptions": "خيارات إضافية",
+    "close": "إغلاق",
+    "openMore": "فتح المزيد من الخيارات",
+    "more": "المزيد"
+  },
+  "hero": {
+    "downloadCv": "تحميل السيرة الذاتية"
+  },
+  "social": {
+    "icons": {
+      "fallbackName": "رابط اجتماعي",
+      "open": "فتح {{name}}",
+      "khamsatAlt": "خمسات"
+    }
+  },
+  "loading": {
+    "aria": "جارٍ التحميل",
+    "title": "جارٍ التحميل...",
+    "description": "يرجى الانتظار بينما نعد تجربتك"
+  },
+  "errorBoundary": {
+    "title": "حدث خطأ ما",
+    "description": "نأسف، حدث أمر غير متوقع. يرجى إعادة تحميل الصفحة.",
+    "action": "إعادة تحميل الصفحة"
+  }
+}

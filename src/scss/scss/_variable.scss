@@ -1,103 +1,46 @@
+$highlight-magenta: #FF3CAC;
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
 
 $px-font: 'Space Grotesk', sans-serif !default;
 
-// Dark mode palette built around the refreshed brand colors
-$palette-night: #0d0d0d;
-$palette-indigo: #312e8c;
-$palette-violet: #774ad9;
-$palette-sky: #3d90d9;
-$palette-cyan: #23b7d9;
+// Modern Dark Portfolio Design System
+// Primary Color Palette
+$px-bg-primary: #0a0a0a;
+$px-bg-secondary: #1a1a1a;
+$px-bg-tertiary: #111827;
+$px-bg-quaternary: #1f2937;
 
-$dark-bg: $palette-night;
-$dark-surface: mix($palette-night, $palette-indigo, 85%);
-$dark-surface-alt: mix($palette-night, $palette-indigo, 70%);
-$dark-surface-strong: mix($palette-night, $palette-violet, 60%);
-$dark-text-primary: #f5f4ff;
-$dark-text-secondary: mix(#f5f4ff, $palette-indigo, 75%);
-$dark-text-tertiary: mix(#f5f4ff, $palette-indigo, 60%);
-$dark-text-muted: mix(#f5f4ff, $palette-indigo, 45%);
-$dark-accent: $palette-violet;
-$dark-accent-hover: lighten($dark-accent, 7%);
+// Text Colors
+$px-text-primary: #ffffff;
+$px-text-secondary: #a0a0a0;
+$px-text-tertiary: #9ca3af;
+$px-text-muted: #6b7280;
 
-// Shared accent palette inspired by the logo system
-$accent-secondary: $palette-sky;
-$accent-success: mix($palette-cyan, #ffffff, 60%);
-$accent-warning: mix($palette-violet, $palette-sky, 45%);
-$accent-error: mix($palette-violet, $palette-night, 55%);
+// Accent Colors
+$px-accent-primary: #3b82f6;
+$px-accent-secondary: #8b5cf6;
+$px-accent-success: #10b981;
+$px-accent-warning: #f59e0b;
+$px-accent-error: #ef4444;
 
-// Utility colors and gradients
-$highlight-cyan: $palette-cyan;
-$highlight-magenta: lighten($palette-violet, 5%);
-$highlight-purple: mix($palette-indigo, $palette-violet, 65%);
-$highlight-violet: lighten($palette-violet, 12%);
-$highlight-pink: lighten($palette-violet, 25%);
-$highlight-green: mix($palette-cyan, $palette-violet, 55%);
-$highlight-teal: mix($palette-cyan, $palette-indigo, 70%);
-$highlight-orange: mix($palette-sky, $palette-violet, 40%);
-$highlight-amber: mix($palette-sky, #ffffff, 55%);
-$highlight-sky: $palette-sky;
-$highlight-steel: mix($palette-indigo, $palette-night, 75%);
-$highlight-charcoal: mix($palette-indigo, $palette-night, 85%);
-$neutral-muted: mix(#ffffff, $palette-indigo, 12%);
-$neutral-soft: mix(#ffffff, $palette-indigo, 6%);
-$neutral-line: rgba($palette-sky, 0.4);
-$glow-space-start: mix($palette-indigo, $palette-night, 72%);
-$glow-space-end: mix($palette-violet, $palette-night, 65%);
-$brand-secondary: $palette-violet;
-$brand-secondary-alt: $palette-sky;
-$brand-surface-soft: mix($palette-violet, #ffffff, 82%);
-$brand-hero-primary: $palette-violet;
-$brand-hero-secondary: $palette-cyan;
-$brand-hero-tertiary: mix($palette-sky, $palette-violet, 50%);
-$brand-robot-primary: $palette-sky;
-$brand-robot-secondary: $palette-violet;
-$brand-robot-tertiary: $palette-cyan;
-$brand-robot-base: mix($palette-indigo, $palette-night, 65%);
-$brand-robot-base-alt: mix($palette-indigo, $palette-night, 72%);
-$brand-robot-glow: $palette-cyan;
-$brand-dribbble-start: $palette-violet;
-$brand-dribbble-end: $palette-cyan;
-$brand-facebook-start: $palette-sky;
-$brand-facebook-end: $palette-cyan;
-$brand-linkedin-start: $palette-indigo;
-$brand-linkedin-end: $palette-sky;
-$brand-github-start: mix($palette-night, $palette-indigo, 80%);
-$brand-github-end: mix($palette-night, $palette-indigo, 92%);
-$brand-producthunt-start: $palette-violet;
-$brand-producthunt-end: $palette-sky;
-$brand-twitter-start: $palette-sky;
-$brand-twitter-end: $palette-cyan;
-$brand-contact-primary: $palette-cyan;
-$brand-react: $palette-cyan;
-$brand-typescript: $palette-sky;
-$brand-next: $palette-night;
-$brand-tailwind: $palette-cyan;
-$brand-three: $palette-indigo;
-$brand-node: mix($palette-indigo, $palette-violet, 65%);
-$brand-python: $palette-sky;
-$brand-mongodb: mix($palette-indigo, $palette-cyan, 55%);
-$brand-docker: $palette-cyan;
-$brand-aws: mix($palette-violet, $palette-sky, 50%);
+// Light Mode Colors (Complementary)
+$px-light-bg-primary: #ffffff;
+$px-light-bg-secondary: #f8fafc;
+$px-light-bg-tertiary: #f1f5f9;
+$px-light-bg-quaternary: #e2e8f0;
 
-// Legacy compatibility aliases
-$px-bg-primary: $dark-bg;
-$px-bg-secondary: $dark-surface;
-$px-bg-tertiary: $dark-surface-alt;
-$px-bg-quaternary: $dark-surface-strong;
-$px-text-primary: $dark-text-primary;
-$px-text-secondary: $dark-text-secondary;
-$px-text-tertiary: $dark-text-tertiary;
-$px-text-muted: $dark-text-muted;
-$px-accent-primary: $dark-accent;
-$px-accent-secondary: $accent-secondary;
-$px-accent-success: $accent-success;
-$px-accent-warning: $accent-warning;
-$px-accent-error: $accent-error;
+$px-light-text-primary: #0f172a;
+$px-light-text-secondary: #475569;
+$px-light-text-tertiary: #64748b;
+$px-light-text-muted: #94a3b8;
+
+// Legacy variables for compatibility
 $px-theme: $px-accent-primary;
-$px-theme-rgb: 119, 74, 217;
+$px-theme-rgb: 59, 130, 246;
 $px-white: $px-text-primary;
 $px-black: $px-bg-primary;
+
+$highlight-purple: #a259ff;
 $px-text: $px-text-secondary;
 $px-heading: $px-text-primary;
 
