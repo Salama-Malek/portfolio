@@ -456,7 +456,7 @@ textarea.form-control {
 }
 
 .contact-section {
-  --section-bg: linear-gradient(135deg, rgba(9, 18, 64, 0.95) 0%, rgba(3, 84, 63, 0.9) 55%, rgba(8, 47, 73, 0.95) 100%);
+  --section-bg: var(--px-gradient-alt);
   --section-label-color: rgba(224, 242, 254, 0.85);
   --section-label-text: #7dd3fc;
   --section-label-gradient: linear-gradient(135deg, rgba(59, 130, 246, 0.2) 0%, rgba(20, 184, 166, 0.2) 100%);
@@ -473,7 +473,7 @@ textarea.form-control {
   overflow: hidden;
 
   .contact-content {
-    background: var(--px-gray-1);
+    background: var(--px-surface-primary);
     border-radius: 20px;
     overflow: hidden;
     display: grid;
@@ -485,7 +485,7 @@ textarea.form-control {
   }
 
   .contact-info-wrapper {
-    background: linear-gradient(135deg, darken($px-theme, 10%), $px-theme);
+    background: var(--px-gradient-brand);
     color: var(--px-white);
     padding: 40px;
     display: flex;

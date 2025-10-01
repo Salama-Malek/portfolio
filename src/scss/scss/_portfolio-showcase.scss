@@ -1,6 +1,6 @@
 /* Portfolio Showcase Styles */
 .portfolio-showcase-section {
-  --section-bg: linear-gradient(135deg, rgba(32, 12, 58, 0.95) 0%, rgba(76, 29, 149, 0.92) 45%, rgba(17, 24, 39, 0.96) 100%);
+  --section-bg: var(--px-bg);
   --section-label-color: rgba(255, 240, 255, 0.85);
   --section-label-text: #ffd1f7;
   --section-label-gradient: linear-gradient(135deg, rgba(255, 60, 172, 0.22) 0%, rgba(119, 74, 217, 0.22) 100%);
@@ -15,21 +15,7 @@
   background: var(--section-bg);
   position: relative;
   overflow: hidden;
-  
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: 
-      radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
-      radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.3) 0%, transparent 50%),
-      radial-gradient(circle at 40% 40%, rgba(120, 119, 198, 0.2) 0%, transparent 50%);
-    pointer-events: none;
-  }
-  
+
   .container {
     position: relative;
     z-index: 2;

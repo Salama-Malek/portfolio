@@ -5,7 +5,7 @@
   justify-content: center;
   border-radius: 50px;
   border: 2px solid var(--px-accent-primary);
-  background: var(--px-gradient-primary);
+  background: var(--px-gradient-brand);
   color: var(--px-text-primary);
   text-decoration: none;
   transition: all 0.3s ease;
@@ -51,14 +51,14 @@
   }
   
   &.dark {
-    background: var(--px-bg-primary);
-    border: 2px solid var(--px-bg-primary);
+    background: var(--px-bg);
+    border: 2px solid var(--px-bg);
     color: var(--px-text-primary);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     
     &:hover {
       background: var(--px-text-primary);
-      color: var(--px-bg-primary);
+      color: var(--px-bg);
       transform: translateY(-2px);
     }
   }
@@ -79,7 +79,7 @@
   &.white {
     background: var(--px-text-primary);
     border: 2px solid var(--px-text-primary);
-    color: var(--px-bg-primary);
+    color: var(--px-bg);
     
     &:hover {
       background: transparent;

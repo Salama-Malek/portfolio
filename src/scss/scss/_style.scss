@@ -8,7 +8,7 @@ body {
   --bs-body-font-size: 1rem;
   --bs-body-line-height: 1.6;
   overflow-x: hidden;
-  background: var(--px-gradient-bg);
+  background: var(--px-bg);
   min-height: 100vh;
 }
 
@@ -227,6 +227,8 @@ a {
 *   About
 ---------------------------*/
 .about-section {
+  --section-bg: var(--px-bg-secondary);
+  background: var(--section-bg);
   overflow: hidden;
   .container {
     position: relative;
@@ -399,7 +401,7 @@ a {
         display: flex;
         align-items: center;
         justify-content: center;
-        background: var(--px-gradient-primary);
+        background: var(--px-gradient-brand);
         color: var(--px-text-primary);
         font-size: 20px;
         border-radius: 50%;
@@ -457,7 +459,7 @@ a {
     .icon {
       width: 60px;
       height: 60px;
-      background: var(--px-gradient-primary);
+      background: var(--px-gradient-brand);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -533,7 +535,7 @@ a {
   .ex-left {
     padding: 25px;
     border-radius: 12px;
-    background: var(--px-gradient-primary);
+    background: var(--px-gradient-brand);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
     transition: all 0.3s ease;
     
@@ -567,7 +569,7 @@ a {
       padding: 10px 20px;
       border-radius: 30px;
       background: var(--px-text-primary);
-      color: var(--px-bg-primary);
+      color: var(--px-bg);
       font-size: 12px;
       text-transform: uppercase;
       line-height: 1;
@@ -749,7 +751,7 @@ a {
       transition: all 0.3s ease;
       
       &:focus {
-        background: var(--px-bg-primary);
+        background: var(--px-bg);
         border-color: var(--px-accent-primary);
         box-shadow: 0 0 0 3px rgba(119, 74, 217, 0.18);
       }
