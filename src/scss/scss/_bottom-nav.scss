@@ -214,7 +214,7 @@
       font-weight: 700;
       font-size: 1.2rem;
       color: rgba(255, 255, 255, 0.9);
-      background: linear-gradient(135deg, #667eea, #764ba2);
+      background: var(--gradient-brand);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;

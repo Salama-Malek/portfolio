@@ -32,7 +32,6 @@ export default function Hero({ data = {}, socialData = [] }) {
       <Particles />
       <div className="hero-liquid-container">
         <LiquidEther
-          colors={[ '#5227FF', '#FF9FFC', '#B19EEF' ]}
           mouseForce={20}
           cursorSize={100}
           isViscous={false}

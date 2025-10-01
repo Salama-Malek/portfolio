@@ -13,7 +13,7 @@
     .header-icon {
       width: 80px;
       height: 80px;
-      background: linear-gradient(135deg, #0788ff, #00d4ff);
+      background: var(--gradient-contact);
       border-radius: 50%;
       display: flex;
       align-items: center;
@@ -88,7 +88,7 @@
     .form-icon {
       width: 70px;
       height: 70px;
-      background: linear-gradient(135deg, #0788ff, #00d4ff);
+      background: var(--gradient-contact);
       border-radius: 20px;
       display: flex;
       align-items: center;
@@ -141,7 +141,7 @@
     border-bottom: 1px solid rgba(7, 136, 255, 0.3);
     
     svg {
-      color: #0788ff;
+      color: var(--brand-contact-primary);
       font-size: 24px;
       margin-bottom: 10px;
       display: block;
@@ -181,7 +181,7 @@
     }
     
     svg {
-      color: #0788ff;
+      color: var(--brand-contact-primary);
       font-size: 18px;
       background: rgba(7, 136, 255, 0.1);
       padding: 8px;
@@ -229,7 +229,7 @@
       .stat-number {
         font-size: 24px;
         font-weight: 700;
-        color: #0788ff;
+        color: var(--brand-contact-primary);
         line-height: 1;
         margin-bottom: 5px;
       }
@@ -342,8 +342,8 @@ textarea.form-control {
       }
       
       &.active {
-        background: linear-gradient(135deg, #0788ff, #00d4ff);
-        border-color: #0788ff;
+        background: var(--gradient-contact);
+        border-color: var(--brand-contact-primary);
         transform: translateY(-2px);
         box-shadow: 0 12px 30px rgba(7, 136, 255, 0.3);
       }

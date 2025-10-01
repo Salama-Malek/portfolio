@@ -1,4 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
+import { getCssVariableValue } from '../utils/themeTokens';
+import { useThemeContext } from '../ThemeProvider';
 
 const Robot3DLoader = ({ onLoad }) => {
   const [isLoading, setIsLoading] = useState(true);
@@ -15,8 +17,26 @@ const Robot3DLoader = ({ onLoad }) => {
 
   if (!isLoading) return null;
 
+  const { theme } = useThemeContext();
+  const overlayColor = useMemo(
+    () => getCssVariableValue('--loader-overlay', 'rgba(0, 0, 0, 0.8)'),
+    [theme]
+  );
+  const spinnerTrack = useMemo(
+    () => getCssVariableValue('--loader-spinner-track', 'rgba(59, 130, 246, 0.3)'),
+    [theme]
+  );
+  const spinnerBorder = useMemo(
+    () => getCssVariableValue('--loader-spinner-border', '#3b82f6'),
+    [theme]
+  );
+  const textColor = useMemo(
+    () => getCssVariableValue('--text-primary', '#ffffff'),
+    [theme]
+  );
+
   return (
-    <div 
+    <div
       className="robot-loader"
       style={{
         position: 'absolute',
@@ -24,24 +44,24 @@ const Robot3DLoader = ({ onLoad }) => {
         left: 0,
         width: '100%',
         height: '100%',
-        background: 'rgba(0, 0, 0, 0.8)',
+        background: overlayColor,
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
         zIndex: 1000,
         borderRadius: '20px',
-        color: 'white',
+        color: textColor,
         fontFamily: 'Space Grotesk, sans-serif'
       }}
     >
-      <div 
+      <div
         className="loader-spinner"
         style={{
           width: '60px',
           height: '60px',
-          border: '4px solid rgba(59, 130, 246, 0.3)',
-          borderTop: '4px solid #3b82f6',
+          border: `4px solid ${spinnerTrack}`,
+          borderTop: `4px solid ${spinnerBorder}`,
           borderRadius: '50%',
           animation: 'spin 1s linear infinite',
           marginBottom: '20px'

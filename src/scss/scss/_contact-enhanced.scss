@@ -19,7 +19,7 @@
   }
 
   .contact-info-wrapper {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: var(--gradient-brand);
     color: white;
     padding: 50px 40px;
     display: flex;
@@ -87,7 +87,7 @@
       font-size: 2rem;
       font-weight: 700;
       margin-bottom: 15px;
-      background: linear-gradient(45deg, #fff, #e0e7ff);
+      background: var(--gradient-brand-soft);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -166,7 +166,7 @@
         transition: all 0.3s ease;
 
         &:hover {
-          color: #e0e7ff;
+          color: var(--brand-surface-soft);
           text-decoration: underline;
         }
       }
@@ -280,7 +280,7 @@
       font-weight: 600;
       border-radius: 12px;
       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      background: var(--gradient-brand);
       border: none;
       color: white;
       display: inline-flex;
