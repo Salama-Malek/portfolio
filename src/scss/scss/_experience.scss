@@ -158,7 +158,7 @@
     top: 20px;
     width: 60px;
     height: 60px;
-    background: white;
+    background: var(--px-bg-tertiary);
     border: 4px solid var(--px-theme);
     border-radius: 50%;
     display: flex;
@@ -189,7 +189,7 @@
   
   .timeline-content {
     .experience-card {
-      background: white;
+      background: var(--px-bg-tertiary);
       border-radius: 20px;
       padding: 25px;
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
@@ -451,7 +451,7 @@
 }
 
 .experience-modal {
-  background: white;
+  background: var(--px-bg-tertiary);
   border-radius: 20px;
   max-width: 900px;
   width: 100%;
@@ -486,7 +486,7 @@
       
       h3 {
         margin: 0 0 10px;
-        color: var(--px-black);
+        color: var(--px-text-primary);
         font-weight: 700;
         font-size: 28px;
       }

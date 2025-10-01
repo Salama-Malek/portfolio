@@ -491,7 +491,7 @@
   position: relative;
   overflow: hidden;
   border-radius: 20px;
-  background: white;
+  background: var(--px-bg-tertiary);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   
@@ -531,7 +531,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(135deg, rgba(7, 136, 255, 0.95) 0%, rgba(0, 212, 255, 0.95) 100%);
+  background: var(--px-gradient-brand);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -546,7 +546,7 @@
     .action-btn {
       width: 60px;
       height: 60px;
-      background: white;
+      background: var(--px-bg-tertiary);
       border-radius: 50%;
       display: flex;
       align-items: center;
@@ -655,7 +655,7 @@
 
 .project-body {
   padding: 25px;
-  background: white;
+  background: var(--px-bg-tertiary);
   
   .text {
     .project-header {
@@ -665,7 +665,7 @@
       margin-bottom: 12px;
       
       .project-title {
-        color: var(--px-black);
+        color: var(--px-text-primary);
         font-weight: 700;
         font-size: 18px;
         margin: 0;

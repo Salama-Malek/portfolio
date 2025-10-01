@@ -1,5 +1,5 @@
 .testimonial-section {
-  --section-bg: linear-gradient(135deg, rgba(84, 22, 45, 0.92) 0%, rgba(120, 53, 15, 0.9) 45%, rgba(30, 30, 60, 0.95) 100%);
+  --section-bg: var(--px-gradient-brand);
   --section-label-color: rgba(255, 248, 231, 0.85);
   --section-label-text: #fbd38d;
   --section-label-gradient: linear-gradient(135deg, rgba(245, 158, 11, 0.2) 0%, rgba(244, 114, 182, 0.2) 100%);
@@ -23,7 +23,7 @@
 }
 
 .testimonial-card {
-  background: var(--px-bg);
+  background: var(--px-bg-tertiary);
   padding: 40px;
   border-radius: 20px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
@@ -91,7 +91,7 @@
   margin-top: 30px;
 
   .nav-btn {
-    background: var(--px-bg);
+    background: var(--px-bg-tertiary);
     border: 1px solid var(--px-gray-3);
     width: 45px;
     height: 45px;
