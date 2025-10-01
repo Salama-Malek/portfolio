@@ -667,7 +667,7 @@
 }
 
 .experience-section {
-  --section-bg: linear-gradient(135deg, rgba(8, 47, 73, 0.95) 0%, rgba(6, 78, 59, 0.9) 55%, rgba(15, 23, 42, 0.95) 100%);
+  --section-bg: var(--px-bg-secondary);
   --section-label-color: rgba(221, 255, 240, 0.85);
   --section-label-text: #5eead4;
   --section-label-gradient: linear-gradient(135deg, rgba(16, 185, 129, 0.22) 0%, rgba(56, 189, 248, 0.22) 100%);
