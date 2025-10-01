@@ -65,7 +65,6 @@ export default function Header() {
           <div className="header-actions d-none d-lg-flex">
             <div className="d-flex align-items-center gap-3">
               <LanguageSwitcher />
-              <ThemeSwitcher />
             </div>
             <ScrollLink to="contactus" smooth={true} offset={-80} duration={500} className="px-btn">
               {t('header.cta')}
