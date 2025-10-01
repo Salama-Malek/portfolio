@@ -30,13 +30,14 @@
   z-index: 1000;
   padding: 20px 0;
   transition: all 0.3s ease;
+  background: transparent;
 
   @media (max-width: 991px) {
     padding: 15px 0;
   }
 
   &.scrolled {
-    background-color: var(--px-surface-primary);
+    background-color: transparent;
     backdrop-filter: saturate(180%) blur(20px);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     border-bottom: 1px solid var(--px-border-primary);
@@ -188,7 +189,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: var(--px-surface-primary);
+  background-color: var(--px-bg-quaternary);
   backdrop-filter: saturate(180%) blur(20px);
   z-index: 1001;
   display: flex;
