@@ -99,7 +99,7 @@ img {
 /* Section
 ---------------------*/
 .section {
-  --section-bg: transparent;
+  --section-bg: var(--px-bg);
   --section-label-color: rgba(255, 255, 255, 0.8);
   --section-label-text: var(--tone-purple, rgba($highlight-purple, 0.9));
   --section-label-gradient: linear-gradient(135deg, rgba($highlight-purple, 0.2) 0%, rgba($highlight-magenta, 0.2) 100%);

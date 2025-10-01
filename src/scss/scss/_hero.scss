@@ -3,6 +3,7 @@
 ---------------------------*/
 .hero-section {
   position: relative;
+  background: var(--px-bg);
   height: 100vh;
   min-height: 800px;
   display: flex;
@@ -113,7 +114,7 @@
       transform: translate(-50%, -50%);
       width: 90%;
       height: 90%;
-      background: var(--px-gradient-primary);
+      background: var(--px-gradient-brand);
       opacity: 0.1;
       border-radius: 40% 60% 60% 40% / 70% 30% 70% 30%;
       animation: blob 8s ease-in-out infinite;

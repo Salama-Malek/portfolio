@@ -1,8 +1,10 @@
 /* Enhanced Contact Section Styles */
 
 .contact-section {
+  --section-bg: var(--px-gradient-alt);
   position: relative;
   overflow: hidden;
+  background: var(--section-bg);
   
   .contact-content {
     background: var(--px-surface-primary);
@@ -19,7 +21,7 @@
   }
 
   .contact-info-wrapper {
-    background: var(--gradient-brand);
+    background: var(--px-gradient-brand);
     color: white;
     padding: 50px 40px;
     display: flex;
@@ -48,7 +50,7 @@
         right: -50px;
         width: 200px;
         height: 200px;
-        background: rgba(255, 255, 255, 0.1);
+        background: var(--px-surface-primary);
         border-radius: 50%;
         animation: float 6s ease-in-out infinite;
       }
@@ -59,7 +61,7 @@
         left: -30px;
         width: 150px;
         height: 150px;
-        background: rgba(255, 255, 255, 0.05);
+        background: var(--px-surface-secondary);
         border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
         animation: float 8s ease-in-out infinite reverse;
       }
@@ -111,23 +113,23 @@
     align-items: center;
     gap: 20px;
     padding: 20px;
-    background: rgba(255, 255, 255, 0.1);
+    background: var(--px-surface-primary);
     border-radius: 16px;
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid var(--px-border-primary);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     cursor: pointer;
 
     &:hover {
       transform: translateX(10px);
-      background: rgba(255, 255, 255, 0.15);
+      background: var(--px-surface-hover);
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     }
 
     .contact-info-icon {
       width: 50px;
       height: 50px;
-      background: rgba(255, 255, 255, 0.2);
+      background: var(--px-surface-secondary);
       border-radius: 12px;
       display: flex;
       align-items: center;
@@ -151,7 +153,7 @@
 
       h6 {
         font-size: 0.9rem;
-        opacity: 0.8;
+        opacity: 0.85;
         margin-bottom: 5px;
         text-transform: uppercase;
         letter-spacing: 1px;
@@ -166,7 +168,7 @@
         transition: all 0.3s ease;
 
         &:hover {
-          color: var(--brand-surface-soft);
+          color: var(--px-accent-primary);
           text-decoration: underline;
         }
       }
@@ -280,7 +282,7 @@
       font-weight: 600;
       border-radius: 12px;
       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      background: var(--gradient-brand);
+      background: var(--px-gradient-brand);
       border: none;
       color: white;
       display: inline-flex;

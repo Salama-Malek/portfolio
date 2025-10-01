@@ -1,3 +1,8 @@
+section#services {
+  --section-bg: var(--px-bg);
+  background: var(--section-bg);
+}
+
 /* Enhanced Services Section Styles */
 
 /* Service Statistics */
@@ -217,7 +222,7 @@
 
 /* Enhanced Service Cards */
 .service-card {
-  background: white;
+  background: var(--px-bg-tertiary);
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
@@ -261,7 +266,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(7, 136, 255, 0.95) 0%, rgba(0, 212, 255, 0.95) 100%);
+    background: var(--px-gradient-brand);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -489,7 +494,7 @@
 }
 
 .service-modal {
-  background: white;
+  background: var(--px-bg-tertiary);
   border-radius: 20px;
   max-width: 900px;
   width: 100%;
@@ -507,7 +512,7 @@
     
     h3 {
       margin: 0;
-      color: var(--px-black);
+      color: var(--px-text-primary);
       font-weight: 700;
       font-size: 24px;
     }
