@@ -853,7 +853,7 @@
     }
   },
   "themeSwitcher": {
-    "toggle": "Toggle theme"
+    "darkModeLabel": "Dark mode active"
   },
   "navigation": {
     "moreOptions": "More Options",
