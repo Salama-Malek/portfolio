@@ -336,11 +336,17 @@
             font-weight: 500;
             border: 1px solid var(--tone-muted);
             transition: all 0.3s ease;
-            
+
             &:hover {
-              background: var(--px-theme);
-              color: white;
-              border-color: var(--px-theme);
+              background: rgba(49, 46, 140, 0.18);
+              color: var(--palette-indigo);
+              border-color: rgba(49, 46, 140, 0.35);
+            }
+
+            &.active {
+              background: rgba(61, 144, 217, 0.18);
+              color: var(--palette-sky);
+              border-color: rgba(61, 144, 217, 0.45);
             }
           }
         }
@@ -736,15 +742,20 @@
         transform: translateY(-50%);
         width: 4px;
         height: 0;
-        background: var(--px-primary);
+        background: var(--palette-sky);
         border-radius: 2px;
         transition: height 0.3s ease;
       }
 
-      &.active,
       &:hover {
-        background: var(--px-bg);
-        color: var(--px-heading);
+        background: rgba(49, 46, 140, 0.18);
+        color: var(--palette-indigo);
+      }
+
+      &.active {
+        background: rgba(61, 144, 217, 0.18);
+        color: var(--palette-sky);
+        box-shadow: 0 12px 28px rgba(61, 144, 217, 0.22);
       }
 
       &.active::before {
@@ -818,9 +829,11 @@
       border-radius: 10px;
       overflow: hidden;
       transition: background-color 0.3s ease;
+      border: 1px solid rgba(49, 46, 140, 0.25);
 
       &.active {
-        background: var(--px-bg);
+        background: rgba(61, 144, 217, 0.12);
+        border-color: rgba(61, 144, 217, 0.35);
       }
 
       .accordion-header {
@@ -835,6 +848,11 @@
         font-size: 1rem;
         font-weight: 500;
         color: var(--px-heading);
+        transition: color 0.3s ease;
+
+        &:hover {
+          color: var(--palette-indigo);
+        }
       }
 
       .accordion-icon {
@@ -844,6 +862,7 @@
 
       &.active .accordion-icon {
         transform: rotate(180deg);
+        color: var(--palette-sky);
       }
 
       .accordion-content {

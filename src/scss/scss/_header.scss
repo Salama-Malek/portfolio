@@ -79,12 +79,17 @@
     transition: all 0.3s ease;
     background: transparent;
 
-    &:hover,
-    &.active {
-      color: var(--px-accent-primary);
-      background: var(--px-surface-primary);
+    &:hover {
+      color: var(--palette-indigo);
+      background: rgba(61, 144, 217, 0.12);
       transform: translateY(-2px);
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 10px 24px rgba(49, 46, 140, 0.25);
+    }
+
+    &.active {
+      color: var(--palette-sky);
+      background: rgba(35, 183, 217, 0.18);
+      box-shadow: 0 12px 26px rgba(35, 183, 217, 0.2);
     }
 
     &::after {
