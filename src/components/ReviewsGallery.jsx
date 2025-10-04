@@ -1,7 +1,10 @@
 import React, { useMemo, useState, useEffect } from 'react';
 import { Icon } from '@iconify/react';
+import { useTranslation } from 'react-i18next';
 
 export default function ReviewsGallery({ images = [], heading }) {
+  const { i18n } = useTranslation();
+  const isRTL = i18n.dir() === 'rtl';
   const [activeIndex, setActiveIndex] = useState(null);
 
   const shapedImages = useMemo(() => {
@@ -94,18 +97,17 @@ export default function ReviewsGallery({ images = [], heading }) {
             <Icon icon="bi:x" />
           </button>
           <button className="lightbox-nav prev" onClick={showPrev} aria-label="Previous">
-            <Icon icon="bi:arrow-left" />
+            <Icon icon={isRTL ? "bi:arrow-right" : "bi:arrow-left"} />
           </button>
           <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
             <img src={images[activeIndex]} alt={`Review ${activeIndex + 1}`} />
           </div>
           <button className="lightbox-nav next" onClick={showNext} aria-label="Next">
-            <Icon icon="bi:arrow-right" />
+            <Icon icon={isRTL ? "bi:arrow-left" : "bi:arrow-right"} />
           </button>
         </div>
       )}
     </section>
   );
 }
-
 

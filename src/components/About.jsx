@@ -1,5 +1,6 @@
 import React from 'react';
 import parser from 'html-react-parser';
+import SectionHeading from './SectionHeading';
 import Timeline from './Timeline';
 import Skillbar from './Skillbar';
 import FunFact from './FunFact';
@@ -28,7 +29,7 @@ export default function About({ data = {} }) {
   });
 
   return (
-    <section className="about-section section" id="about">
+    <section className="about-section section" id="about" style={{ minHeight: '100vh', width: '100vw' }}>
       <div className="container">
         <div className="row align-items-start justify-content-center gy-5">
           <div
@@ -48,10 +49,8 @@ export default function About({ data = {} }) {
               data-aos-duration="1200"
               data-aos-delay="400"
             >
-              <div className="section-heading">
-                {miniTitle && <h6>{miniTitle}</h6>}
-                {title && <h2>{parser(title)}</h2>}
-              </div>
+              {/* Use SectionHeading for consistency with other sections */}
+              <SectionHeading miniTitle={miniTitle} title={title} />
               <p>{description}</p>
               <a href={btnUrl} className="px-btn">
                 {btnText}

@@ -4,7 +4,8 @@ import { useTranslation } from 'react-i18next';
 import TechIcon from '../utils/techIcons';
 
 export default function ProjectCard({ project, onClick }) {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const isRTL = i18n.dir() === 'rtl';
   const { 
     thumbUrl, 
     title, 
@@ -96,7 +97,7 @@ export default function ProjectCard({ project, onClick }) {
         <div className="project-card-actions">
           <button className="project-card-btn">
             <span>{t('portfolioShowcase.projectCard.details')}</span>
-            <Icon icon="bi:arrow-right" />
+            <Icon icon={isRTL ? 'bi:arrow-left' : 'bi:arrow-right'} />
           </button>
           {demoUrl && (
             <button className="project-card-demo" onClick={handleDemoClick}>
@@ -109,3 +110,4 @@ export default function ProjectCard({ project, onClick }) {
     </div>
   );
 }
+

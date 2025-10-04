@@ -14,7 +14,7 @@ export default function Header() {
   const navLinks = [
     { to: 'home', label: 'header.nav.home' },
     { to: 'about', label: 'header.nav.about' },
-    { to: 'portfolio-showcase', label: 'header.nav.portfolio' },
+    { to: 'project', label: 'header.nav.portfolio' }, // <-- changed from 'portfolio-showcase' to 'project'
     { to: 'experience', label: 'header.nav.experience' },
     { to: 'testimonial', label: 'header.nav.testimonials' },
     { to: 'contactus', label: 'header.nav.contact' },

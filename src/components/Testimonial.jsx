@@ -3,8 +3,12 @@ import SectionHeading from './SectionHeading';
 import Slider from 'react-slick';
 import Ratings from './Ratings';
 import { Icon } from '@iconify/react';
+import { useTranslation } from 'react-i18next';
 
 export default function Testimonial({ data = {} }) {
+const { t, i18n } = useTranslation();
+  const isRTL = i18n.dir() === 'rtl';
+
   const { sectionHeading = {}, allTestimonial = [] } = data;
   const sliderRef = useRef(null);
 
@@ -24,7 +28,7 @@ export default function Testimonial({ data = {} }) {
   };
 
   return (
-    <section className="testimonial-section section" id="testimonial">
+    <section className="testimonial-section section" id="testimonial" style={{ minHeight: '100vh', width: '100vw' }}>
       <div className="container">
         <SectionHeading {...sectionHeading} variant="text-center" />
         <div className="testimonial-slider-wrapper" data-aos="fade-up" data-aos-duration="800">
@@ -52,10 +56,12 @@ export default function Testimonial({ data = {} }) {
           </div>
           <div className="slider-nav">
             <button className="nav-btn prev" onClick={() => sliderRef.current?.slickPrev()}>
-              <Icon icon="bi:arrow-left" />
+            <Icon icon={isRTL ? 'bi:arrow-right' : 'bi:arrow-left'} />
+
             </button>
             <button className="nav-btn next" onClick={() => sliderRef.current?.slickNext()}>
-              <Icon icon="bi:arrow-right" />
+            <Icon icon={isRTL ? 'bi:arrow-left' : 'bi:arrow-right'} />
+
             </button>
           </div>
         </div>

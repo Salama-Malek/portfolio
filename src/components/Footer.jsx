@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { Link as ScrollLink } from 'react-scroll';
@@ -6,6 +6,18 @@ import SocialBtns from './SocialBtns';
 
 export default function Footer({ socialData = [] }) {
   const { t } = useTranslation();
+  const [showBackToTop, setShowBackToTop] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Get hero section height
+      const hero = document.getElementById('home');
+      const heroHeight = hero ? hero.offsetHeight : 400;
+      setShowBackToTop(window.scrollY > heroHeight);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const scrollToTop = () => {
     window.scrollTo({
@@ -62,14 +74,16 @@ export default function Footer({ socialData = [] }) {
         </div>
         <div className="footer-bottom">
           <p className="copyright-text">{t('footer.copyright')}</p>
-          <button
-            className="back-to-top"
-            onClick={scrollToTop}
-            title={t('common.backToTop')}
-            aria-label={t('common.backToTop')}
-          >
-            <i className="bi bi-arrow-up"></i>
-          </button>
+          {showBackToTop && (
+            <button
+              className="back-to-top"
+              onClick={scrollToTop}
+              title={t('common.backToTop')}
+              aria-label={t('common.backToTop')}
+            >
+              <i className="bi bi-arrow-up"></i>
+            </button>
+          )}
         </div>
       </div>
     </footer>
