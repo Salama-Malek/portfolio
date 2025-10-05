@@ -17,70 +17,76 @@
 
 .testimonial-slider-wrapper {
   position: relative;
-  max-width: 800px;
+  max-width: min(960px, 100%);
   margin: 0 auto;
 }
 
 .testimonial-card {
   background: var(--px-bg-tertiary);
-  padding: 40px;
+  padding: clamp(28px, 4vw, 40px);
   border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.1);
   text-align: center;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
 
-  .testimonial-icon {
-    font-size: 3rem;
-    color: var(--px-primary);
-    opacity: 0.5;
-    margin-bottom: 20px;
-  }
+  &.testimonial-card--enhanced {
+    background: linear-gradient(135deg, rgba(79, 70, 229, 0.12), rgba(30, 64, 175, 0.18));
+    border: 1px solid rgba(99, 102, 241, 0.25);
+    box-shadow: 0 36px 68px rgba(15, 23, 42, 0.3);
 
-  .testimonial-text {
-    font-size: 1.2rem;
-    line-height: 1.7;
-    font-style: italic;
-    margin-bottom: 30px;
-  }
+    .testimonial-media {
+      display: flex;
+      justify-content: center;
+    }
 
-  .testimonial-author {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
-
-    .author-img {
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
+    .testimonial-image-trigger {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: min(100%, 640px);
+      height: clamp(260px, 55vw, 520px);
+      margin: 0 auto;
+      border-radius: 28px;
       overflow: hidden;
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
+      background: radial-gradient(circle at top, rgba(244, 244, 255, 0.65), rgba(67, 56, 202, 0.25));
+      border: 1px solid rgba(99, 102, 241, 0.35);
+      box-shadow: 0 24px 45px rgba(30, 64, 175, 0.35);
+      cursor: zoom-in;
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+
+      &:focus-visible {
+        outline: 3px solid rgba(129, 140, 248, 0.85);
+        outline-offset: 4px;
+      }
+
+      &:hover {
+        box-shadow: 0 28px 55px rgba(30, 64, 175, 0.4);
+        transform: translateY(-2px);
       }
     }
 
-    .author-info {
-      text-align: left;
+    .testimonial-image-overlay {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 20% 20%, rgba(129, 140, 248, 0.45), transparent 55%);
+      mix-blend-mode: screen;
+      opacity: 0.45;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
     }
 
-    .author-name {
-      font-weight: 600;
-      margin: 0;
+    .testimonial-image-trigger:hover .testimonial-image-overlay {
+      opacity: 0.65;
     }
 
-    .author-company {
-      font-size: 0.9rem;
-      color: var(--px-text);
+    .testimonial-image {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
     }
   }
-}
-
-.ratings {
-  display: flex;
-  gap: 3px;
-  margin-top: 5px;
-  color: var(--status-amber);
 }
 
 .slider-nav {
@@ -100,10 +106,78 @@
     transition: all 0.3s ease;
     color: var(--px-text);
 
-    &:hover {
+    &:hover,
+    &:focus-visible {
       background: var(--px-primary);
       color: var(--px-white);
       border-color: var(--px-primary);
+      outline: none;
     }
+  }
+}
+
+.testimonial-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(12, 17, 29, 0.75);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(20px, 5vw, 60px);
+  z-index: 1050;
+
+  &__content {
+    position: relative;
+    background: var(--px-bg-tertiary);
+    border-radius: 24px;
+    padding: clamp(16px, 3vw, 28px);
+    max-width: min(90vw, 960px);
+    max-height: min(90vh, 720px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 40px 90px rgba(15, 23, 42, 0.45);
+    overflow: hidden;
+  }
+
+  &__close {
+    position: absolute;
+    top: clamp(8px, 2vw, 18px);
+    inset-inline-end: clamp(8px, 2vw, 18px);
+    background: rgba(15, 23, 42, 0.75);
+    color: var(--px-white);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+
+    &:hover,
+    &:focus-visible {
+      background: var(--px-primary);
+      transform: scale(1.05);
+      outline: none;
+    }
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 16px;
+  }
+}
+
+@media (max-width: 575px) {
+  .testimonial-card {
+    padding: 24px;
+  }
+
+  .testimonial-card.testimonial-card--enhanced .testimonial-image-trigger {
+    height: clamp(220px, 70vw, 360px);
   }
 }
