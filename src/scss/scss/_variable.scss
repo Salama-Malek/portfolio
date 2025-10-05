@@ -1,4 +1,4 @@
-$highlight-magenta: #FF3CAC;
+$highlight-magenta: #ff3cac;
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
 
 $px-font: 'Space Grotesk', sans-serif !default;
@@ -6,37 +6,37 @@ $px-font: 'Space Grotesk', sans-serif !default;
 // Modern Dark Portfolio Design System
 // Primary Color Palette
 $px-bg: #0d0d0d;
-$px-bg-secondary: #121212;
-$px-bg-tertiary: #1a1a1a;
-$px-bg-quaternary: #111827;
+$px-bg-secondary: #161026;
+$px-bg-tertiary: #1f1536;
+$px-bg-quaternary: #261c44;
 
 // Text Colors
-$px-text-primary: #ffffff;
-$px-text-secondary: #a0a0a0;
-$px-text-tertiary: #9ca3af;
-$px-text-muted: #6b7280;
+$px-text-primary: #f5f5f5;
+$px-text-secondary: rgba(245, 245, 245, 0.85);
+$px-text-tertiary: rgba(245, 245, 245, 0.65);
+$px-text-muted: rgba(245, 245, 245, 0.55);
 
 // Accent Colors
-$px-accent-primary: #3b82f6;
-$px-accent-secondary: #8b5cf6;
+$px-accent-primary: #04d9d9;
+$px-accent-secondary: #04adbf;
 $px-accent-success: #10b981;
 $px-accent-warning: #f59e0b;
 $px-accent-error: #ef4444;
 
 // Surface Colors
-$px-surface-primary: rgba(17, 24, 39, 0.6);
-$px-surface-secondary: rgba(17, 24, 39, 0.45);
-$px-surface-hover: rgba(17, 24, 39, 0.75);
+$px-surface-primary: rgba(4, 217, 217, 0.12);
+$px-surface-secondary: rgba(64, 28, 140, 0.22);
+$px-surface-hover: rgba(4, 173, 191, 0.3);
 
 // Legacy variables for compatibility
 $px-theme: $px-accent-primary;
-$px-theme-rgb: 59, 130, 246;
+$px-theme-rgb: 4, 217, 217;
 $px-white: $px-text-primary;
 $px-black: $px-bg;
 
-$highlight-purple: #a259ff;
+$highlight-purple: #6f1fbf;
 $px-text: $px-text-secondary;
-$px-heading: $px-text-primary;
+$px-heading: #6f1fbf;
 
 // Breakpoints
 $px-media-xsm: 567px !default;

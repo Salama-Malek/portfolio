@@ -69,7 +69,7 @@
   .nav-link {
     padding: 10px 24px;
     text-transform: uppercase;
-    color: var(--px-text-primary);
+    color: var(--color-body-text);
     font-size: 14px;
     letter-spacing: 1px;
     font-weight: 600;
@@ -79,12 +79,17 @@
     transition: all 0.3s ease;
     background: transparent;
 
-    &:hover,
-    &.active {
-      color: var(--px-accent-primary);
-      background: var(--px-surface-primary);
+    &:hover {
+      color: var(--color-primary-1);
+      background: rgba(4, 173, 191, 0.12);
       transform: translateY(-2px);
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 10px 24px rgba(64, 28, 140, 0.25);
+    }
+
+    &.active {
+      color: var(--color-accent-1);
+      background: rgba(4, 217, 217, 0.18);
+      box-shadow: 0 12px 26px rgba(4, 173, 191, 0.25);
     }
 
     &::after {
@@ -112,8 +117,8 @@
 
 .theme-switcher {
   background: var(--gradient-accent);
-  border: 1px solid rgba(119, 74, 217, 0.55);
-  color: var(--text-primary);
+  border: 1px solid rgba(111, 31, 191, 0.55);
+  color: var(--color-body-text);
   font-size: 20px;
   width: 45px;
   height: 45px;
@@ -130,7 +135,7 @@
   }
 
   svg {
-    color: var(--text-primary);
+    color: var(--color-body-text);
   }
 }
 

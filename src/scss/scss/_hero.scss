@@ -11,6 +11,15 @@
   overflow: hidden;
   padding-top: 84px; // Added padding for the fixed header
 
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(64, 28, 140, 0.8) 0%, rgba(4, 173, 191, 0.45) 100%);
+    opacity: 0.9;
+    z-index: -2;
+  }
+
   #tsparticles {
     position: absolute;
     top: 0;
@@ -31,7 +40,7 @@
     h6 {
       font-size: clamp(1rem, 4vw, 1.25rem);
       font-weight: 600;
-      color: var(--px-accent-primary);
+      color: var(--color-accent-1);
       margin-bottom: 15px;
     }
 
@@ -40,17 +49,14 @@
       font-weight: 700;
       line-height: 1.2;
       margin-bottom: 20px;
-      background: var(--px-gradient-text);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+      color: var(--color-primary-1);
     }
 
     h2 {
       font-size: clamp(1.5rem, 6vw, 2.5rem);
       font-weight: 500;
       margin-bottom: 30px;
-      color: var(--px-text-primary);
+      color: var(--color-primary-2);
     }
 
     p {
@@ -58,7 +64,8 @@
       line-height: 1.7;
       margin-bottom: 40px;
       max-width: 600px;
-      color: var(--px-text-secondary);
+      color: var(--color-body-text);
+      opacity: 0.85;
     }
   }
 
@@ -114,8 +121,8 @@
       transform: translate(-50%, -50%);
       width: 90%;
       height: 90%;
-      background: var(--px-gradient-brand);
-      opacity: 0.1;
+      background: linear-gradient(135deg, rgba(64, 28, 140, 0.6) 0%, rgba(4, 173, 191, 0.45) 100%);
+      opacity: 0.18;
       border-radius: 40% 60% 60% 40% / 70% 30% 70% 30%;
       animation: blob 8s ease-in-out infinite;
     }

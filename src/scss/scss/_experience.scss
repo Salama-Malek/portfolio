@@ -336,11 +336,17 @@
             font-weight: 500;
             border: 1px solid var(--tone-muted);
             transition: all 0.3s ease;
-            
+
             &:hover {
-              background: var(--px-theme);
-              color: white;
-              border-color: var(--px-theme);
+              background: rgba(64, 28, 140, 0.18);
+              color: var(--color-primary-2);
+              border-color: rgba(64, 28, 140, 0.35);
+            }
+
+            &.active {
+              background: rgba(4, 217, 217, 0.18);
+              color: var(--color-accent-1);
+              border-color: rgba(4, 217, 217, 0.45);
             }
           }
         }
@@ -643,21 +649,21 @@
           
           &.cta-primary {
             background: var(--gradient-accent-soft);
-            color: white;
-            
+            color: var(--color-body-text);
+
             &:hover {
               transform: translateY(-3px);
-              box-shadow: 0 8px 25px rgba(7, 136, 255, 0.4);
+              box-shadow: 0 8px 25px rgba(4, 173, 191, 0.4);
             }
           }
-          
+
           &.cta-secondary {
             background: var(--gradient-secondary);
-            color: white;
-            
+            color: var(--color-body-text);
+
             &:hover {
               transform: translateY(-3px);
-              box-shadow: 0 8px 25px rgba(111, 66, 193, 0.4);
+              box-shadow: 0 8px 25px rgba(111, 31, 191, 0.4);
             }
           }
         }
@@ -667,17 +673,16 @@
 }
 
 .experience-section {
-  --section-bg: var(--px-bg-secondary);
-  --section-label-color: rgba(221, 255, 240, 0.85);
-  --section-label-text: #5eead4;
-  --section-label-gradient: linear-gradient(135deg, rgba(16, 185, 129, 0.22) 0%, rgba(56, 189, 248, 0.22) 100%);
-  --section-label-hover-gradient: linear-gradient(135deg, rgba(16, 185, 129, 0.32) 0%, rgba(56, 189, 248, 0.32) 100%);
-  --section-label-border: rgba(16, 185, 129, 0.4);
-  --section-label-hover-border: rgba(56, 189, 248, 0.5);
-  --section-label-hover-shadow: 0 18px 46px rgba(16, 185, 129, 0.35);
-  --section-title-gradient: linear-gradient(135deg, #34d399 0%, #38bdf8 100%);
-  --section-title-highlight: linear-gradient(135deg, rgba(34, 211, 238, 0.95) 0%, rgba(16, 185, 129, 0.95) 100%);
-  --section-title-shadow: 0 26px 58px rgba(45, 212, 191, 0.35);
+  --section-bg: var(--color-background);
+  --section-label-color: rgba(111, 31, 191, 0.7);
+  --section-label-text: var(--color-accent-2);
+  --section-label-gradient: linear-gradient(135deg, rgba(64, 28, 140, 0.28) 0%, rgba(4, 173, 191, 0.28) 100%);
+  --section-label-hover-gradient: linear-gradient(135deg, rgba(4, 217, 217, 0.32) 0%, rgba(4, 173, 191, 0.32) 100%);
+  --section-label-border: rgba(4, 173, 191, 0.4);
+  --section-label-hover-border: rgba(4, 217, 217, 0.5);
+  --section-label-hover-shadow: 0 18px 46px rgba(64, 28, 140, 0.35);
+  --section-title-color: var(--color-primary-1);
+  --section-title-underline: var(--color-accent-1);
 
   background: var(--section-bg);
   position: relative;
@@ -736,15 +741,20 @@
         transform: translateY(-50%);
         width: 4px;
         height: 0;
-        background: var(--px-primary);
+        background: var(--color-accent-1);
         border-radius: 2px;
         transition: height 0.3s ease;
       }
 
-      &.active,
       &:hover {
-        background: var(--px-bg);
-        color: var(--px-heading);
+        background: rgba(64, 28, 140, 0.18);
+        color: var(--color-primary-2);
+      }
+
+      &.active {
+        background: rgba(4, 217, 217, 0.18);
+        color: var(--color-accent-1);
+        box-shadow: 0 12px 28px rgba(4, 173, 191, 0.22);
       }
 
       &.active::before {
@@ -818,9 +828,11 @@
       border-radius: 10px;
       overflow: hidden;
       transition: background-color 0.3s ease;
+      border: 1px solid rgba(64, 28, 140, 0.25);
 
       &.active {
-        background: var(--px-bg);
+        background: rgba(4, 217, 217, 0.12);
+        border-color: rgba(4, 217, 217, 0.35);
       }
 
       .accordion-header {
@@ -835,6 +847,11 @@
         font-size: 1rem;
         font-weight: 500;
         color: var(--px-heading);
+        transition: color 0.3s ease;
+
+        &:hover {
+          color: var(--color-primary-2);
+        }
       }
 
       .accordion-icon {
@@ -844,6 +861,7 @@
 
       &.active .accordion-icon {
         transform: rotate(180deg);
+        color: var(--color-accent-1);
       }
 
       .accordion-content {
