@@ -1,10 +1,4 @@
-import React, {
-  useCallback,
-  useEffect,
-  useMemo,
-  useRef,
-  useState,
-} from 'react';
+import React, { useMemo, useRef } from 'react';
 import SectionHeading from './SectionHeading';
 import Slider from 'react-slick';
 import { Icon } from '@iconify/react';
@@ -49,12 +43,33 @@ const getActiveLanguage = (i18nInstance) => {
   return '';
 };
 
+const REVIEW_IMAGE_FILES = [
+  '11047a5cb70a289ffce3c0e6561d9409.png',
+  '12a3924ef2b896cfba174f30bfc0753e.png',
+  '2689ec40e809b37ec730a5630d44a648.png',
+  '3fefc0d7a020a8d149bd13a338a72277.png',
+  '43d8461bce3214bf3d3a830beb4e4825.png',
+  '461adbea90978a20d803b66ecc2df621.png',
+  '56ad2ac9c8e3762e5e9d83f2887f5a24.png',
+  '59b25a5867817b1a30332046c22f95f7.png',
+  '792d62d464fe2b06692e315f436fab55.png',
+  '79efb6178015069234f034d49eededf6.png',
+  '7b0ea8871f4704ecf8b2482a00d2f7fb.png',
+  '7c658841ab2b0afb39792ad9a1df3154.png',
+  'ae6b13c06b69f4552230f0d7bfadbd8b.png',
+  'c372213c22dc456333c06ee0f8e26c3b.png',
+  'c6ad1c67c637c480134fe1c4f92a4180.png',
+  'e43d41bc435f909ddd2a2dee34944bed.png',
+  'e6c53fcb3f47a75c178bc78270b51d9f.png',
+  'f0a614ad28a990a7fbe8629cebedcc85.png',
+  'f96f0bba13c1c5af6c10e6f49d14c4ed.png',
+];
+
 export default function Testimonial({ data = {} }) {
   const { i18n } = useTranslation();
   const isRTL = i18n.dir() === 'rtl';
 
   const { sectionHeading = {} } = data;
-
   const sliderRef = useRef(null);
   const [activeImage, setActiveImage] = useState(null);
 
@@ -88,31 +103,24 @@ export default function Testimonial({ data = {} }) {
     setActiveImage(null);
   }, []);
 
-  useEffect(() => {
-    if (!activeImage) {
-      return undefined;
+  const reviewImages = useMemo(
+    () =>
+      REVIEW_IMAGE_FILES.map(
+        (fileName) => `${process.env.PUBLIC_URL || ''}/reviews/${fileName}`
+      ),
+    []
+  );
+
+  const slides = useMemo(() => {
+    if (reviewImages.length === 0) {
+      return [];
     }
 
-    const handleKeyDown = (event) => {
-      if (event.key === 'Escape') {
-        closeImage();
-      }
-
-      if (event.key === 'Enter' || event.key === ' ') {
-        event.preventDefault();
-      }
-    };
-
-    document.addEventListener('keydown', handleKeyDown);
-
-    return () => {
-      document.removeEventListener('keydown', handleKeyDown);
-    };
-  }, [activeImage, closeImage]);
-
-  if (!isArabicExperience) {
-    return <TestimonialClassic data={data} />;
-  }
+    return reviewImages.map((image, index) => ({
+      image,
+      altText: `Client review ${index + 1}`,
+    }));
+  }, [reviewImages]);
 
   if (!data || !sectionHeading || slides.length === 0) {
     return null;
@@ -141,19 +149,8 @@ export default function Testimonial({ data = {} }) {
               {slides.map(({ image, altText }, index) => (
                 <div className="testimonial-card testimonial-card--enhanced" key={index}>
                   <div className="testimonial-media">
-                    <div
-                      className="testimonial-image-trigger"
-                      role="button"
-                      tabIndex={0}
-                      onClick={() => openImage({ image, altText })}
-                      onKeyDown={(event) => {
-                        if (event.key === 'Enter' || event.key === ' ') {
-                          event.preventDefault();
-                          openImage({ image, altText });
-                        }
-                      }}
-                    >
-                      <span className="testimonial-image-overlay" aria-hidden="true" />
+                    <div className="testimonial-image-wrapper" data-aos="zoom-in" data-aos-duration="900">
+                      <span className="testimonial-image-overlay" />
                       <img className="testimonial-image" src={image} alt={altText} loading="lazy" />
                     </div>
                   </div>
