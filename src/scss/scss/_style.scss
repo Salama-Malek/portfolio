@@ -29,7 +29,7 @@
 body {
   background-color: var(--px-bg);
   color: var(--px-text);
-  font-family: $px-font;
+  font-family: var(--font-body, #{$px-font});
   --bs-body-font-weight: 400;
   --bs-body-font-size: 1rem;
   --bs-body-line-height: 1.6;
