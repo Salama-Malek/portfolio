@@ -29,7 +29,7 @@ export default function About({ data = {} }) {
   });
 
   return (
-    <section className="about-section section" id="about" style={{ minHeight: '100vh', width: '100vw' }}>
+    <section className="about-section section" id="about">
       <div className="container">
         <div className="row align-items-start justify-content-center gy-5">
           <div

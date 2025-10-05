@@ -7,10 +7,10 @@
   --section-label-hover-gradient: linear-gradient(135deg, rgba(255, 60, 172, 0.32) 0%, rgba(119, 74, 217, 0.32) 100%);
   --section-label-border: rgba(255, 60, 172, 0.45);
   --section-label-hover-border: rgba(119, 74, 217, 0.55);
-  --section-label-hover-shadow: 0 18px 42px rgba(255, 60, 172, 0.35);
+  --section-label-hover-shadow: 0 1.125rem 2.625rem rgba(255, 60, 172, 0.35);
   --section-title-gradient: linear-gradient(135deg, #ff3cac 0%, #784ba0 50%, #2b86c5 100%);
   --section-title-highlight: linear-gradient(135deg, rgba(255, 60, 172, 0.95) 0%, rgba(119, 74, 217, 0.95) 100%);
-  --section-title-shadow: 0 26px 60px rgba(120, 119, 198, 0.45);
+  --section-title-shadow: 0 1.625rem 3.75rem rgba(120, 119, 198, 0.45);
 
   background: var(--px-bg);
   position: relative;
@@ -20,6 +20,14 @@
     position: relative;
     z-index: 2;
   }
+
+  .row {
+    @include auto-grid(18.75rem, clamp(1.5rem, 4vw, 2.5rem));
+  }
+
+  .row.align-items-center {
+    justify-items: center;
+  }
 }
 
 /* Tab Navigation */
@@ -27,7 +35,8 @@
   display: flex;
   justify-content: center;
   gap: 1rem;
-  margin: 3rem 0;
+  margin: 0;
+  @include fluid-space-auto(margin-block, 3rem, 1rem);
   flex-wrap: wrap;
   
   .tab-btn {
@@ -37,13 +46,13 @@
     gap: 0.5rem;
     padding: 1.5rem 2rem;
     background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 0.0625rem solid rgba(255, 255, 255, 0.1);
     border-radius: 1rem;
     color: rgba(255, 255, 255, 0.7);
     cursor: pointer;
     transition: all 0.3s ease;
-    backdrop-filter: blur(10px);
-    min-width: 120px;
+    backdrop-filter: blur(0.625rem);
+    min-width: 7.5rem;
     position: relative;
     overflow: hidden;
     
@@ -59,9 +68,9 @@
     }
     
     &:hover {
-      transform: translateY(-2px);
+      transform: translateY(-0.125rem);
       border-color: rgba(120, 119, 198, 0.5);
-      box-shadow: 0 10px 30px rgba(120, 119, 198, 0.2);
+      box-shadow: 0 0.625rem 1.875rem rgba(120, 119, 198, 0.2);
       
       &::before {
         left: 100%;
@@ -72,8 +81,8 @@
       background: var(--gradient-highlight-magenta);
       border-color: transparent;
       color: white;
-      box-shadow: 0 15px 40px rgba(120, 119, 198, 0.4);
-      transform: translateY(-3px);
+      box-shadow: 0 0.9375rem 2.5rem rgba(120, 119, 198, 0.4);
+      transform: translateY(-0.1875rem);
       
       .tab-icon {
         transform: scale(1.1);
@@ -81,20 +90,20 @@
     }
     
     .tab-icon {
-      font-size: 1.5rem;
+      @include fluid-type-auto(1.5rem);
       transition: transform 0.3s ease;
     }
     
     .tab-label {
       font-weight: 600;
-      font-size: 0.9rem;
+      @include fluid-type-auto(0.9rem);
     }
     
     .tab-count {
       background: rgba(255, 255, 255, 0.2);
       padding: 0.25rem 0.5rem;
       border-radius: 1rem;
-      font-size: 0.75rem;
+      @include fluid-type-auto(0.75rem);
       font-weight: 600;
     }
   }
@@ -102,14 +111,14 @@
 
 /* Tab Content */
 .tab-content {
-  min-height: 400px;
+  min-height: 25rem;
   animation: fadeInUp 0.5s ease;
 }
 
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(1.25rem);
   }
   to {
     opacity: 1;
@@ -128,13 +137,13 @@
   color: rgba(255, 255, 255, 0.6);
   
   .empty-icon {
-    font-size: 3rem;
-    margin-bottom: 1rem;
+    @include fluid-type-auto(3rem);
+    @include fluid-space-auto(margin-bottom, 1rem);
     opacity: 0.5;
   }
   
   p {
-    font-size: 1.1rem;
+    @include fluid-type-auto(1.1rem);
     margin: 0;
   }
 }
@@ -142,28 +151,28 @@
 /* Certificates Grid */
 .certificates-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(18.75rem, 1fr));
   gap: 2rem;
-  margin-top: 2rem;
+  @include fluid-space-auto(margin-top, 2rem);
 }
 
 .certificate-card {
   background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 0.0625rem solid rgba(255, 255, 255, 0.1);
   border-radius: 1rem;
   overflow: hidden;
   transition: all 0.3s ease;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(0.625rem);
   
   &:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    transform: translateY(-0.3125rem);
+    box-shadow: 0 1.25rem 2.5rem rgba(0, 0, 0, 0.3);
     border-color: rgba(120, 119, 198, 0.5);
   }
   
   .certificate-image {
     position: relative;
-    height: 200px;
+    height: 12.5rem;
     overflow: hidden;
     
     img {
@@ -187,7 +196,7 @@
       transition: opacity 0.3s ease;
       
       .view-icon {
-        font-size: 2rem;
+        @include fluid-type-auto(2rem);
         color: white;
       }
     }
@@ -207,27 +216,27 @@
     padding: 1.5rem;
     
     .certificate-title {
-      font-size: 1.1rem;
+      @include fluid-type-auto(1.1rem);
       font-weight: 600;
       color: white;
-      margin-bottom: 0.5rem;
+      @include fluid-space-auto(margin-bottom, 0.5rem);
     }
     
     .certificate-issuer {
       color: rgba(255, 255, 255, 0.8);
-      font-size: 0.9rem;
-      margin-bottom: 0.25rem;
+      @include fluid-type-auto(0.9rem);
+      @include fluid-space-auto(margin-bottom, 0.25rem);
     }
     
     .certificate-date {
       color: rgba(255, 255, 255, 0.6);
-      font-size: 0.8rem;
-      margin-bottom: 0.5rem;
+      @include fluid-type-auto(0.8rem);
+      @include fluid-space-auto(margin-bottom, 0.5rem);
     }
     
     .certificate-id {
       color: rgba(120, 119, 198, 0.8);
-      font-size: 0.75rem;
+      @include fluid-type-auto(0.75rem);
       font-family: 'Courier New', monospace;
     }
   }
@@ -236,22 +245,22 @@
 /* Tech Stack Grid */
 .tech-stack-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(21.875rem, 1fr));
   gap: 2rem;
-  margin-top: 2rem;
+  @include fluid-space-auto(margin-top, 2rem);
 }
 
 .tech-item {
   background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 0.0625rem solid rgba(255, 255, 255, 0.1);
   border-radius: 1rem;
   padding: 2rem;
   transition: all 0.3s ease;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(0.625rem);
   
   &:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    transform: translateY(-0.1875rem);
+    box-shadow: 0 0.9375rem 1.875rem rgba(0, 0, 0, 0.2);
     border-color: rgba(120, 119, 198, 0.5);
   }
   
@@ -259,40 +268,40 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 60px;
-    height: 60px;
+    width: 3.75rem;
+    height: 3.75rem;
     background: var(--gradient-highlight-magenta);
     border-radius: 1rem;
-    margin-bottom: 1rem;
-    font-size: 2rem;
+    @include fluid-space-auto(margin-bottom, 1rem);
+    @include fluid-type-auto(2rem);
     color: white;
   }
   
   .tech-content {
     .tech-name {
-      font-size: 1.2rem;
+      @include fluid-type-auto(1.2rem);
       font-weight: 600;
       color: white;
-      margin-bottom: 1rem;
+      @include fluid-space-auto(margin-bottom, 1rem);
     }
     
     .tech-level {
       display: flex;
       align-items: center;
       gap: 1rem;
-      margin-bottom: 1rem;
+      @include fluid-space-auto(margin-bottom, 1rem);
       
       .tech-progress {
         flex: 1;
-        height: 8px;
+        height: 0.5rem;
         background: rgba(255, 255, 255, 0.1);
-        border-radius: 4px;
+        border-radius: 0.25rem;
         overflow: hidden;
         
         .tech-progress-bar {
           height: 100%;
           background: var(--gradient-highlight-magenta-horizontal);
-          border-radius: 4px;
+          border-radius: 0.25rem;
           transition: width 0.8s ease;
         }
       }
@@ -300,13 +309,13 @@
       .tech-percentage {
         color: rgba(255, 255, 255, 0.8);
         font-weight: 600;
-        font-size: 0.9rem;
+        @include fluid-type-auto(0.9rem);
       }
     }
     
     .tech-description {
       color: rgba(255, 255, 255, 0.7);
-      font-size: 0.9rem;
+      @include fluid-type-auto(0.9rem);
       line-height: 1.5;
       margin: 0;
     }
@@ -314,24 +323,24 @@
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+@include respond-down(mobile) {
   .showcase-tabs {
     gap: 0.5rem;
     
     .tab-btn {
       padding: 1rem 1.5rem;
-      min-width: 100px;
+      min-width: 6.25rem;
       
       .tab-icon {
-        font-size: 1.2rem;
+        @include fluid-type-auto(1.2rem);
       }
       
       .tab-label {
-        font-size: 0.8rem;
+        @include fluid-type-auto(0.8rem);
       }
       
       .tab-count {
-        font-size: 0.7rem;
+        @include fluid-type-auto(0.7rem);
       }
     }
   }
@@ -351,20 +360,20 @@
   }
 }
 
-@media (max-width: 480px) {
+@include respond-down(small) {
   .showcase-tabs {
     flex-direction: column;
     align-items: center;
     
     .tab-btn {
       width: 100%;
-      max-width: 200px;
+      max-width: 12.5rem;
     }
   }
   
   .certificate-card {
     .certificate-image {
-      height: 150px;
+      height: 9.375rem;
     }
     
     .certificate-content {
@@ -376,9 +385,9 @@
     padding: 1rem;
     
     .tech-icon {
-      width: 50px;
-      height: 50px;
-      font-size: 1.5rem;
+      width: 3.125rem;
+      height: 3.125rem;
+      @include fluid-type-auto(1.5rem);
     }
   }
 }
@@ -391,7 +400,7 @@
 @keyframes slideIn {
   from {
     opacity: 0;
-    transform: translateX(20px);
+    transform: translateX(1.25rem);
   }
   to {
     opacity: 1;
@@ -406,14 +415,14 @@
   &::after {
     content: '';
     position: absolute;
-    top: -2px;
-    left: -2px;
-    right: -2px;
-    bottom: -2px;
+    top: -0.125rem;
+    left: -0.125rem;
+    right: -0.125rem;
+    bottom: -0.125rem;
     background: var(--gradient-highlight-magenta);
     border-radius: 1rem;
     z-index: -1;
     opacity: 0.3;
-    filter: blur(8px);
+    filter: blur(0.5rem);
   }
 }
