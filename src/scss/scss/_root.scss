@@ -5,6 +5,10 @@
   --px-primary: #{$px-accent-primary};
   --px-primary-rgb: #{$px-theme-rgb};
 
+  --font-latin: 'Inter', 'Poppins', sans-serif;
+  --font-arabic: 'Cairo', 'Tajawal', sans-serif;
+  --font-cyrillic: 'Manrope', 'Inter', sans-serif;
+
   // Background Colors
   --px-bg: #{$px-bg};
   --px-bg-rgb: 13, 13, 13;
