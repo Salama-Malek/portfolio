@@ -38,7 +38,7 @@ export default function Footer({ socialData = [] }) {
                     <div className="logo logo--3d">
                       <img
                         className="logo-3d-dark"
-                        src="/images/tech1.png"
+                        src="/images/sm.png"
                         alt={t('common.logoAlt')}
                       />
                     </div>

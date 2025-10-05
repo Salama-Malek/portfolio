@@ -27,7 +27,7 @@ export default function MobileMenu({ isOpen, navLinks, onClose }) {
           <div className="logo logo--3d mb-4">
             <img
               className="logo-3d-dark"
-              src="/images/tech1.png"
+              src="/images/sm.png"
               alt={t('common.logoAlt')}
             />
           </div>

@@ -1,13 +1,13 @@
 /* Force header logo size with maximum specificity */
 .header .logo.logo--3d img.logo-3d-dark {
   width: 80px !important;
-  height: 80px !important;
+  height: 70px !important;
   min-width: 80px !important;
-  min-height: 80px !important;
+  min-height: 70px !important;
   max-width: 80px !important;
-  max-height: 80px !important;
+  max-height: 70px !important;
   border-radius: 50% !important;
-  object-fit: cover !important;
+  // object-fit: cover !important;
   display: block;
 }
 /* Logo System Styles */

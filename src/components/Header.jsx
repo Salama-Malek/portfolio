@@ -44,7 +44,7 @@ export default function Header() {
             <Link to="/">
               <img
                 className="logo-3d-dark"
-                src="/images/tech1.png"
+                src="/images/sm.png"
                 alt={t('common.logoAlt')}
               />
             </Link>

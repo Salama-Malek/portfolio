@@ -26,7 +26,7 @@ const LogoShowcase = () => {
             <div className="logo-card">
               <h5>3D Header Logo</h5>
               <div className="logo logo--3d logo-3d-animated">
-                <img src="/images/tech1.png" alt="Salama 3D Header Logo" />
+                <img src="/images/sm.png" alt="Salama 3D Header Logo" />
               </div>
               <p>Compact 3D logo perfect for header navigation</p>
             </div>
@@ -59,7 +59,7 @@ const LogoShowcase = () => {
             <div className="logo-card">
               <h5>Dark Mode Logo</h5>
               <div className="logo logo-dark">
-                <img src="/images/tech1.png" alt="Salama Dark Logo" />
+                <img src="/images/sm.png" alt="Salama Dark Logo" />
               </div>
               <p>3D logo optimized for dark theme</p>
             </div>
@@ -83,25 +83,25 @@ const LogoShowcase = () => {
           <div className="row align-items-center">
             <div className="col-md-3 text-center mb-3">
               <div className="logo logo-variant--small">
-                <img src="/images/tech1.png" alt="Small Logo" />
+                <img src="/images/sm.png" alt="Small Logo" />
               </div>
               <p>Small (24px)</p>
             </div>
             <div className="col-md-3 text-center mb-3">
               <div className="logo logo-variant--medium">
-                <img src="/images/tech1.png" alt="Medium Logo" />
+                <img src="/images/sm.png" alt="Medium Logo" />
               </div>
               <p>Medium (40px)</p>
             </div>
             <div className="col-md-3 text-center mb-3">
               <div className="logo logo-variant--large">
-                <img src="/images/tech1.png" alt="Large Logo" />
+                <img src="/images/sm.png" alt="Large Logo" />
               </div>
               <p>Large (60px)</p>
             </div>
             <div className="col-md-3 text-center mb-3">
               <div className="logo logo-variant--xl">
-                <img src="/images/tech1.png" alt="XL Logo" />
+                <img src="/images/sm.png" alt="XL Logo" />
               </div>
               <p>XL (80px)</p>
             </div>
