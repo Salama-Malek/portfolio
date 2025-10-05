@@ -18,6 +18,9 @@
   @include fluid-type-auto(0.875rem);
   position: relative;
   overflow: hidden;
+  min-height: clamp(3rem, 9vw, 3.5rem);
+  gap: clamp(0.5rem, 2vw, 0.75rem);
+  touch-action: manipulation;
 
   &::before {
     content: '';
@@ -104,6 +107,8 @@
   transition: all 0.3s ease;
   background: transparent;
   box-shadow: none;
+  min-height: clamp(2.75rem, 9vw, 3.25rem);
+  touch-action: manipulation;
 
   &:hover {
     background: linear-gradient(90deg, #312e8c 0%, #3d90d9 100%);

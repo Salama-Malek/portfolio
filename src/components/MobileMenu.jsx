@@ -5,7 +5,7 @@ import SocialBtns from './SocialBtns';
 import LanguageSwitcher from './LanguageSwitcher';
 import ThemeSwitcher from './ThemeSwitcher';
 
-export default function MobileMenu({ isOpen, navLinks, onClose }) {
+export default function MobileMenu({ isOpen, navLinks, onClose, menuId = 'mobile-navigation' }) {
   const { t } = useTranslation();
   const socialData = t('data.social', { returnObjects: true }) || [];
 
@@ -22,7 +22,13 @@ export default function MobileMenu({ isOpen, navLinks, onClose }) {
 
   return (
     <>
-      <div className={`mobile-menu ${isOpen ? 'open' : ''}`}>
+      <div
+        id={menuId}
+        className={`mobile-menu ${isOpen ? 'open' : ''}`}
+        role="dialog"
+        aria-modal="true"
+        aria-hidden={!isOpen}
+      >
         <div className="mobile-menu-content">
           <div className="logo logo--3d mb-4">
             <img
@@ -44,6 +50,7 @@ export default function MobileMenu({ isOpen, navLinks, onClose }) {
                   duration={500}
                   className="mobile-nav-link"
                   onClick={onClose}
+                  tabIndex={isOpen ? 0 : -1}
                 >
                   {t(link.label)}
                 </ScrollLink>
@@ -71,13 +78,22 @@ export default function MobileMenu({ isOpen, navLinks, onClose }) {
               duration={500}
               onClick={onClose}
               className="px-btn"
+              tabIndex={isOpen ? 0 : -1}
             >
               {t('header.cta')}
             </ScrollLink>
           </div>
         </div>
       </div>
-      {isOpen && <div className="mobile-menu-overlay" onClick={onClose}></div>}
+      {isOpen && (
+        <div
+          className="mobile-menu-overlay"
+          onClick={onClose}
+          role="button"
+          tabIndex={-1}
+          aria-hidden="true"
+        ></div>
+      )}
     </>
   );
 }

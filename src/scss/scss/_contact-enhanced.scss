@@ -221,6 +221,7 @@
       position: relative;
       display: flex;
       align-items: center;
+      min-height: clamp(3.25rem, 10vw, 3.75rem);
 
       .input-icon {
         position: absolute;
@@ -246,6 +247,7 @@
         @include fluid-type-auto(1rem);
         transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         outline: none;
+        min-height: clamp(3.25rem, 10vw, 3.75rem);
 
         &:focus {
           border-color: var(--px-primary);
@@ -290,6 +292,8 @@
       align-items: center;
       gap: 0.625rem;
       cursor: pointer;
+      min-height: clamp(3.25rem, 10vw, 3.75rem);
+      touch-action: manipulation;
 
       &:hover {
         transform: translateY(-0.125rem);

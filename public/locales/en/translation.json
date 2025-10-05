@@ -858,6 +858,7 @@
   "navigation": {
     "moreOptions": "More Options",
     "close": "Close",
+    "openMenu": "Open navigation",
     "openMore": "Open more options",
     "more": "More"
   },
