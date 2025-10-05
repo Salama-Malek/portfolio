@@ -1,28 +1,28 @@
 // Mini Title for Section Headings
 .section-mini-title {
   display: inline-block;
-  font-size: 1rem;
+  @include fluid-type-auto(1rem);
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 0.125rem;
   background: linear-gradient(90deg, #0ea5e9 0%, #14b8a6 100%);
-  font-size: 1rem;
+  @include fluid-type-auto(1rem);
   font-weight: 700;
-  padding: 6px 24px;
-  border-radius: 999px;
-  box-shadow: 0 2px 12px rgba(14, 165, 233, 0.12);
-  border: 2px solid rgba(20, 184, 166, 0.18);
+  padding: 0.375rem 1.5rem;
+  border-radius: 62.4375rem;
+  box-shadow: 0 0.125rem 0.75rem rgba(14, 165, 233, 0.12);
+  border: 0.125rem solid rgba(20, 184, 166, 0.18);
   color: #fff;
   -webkit-background-clip: border-box;
   -webkit-text-fill-color: #fff;
   background-clip: border-box;
   display: inline-block;
-  margin-bottom: 18px;
+  @include fluid-space-auto(margin-bottom, 1.125rem);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   color: transparent;
-  margin-bottom: 12px;
+  @include fluid-space-auto(margin-bottom, 0.75rem);
 }
 /* Background
 -------------------------------*/
@@ -31,7 +31,7 @@ body {
   color: var(--px-text);
   font-family: $px-font;
   --bs-body-font-weight: 400;
-  --bs-body-font-size: 1rem;
+  --bs-body-@include fluid-type-auto(1rem);
   --bs-body-line-height: 1.6;
   overflow-x: hidden;
   background: var(--px-bg);
@@ -49,7 +49,7 @@ a {
     position: absolute;
     left: 18%;
     top: 15%;
-    width: 140px;
+    width: 8.75rem;
     img {
       animation: animo-x 8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
     }
@@ -60,7 +60,7 @@ a {
     bottom: 0;
     margin: auto;
     right: 0;
-    height: 450px;
+    height: 28.125rem;
     img {
       height: 100%;
     }
@@ -73,23 +73,24 @@ a {
 .full-width {
   width: 95vw;
   .slick-dots {
-    max-width: 1300px;
+    max-width: 81.25rem;
   }
 }
 .slick-dots {
   text-align: center;
-  font-size: 0px;
-  padding-top: 35px;
+  font-size: 0;
+  padding-top: 2.1875rem;
   li {
     display: inline-block;
     vertical-align: top;
-    width: 10px;
-    height: 10px;
+    width: 0.625rem;
+    height: 0.625rem;
     background: transparent;
-    border: 1px solid var(--px-white);
+    border: 0.0625rem solid var(--px-white);
     transition: ease all 0.55s;
-    border-radius: 8px;
-    margin: 0 4px;
+    border-radius: 0.5rem;
+    margin: 0;
+    @include fluid-space(margin-inline, 0.1875rem, 0.375rem);
     cursor: pointer;
     position: relative;
     overflow: hidden;
@@ -106,7 +107,7 @@ a {
 
     &.slick-active {
       background: var(--px-theme);
-      width: 20px;
+      width: 1.25rem;
     }
   }
 }
@@ -126,8 +127,8 @@ a {
     top: 0;
     bottom: 0;
     margin: auto;
-    width: 35px;
-    height: 35px;
+    width: 2.1875rem;
+    height: 2.1875rem;
     background: var(--px-theme);
     color: var(--px-theme-text);
     display: inline-flex;
@@ -144,18 +145,18 @@ a {
   }
 
   .owl-next {
-    right: 0px;
+    right: 0rem;
 
-    @include up-lg {
-      right: -50px;
+    @include respond(desktop) {
+      right: -3.125rem;
     }
   }
 
   .owl-prev {
-    left: 0px;
+    left: 0rem;
 
-    @include up-lg {
-      left: -50px;
+    @include respond(desktop) {
+      left: -3.125rem;
     }
   }
 }
@@ -167,35 +168,36 @@ a {
   position: relative;
   overflow: hidden;
   z-index: 1;
-  padding-top: 150px;
-  @include down-md {
-    padding-top: 130px;
+  padding-top: 9.375rem;
+  @include respond-down(tablet) {
+    padding-top: 8.125rem;
   }
 
   .hs-text-box {
-    @include down-md {
-      padding-bottom: 50px;
+    @include respond-down(tablet) {
+      padding-bottom: 3.125rem;
     }
     h6 {
-      margin: 0 0 10px;
+      margin: 0;
+      @include fluid-space-auto(margin-bottom, 0.625rem);
       span {
         background: var(--px-surface-primary);
-        border: 1px solid var(--px-border-primary);
-        border-radius: 8px;
-        padding: 8px 16px;
+        border: 0.0625rem solid var(--px-border-primary);
+        border-radius: 0.5rem;
+        padding: 0.5rem 1rem;
         display: inline-block;
         color: var(--px-text-primary);
         font-weight: 500;
-        font-size: 14px;
-        line-height: 20px;
-        letter-spacing: 2px;
+        @include fluid-type-auto(0.875rem);
+        line-height: 1.25rem;
+        letter-spacing: 0.125rem;
         text-transform: uppercase;
-        backdrop-filter: blur(10px);
+        backdrop-filter: blur(0.625rem);
         transition: all 0.3s ease;
         
         &:hover {
           background: var(--px-surface-hover);
-          transform: translateY(-2px);
+          transform: translateY(-0.125rem);
         }
       }
     }
@@ -205,46 +207,49 @@ a {
       -webkit-text-fill-color: transparent;
       background-clip: text;
       font-weight: 700;
-      font-size: 70px;
+      @include fluid-type-auto(4.375rem);
       text-transform: uppercase;
-      margin-bottom: 20px;
-      @include down-lg {
-        font-size: 45px;
+      @include fluid-space-auto(margin-bottom, 1.25rem);
+      @include respond-down(desktop) {
+        @include fluid-type-auto(2.8125rem);
       }
-      @include down-sm {
-        font-size: 38px;
+      @include respond-down(mobile) {
+        @include fluid-type-auto(2.375rem);
       }
     }
     h2 {
       color: var(--px-accent-primary);
       font-weight: 700;
-      font-size: 70px;
+      @include fluid-type-auto(4.375rem);
       text-transform: uppercase;
-      margin: 0 0 30px;
-      @include down-lg {
-        font-size: 45px;
-        margin: 0 0 20px;
+      margin: 0;
+      @include fluid-space-auto(margin-bottom, 1.875rem);
+      @include respond-down(desktop) {
+        @include fluid-type-auto(2.8125rem);
+        margin: 0;
+        @include fluid-space-auto(margin-bottom, 1.25rem);
       }
-      @include down-sm {
-        font-size: 38px;
-        margin: 0 0 10px;
+      @include respond-down(mobile) {
+        @include fluid-type-auto(2.375rem);
+        margin: 0;
+        @include fluid-space-auto(margin-bottom, 0.625rem);
       }
     }
     .text {
       font-weight: 400;
-      font-size: 20px;
+      @include fluid-type-auto(1.25rem);
       line-height: 150%;
       letter-spacing: 0.01em;
       color: var(--px-text-secondary);
-      @include down-lg {
-        font-size: 18px;
+      @include respond-down(desktop) {
+        @include fluid-type-auto(1.125rem);
       }
-      @include down-sm {
-        font-size: 16px;
+      @include respond-down(mobile) {
+        @include fluid-type-auto(1rem);
       }
     }
     .btn-bar {
-      padding-top: 15px;
+      padding-top: 0.9375rem;
     }
   }
 }
@@ -256,73 +261,79 @@ a {
   --section-bg: var(--px-bg-secondary);
   background: var(--section-bg);
   overflow: hidden;
+  .row.align-items-start {
+    @include auto-grid(20rem, clamp(1.5rem, 4vw, 2.5rem));
+    align-items: flex-start;
+  }
   .container {
     position: relative;
     z-index: 1;
   }
   .effect-1 {
     position: absolute;
-    bottom: -50px;
+    bottom: -3.125rem;
     left: 0;
     z-index: -1;
     animation: rotate360 reverse 40s linear infinite;
-    @include down-md {
+    @include respond-down(tablet) {
       display: none;
     }
   }
   .effect-2 {
     position: absolute;
-    top: 80px;
-    right: -60px;
+    top: 5rem;
+    right: -3.75rem;
     z-index: -1;
     animation: rotate360 40s linear infinite;
-    @include down-md {
+    @include respond-down(tablet) {
       display: none;
     }
   }
   .about-text {
     .section-heading {
-      margin-bottom: 25px;
+      @include fluid-space-auto(margin-bottom, 1.5625rem);
     }
     p {
       color: var(--px-text-secondary);
     }
   }
   .review-box {
-    display: flex;
-    padding-top: 15px;
-    padding-bottom: 45px;
+    @include flex-container(row, wrap, clamp(1.25rem, 4vw, 2rem));
+    padding-top: 0.9375rem;
+    padding-bottom: 2.8125rem;
+
+    @include respond-down(mobile) {
+      @include stack-vertical(clamp(1rem, 4vw, 1.5rem));
+    }
     .r-box {
       background: var(--px-surface-primary);
-      border: 1px solid var(--px-border-primary);
+      border: 0.0625rem solid var(--px-border-primary);
       display: flex;
       flex-direction: column;
       color: var(--px-text-primary);
-      border-radius: 12px;
-      padding: 24px;
-      backdrop-filter: blur(10px);
+      border-radius: 0.75rem;
+      padding: 1.5rem;
+      backdrop-filter: blur(0.625rem);
       transition: all 0.3s ease;
       
       &:hover {
         background: var(--px-surface-hover);
-        transform: translateY(-4px);
-        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        transform: translateY(-0.25rem);
+        box-shadow: 0 0.5rem 1.5625rem rgba(0, 0, 0, 0.1);
       }
       
       h3 {
-        margin: 0 0 8px;
+        margin: 0;
+        @include fluid-space-auto(margin-bottom, 0.5rem);
         color: var(--px-text-primary);
         font-weight: 700;
       }
       label {
-        font-size: 13px;
+        @include fluid-type-auto(0.8125rem);
         line-height: 130%;
         color: var(--px-text-tertiary);
         text-transform: uppercase;
-        letter-spacing: 1px;
-      }
-      + .r-box {
-        margin-left: 10px;
+        letter-spacing: 0.0625rem;
       }
     }
   }
@@ -338,23 +349,23 @@ a {
   }
 }
 .project-box {
-  padding: 20px;
-  border-radius: 16px;
+  padding: 1.25rem;
+  border-radius: 1rem;
   background: var(--px-surface-primary);
-  border: 1px solid var(--px-border-primary);
-  backdrop-filter: blur(10px);
+  border: 0.0625rem solid var(--px-border-primary);
+  backdrop-filter: blur(0.625rem);
   transition: all 0.3s ease;
   
   &:hover {
     background: var(--px-surface-hover);
-    transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    transform: translateY(-0.5rem);
+    box-shadow: 0 1.25rem 2.5rem rgba(0, 0, 0, 0.1);
   }
   
   .project-media {
     position: relative;
     overflow: hidden;
-    border-radius: 12px;
+    border-radius: 0.75rem;
     img {
       transition: ease all 0.35s;
       transform: scale(1);
@@ -375,16 +386,16 @@ a {
       cursor: pointer;
       transition: ease all 0.35s;
       i {
-        width: 60px;
-        height: 60px;
+        width: 3.75rem;
+        height: 3.75rem;
         display: flex;
         align-items: center;
         justify-content: center;
         background: var(--px-accent-primary);
         color: var(--px-text-primary);
-        font-size: 24px;
+        @include fluid-type-auto(1.5rem);
         border-radius: 50%;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        box-shadow: 0 0.25rem 0.9375rem rgba(0, 0, 0, 0.3);
       }
     }
   }
@@ -402,44 +413,45 @@ a {
   .project-body {
     display: flex;
     align-items: center;
-    padding-top: 20px;
+    padding-top: 1.25rem;
     h5 {
       font-weight: 700;
       color: var(--px-text-primary);
-      font-size: 18px;
-      margin: 0 0 8px;
+      @include fluid-type-auto(1.125rem);
+      margin: 0;
+      @include fluid-space-auto(margin-bottom, 0.5rem);
     }
     .text {
-      flex: 0 0 calc(100% - 50px);
-      padding-right: 10px;
+      flex: 0 0 calc(100% - 3.125rem);
+      padding-right: 0.625rem;
       span {
-        font-size: 14px;
+        @include fluid-type-auto(0.875rem);
         color: var(--px-text-tertiary);
         text-transform: uppercase;
-        letter-spacing: 1px;
+        letter-spacing: 0.0625rem;
       }
     }
     .link {
-      width: 50px;
+      width: 3.125rem;
       .p-link {
-        width: 45px;
-        height: 45px;
+        width: 2.8125rem;
+        height: 2.8125rem;
         display: flex;
         align-items: center;
         justify-content: center;
         background: var(--px-gradient-brand);
         color: var(--px-text-primary);
-        font-size: 20px;
+        @include fluid-type-auto(1.25rem);
         border-radius: 50%;
-        border: 2px solid var(--px-border-primary);
+        border: 0.125rem solid var(--px-border-primary);
         cursor: pointer;
         transition: all 0.4s ease;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 0.25rem 0.9375rem rgba(0, 0, 0, 0.1);
         
         &:hover {
           background: var(--px-accent-secondary);
           transform: scale(1.1);
-          box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0.375rem 1.25rem rgba(0, 0, 0, 0.2);
         }
       }
     }
@@ -453,19 +465,19 @@ a {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  padding-top: 150px;
+  padding-top: 9.375rem;
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
   position: relative;
   overflow: hidden;
-  border-radius: 16px;
-  border: 1px solid var(--px-border-primary);
+  border-radius: 1rem;
+  border: 0.0625rem solid var(--px-border-primary);
   transition: all 0.3s ease;
   
   &:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    transform: translateY(-0.5rem);
+    box-shadow: 0 1.25rem 2.5rem rgba(0, 0, 0, 0.15);
   }
   
   &:after {
@@ -476,24 +488,24 @@ a {
     left: 0;
     right: 0;
     bottom: 0;
-    border-radius: 16px;
+    border-radius: 1rem;
   }
   .services-body {
-    padding: 30px;
+    padding: 1.875rem;
     position: relative;
     z-index: 1;
     .icon {
-      width: 60px;
-      height: 60px;
+      width: 3.75rem;
+      height: 3.75rem;
       background: var(--px-gradient-brand);
       display: flex;
       align-items: center;
       justify-content: center;
       color: var(--px-text-primary);
-      font-size: 24px;
-      border-radius: 12px;
-      margin-bottom: 20px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      @include fluid-type-auto(1.5rem);
+      border-radius: 0.75rem;
+      @include fluid-space-auto(margin-bottom, 1.25rem);
+      box-shadow: 0 0.25rem 0.9375rem rgba(0, 0, 0, 0.2);
       transition: all 0.3s ease;
       
       &:hover {
@@ -503,26 +515,27 @@ a {
     h5 {
       color: var(--px-text-primary);
       font-weight: 700;
-      font-size: 20px;
-      margin-bottom: 15px;
+      @include fluid-type-auto(1.25rem);
+      @include fluid-space-auto(margin-bottom, 0.9375rem);
     }
     p {
       color: var(--px-text-primary);
-      font-size: 14px;
+      @include fluid-type-auto(0.875rem);
       line-height: 160%;
       opacity: 0.9;
-      margin: 0 0 15px;
+      margin: 0;
+      @include fluid-space-auto(margin-bottom, 0.9375rem);
     }
     .rating-wrap {
-      padding-top: 15px;
-      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      padding-top: 0.9375rem;
+      border-top: 0.0625rem solid rgba(255, 255, 255, 0.2);
     }
   }
 }
 .ratings {
   position: relative;
-  width: 102px;
-  font-size: 16px;
+  width: 6.375rem;
+  @include fluid-type-auto(1rem);
   .rating:last-child {
     position: absolute;
     top: 0;
@@ -534,7 +547,7 @@ a {
   display: flex;
   color: var(--bs-warning);
   i {
-    margin-right: 5px;
+    @include fluid-space-auto(margin-right, 0.3125rem);
     display: flex;
     &:last-child {
       margin-right: 0;
@@ -546,23 +559,23 @@ a {
 ---------------------------*/
 .ex-box {
   background: var(--px-surface-primary);
-  border: 1px solid var(--px-border-primary);
-  padding: 30px;
-  border-radius: 16px;
-  backdrop-filter: blur(10px);
+  border: 0.0625rem solid var(--px-border-primary);
+  padding: 1.875rem;
+  border-radius: 1rem;
+  backdrop-filter: blur(0.625rem);
   transition: all 0.3s ease;
   
   &:hover {
     background: var(--px-surface-hover);
-    transform: translateY(-4px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    transform: translateY(-0.25rem);
+    box-shadow: 0 0.9375rem 1.875rem rgba(0, 0, 0, 0.1);
   }
   
   .ex-left {
-    padding: 25px;
-    border-radius: 12px;
+    padding: 1.5625rem;
+    border-radius: 0.75rem;
     background: var(--px-gradient-brand);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 0.5rem 1.5625rem rgba(0, 0, 0, 0.15);
     transition: all 0.3s ease;
     
     &:hover {
@@ -570,48 +583,50 @@ a {
     }
     
     h4 {
-      margin: 0 0 8px;
+      margin: 0;
+      @include fluid-space-auto(margin-bottom, 0.5rem);
       font-weight: 700;
       color: var(--px-text-primary);
-      font-size: 18px;
+      @include fluid-type-auto(1.125rem);
     }
     span {
       font-weight: 500;
-      font-size: 12px;
+      @include fluid-type-auto(0.75rem);
       text-transform: uppercase;
       color: var(--px-text-primary);
       opacity: 0.9;
-      letter-spacing: 1px;
+      letter-spacing: 0.0625rem;
     }
     p {
       font-weight: 500;
-      font-size: 16px;
+      @include fluid-type-auto(1rem);
       color: var(--px-text-primary);
       text-transform: uppercase;
-      margin: 0 0 15px;
-      letter-spacing: 0.5px;
+      margin: 0;
+      @include fluid-space-auto(margin-bottom, 0.9375rem);
+      letter-spacing: 0.03125rem;
     }
     label {
-      padding: 10px 20px;
-      border-radius: 30px;
+      padding: 0.625rem 1.25rem;
+      border-radius: 1.875rem;
       background: var(--px-text-primary);
       color: var(--px-bg);
-      font-size: 12px;
+      @include fluid-type-auto(0.75rem);
       text-transform: uppercase;
       line-height: 1;
       font-weight: 700;
-      letter-spacing: 1px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      letter-spacing: 0.0625rem;
+      box-shadow: 0 0.25rem 0.9375rem rgba(0, 0, 0, 0.2);
     }
   }
   .ex-right {
     h5 {
       font-weight: 700;
-      font-size: 32px;
+      @include fluid-type-auto(2rem);
       color: var(--px-text-primary);
-      margin-bottom: 15px;
-      @include down-sm {
-        font-size: 28px;
+      @include fluid-space-auto(margin-bottom, 0.9375rem);
+      @include respond-down(mobile) {
+        @include fluid-type-auto(1.75rem);
       }
     }
     p {
@@ -626,30 +641,31 @@ a {
 *   Testimonials
 ---------------------------*/
 .testimonial-box {
-  max-width: 780px;
+  max-width: 48.75rem;
   margin: 0 auto;
   text-align: center;
   background: var(--px-surface-primary);
-  border: 1px solid var(--px-border-primary);
-  border-radius: 20px;
-  padding: 40px;
-  backdrop-filter: blur(10px);
+  border: 0.0625rem solid var(--px-border-primary);
+  border-radius: 1.25rem;
+  padding: 2.5rem;
+  backdrop-filter: blur(0.625rem);
   transition: all 0.3s ease;
   
   &:hover {
     background: var(--px-surface-hover);
-    transform: translateY(-8px);
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+    transform: translateY(-0.5rem);
+    box-shadow: 0 1.5625rem 3.125rem rgba(0, 0, 0, 0.15);
   }
   
   .t-user {
-    width: 130px;
-    height: 130px;
+    width: 8.125rem;
+    height: 8.125rem;
     display: flex;
-    margin: 0 auto 30px;
+    margin: 0 auto;
+    @include fluid-space-auto(margin-bottom, 1.875rem, 0.75rem);
     border-radius: 50%;
-    border: 4px solid var(--px-border-primary);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    border: 0.25rem solid var(--px-border-primary);
+    box-shadow: 0 0.5rem 1.5625rem rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
     
     &:hover {
@@ -665,9 +681,9 @@ a {
     }
   }
   .t-text {
-    margin-bottom: 25px;
+    @include fluid-space-auto(margin-bottom, 1.5625rem);
     font-weight: 500;
-    font-size: 18px;
+    @include fluid-type-auto(1.125rem);
     color: var(--px-text-primary);
     line-height: 1.6;
     font-style: italic;
@@ -675,20 +691,21 @@ a {
   .t-person {
     h6 {
       font-weight: 600;
-      font-size: 20px;
+      @include fluid-type-auto(1.25rem);
       text-transform: uppercase;
-      margin: 0 0 8px;
+      margin: 0;
+      @include fluid-space-auto(margin-bottom, 0.5rem);
       color: var(--px-text-primary);
-      letter-spacing: 1px;
+      letter-spacing: 0.0625rem;
     }
     span {
       font-weight: 400;
-      font-size: 16px;
-      line-height: 20px;
+      @include fluid-type-auto(1rem);
+      line-height: 1.25rem;
       text-align: center;
       color: var(--px-text-tertiary);
       text-transform: uppercase;
-      letter-spacing: 1px;
+      letter-spacing: 0.0625rem;
     }
   }
 }
@@ -700,86 +717,88 @@ a {
   .contactus-title {
     h5 {
       font-weight: 700;
-      font-size: 40px;
+      @include fluid-type-auto(2.5rem);
       color: var(--px-text-primary);
-      margin-bottom: 20px;
-      @include down-sm {
-        font-size: 32px;
+      @include fluid-space-auto(margin-bottom, 1.25rem);
+      @include respond-down(mobile) {
+        @include fluid-type-auto(2rem);
       }
     }
     p {
       font-weight: 400;
-      font-size: 17px;
+      @include fluid-type-auto(1.0625rem);
       color: var(--px-text-secondary);
-      max-width: 550px;
+      max-width: 34.375rem;
       line-height: 1.6;
     }
   }
   .contact-banner {
-    @include up-md {
-      margin-top: -200px;
+    @include respond(tablet) {
+      margin-top: -12.5rem;
     }
   }
   .contact-info {
-    padding: 20px 0 40px;
-    @include down-sm {
-      padding: 20px 0 25px;
+    padding: 1.25rem 0 2.5rem;
+    @include respond-down(mobile) {
+      padding: 1.25rem 0 1.5625rem;
     }
     .contact-info-in {
       display: flex;
       flex-direction: column;
-      padding-top: 20px;
+      padding-top: 1.25rem;
       label {
         font-weight: 500;
-        font-size: 12px;
+        @include fluid-type-auto(0.75rem);
         color: var(--px-text-tertiary);
-        margin: 0 0 8px;
+        margin: 0;
+        @include fluid-space-auto(margin-bottom, 0.5rem);
         text-transform: uppercase;
-        letter-spacing: 2px;
+        letter-spacing: 0.125rem;
       }
       a {
         color: var(--px-text-primary);
-        font-size: 22px;
+        @include fluid-type-auto(1.375rem);
         font-weight: 700;
         transition: all 0.3s ease;
         
         &:hover {
           color: var(--px-accent-primary);
-          transform: translateX(5px);
+          transform: translateX(0.3125rem);
         }
       }
     }
   }
 
   .contactus-box {
-    border: 1px solid var(--px-border-primary);
-    border-radius: 16px;
+    border: 0.0625rem solid var(--px-border-primary);
+    border-radius: 1rem;
     background: var(--px-surface-primary);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(0.625rem);
     overflow: hidden;
   }
   .contact-form {
     .form-label {
       color: var(--px-text-primary);
-      margin: 0 0 8px;
-      font-size: 12px;
+      margin: 0;
+      @include fluid-space-auto(margin-bottom, 0.5rem);
+      @include fluid-type-auto(0.75rem);
       text-transform: uppercase;
-      letter-spacing: 1px;
+      letter-spacing: 0.0625rem;
       font-weight: 600;
     }
     .form-control {
       background: var(--px-bg-secondary);
-      border: 1px solid var(--px-border-primary);
+      border: 0.0625rem solid var(--px-border-primary);
       color: var(--px-text-primary);
       box-shadow: none;
-      padding: 12px 16px;
-      border-radius: 8px;
+      padding: 0.75rem 1rem;
+      border-radius: 0.5rem;
       transition: all 0.3s ease;
       
       &:focus {
         background: var(--px-bg);
         border-color: var(--px-accent-primary);
-        box-shadow: 0 0 0 3px rgba(119, 74, 217, 0.18);
+        box-shadow: 0 0 0 0.1875rem rgba(119, 74, 217, 0.18);
       }
       
       &::-webkit-input-placeholder {
@@ -807,9 +826,9 @@ a {
   }
 
   .contactus-form {
-    border-top: 1px solid var(--px-border-primary);
+    border-top: 0.0625rem solid var(--px-border-primary);
     background: var(--px-surface-secondary);
-    padding: 30px;
+    padding: 1.875rem;
   }
 }
 
@@ -834,7 +853,7 @@ a {
   height: 100%;
   left: 0;
   top: 0;
-  padding: 30px 15px;
+  padding: 1.875rem 0.9375rem;
   box-sizing: border-box;
   &:before {
     content: '';
@@ -854,8 +873,8 @@ a {
 }
 .mfp-bg {
   background: rgba(0, 0, 0, 0.6);
-  -webkit-backdrop-filter: saturate(180%) blur(20px);
-  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(1.25rem);
+  backdrop-filter: saturate(180%) blur(1.25rem);
   position: fixed;
   left: 0;
   top: 0;
@@ -865,28 +884,28 @@ a {
 }
 .slider-gap-24 {
   .slick-list {
-    margin-left: -12px;
-    margin-right: -12px;
+    margin-left: -0.75rem;
+    margin-right: -0.75rem;
   }
   .slick-track > * {
-    padding: 0 12px;
+    padding: 0 0.75rem;
   }
 }
 .slider-gap-50 {
   .slick-list {
-    margin-left: -25px;
-    margin-right: -25px;
+    margin-left: -1.5625rem;
+    margin-right: -1.5625rem;
   }
   .slick-track > * {
-    padding: 0 25px;
+    padding: 0 1.5625rem;
   }
-  @media (max-width: 991px) {
+  @include respond-down(tablet) {
     .slick-list {
-      margin-left: -12px;
-      margin-right: -12px;
+      margin-left: -0.75rem;
+      margin-right: -0.75rem;
     }
     .slick-track > * {
-      padding: 0 12px;
+      padding: 0 0.75rem;
     }
   }
 }
@@ -916,24 +935,24 @@ a {
   z-index: 9999;
 }
 .cs-cursor_lg {
-  width: 40px;
-  height: 40px;
-  border: 1px solid transparent;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 0.0625rem solid transparent;
   left: 0;
   top: 0;
   pointer-events: none;
   transition: 0.15s;
 }
 .cs-cursor_sm {
-  width: 10px;
-  height: 10px;
+  width: 0.625rem;
+  height: 0.625rem;
   background-color: var(--bg);
-  left: 15px;
-  top: 15px;
+  left: 0.9375rem;
+  top: 0.9375rem;
   pointer-events: none;
   transition: all 0.1s ease;
 }
-@media screen and (max-width: 575px) {
+@include respond-down(mobile) {
   .cs-cursor_lg,
   .cs-cursor_sm {
     display: none;
@@ -941,7 +960,7 @@ a {
 }
 .index-module_type__E-SaG::after {
   position: relative;
-  top: -5px;
+  top: -0.3125rem;
 }
 @keyframes rotate360 {
   from {
@@ -954,7 +973,7 @@ a {
 @keyframes animo-x {
   50% {
     animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transform: translateX(35px);
+    transform: translateX(2.1875rem);
   }
 }
 
@@ -1003,7 +1022,7 @@ a {
     .project-body {
       .text {
         padding-right: 0;
-        padding-left: 10px;
+        padding-left: 0.625rem;
         text-align: right;
         
         h5, span {
@@ -1265,7 +1284,7 @@ a {
   .rating {
     i {
       margin-right: 0;
-      margin-left: 5px;
+      @include fluid-space-auto(margin-left, 0.3125rem);
       
       &:last-child {
         margin-left: 0;

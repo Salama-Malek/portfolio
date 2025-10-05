@@ -12,6 +12,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   overflow-x: hidden;
+  @include fluid-type(1rem, 1.125rem);
+  line-height: 1.6;
 }
 
 /* Add a class to the body when a modal is open to prevent scrolling */
@@ -21,7 +23,7 @@ body.modal-open {
 
 /* Custom scrollbar styles */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 0.5rem;
 }
 
 ::-webkit-scrollbar-track {
@@ -30,7 +32,7 @@ body.modal-open {
 
 ::-webkit-scrollbar-thumb {
   background: var(--px-theme);
-  border-radius: 10px;
+  border-radius: 0.625rem;
 }
 
 /* Remove default outline and apply a custom focus style */
@@ -40,14 +42,165 @@ body.modal-open {
 
 /* Style for keyboard-focused elements */
 :focus-visible {
-  outline: 2px solid var(--px-theme) !important;
-  outline-offset: 2px;
+  outline: 0.125rem solid var(--px-theme) !important;
+  outline-offset: 0.125rem;
 }
 
 img {
   max-width: 100%;
   height: auto;
   vertical-align: middle;
+}
+
+:root {
+  --layout-container-max: 75rem;
+  --layout-container-padding: clamp(1.5rem, 5vw, 3rem);
+  --layout-gap: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-weight: 700;
+  line-height: 1.1;
+  @include fluid-space(margin-bottom, 0.75rem, 1.5rem);
+}
+
+h1 {
+  @include fluid-type(2.75rem, 4.5rem);
+}
+
+h2 {
+  @include fluid-type(2.25rem, 3.5rem);
+}
+
+h3 {
+  @include fluid-type(1.875rem, 2.75rem);
+}
+
+h4 {
+  @include fluid-type(1.5rem, 2.125rem);
+}
+
+h5 {
+  @include fluid-type(1.25rem, 1.75rem);
+}
+
+h6 {
+  @include fluid-type(1rem, 1.25rem);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+p {
+  margin: 0;
+  @include fluid-space(margin-bottom, 1rem, 1.5rem);
+  @include fluid-type(0.95rem, 1.1rem);
+  line-height: 1.7;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+.subtitle,
+.section-subtitle {
+  @include fluid-type(1.125rem, 1.5rem);
+  @include fluid-space(margin-bottom, 0.75rem, 1rem);
+  color: var(--px-text-secondary);
+}
+
+.container {
+  width: min(100%, var(--layout-container-max));
+  margin-inline: auto;
+  padding-inline: var(--layout-container-padding);
+  display: grid;
+  grid-template-columns: 100%;
+  row-gap: var(--layout-gap);
+
+  @include respond-down(small) {
+    padding-inline: clamp(1rem, 6vw, 1.75rem);
+  }
+}
+
+.row {
+  @include flex-container();
+  width: 100%;
+  margin-inline: 0;
+}
+
+.row > * {
+  min-width: 0;
+  flex: 1 1 100%;
+}
+
+$grid-gap-utilities: (
+  4: clamp(1.5rem, 4vw, 2.5rem),
+  5: clamp(2rem, 5vw, 3rem)
+);
+
+@each $key, $value in $grid-gap-utilities {
+  .gy-#{$key} {
+    row-gap: $value;
+  }
+
+  .gx-#{$key} {
+    column-gap: $value;
+  }
+}
+
+[class^='col-'],
+[class*=' col-'] {
+  min-width: 0;
+}
+
+@for $i from 1 through $grid-columns {
+  .col-#{$i} {
+    @include column-span($i);
+  }
+}
+
+$col-breakpoints: (
+  sm: small,
+  md: mobile,
+  lg: tablet,
+  xl: desktop
+);
+
+@each $prefix, $breakpoint in $col-breakpoints {
+  @for $i from 1 through $grid-columns {
+    .col-#{$prefix}-#{$i} {
+      @include column-span($i, $breakpoint);
+    }
+  }
+}
+
+.align-items-start {
+  align-items: flex-start !important;
+}
+
+.align-items-center {
+  align-items: center !important;
+}
+
+.align-items-end {
+  align-items: flex-end !important;
+}
+
+.justify-content-start {
+  justify-content: flex-start !important;
+}
+
+.justify-content-center {
+  justify-content: center !important;
+}
+
+.justify-content-between {
+  justify-content: space-between !important;
 }
 
 /* Remove the !important flag from outline */
@@ -72,9 +225,9 @@ img {
 }
 
 .load-circle {
-  width: 50px;
-  height: 50px;
-  border: 5px solid rgba(var(--px-theme-rgb), 0.2);
+  width: 3.125rem;
+  height: 3.125rem;
+  border: 0.3125rem solid rgba(var(--px-theme-rgb), 0.2);
   border-top-color: var(--px-theme);
   border-radius: 50%;
   animation: spin 1s linear infinite;
@@ -114,7 +267,7 @@ img {
     rgba(61, 144, 217, 0.45) 100%
   );
   --section-label-hover-border: rgba(35, 183, 217, 0.6);
-  --section-label-hover-shadow: 0 14px 40px rgba(49, 46, 140, 0.35);
+  --section-label-hover-shadow: 0 0.875rem 2.5rem rgba(49, 46, 140, 0.35);
   --section-title-color: transparent;
   --section-title-gradient: linear-gradient(90deg, #774ad9 0%, #23b7d9 100%);
   --section-title-highlight: linear-gradient(
@@ -122,40 +275,28 @@ img {
     rgba(119, 74, 217, 0.95) 0%,
     rgba(35, 183, 217, 0.95) 100%
   );
-  --section-title-shadow: 0 20px 45px rgba(49, 46, 140, 0.35);
+  --section-title-shadow: 0 1.25rem 2.8125rem rgba(49, 46, 140, 0.35);
   --section-title-underline: #3d90d9;
 
-  padding: 100px 0;
+  padding-block: clamp(3.75rem, 8vw, 6.25rem);
+  padding-inline: 0;
   position: relative;
   background: var(--section-bg);
 }
 
-@include down-lg {
-  .section {
-    padding-top: 80px;
-    padding-bottom: 80px;
-  }
-}
-
-@include down-sm {
-  .section {
-    padding-top: 60px;
-    padding-bottom: 60px;
-  }
-}
-
 .section-heading {
-  margin-bottom: 3rem;
+  @include fluid-space(margin-bottom, 2rem, 3rem);
   position: relative;
   text-align: center;
 
-  @include down-sm {
-    margin-bottom: 2rem;
+  @include respond-down(mobile) {
+    margin-bottom: clamp(1.5rem, 5vw, 2rem);
   }
 
   h6 {
-    margin: 0 0 1rem;
-    font-size: 0.875rem;
+    margin: 0;
+    @include fluid-space(margin-bottom, 0.75rem, 1rem);
+    @include fluid-type(0.75rem, 0.875rem);
     font-weight: 600;
     color: var(--section-label-color);
     text-transform: uppercase;
@@ -163,23 +304,23 @@ img {
 
     span {
       background: var(--section-label-gradient);
-      border: 1px solid var(--section-label-border);
+      border: 0.0625rem solid var(--section-label-border);
       border-radius: 2rem;
-      padding: 0.5rem 1.25rem;
+      padding: clamp(0.4rem, 2vw, 0.5rem) clamp(1rem, 3vw, 1.25rem);
       display: inline-block;
       color: var(--section-label-text);
       font-weight: 600;
-      font-size: 0.75rem;
+      @include fluid-type(0.6875rem, 0.8rem);
       line-height: 1;
       letter-spacing: 0.15em;
       text-transform: uppercase;
-      backdrop-filter: blur(10px);
+      backdrop-filter: blur(0.625rem);
       transition: all 0.3s ease;
 
       &:hover {
         background: var(--section-label-hover-gradient);
         border-color: var(--section-label-hover-border);
-        transform: translateY(-2px);
+        transform: translateY(-0.125rem);
         box-shadow: var(--section-label-hover-shadow);
         color: var(--palette-dark);
       }
@@ -189,7 +330,7 @@ img {
   h2 {
     margin: 0;
     font-weight: 800;
-    font-size: clamp(2rem, 5vw, 3.5rem);
+    @include fluid-type(2.25rem, 3.5rem);
     line-height: 1.2;
     color: var(--section-title-color);
     background: var(--section-title-gradient);
@@ -209,18 +350,18 @@ img {
       &::after {
         content: "";
         position: absolute;
-        bottom: -4px;
+        bottom: -0.25rem;
         left: 0;
         right: 0;
-        height: 3px;
+        height: 0.1875rem;
         background: var(--section-title-underline);
-        border-radius: 2px;
+        border-radius: 0.125rem;
         opacity: 0.6;
       }
     }
 
-    @include down-sm {
-      font-size: clamp(1.75rem, 4vw, 2.5rem);
+    @include respond-down(mobile) {
+      font-size: clamp(1.875rem, 5vw, 2.625rem);
     }
   }
 
@@ -264,18 +405,23 @@ img {
   );
   --section-label-border: rgba(61, 144, 217, 0.4);
   --section-label-hover-border: rgba(35, 183, 217, 0.55);
-  --section-label-hover-shadow: 0 18px 42px rgba(49, 46, 140, 0.35);
+  --section-label-hover-shadow: 0 1.125rem 2.625rem rgba(49, 46, 140, 0.35);
   --section-title-gradient: linear-gradient(90deg, #774ad9 0%, #23b7d9 100%);
   --section-title-highlight: linear-gradient(
     90deg,
     rgba(119, 74, 217, 0.95) 0%,
     rgba(35, 183, 217, 0.95) 100%
   );
-  --section-title-shadow: 0 24px 52px rgba(49, 46, 140, 0.35);
+  --section-title-shadow: 0 1.5rem 3.25rem rgba(49, 46, 140, 0.35);
 
   background: var(--section-bg);
   position: relative;
   overflow: hidden;
+
+  .row.align-items-start {
+    @include auto-grid(20rem, clamp(1.5rem, 4vw, 2.5rem));
+    align-items: flex-start;
+  }
 
   .container {
     position: relative;
@@ -284,40 +430,40 @@ img {
 
   .about-banner {
     position: sticky;
-    top: 120px;
+    top: 7.5rem;
     img {
-      border-radius: 20px;
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      border-radius: 1.25rem;
+      box-shadow: 0 0.625rem 1.25rem rgba(0, 0, 0, 0.1);
     }
   }
 
   .about-funfacts {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
-    margin-top: 32px;
-    padding: 0 20px;
+    gap: 1rem;
+    @include fluid-space-auto(margin-top, 2rem);
+    padding: 0 1.25rem;
 
-    @include down-md {
+    @include respond-down(tablet) {
       grid-template-columns: repeat(2, 1fr);
-      gap: 14px;
-      padding: 0 10px;
+      gap: 0.875rem;
+      padding: 0 0.625rem;
     }
 
-    @include down-sm {
+    @include respond-down(mobile) {
       grid-template-columns: 1fr;
-      gap: 12px;
+      gap: 0.75rem;
       padding: 0;
     }
   }
 
   .about-text {
     .px-btn {
-      margin-top: 24px;
+      @include fluid-space-auto(margin-top, 1.5rem);
     }
 
     p {
-      margin-bottom: 24px;
+      @include fluid-space-auto(margin-bottom, 1.5rem);
       line-height: 1.7;
       color: rgba(255, 255, 255, 0.8);
     }
@@ -325,28 +471,33 @@ img {
   }
 
   .about-details {
-    margin-top: 50px;
-    padding-top: 50px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    @include fluid-space-auto(margin-top, 3.125rem);
+    padding-top: 3.125rem;
+    border-top: 0.0625rem solid rgba(255, 255, 255, 0.1);
 
-    @include down-md {
-      margin-top: 40px;
-      padding-top: 40px;
+    @include respond-down(tablet) {
+      @include fluid-space-auto(margin-top, 2.5rem);
+      padding-top: 2.5rem;
+    }
+
+    .row {
+      @include auto-grid(18.75rem, clamp(1.25rem, 4vw, 2rem));
+      align-items: stretch;
     }
   }
 }
 
 .funfact-card {
   background: var(--px-bg-tertiary);
-  border: 1px solid var(--px-border-primary);
-  padding: 16px;
-  border-radius: 16px;
+  border: 0.0625rem solid var(--px-border-primary);
+  padding: 1rem;
+  border-radius: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(0.625rem);
   position: relative;
   overflow: hidden;
 
@@ -356,7 +507,7 @@ img {
     top: 0;
     left: 0;
     right: 0;
-    height: 3px;
+    height: 0.1875rem;
     background: linear-gradient(
       135deg,
       var(--px-primary) 0%,
@@ -367,8 +518,8 @@ img {
   }
 
   &:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    transform: translateY(-0.5rem);
+    box-shadow: 0 1.25rem 2.5rem rgba(0, 0, 0, 0.3);
     border-color: rgba(120, 119, 198, 0.5);
 
     &::before {
@@ -381,25 +532,25 @@ img {
   }
 
   .funfact-icon-wrapper {
-    margin-bottom: 12px;
+    @include fluid-space-auto(margin-bottom, 0.75rem);
     transition: transform 0.3s ease;
   }
 
   .funfact-icon {
-    font-size: 2rem;
+    @include fluid-type(1.5rem, 2rem);
     color: var(--px-primary);
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 45px;
-    height: 45px;
+    width: clamp(2.25rem, 5vw, 2.8125rem);
+    height: clamp(2.25rem, 5vw, 2.8125rem);
     background: linear-gradient(
       135deg,
       rgba(120, 119, 198, 0.1) 0%,
       rgba(255, 119, 198, 0.1) 100%
     );
     border-radius: 50%;
-    border: 2px solid rgba(120, 119, 198, 0.2);
+    border: 0.125rem solid rgba(120, 119, 198, 0.2);
   }
 
   .funfact-content {
@@ -407,11 +558,11 @@ img {
   }
 
   .funfact-number {
-    font-size: 2rem;
+    @include fluid-type(1.75rem, 2.25rem);
     font-weight: 800;
     color: white;
     line-height: 1;
-    margin-bottom: 6px;
+    margin-bottom: clamp(0.25rem, 2vw, 0.5rem);
     background: linear-gradient(
       135deg,
       var(--px-primary) 0%,
@@ -423,18 +574,18 @@ img {
   }
 
   .funfact-plus {
-    font-size: 1.4rem;
+    @include fluid-type(1.125rem, 1.5rem);
     color: var(--px-primary);
-    margin-left: 2px;
+    margin-left: clamp(0.0625rem, 1.5vw, 0.1875rem);
   }
 
   .funfact-title {
-    font-size: 0.85rem;
+    @include fluid-type(0.75rem, 0.875rem);
     color: rgba(255, 255, 255, 0.7);
     font-weight: 500;
     line-height: 1.3;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.03125rem;
   }
 }
 
@@ -449,48 +600,48 @@ img {
       content: "";
       position: absolute;
       top: 0;
-      left: 20px;
+      left: 1.25rem;
       height: 100%;
-      width: 2px;
+      width: 0.125rem;
       background-color: var(--px-gray-3);
     }
   }
 
   .timeline-item {
     position: relative;
-    padding-left: 60px;
-    margin-bottom: 30px;
+    padding-left: clamp(2.5rem, 6vw, 3.75rem);
+    margin-bottom: clamp(1.25rem, 5vw, 1.875rem);
   }
 
   .timeline-marker {
     position: absolute;
-    top: 5px;
-    left: 13px;
-    width: 16px;
-    height: 16px;
+    top: 0.3125rem;
+    left: clamp(0.625rem, 3vw, 0.8125rem);
+    width: clamp(0.75rem, 2.5vw, 1rem);
+    height: clamp(0.75rem, 2.5vw, 1rem);
     border-radius: 50%;
     background-color: var(--px-primary);
-    border: 3px solid var(--px-bg);
+    border: 0.1875rem solid var(--px-bg);
   }
 
   .timeline-info {
     position: absolute;
     top: 0;
-    left: -100px;
-    width: 80px;
+    left: clamp(-5rem, -8vw, -6.25rem);
+    width: clamp(4rem, 12vw, 5rem);
     text-align: right;
-    font-size: 0.9rem;
+    @include fluid-type(0.8rem, 0.95rem);
     color: var(--px-text);
   }
 
   .timeline-content {
     h5 {
-      font-size: 1.2rem;
+      @include fluid-type(1.05rem, 1.25rem);
       font-weight: 600;
-      margin-bottom: 5px;
+      margin-bottom: clamp(0.25rem, 2vw, 0.375rem);
     }
     p {
-      font-size: 1rem;
+      @include fluid-type(0.95rem, 1.05rem);
       color: var(--px-text);
     }
   }
@@ -498,26 +649,26 @@ img {
 
 .skillbar-section {
   .skillbar {
-    margin-bottom: 25px;
+    margin-bottom: clamp(1rem, 4vw, 1.75rem);
   }
 
   .skillbar-title {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 8px;
+    margin-bottom: clamp(0.35rem, 2vw, 0.5rem);
     font-weight: 600;
   }
 
   .skillbar-bar {
-    height: 8px;
+    height: 0.5rem;
     background-color: var(--px-gray-2);
-    border-radius: 5px;
+    border-radius: 0.3125rem;
   }
 
   .skillbar-progress {
     height: 100%;
     background-color: var(--px-primary);
-    border-radius: 5px;
+    border-radius: 0.3125rem;
     transition: width 1.5s ease;
   }
 }
@@ -527,16 +678,16 @@ img {
 .mfp-bg {
   background: rgba(0, 0, 0, 0.6);
   opacity: 1;
-  backdrop-filter: saturate(180%) blur(20px);
+  backdrop-filter: saturate(180%) blur(1.25rem);
 }
 .px-modal {
-  max-width: 1200px;
+  max-width: 75rem;
   margin: 0 auto;
-  padding: 30px;
+  padding: 1.875rem;
   background-color: var(--px-white);
   position: relative;
-  @include down-lg {
-    padding: 18px;
+  @include respond-down(desktop) {
+    padding: 1.125rem;
   }
 
   .about-content {
@@ -545,7 +696,7 @@ img {
       margin: 0;
       list-style: none;
       li {
-        padding: 5px 0;
+        padding: 0.3125rem 0;
       }
     }
     .col-4 {
@@ -562,9 +713,9 @@ img {
   z-index: 1;
   opacity: 1;
   border: none;
-  width: 40px;
-  height: 40px;
-  font-size: 30px;
+  width: 2.5rem;
+  height: 2.5rem;
+  @include fluid-type-auto(1.875rem);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -575,10 +726,10 @@ img {
 }
 .single-project-box {
   h4 {
-    margin-bottom: 12px;
-    padding-bottom: 12px;
+    @include fluid-space-auto(margin-bottom, 0.75rem);
+    padding-bottom: 0.75rem;
     color: var(--text-primary);
-    border-bottom: 1px solid var(--bs-border-color);
+    border-bottom: 0.0625rem solid var(--bs-border-color);
   }
 }
 
@@ -593,10 +744,10 @@ img {
   .header-top-fixed {
     .main-menu {
       margin: 0 auto 0 0;
-      padding: 0 0 0 50px;
+      padding: 0 0 0 3.125rem;
 
-      @include down-md {
-        padding: 10px 20px;
+      @include respond-down(tablet) {
+        padding: 0.625rem 1.25rem;
       }
 
       > li {
@@ -620,7 +771,7 @@ img {
   /* Language switcher RTL */
   .language-switcher-container {
     margin-right: 0;
-    margin-left: 30px;
+    @include fluid-space-auto(margin-left, 1.875rem);
   }
 
   .language-dropdown {
@@ -636,7 +787,7 @@ img {
   .px-btn {
     i {
       margin-left: 0;
-      margin-right: 10px;
+      @include fluid-space-auto(margin-right, 0.625rem);
       transform: rotate(180deg);
     }
   }
@@ -650,14 +801,13 @@ img {
 
     .effect-2 {
       right: auto;
-      left: -60px;
+      left: -3.75rem;
     }
 
     .review-box {
       .r-box {
         + .r-box {
-          margin-left: 0;
-          margin-right: 10px;
+          margin-inline: 0;
         }
       }
     }
@@ -668,7 +818,7 @@ img {
     .project-body {
       .text {
         padding-right: 0;
-        padding-left: 10px;
+        padding-left: 0.625rem;
       }
     }
   }
@@ -712,21 +862,21 @@ img {
   .owl-nav {
     .owl-next {
       right: auto;
-      left: 0px;
+      left: 0rem;
 
-      @include up-lg {
+      @include respond(desktop) {
         right: auto;
-        left: -50px;
+        left: -3.125rem;
       }
     }
 
     .owl-prev {
       left: auto;
-      right: 0px;
+      right: 0rem;
 
-      @include up-lg {
+      @include respond(desktop) {
         left: auto;
-        right: -50px;
+        right: -3.125rem;
       }
     }
   }
@@ -734,21 +884,21 @@ img {
   /* Slick slider RTL */
   .slider-gap-24 {
     .slick-list {
-      margin-left: -12px;
-      margin-right: -12px;
+      margin-left: -0.75rem;
+      margin-right: -0.75rem;
     }
   }
 
   .slider-gap-50 {
     .slick-list {
-      margin-left: -25px;
-      margin-right: -25px;
+      margin-left: -1.5625rem;
+      margin-right: -1.5625rem;
     }
 
-    @media (max-width: 991px) {
+    @include respond-down(tablet) {
       .slick-list {
-        margin-left: -12px;
-        margin-right: -12px;
+        margin-left: -0.75rem;
+        margin-right: -0.75rem;
       }
     }
   }
@@ -757,7 +907,7 @@ img {
   .rating {
     i {
       margin-right: 0;
-      margin-left: 5px;
+      @include fluid-space-auto(margin-left, 0.3125rem);
 
       &:last-child {
         margin-left: 0;
@@ -768,18 +918,18 @@ img {
   /* Toggler menu RTL */
   .toggler-menu {
     margin-left: 0;
-    margin-right: 15px;
+    @include fluid-space-auto(margin-right, 0.9375rem);
   }
 
   /* Responsive RTL adjustments */
-  @include down-md {
+  @include respond-down(tablet) {
     .language-switcher-container {
-      margin-left: 10px;
-      margin-right: 10px;
+      @include fluid-space-auto(margin-left, 0.625rem);
+      @include fluid-space-auto(margin-right, 0.625rem);
     }
 
     .toggler-menu {
-      margin-right: 10px;
+      @include fluid-space-auto(margin-right, 0.625rem);
     }
   }
 
@@ -799,7 +949,7 @@ img {
   }
 
   /* Fix for mobile menu in RTL */
-  @include down-md {
+  @include respond-down(tablet) {
     .header-top-fixed {
       .main-menu {
         text-align: right;

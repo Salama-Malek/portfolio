@@ -6,15 +6,15 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 15px;
-    margin-bottom: 50px;
+    gap: 0.9375rem;
+    @include fluid-space-auto(margin-bottom, 3.125rem);
 
     .filter-btn {
       background-color: transparent;
-      border: 1px solid var(--px-gray-3);
+      border: 0.0625rem solid var(--px-gray-3);
       color: var(--px-text);
-      padding: 10px 25px;
-      border-radius: 50px;
+      padding: 0.625rem 1.5625rem;
+      border-radius: 3.125rem;
       cursor: pointer;
       font-weight: 500;
       transition: all 0.3s ease;
@@ -25,7 +25,7 @@
         background: var(--px-primary);
         border-color: var(--px-primary);
         color: var(--px-white);
-        box-shadow: 0 5px 15px rgba(var(--px-primary-rgb), 0.3);
+        box-shadow: 0 0.3125rem 0.9375rem rgba(var(--px-primary-rgb), 0.3);
       }
     }
   }
@@ -34,38 +34,38 @@
     display: grid !important;
     grid-template-columns: repeat(4, 1fr) !important;
     gap: 1.5rem !important;
-    max-width: 1600px !important;
+    max-width: 100rem !important;
     margin: 0 auto !important;
     
-    @media (max-width: 1400px) {
+    @include respond-down(desktop) {
       grid-template-columns: repeat(3, 1fr) !important;
       gap: 1.5rem !important;
-      max-width: 1200px !important;
+      max-width: 75rem !important;
     }
     
-    @media (max-width: 1000px) {
+    @include respond-down(tablet) {
       grid-template-columns: repeat(2, 1fr) !important;
       gap: 1.25rem !important;
-      max-width: 800px !important;
+      max-width: 50rem !important;
     }
     
-    @media (max-width: 768px) {
+    @include respond-down(mobile) {
       grid-template-columns: 1fr !important;
       gap: 1rem !important;
-      max-width: 400px !important;
+      max-width: 25rem !important;
     }
   }
 }
 
 .project-card {
   background: var(--gradient-space);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 0.0625rem solid rgba(255, 255, 255, 0.1);
   border-radius: 1.5rem;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.3);
   cursor: pointer;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   overflow: hidden;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(0.625rem);
   position: relative;
   width: 100%;
 
@@ -83,8 +83,8 @@
   }
 
   &:hover {
-    transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    transform: translateY(-0.5rem) scale(1.02);
+    box-shadow: 0 1.25rem 2.5rem rgba(0, 0, 0, 0.4);
     border-color: rgba(120, 119, 198, 0.5);
     
     &::before {
@@ -103,7 +103,7 @@
   .project-card-img {
     position: relative;
     overflow: hidden;
-    height: 200px;
+    height: 12.5rem;
     border-radius: 1rem 1rem 0 0;
     
     img {
@@ -125,24 +125,24 @@
       justify-content: center;
       opacity: 0;
       transition: opacity 0.3s ease;
-      backdrop-filter: blur(5px);
+      backdrop-filter: blur(0.3125rem);
       
       .overlay-content {
         display: flex;
         gap: 1rem;
         
         .overlay-btn {
-          width: 50px;
-          height: 50px;
+          width: 3.125rem;
+          height: 3.125rem;
           background: rgba(255, 255, 255, 0.2);
           border-radius: 50%;
           display: flex;
           align-items: center;
           justify-content: center;
           color: white;
-          font-size: 1.2rem;
+          @include fluid-type-auto(1.2rem);
           transition: all 0.3s ease;
-          backdrop-filter: blur(10px);
+          backdrop-filter: blur(0.625rem);
           
           &:hover {
             background: rgba(255, 255, 255, 0.3);
@@ -157,14 +157,14 @@
       top: 1rem;
       right: 1rem;
       background: rgba(0, 0, 0, 0.8);
-      backdrop-filter: blur(10px);
+      backdrop-filter: blur(0.625rem);
       padding: 0.5rem 1rem;
       border-radius: 2rem;
-      font-size: 0.75rem;
+      @include fluid-type-auto(0.75rem);
       font-weight: 600;
       text-transform: uppercase;
       color: white;
-      letter-spacing: 0.5px;
+      letter-spacing: 0.03125rem;
       z-index: 2;
     }
   }
@@ -179,10 +179,10 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    margin-bottom: 1rem;
+    @include fluid-space-auto(margin-bottom, 1rem);
     
     .project-card-title {
-      font-size: 1.25rem;
+      @include fluid-type-auto(1.25rem);
       font-weight: 700;
       color: white;
       margin: 0;
@@ -194,7 +194,7 @@
       gap: 0.25rem;
       
       svg {
-        font-size: 0.875rem;
+        @include fluid-type-auto(0.875rem);
         color: var(--status-amber);
         
         &:last-child {
@@ -206,9 +206,9 @@
 
   .project-card-subtitle {
     color: rgba(255, 255, 255, 0.7);
-    font-size: 0.875rem;
+    @include fluid-type-auto(0.875rem);
     font-weight: 500;
-    margin-bottom: 1rem;
+    @include fluid-space-auto(margin-bottom, 1rem);
     line-height: 1.5;
   }
 
@@ -216,15 +216,15 @@
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    margin-bottom: 1rem;
+    @include fluid-space-auto(margin-bottom, 1rem);
     flex-wrap: wrap;
     
     .tech-icon-wrapper {
-      font-size: 1.25rem;
+      @include fluid-type-auto(1.25rem);
       color: rgba(255, 255, 255, 0.8);
       
       &.more {
-        font-size: 0.75rem;
+        @include fluid-type-auto(0.75rem);
         font-weight: 600;
         color: rgba(120, 119, 198, 0.8);
       }
@@ -235,9 +235,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 1rem;
+    @include fluid-space-auto(margin-top, 1rem);
     padding-top: 1rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 0.0625rem solid rgba(255, 255, 255, 0.1);
     
     .project-card-btn {
       color: var(--tone-purple);
@@ -248,7 +248,7 @@
       background: none;
       border: none;
       padding: 0;
-      font-size: 0.875rem;
+      @include fluid-type-auto(0.875rem);
       transition: all 0.3s ease;
       
       span {
@@ -257,7 +257,7 @@
       
       svg {
         transition: transform 0.3s ease;
-        font-size: 1rem;
+        @include fluid-type-auto(1rem);
       }
       
       &:hover {
@@ -268,7 +268,7 @@
         }
         
         svg {
-          transform: translateX(4px);
+          transform: translateX(0.25rem);
         }
       }
     }
@@ -279,22 +279,22 @@
       border: none;
       padding: 0.5rem 1rem;
       border-radius: 2rem;
-      font-size: 0.75rem;
+      @include fluid-type-auto(0.75rem);
       font-weight: 600;
       text-transform: uppercase;
-      letter-spacing: 0.5px;
+      letter-spacing: 0.03125rem;
       transition: all 0.3s ease;
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
       
       &:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 8px 25px rgba(120, 119, 198, 0.4);
+        transform: translateY(-0.125rem);
+        box-shadow: 0 0.5rem 1.5625rem rgba(120, 119, 198, 0.4);
       }
       
       svg {
-        font-size: 0.875rem;
+        @include fluid-type-auto(0.875rem);
       }
     }
   }
@@ -318,38 +318,38 @@
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.7);
-    backdrop-filter: blur(8px);
+    backdrop-filter: blur(0.5rem);
     z-index: -1;
   }
 
   .project-modal-content {
     background: var(--px-bg);
     color: var(--px-text);
-    border-radius: 15px;
-    max-width: 900px;
+    border-radius: 0.9375rem;
+    max-width: 56.25rem;
     width: 95%;
     max-height: 90vh;
     display: grid;
     grid-template-columns: 1fr;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0.625rem 2.5rem rgba(0, 0, 0, 0.2);
     overflow: hidden;
 
-    @media (min-width: 768px) {
+    @include respond(mobile) {
       grid-template-columns: 1fr 1fr;
     }
   }
 
   .project-modal-close {
     position: absolute;
-    top: 15px;
-    right: 15px;
+    top: 0.9375rem;
+    right: 0.9375rem;
     background: rgba(var(--px-bg-rgb), 0.7);
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(0.3125rem);
     border: none;
     border-radius: 50%;
-    width: 35px;
-    height: 35px;
-    font-size: 20px;
+    width: 2.1875rem;
+    height: 2.1875rem;
+    @include fluid-type-auto(1.25rem);
     color: var(--px-text);
     cursor: pointer;
     z-index: 10;
@@ -361,8 +361,8 @@
   }
 
   .project-modal-img {
-    height: 300px;
-    @media (min-width: 768px) {
+    height: 18.75rem;
+    @include respond(mobile) {
       height: 100%;
     }
     img {
@@ -373,47 +373,47 @@
   }
 
   .project-modal-info {
-    padding: 30px;
+    padding: 1.875rem;
     overflow-y: auto;
   }
 
   .project-modal-title {
-    font-size: 2rem;
+    @include fluid-type-auto(2rem);
     font-weight: 700;
     color: var(--px-heading);
   }
 
   .project-modal-subtitle {
-    font-size: 1rem;
+    @include fluid-type-auto(1rem);
     color: var(--px-primary);
-    margin-bottom: 20px;
+    @include fluid-space-auto(margin-bottom, 1.25rem);
   }
 
   .project-modal-description {
     line-height: 1.7;
-    margin-bottom: 30px;
+    @include fluid-space-auto(margin-bottom, 1.875rem);
   }
 
   .project-modal-tech {
-    margin-bottom: 30px;
+    @include fluid-space-auto(margin-bottom, 1.875rem);
     h5 {
       font-weight: 600;
-      margin-bottom: 15px;
+      @include fluid-space-auto(margin-bottom, 0.9375rem);
     }
     .tech-icons-container {
       display: flex;
       flex-wrap: wrap;
-      gap: 15px;
+      gap: 0.9375rem;
     }
     .tech-icon-item {
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 8px;
-      width: 60px;
-      font-size: 32px;
+      gap: 0.5rem;
+      width: 3.75rem;
+      @include fluid-type-auto(2rem);
       span {
-        font-size: 12px;
+        @include fluid-type-auto(0.75rem);
         font-weight: 500;
       }
     }
@@ -422,7 +422,7 @@
   .project-modal-links {
     display: flex;
     flex-wrap: wrap;
-    gap: 15px;
+    gap: 0.9375rem;
   }
 }
 
@@ -440,31 +440,31 @@
 .project-counter-wrapper {
   .counter-card {
     background: var(--gradient-neutral);
-    border: 2px solid var(--tone-muted);
-    border-radius: 20px;
-    padding: 20px 30px;
+    border: 0.125rem solid var(--tone-muted);
+    border-radius: 1.25rem;
+    padding: 1.25rem 1.875rem;
     display: inline-flex;
     align-items: center;
-    gap: 15px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    gap: 0.9375rem;
+    box-shadow: 0 0.25rem 1.25rem rgba(0, 0, 0, 0.08);
     transition: all 0.3s ease;
     
     &:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+      transform: translateY(-0.125rem);
+      box-shadow: 0 0.5rem 1.875rem rgba(0, 0, 0, 0.12);
       border-color: var(--px-theme);
     }
     
     .counter-icon {
-      width: 50px;
-      height: 50px;
+      width: 3.125rem;
+      height: 3.125rem;
       background: var(--gradient-accent-soft);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       color: white;
-      font-size: 24px;
+      @include fluid-type-auto(1.5rem);
     }
     
     .counter-content {
@@ -472,14 +472,14 @@
       flex-direction: column;
       
       .counter-number {
-        font-size: 32px;
+        @include fluid-type-auto(2rem);
         font-weight: 700;
         color: var(--px-theme);
         line-height: 1;
       }
       
       .counter-label {
-        font-size: 14px;
+        @include fluid-type-auto(0.875rem);
         color: var(--px-text);
         font-weight: 500;
       }
@@ -490,14 +490,14 @@
 .project-box {
   position: relative;
   overflow: hidden;
-  border-radius: 20px;
+  border-radius: 1.25rem;
   background: var(--px-bg-tertiary);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 0.25rem 1.25rem rgba(0, 0, 0, 0.08);
   
   &:hover {
-    transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    transform: translateY(-0.5rem) scale(1.02);
+    box-shadow: 0 1.25rem 2.5rem rgba(0, 0, 0, 0.15);
     
     .project-overlay {
       opacity: 1;
@@ -508,7 +508,7 @@
     }
     
     .project-category {
-      transform: translateY(-5px);
+      transform: translateY(-0.3125rem);
     }
   }
 }
@@ -519,7 +519,7 @@
   
   img {
     width: 100%;
-    height: 280px;
+    height: 17.5rem;
     object-fit: cover;
     transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   }
@@ -537,15 +537,15 @@
   justify-content: center;
   opacity: 0;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(0.3125rem);
   
   .overlay-actions {
     display: flex;
-    gap: 20px;
+    gap: 1.25rem;
     
     .action-btn {
-      width: 60px;
-      height: 60px;
+      width: 3.75rem;
+      height: 3.75rem;
       background: var(--px-bg-tertiary);
       border-radius: 50%;
       display: flex;
@@ -553,17 +553,17 @@
       justify-content: center;
       cursor: pointer;
       transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 0.25rem 0.9375rem rgba(0, 0, 0, 0.2);
       
       svg {
-        font-size: 24px;
+        @include fluid-type-auto(1.5rem);
         color: var(--px-theme);
         transition: transform 0.3s ease;
       }
       
       &:hover {
         transform: scale(1.15) rotate(5deg);
-        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        box-shadow: 0 0.5rem 1.5625rem rgba(0, 0, 0, 0.3);
         
         svg {
           transform: scale(1.2);
@@ -591,23 +591,23 @@
 
 .project-status {
   position: absolute;
-  top: 20px;
-  right: 20px;
-  padding: 8px 16px;
-  border-radius: 25px;
-  font-size: 11px;
+  top: 1.25rem;
+  right: 1.25rem;
+  padding: 0.5rem 1rem;
+  border-radius: 1.5625rem;
+  @include fluid-type-auto(0.6875rem);
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 0.0625rem;
   display: flex;
   align-items: center;
-  gap: 6px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(10px);
+  gap: 0.375rem;
+  box-shadow: 0 0.25rem 0.9375rem rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(0.625rem);
   
   .status-dot {
-    width: 8px;
-    height: 8px;
+    width: 0.5rem;
+    height: 0.5rem;
     border-radius: 50%;
     background: currentColor;
     animation: pulse 2s infinite;
@@ -631,30 +631,30 @@
 
 .project-category {
   position: absolute;
-  top: 20px;
-  left: 20px;
+  top: 1.25rem;
+  left: 1.25rem;
   background: rgba(0, 0, 0, 0.8);
   color: white;
-  padding: 6px 12px;
-  border-radius: 20px;
-  font-size: 10px;
+  padding: 0.375rem 0.75rem;
+  border-radius: 1.25rem;
+  @include fluid-type-auto(0.625rem);
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.03125rem;
   display: flex;
   align-items: center;
-  gap: 5px;
-  backdrop-filter: blur(10px);
+  gap: 0.3125rem;
+  backdrop-filter: blur(0.625rem);
   transition: all 0.3s ease;
   
   svg {
-    font-size: 12px;
+    @include fluid-type-auto(0.75rem);
     color: var(--px-theme);
   }
 }
 
 .project-body {
-  padding: 25px;
+  padding: 1.5625rem;
   background: var(--px-bg-tertiary);
   
   .text {
@@ -662,22 +662,22 @@
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
-      margin-bottom: 12px;
+      @include fluid-space-auto(margin-bottom, 0.75rem);
       
       .project-title {
         color: var(--px-text-primary);
         font-weight: 700;
-        font-size: 18px;
+        @include fluid-type-auto(1.125rem);
         margin: 0;
         line-height: 1.3;
       }
       
       .project-rating {
         display: flex;
-        gap: 2px;
+        gap: 0.125rem;
         
         svg {
-          font-size: 14px;
+          @include fluid-type-auto(0.875rem);
           color: var(--status-amber);
           
           &:last-child {
@@ -689,62 +689,62 @@
     
     .project-subtitle {
       color: var(--px-text);
-      font-size: 14px;
+      @include fluid-type-auto(0.875rem);
       font-weight: 500;
-      margin-bottom: 15px;
+      @include fluid-space-auto(margin-bottom, 0.9375rem);
     }
   }
 }
 
 .tech-tags {
-  margin-top: 20px;
+  @include fluid-space-auto(margin-top, 1.25rem);
   
   .tech-header {
     display: flex;
     align-items: center;
-    gap: 8px;
-    margin-bottom: 12px;
+    gap: 0.5rem;
+    @include fluid-space-auto(margin-bottom, 0.75rem);
     color: var(--px-text);
-    font-size: 13px;
+    @include fluid-type-auto(0.8125rem);
     font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.03125rem;
     
     svg {
       color: var(--px-theme);
-      font-size: 14px;
+      @include fluid-type-auto(0.875rem);
     }
   }
   
   .tech-list {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
+    gap: 0.5rem;
     
     .tech-tag {
       background: linear-gradient(135deg, var(--surface) 0%, var(--tone-muted) 100%);
       color: var(--px-text);
-      padding: 6px 12px;
-      border-radius: 20px;
-      font-size: 11px;
+      padding: 0.375rem 0.75rem;
+      border-radius: 1.25rem;
+      @include fluid-type-auto(0.6875rem);
       font-weight: 600;
-      border: 1px solid var(--tone-line);
+      border: 0.0625rem solid var(--tone-line);
       display: flex;
       align-items: center;
-      gap: 5px;
+      gap: 0.3125rem;
       transition: all 0.3s ease;
       
       svg {
         color: var(--status-green);
-        font-size: 12px;
+        @include fluid-type-auto(0.75rem);
       }
       
       &:hover {
         background: var(--gradient-accent-soft);
         color: white;
         border-color: transparent;
-        transform: translateY(-2px);
-        box-shadow: 0 4px 15px rgba(7, 136, 255, 0.3);
+        transform: translateY(-0.125rem);
+        box-shadow: 0 0.25rem 0.9375rem rgba(7, 136, 255, 0.3);
         
         svg {
           color: white;
@@ -761,7 +761,7 @@
         }
         
         &:hover {
-          transform: translateY(-2px) scale(1.05);
+          transform: translateY(-0.125rem) scale(1.05);
         }
       }
     }
@@ -769,33 +769,33 @@
 }
 
 .project-meta {
-  margin-top: 25px;
-  padding-top: 20px;
-  border-top: 2px solid var(--surface);
+  @include fluid-space-auto(margin-top, 1.5625rem);
+  padding-top: 1.25rem;
+  border-top: 0.125rem solid var(--surface);
   position: relative;
   
   .project-actions-compact {
     position: absolute;
-    bottom: -100px;
-    left: -15px;
+    bottom: -6.25rem;
+    left: -0.9375rem;
     display: flex;
-    gap: 8px;
+    gap: 0.5rem;
     z-index: 10;
     
     .action-icon {
-      width: 40px;
-      height: 40px;
+      width: 2.5rem;
+      height: 2.5rem;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       text-decoration: none;
       transition: all 0.3s ease;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 0.25rem 0.9375rem rgba(0, 0, 0, 0.2);
       cursor: pointer;
       
       svg {
-        font-size: 18px;
+        @include fluid-type-auto(1.125rem);
         transition: transform 0.3s ease;
       }
       
@@ -805,8 +805,8 @@
         color: white;
         
         &:hover {
-          transform: translateY(-3px) scale(1.1);
-          box-shadow: 0 8px 25px rgba(40, 167, 69, 0.4);
+          transform: translateY(-0.1875rem) scale(1.1);
+          box-shadow: 0 0.5rem 1.5625rem rgba(40, 167, 69, 0.4);
           
           svg {
             transform: scale(1.2) rotate(15deg);
@@ -814,7 +814,7 @@
         }
         
         &:active {
-          transform: translateY(-1px) scale(1.05);
+          transform: translateY(-0.0625rem) scale(1.05);
         }
       }
       
@@ -824,8 +824,8 @@
         color: white;
         
         &:hover {
-          transform: translateY(-3px) scale(1.1);
-          box-shadow: 0 8px 25px rgba(111, 66, 193, 0.4);
+          transform: translateY(-0.1875rem) scale(1.1);
+          box-shadow: 0 0.5rem 1.5625rem rgba(111, 66, 193, 0.4);
           
           svg {
             transform: scale(1.2);
@@ -833,7 +833,7 @@
         }
         
         &:active {
-          transform: translateY(-1px) scale(1.05);
+          transform: translateY(-0.0625rem) scale(1.05);
         }
       }
       
@@ -844,8 +844,8 @@
         cursor: default;
         
         &:hover {
-          transform: translateY(-2px) scale(1.05);
-          box-shadow: 0 6px 20px rgba(108, 117, 125, 0.4);
+          transform: translateY(-0.125rem) scale(1.05);
+          box-shadow: 0 0.375rem 1.25rem rgba(108, 117, 125, 0.4);
         }
       }
     }
@@ -861,29 +861,29 @@
   .slider-nav-arrows {
     position: absolute;
     top: 50%;
-    left: -60px;
-    right: -60px;
+    left: -3.75rem;
+    right: -3.75rem;
     transform: translateY(-50%);
     z-index: 10;
     pointer-events: none;
     
     .nav-arrow {
       position: absolute;
-      width: 50px;
-      height: 50px;
+      width: 3.125rem;
+      height: 3.125rem;
       background: var(--gradient-accent-soft);
       border: none;
       border-radius: 50%;
       color: white;
-      font-size: 20px;
+      @include fluid-type-auto(1.25rem);
       cursor: pointer;
       transition: all 0.3s ease;
-      box-shadow: 0 4px 15px rgba(7, 136, 255, 0.3);
+      box-shadow: 0 0.25rem 0.9375rem rgba(7, 136, 255, 0.3);
       pointer-events: auto;
       
       &:hover {
         transform: scale(1.1);
-        box-shadow: 0 6px 25px rgba(7, 136, 255, 0.5);
+        box-shadow: 0 0.375rem 1.5625rem rgba(7, 136, 255, 0.5);
       }
       
       &.prev-arrow {
@@ -898,23 +898,23 @@
   
   .slider-progress {
     position: absolute;
-    bottom: -30px;
+    bottom: -1.875rem;
     left: 50%;
     transform: translateX(-50%);
-    width: 200px;
+    width: 12.5rem;
     z-index: 10;
     
     .progress-bar {
       width: 100%;
-      height: 4px;
+      height: 0.25rem;
       background: var(--tone-muted);
-      border-radius: 2px;
+      border-radius: 0.125rem;
       overflow: hidden;
       
       .progress-fill {
         height: 100%;
         background: var(--gradient-accent-horizontal);
-        border-radius: 2px;
+        border-radius: 0.125rem;
         animation: progress 5s linear infinite;
       }
     }
@@ -945,23 +945,23 @@
 /* Removed demo-pulse animation - no longer needed */
 
 /* Responsive Design */
-@media (max-width: 1200px) {
+@include respond-down(desktop) {
   .slider-container {
     .slider-nav-arrows {
-      left: -40px;
-      right: -40px;
+      left: -2.5rem;
+      right: -2.5rem;
       
       .nav-arrow {
-        width: 45px;
-        height: 45px;
-        font-size: 18px;
+        width: 2.8125rem;
+        height: 2.8125rem;
+        @include fluid-type-auto(1.125rem);
       }
     }
   }
   
   .project-card {
     .project-card-img {
-      height: 180px;
+      height: 11.25rem;
     }
     
     .project-card-body {
@@ -969,36 +969,36 @@
     }
     
     .project-card-title {
-      font-size: 1.1rem;
+      @include fluid-type-auto(1.1rem);
     }
   }
 }
 
-@media (max-width: 768px) {
+@include respond-down(mobile) {
   .project-filters-wrapper {
     .filter-header {
       .filter-subtitle {
-        font-size: 14px;
+        @include fluid-type-auto(0.875rem);
       }
     }
   }
   
   .project-filters {
-    gap: 8px;
+    gap: 0.5rem;
     
     .filter-btn {
-      padding: 10px 18px;
-      font-size: 13px;
+      padding: 0.625rem 1.125rem;
+      @include fluid-type-auto(0.8125rem);
       
       .filter-icon {
-        font-size: 14px;
+        @include fluid-type-auto(0.875rem);
       }
     }
   }
   
   .project-card {
     .project-card-img {
-      height: 160px;
+      height: 10rem;
     }
     
     .project-card-body {
@@ -1007,26 +1007,26 @@
     
     .project-card-header {
       .project-card-title {
-        font-size: 1rem;
+        @include fluid-type-auto(1rem);
       }
       
       .project-card-rating {
         svg {
-          font-size: 0.75rem;
+          @include fluid-type-auto(0.75rem);
         }
       }
     }
     
     .project-card-subtitle {
-      font-size: 0.8rem;
+      @include fluid-type-auto(0.8rem);
     }
     
     .project-card-tech {
       .tech-icon-wrapper {
-        font-size: 1rem;
+        @include fluid-type-auto(1rem);
         
         &.more {
-          font-size: 0.7rem;
+          @include fluid-type-auto(0.7rem);
         }
       }
     }
@@ -1037,11 +1037,11 @@
       align-items: stretch;
       
       .project-card-btn {
-        font-size: 0.8rem;
+        @include fluid-type-auto(0.8rem);
       }
       
       .project-card-demo {
-        font-size: 0.7rem;
+        @include fluid-type-auto(0.7rem);
         padding: 0.4rem 0.8rem;
       }
     }
@@ -1050,42 +1050,42 @@
   
   .project-counter-wrapper {
     .counter-card {
-      padding: 15px 20px;
+      padding: 0.9375rem 1.25rem;
       
       .counter-icon {
-        width: 40px;
-        height: 40px;
-        font-size: 20px;
+        width: 2.5rem;
+        height: 2.5rem;
+        @include fluid-type-auto(1.25rem);
       }
       
       .counter-content {
         .counter-number {
-          font-size: 28px;
+          @include fluid-type-auto(1.75rem);
         }
         
         .counter-label {
-          font-size: 12px;
+          @include fluid-type-auto(0.75rem);
         }
       }
     }
   }
   
   .project-media img {
-    height: 220px;
+    height: 13.75rem;
   }
   
   .project-body {
-    padding: 20px;
+    padding: 1.25rem;
     
     .text {
       .project-header {
         .project-title {
-          font-size: 16px;
+          @include fluid-type-auto(1rem);
         }
         
         .project-rating {
           svg {
-            font-size: 12px;
+            @include fluid-type-auto(0.75rem);
           }
         }
       }
@@ -1094,13 +1094,13 @@
   
   .tech-tags {
     .tech-header {
-      font-size: 12px;
+      @include fluid-type-auto(0.75rem);
     }
     
     .tech-list {
       .tech-tag {
-        font-size: 10px;
-        padding: 5px 10px;
+        @include fluid-type-auto(0.625rem);
+        padding: 0.3125rem 0.625rem;
       }
     }
   }
@@ -1108,29 +1108,29 @@
   .project-meta {
     .project-links {
       flex-direction: column;
-      gap: 8px;
+      gap: 0.5rem;
       
       .project-link {
-        padding: 8px 14px;
-        font-size: 12px;
+        padding: 0.5rem 0.875rem;
+        @include fluid-type-auto(0.75rem);
         
         span {
-          font-size: 11px;
+          @include fluid-type-auto(0.6875rem);
         }
       }
     }
     
     .project-actions-compact {
-      bottom: 12px;
-      right: 20px;
-      gap: 6px;
+      bottom: 0.75rem;
+      right: 1.25rem;
+      gap: 0.375rem;
       
       .action-icon {
-        width: 35px;
-        height: 35px;
+        width: 2.1875rem;
+        height: 2.1875rem;
         
         svg {
-          font-size: 16px;
+          @include fluid-type-auto(1rem);
         }
       }
     }
@@ -1142,19 +1142,19 @@
     }
     
     .slider-progress {
-      bottom: -25px;
-      width: 150px;
+      bottom: -1.5625rem;
+      width: 9.375rem;
     }
   }
 
 
-@media (max-width: 480px) {
+@include respond-down(small) {
   .project-filters {
     flex-direction: column;
     align-items: center;
     
     .filter-btn {
-      width: 200px;
+      width: 12.5rem;
       justify-content: center;
     }
   }
@@ -1163,41 +1163,41 @@
     .counter-card {
       flex-direction: column;
       text-align: center;
-      gap: 10px;
+      gap: 0.625rem;
     }
   }
   
   .project-body {
-    padding: 15px;
+    padding: 0.9375rem;
   }
   
   .project-actions-compact {
-    bottom: 10px;
-    right: 15px;
-    gap: 5px;
+    bottom: 0.625rem;
+    right: 0.9375rem;
+    gap: 0.3125rem;
     
     .action-icon {
-      width: 32px;
-      height: 32px;
+      width: 2rem;
+      height: 2rem;
       
       svg {
-        font-size: 14px;
+        @include fluid-type-auto(0.875rem);
       }
     }
   }
   
   .project-card {
     .project-card-img {
-      height: 140px;
+      height: 8.75rem;
       
       .project-card-overlay {
         .overlay-content {
           gap: 0.75rem;
           
           .overlay-btn {
-            width: 40px;
-            height: 40px;
-            font-size: 1rem;
+            width: 2.5rem;
+            height: 2.5rem;
+            @include fluid-type-auto(1rem);
           }
         }
       }
@@ -1206,7 +1206,7 @@
         top: 0.75rem;
         right: 0.75rem;
         padding: 0.4rem 0.8rem;
-        font-size: 0.7rem;
+        @include fluid-type-auto(0.7rem);
       }
     }
     
@@ -1215,48 +1215,48 @@
     }
     
     .project-card-header {
-      margin-bottom: 0.75rem;
+      @include fluid-space-auto(margin-bottom, 0.75rem);
       
       .project-card-title {
-        font-size: 0.95rem;
+        @include fluid-type-auto(0.95rem);
       }
     }
     
     .project-card-subtitle {
-      font-size: 0.75rem;
-      margin-bottom: 0.75rem;
+      @include fluid-type-auto(0.75rem);
+      @include fluid-space-auto(margin-bottom, 0.75rem);
     }
     
     .project-card-tech {
-      margin-bottom: 0.75rem;
+      @include fluid-space-auto(margin-bottom, 0.75rem);
       
       .tech-icon-wrapper {
-        font-size: 0.9rem;
+        @include fluid-type-auto(0.9rem);
         
         &.more {
-          font-size: 0.65rem;
+          @include fluid-type-auto(0.65rem);
         }
       }
     }
     
     .project-card-actions {
-      margin-top: 0.75rem;
+      @include fluid-space-auto(margin-top, 0.75rem);
       padding-top: 0.75rem;
       
       .project-card-btn {
-        font-size: 0.75rem;
+        @include fluid-type-auto(0.75rem);
         
         svg {
-          font-size: 0.875rem;
+          @include fluid-type-auto(0.875rem);
         }
       }
       
       .project-card-demo {
-        font-size: 0.65rem;
+        @include fluid-type-auto(0.65rem);
         padding: 0.35rem 0.7rem;
         
         svg {
-          font-size: 0.75rem;
+          @include fluid-type-auto(0.75rem);
         }
       }
     }
@@ -1266,7 +1266,7 @@
 /* Loading State */
 .projects-loading {
   text-align: center;
-  padding: 60px 20px;
+  padding: 3.75rem 1.25rem;
   
   .spinner-border {
     width: 3rem;
@@ -1278,12 +1278,12 @@
 /* Empty State */
 .projects-empty {
   text-align: center;
-  padding: 60px 20px;
+  padding: 3.75rem 1.25rem;
   color: var(--px-text);
   
   .icon {
-    font-size: 4rem;
-    margin-bottom: 20px;
+    @include fluid-type-auto(4rem);
+    @include fluid-space-auto(margin-bottom, 1.25rem);
     opacity: 0.5;
   }
 }

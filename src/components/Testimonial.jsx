@@ -28,7 +28,7 @@ const { t, i18n } = useTranslation();
   };
 
   return (
-    <section className="testimonial-section section" id="testimonial" style={{ minHeight: '100vh', width: '100vw' }}>
+    <section className="testimonial-section section" id="testimonial">
       <div className="container">
         <SectionHeading {...sectionHeading} variant="text-center" />
         <div className="testimonial-slider-wrapper" data-aos="fade-up" data-aos-duration="800">

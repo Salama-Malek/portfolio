@@ -13,13 +13,13 @@
   
   .robot-canvas {
     position: relative;
-    border-radius: 20px;
+    border-radius: 1.25rem;
     overflow: hidden;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-    border: 1px solid var(--px-border-primary);
+    box-shadow: 0 1.25rem 2.5rem rgba(0, 0, 0, 0.1);
+    border: 0.0625rem solid var(--px-border-primary);
     
     canvas {
-      border-radius: 20px;
+      border-radius: 1.25rem;
     }
   }
   
@@ -28,7 +28,7 @@
       transition: all 0.3s ease;
       
       &:hover {
-        transform: translateX(10px);
+        transform: translateX(0.625rem);
         
         .feature-icon {
           transform: scale(1.1);
@@ -38,12 +38,12 @@
     
     .feature-icon {
       transition: all 0.3s ease;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 0.25rem 0.9375rem rgba(0, 0, 0, 0.1);
     }
   }
   
   /* Responsive Design */
-  @media (max-width: 991px) {
+  @include respond-down(tablet) {
     .container {
       .row {
         flex-direction: column-reverse;
@@ -52,18 +52,18 @@
     
     .robot-content {
       text-align: center;
-      margin-top: 2rem;
+      @include fluid-space-auto(margin-top, 2rem);
     }
     
     .robot-canvas {
       height: 60vh;
-      margin-bottom: 2rem;
+      @include fluid-space-auto(margin-bottom, 2rem);
     }
   }
   
-  @media (max-width: 767px) {
+  @include respond-down(mobile) {
     min-height: 80vh;
-    padding: 60px 0;
+    padding: 3.75rem 0;
     
     .robot-canvas {
       height: 50vh;
@@ -71,30 +71,30 @@
     
     .robot-content {
       h2 {
-        font-size: 2.5rem !important;
+        font-size: clamp(2.125rem, 6vw, 2.75rem) !important;
       }
-      
+
       p {
-        font-size: 1rem !important;
+        font-size: clamp(0.95rem, 4vw, 1.1rem) !important;
       }
     }
   }
   
-  @media (max-width: 480px) {
+  @include respond-down(small) {
     .robot-canvas {
       height: 40vh;
     }
     
     .robot-content {
       h2 {
-        font-size: 2rem !important;
+        font-size: clamp(1.75rem, 5vw, 2.25rem) !important;
       }
-      
+
       .feature-item {
         .feature-icon {
-          width: 35px !important;
-          height: 35px !important;
-          font-size: 16px !important;
+          width: 2.1875rem !important;
+          height: 2.1875rem !important;
+          font-size: clamp(0.875rem, 4vw, 1.125rem) !important;
         }
       }
     }
@@ -105,7 +105,7 @@
 [data-theme='dark'] {
   .robot-3d-section {
     .robot-canvas {
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 1.25rem 2.5rem rgba(0, 0, 0, 0.3);
       border-color: var(--px-border-primary);
     }
   }
@@ -114,19 +114,19 @@
 /* Animation keyframes */
 @keyframes robotFloat {
   0%, 100% {
-    transform: translateY(0px);
+    transform: translateY(0rem);
   }
   50% {
-    transform: translateY(-10px);
+    transform: translateY(-0.625rem);
   }
 }
 
 @keyframes robotGlow {
   0%, 100% {
-    box-shadow: 0 0 20px rgba(119, 74, 217, 0.32);
+    box-shadow: 0 0 1.25rem rgba(119, 74, 217, 0.32);
   }
   50% {
-    box-shadow: 0 0 30px rgba(35, 183, 217, 0.55);
+    box-shadow: 0 0 1.875rem rgba(35, 183, 217, 0.55);
   }
 }
 
@@ -164,7 +164,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     color: var(--px-text-secondary);
-    font-size: 1.1rem;
+    @include fluid-type-auto(1.1rem);
     font-weight: 600;
     z-index: 1;
     opacity: 0;
