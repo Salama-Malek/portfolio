@@ -1,48 +1,143 @@
-// Media Responsive
-@mixin up-xsm {
-	@media(min-width: $px-media-xsm + 1 ){
-		@content;
-	}
+@use 'sass:map';
+@use 'sass:math';
+
+/// Convert pixel values to rem units based on a 16px root font size.
+/// Accepts raw numbers (assumed to be pixels) or values with px units.
+@function rem($value, $base: 16) {
+  @if type-of($value) == 'number' {
+    @if unit($value) == 'px' {
+      @return math.div($value, $base) * 1rem;
+    } @else if unitless($value) {
+      @return math.div($value, $base) * 1rem;
+    }
+  }
+
+  @return $value;
 }
 
-@mixin down-xsm {
-	@media(max-width: $px-media-xsm){
-		@content;
-	}
+/// Retrieve a breakpoint from the `$breakpoints` map defined in `_variable.scss`.
+@function breakpoint($name) {
+  @if map.has-key($breakpoints, $name) {
+    @return map.get($breakpoints, $name);
+  }
+
+  @error 'Breakpoint `#{$name}` is not defined in $breakpoints.';
 }
 
-@mixin up-sm {
-	@media(min-width: $px-media-sm + 1 ){
-		@content;
-	}
+/// Mobile-first media query helper using min-width.
+@mixin respond($name) {
+  $value: breakpoint($name);
+  @media (min-width: $value) {
+    @content;
+  }
 }
 
-@mixin down-sm {
-	@media(max-width: $px-media-sm){
-		@content;
-	}
+/// Max-width media query helper for progressive enhancement on smaller screens.
+@mixin respond-down($name) {
+  $value: breakpoint($name);
+  @media (max-width: $value) {
+    @content;
+  }
 }
 
-@mixin up-md {
-	@media(min-width: $px-media-md + 1 ){
-		@content;
-	}
+/// Apply content between two breakpoints using min/max width.
+@mixin respond-between($lower, $upper) {
+  $min: breakpoint($lower);
+  $max: breakpoint($upper);
+  @media (min-width: $min) and (max-width: $max) {
+    @content;
+  }
 }
 
-@mixin down-md {
-	@media(max-width: $px-media-md){
-		@content;
-	}
+/// Shared number of columns for layout utilities.
+$grid-columns: 12 !default;
+
+/// Convert a column span into a percentage width.
+@function span-percentage($span, $columns: $grid-columns) {
+  @return percentage(math.div($span, $columns));
 }
 
-@mixin up-lg {
-	@media(min-width: $px-media-lg + 1 ){
-		@content;
-	}
+/// Quick helper to ensure media elements resize fluidly within their containers.
+@mixin responsive-media($fit: cover) {
+  display: block;
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  object-fit: $fit;
 }
 
-@mixin down-lg {
-	@media(max-width: $px-media-lg){
-		@content;
-	}
+/// Flexible container helper to quickly establish a responsive flex layout.
+@mixin flex-container(
+  $direction: row,
+  $wrap: wrap,
+  $gap: clamp(1.5rem, 4vw, 2.5rem),
+  $align: stretch,
+  $justify: flex-start
+) {
+  display: flex;
+  flex-direction: $direction;
+  flex-wrap: $wrap;
+  row-gap: $gap;
+  column-gap: $gap;
+  align-items: $align;
+  justify-content: $justify;
+}
+
+/// Auto-fit grid helper that creates evenly spaced cards/columns.
+@mixin auto-grid($min-width: 18rem, $gap: clamp(1.5rem, 4vw, 2.5rem)) {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax($min-width, 1fr));
+  gap: $gap;
+  align-items: stretch;
+}
+
+/// Utility to stack flex children vertically with consistent spacing.
+@mixin stack-vertical($gap: clamp(1rem, 3vw, 1.5rem)) {
+  flex-direction: column;
+  row-gap: $gap;
+  column-gap: $gap;
+}
+
+/// Assign a flex column span optionally scoped to a breakpoint.
+@mixin column-span($span, $breakpoint: null, $columns: $grid-columns) {
+  $width: span-percentage($span, $columns);
+
+  @if $breakpoint == null {
+    flex: 0 0 $width;
+    max-width: $width;
+  } @else {
+    @include respond($breakpoint) {
+      flex: 0 0 $width;
+      max-width: $width;
+    }
+  }
+}
+
+/// Apply a property with clamp for fluid scaling between two viewport widths.
+@mixin fluid-property($property, $min-value, $max-value, $min-vw: 20rem, $max-vw: map.get($breakpoints, desktop)) {
+  #{$property}: clamp($min-value, calc(#{$min-value} + (#{strip-unit($max-value - $min-value)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}))), $max-value);
+}
+
+/// Utility mixin to quickly generate fluid typography using clamp().
+@mixin fluid-type($min-size, $max-size, $min-vw: 20rem, $max-vw: map.get($breakpoints, desktop)) {
+  @include fluid-property(font-size, $min-size, $max-size, $min-vw, $max-vw);
+}
+
+/// Utility mixin to apply clamp-based spacing for margins, paddings, etc.
+@mixin fluid-space($property, $min-size, $max-size, $min-vw: 20rem, $max-vw: map.get($breakpoints, desktop)) {
+  @include fluid-property($property, $min-size, $max-size, $min-vw, $max-vw);
+}
+
+/// Convenience mixin to create fluid typography around a base size with a configurable spread.
+@mixin fluid-type-auto($base-size, $spread: 0.25rem, $min-vw: 20rem, $max-vw: map.get($breakpoints, desktop)) {
+  $min-size: math.max($base-size - $spread, 0.125rem);
+  $max-size: $base-size + $spread;
+  @include fluid-type($min-size, $max-size, $min-vw, $max-vw);
+}
+
+/// Convenience mixin to create fluid spacing using a base size and spread.
+@mixin fluid-space-auto($property, $base-size, $spread: 0.5rem, $min-vw: 20rem, $max-vw: map.get($breakpoints, desktop)) {
+  $min-size: math.max($base-size - $spread, 0rem);
+  $max-size: $base-size + $spread;
+  @include fluid-space($property, $min-size, $max-size, $min-vw, $max-vw);
 }

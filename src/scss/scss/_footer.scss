@@ -1,43 +1,43 @@
 .footer-section {
   background: var(--px-bg-quaternary);
   color: var(--px-gray-5);
-  padding: 80px 0 0;
+  padding: 5rem 0 0;
 
   .footer-content {
-    padding-bottom: 40px;
+    padding-bottom: 2.5rem;
   }
 
   .footer-widget {
-    margin-bottom: 30px;
+    @include fluid-space-auto(margin-bottom, 1.875rem);
   }
 
   .footer-logo {
-    margin-bottom: 25px;
+    @include fluid-space-auto(margin-bottom, 1.5625rem);
     img {
-      width: 80px;
-      height: 70px;
-      max-height: 90px;
-      max-width: 100px;
+      width: 5rem;
+      height: 4.375rem;
+      max-height: 5.625rem;
+      max-width: 6.25rem;
     }
   }
 
   .footer-text {
     line-height: 1.8;
-    margin-bottom: 25px;
+    @include fluid-space-auto(margin-bottom, 1.5625rem);
   }
 
   .widget-title {
-    font-size: 1.2rem;
+    @include fluid-type-auto(1.2rem);
     font-weight: 600;
     color: var(--px-white);
-    margin-bottom: 25px;
+    @include fluid-space-auto(margin-bottom, 1.5625rem);
   }
 
   .footer-nav {
     list-style: none;
     padding: 0;
     li {
-      margin-bottom: 12px;
+      @include fluid-space-auto(margin-bottom, 0.75rem);
       a, span {
         color: var(--px-gray-5);
         text-decoration: none;
@@ -45,7 +45,7 @@
         cursor: pointer;
         &:hover {
           color: var(--px-primary);
-          padding-left: 5px;
+          padding-left: 0.3125rem;
         }
       }
     }
@@ -56,9 +56,9 @@
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    gap: 15px;
-    padding: 25px 0;
-    border-top: 1px solid var(--px-gray-8);
+    gap: 0.9375rem;
+    padding: 1.5625rem 0;
+    border-top: 0.0625rem solid var(--px-gray-8);
   }
 
   .copyright-text {
@@ -69,25 +69,25 @@
     background: var(--px-primary);
     color: var(--px-white);
     border: none;
-    width: 40px;
-    height: 40px;
+    width: 2.5rem;
+    height: 2.5rem;
     border-radius: 50%;
     cursor: pointer;
-    font-size: 18px;
+    @include fluid-type-auto(1.125rem);
     transition: all 0.3s ease;
     display: flex;
     align-items: center;
     justify-content: center;
     /* Removed position: fixed; to make button flow in footer */
   position: fixed;
-  right: 32px;
-  bottom: 32px;
+  right: 2rem;
+  bottom: 2rem;
   z-index: 1000;
   margin-left: 0;
 
     &:hover {
       background: darken($px-theme, 10%);
-      transform: translateY(-3px);
+      transform: translateY(-0.1875rem);
     }
   }
 }

@@ -14,7 +14,7 @@ export default function Contact({ data = {}, socialData = [] }) {
   }
 
   return (
-    <section id="contactus" className="section contact-section" style={{ minHeight: '100vh', width: '100vw' }}>
+    <section id="contactus" className="section contact-section">
       <div className="container">
         <SectionHeading {...sectionHeading} />
         <div className="contact-content">

@@ -8,14 +8,14 @@
 
   .contact-content {
     background: var(--px-surface-primary);
-    border-radius: 24px;
+    border-radius: 1.5rem;
     overflow: hidden;
     display: grid;
     grid-template-columns: 1fr;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
-    border: 1px solid var(--px-border-primary);
+    box-shadow: 0 1.25rem 3.75rem rgba(0, 0, 0, 0.1);
+    border: 0.0625rem solid var(--px-border-primary);
 
-    @media (min-width: 992px) {
+    @include respond(tablet) {
       grid-template-columns: 1fr 1.2fr;
     }
   }
@@ -23,7 +23,7 @@
   .contact-info-wrapper {
     background: var(--px-gradient-brand);
     color: white;
-    padding: 50px 40px;
+    padding: 3.125rem 2.5rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -46,10 +46,10 @@
 
       .contact-shape-1 {
         position: absolute;
-        top: -50px;
-        right: -50px;
-        width: 200px;
-        height: 200px;
+        top: -3.125rem;
+        right: -3.125rem;
+        width: 12.5rem;
+        height: 12.5rem;
         background: var(--px-surface-primary);
         border-radius: 50%;
         animation: float 6s ease-in-out infinite;
@@ -57,10 +57,10 @@
 
       .contact-shape-2 {
         position: absolute;
-        bottom: -30px;
-        left: -30px;
-        width: 150px;
-        height: 150px;
+        bottom: -1.875rem;
+        left: -1.875rem;
+        width: 9.375rem;
+        height: 9.375rem;
         background: var(--px-surface-secondary);
         border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
         animation: float 8s ease-in-out infinite reverse;
@@ -69,12 +69,12 @@
   }
 
   .contact-social {
-    margin-top: 40px;
+    @include fluid-space-auto(margin-top, 2.5rem);
 
     h4 {
-      font-size: 1.2rem;
+      @include fluid-type-auto(1.2rem);
       font-weight: 600;
-      margin-bottom: 20px;
+      @include fluid-space-auto(margin-bottom, 1.25rem);
       opacity: 0.9;
     }
   }
@@ -83,12 +83,12 @@
 /* Contact Info Styles */
 .contact-info {
   .contact-info-header {
-    margin-bottom: 40px;
+    @include fluid-space-auto(margin-bottom, 2.5rem);
 
     h4 {
-      font-size: 2rem;
+      @include fluid-type-auto(2rem);
       font-weight: 700;
-      margin-bottom: 15px;
+      @include fluid-space-auto(margin-bottom, 0.9375rem);
       background: var(--gradient-brand-soft);
       -webkit-background-clip: text;
       -webkit-text-fill-color: var(--px-white);
@@ -96,7 +96,7 @@
     }
 
     p {
-      font-size: 1.1rem;
+      @include fluid-type-auto(1.1rem);
       opacity: 0.9;
       line-height: 1.6;
     }
@@ -105,39 +105,39 @@
   .contact-info-list {
     display: flex;
     flex-direction: column;
-    gap: 25px;
+    gap: 1.5625rem;
   }
 
   .contact-info-item {
     display: flex;
     align-items: center;
-    gap: 20px;
-    padding: 20px;
+    gap: 1.25rem;
+    padding: 1.25rem;
     background: var(--px-surface-primary);
-    border-radius: 16px;
-    backdrop-filter: blur(10px);
-    border: 1px solid var(--px-border-primary);
+    border-radius: 1rem;
+    backdrop-filter: blur(0.625rem);
+    border: 0.0625rem solid var(--px-border-primary);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     cursor: pointer;
 
     &:hover {
-      transform: translateX(10px);
+      transform: translateX(0.625rem);
       background: var(--px-surface-hover);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 0.625rem 1.875rem rgba(0, 0, 0, 0.1);
     }
 
     .contact-info-icon {
-      width: 50px;
-      height: 50px;
+      width: 3.125rem;
+      height: 3.125rem;
       background: var(--px-surface-secondary);
-      border-radius: 12px;
+      border-radius: 0.75rem;
       display: flex;
       align-items: center;
       justify-content: center;
       transition: all 0.3s ease;
 
       span {
-        font-size: 24px;
+        @include fluid-type-auto(1.5rem);
         color: white;
         cursor: pointer;
         transition: all 0.3s ease;
@@ -152,11 +152,11 @@
       flex: 1;
 
       h6 {
-        font-size: 0.9rem;
+        @include fluid-type-auto(0.9rem);
         opacity: 0.85;
-        margin-bottom: 5px;
+        @include fluid-space-auto(margin-bottom, 0.3125rem);
         text-transform: uppercase;
-        letter-spacing: 1px;
+        letter-spacing: 0.0625rem;
         font-weight: 600;
       }
 
@@ -165,7 +165,7 @@
         font-weight: 500;
         color: white;
         text-decoration: none;
-        font-size: 1rem;
+        @include fluid-type-auto(1rem);
         transition: all 0.3s ease;
 
         &:hover {
@@ -179,78 +179,81 @@
 
 /* Contact Form Styles */
 .contact-form-wrapper {
-  padding: 50px 40px;
+  padding: 3.125rem 2.5rem;
   background: var(--px-surface-primary);
 }
 
 .contact-form {
   .form-header {
     text-align: center;
-    margin-bottom: 40px;
+    @include fluid-space-auto(margin-bottom, 2.5rem);
 
     h4 {
-      font-size: 2rem;
+      @include fluid-type-auto(2rem);
       font-weight: 700;
-      margin-bottom: 15px;
+      @include fluid-space-auto(margin-bottom, 0.9375rem);
       color: var(--px-text-primary);
     }
 
     p {
       color: var(--px-text-secondary);
-      font-size: 1.1rem;
+      @include fluid-type-auto(1.1rem);
       line-height: 1.6;
     }
   }
 
   .form-body {
     .form-group {
-      margin-bottom: 30px;
+      @include fluid-space-auto(margin-bottom, 1.875rem);
     }
 
     .form-label {
       display: block;
       font-weight: 600;
-      margin-bottom: 8px;
+      @include fluid-space-auto(margin-bottom, 0.5rem);
       color: var(--px-text-primary);
-      font-size: 0.9rem;
+      @include fluid-type-auto(0.9rem);
       text-transform: uppercase;
-      letter-spacing: 1px;
+      letter-spacing: 0.0625rem;
     }
 
     .input-wrapper {
       position: relative;
       display: flex;
       align-items: center;
+      min-height: clamp(3.25rem, 10vw, 3.75rem);
 
       .input-icon {
         position: absolute;
-        left: 15px;
-        font-size: 18px;
+        left: clamp(0.75rem, 3vw, 1.125rem);
+        @include fluid-type-auto(1.125rem);
         color: var(--px-text-tertiary);
         z-index: 2;
         transition: all 0.3s ease;
 
         &.textarea-icon {
-          top: 15px;
+          top: 0.9375rem;
           align-self: flex-start;
         }
       }
 
       .form-control {
         width: 100%;
-        padding: 15px 15px 15px 50px;
-        border: 2px solid var(--px-border-primary);
-        border-radius: 12px;
+        padding: clamp(0.75rem, 2.5vw, 1rem) clamp(1rem, 3vw, 1.5rem)
+          clamp(0.75rem, 2.5vw, 1rem) clamp(2.5rem, 6vw, 3.5rem);
+        border: 0.125rem solid var(--px-border-primary);
+        border-radius: clamp(0.75rem, 3vw, 1rem);
         background: var(--px-surface-secondary);
         color: var(--px-text-primary);
-        font-size: 1rem;
+        @include fluid-type-auto(1rem);
         transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         outline: none;
+        min-height: clamp(3.25rem, 10vw, 3.75rem);
 
         &:focus {
           border-color: var(--px-primary);
-          box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
-          transform: translateY(-2px);
+          box-shadow: 0 0 0 0.1875rem rgba(102, 126, 234, 0.1);
+          transform: translateY(-0.125rem);
         }
 
         &::placeholder {
@@ -264,8 +267,8 @@
       }
 
       .textarea-control {
-        padding-top: 15px;
-        min-height: 120px;
+        padding-top: clamp(0.75rem, 2.5vw, 1rem);
+        min-height: clamp(8rem, 22vw, 12.5rem);
         resize: vertical;
       }
 
@@ -278,22 +281,24 @@
     .form-submit-btn {
       position: relative;
       overflow: hidden;
-      padding: 15px 40px;
-      font-size: 1.1rem;
+      padding: clamp(0.875rem, 2.75vw, 1.125rem) clamp(2rem, 6vw, 3rem);
+      @include fluid-type-auto(1.1rem);
       font-weight: 600;
-      border-radius: 12px;
+      border-radius: clamp(0.75rem, 3vw, 1rem);
       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       background: var(--px-gradient-brand);
       border: none;
       color: white;
       display: inline-flex;
       align-items: center;
-      gap: 10px;
+      gap: clamp(0.5rem, 2vw, 0.75rem);
       cursor: pointer;
+      min-height: clamp(3.25rem, 10vw, 3.75rem);
+      touch-action: manipulation;
 
       &:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+        transform: translateY(-0.125rem);
+        box-shadow: 0 0.625rem 1.875rem rgba(102, 126, 234, 0.3);
       }
 
       &:active {
@@ -314,8 +319,8 @@
       }
 
       &:hover .btn-ripple {
-        width: 300px;
-        height: 300px;
+        width: 18.75rem;
+        height: 18.75rem;
         opacity: 0;
       }
     }
@@ -327,56 +332,56 @@
 
   0%,
   100% {
-    transform: translateY(0px) rotate(0deg);
+    transform: translateY(0rem) rotate(0deg);
   }
 
   50% {
-    transform: translateY(-20px) rotate(5deg);
+    transform: translateY(-1.25rem) rotate(5deg);
   }
 }
 
 /* Responsive Design */
-@media (max-width: 991px) {
+@include respond-down(tablet) {
   .contact-section {
     .contact-content {
       grid-template-columns: 1fr;
     }
 
     .contact-info-wrapper {
-      padding: 40px 30px;
+      padding: 2.5rem 1.875rem;
     }
 
     .contact-form-wrapper {
-      padding: 40px 30px;
+      padding: 2.5rem 1.875rem;
     }
   }
 }
 
-@media (max-width: 768px) {
+@include respond-down(mobile) {
   .contact-section {
     .contact-info-wrapper {
-      padding: 30px 25px;
+      padding: 1.875rem 1.5625rem;
     }
 
     .contact-form-wrapper {
-      padding: 30px 25px;
+      padding: 1.875rem 1.5625rem;
     }
 
     .contact-info {
       .contact-info-header h4 {
-        font-size: 1.5rem;
+        @include fluid-type-auto(1.5rem);
       }
 
       .contact-info-item {
-        padding: 15px;
-        gap: 15px;
+        padding: 0.9375rem;
+        gap: 0.9375rem;
 
         .contact-info-icon {
-          width: 40px;
-          height: 40px;
+          width: 2.5rem;
+          height: 2.5rem;
 
           span {
-            font-size: 20px;
+            @include fluid-type-auto(1.25rem);
           }
         }
       }
@@ -384,24 +389,24 @@
 
     .contact-form {
       .form-header h4 {
-        font-size: 1.5rem;
+        @include fluid-type-auto(1.5rem);
       }
 
       .form-body {
         .input-wrapper .form-control {
-          padding: 12px 12px 12px 45px;
+          padding: 0.75rem 0.75rem 0.75rem 2.8125rem;
         }
       }
     }
   }
 }
 
-@media (max-width: 480px) {
+@include respond-down(small) {
   .contact-section {
 
     .contact-info-wrapper,
     .contact-form-wrapper {
-      padding: 25px 20px;
+      padding: 1.5625rem 1.25rem;
     }
   }
 }

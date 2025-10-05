@@ -13,7 +13,7 @@ export default function Experience({ data = {} }) {
   const activeData = allExperience[activeExperience];
 
   return (
-    <section className="experience-section section" id="experience" style={{ minHeight: '100vh', width: '100vw' }}>
+    <section className="experience-section section" id="experience">
       <div className="container">
         <SectionHeading {...sectionHeading} />
         <div className="experience-switcher">
