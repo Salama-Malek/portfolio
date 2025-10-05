@@ -80,16 +80,16 @@
     background: transparent;
 
     &:hover {
-      color: var(--color-primary-1);
-      background: rgba(4, 173, 191, 0.12);
+      color: var(--palette-indigo);
+      background: rgba(61, 144, 217, 0.12);
       transform: translateY(-2px);
-      box-shadow: 0 10px 24px rgba(64, 28, 140, 0.25);
+      box-shadow: 0 10px 24px rgba(49, 46, 140, 0.25);
     }
 
     &.active {
-      color: var(--color-accent-1);
-      background: rgba(4, 217, 217, 0.18);
-      box-shadow: 0 12px 26px rgba(4, 173, 191, 0.25);
+      color: var(--palette-sky);
+      background: rgba(35, 183, 217, 0.18);
+      box-shadow: 0 12px 26px rgba(35, 183, 217, 0.2);
     }
 
     &::after {

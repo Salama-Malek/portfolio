@@ -338,15 +338,15 @@
             transition: all 0.3s ease;
 
             &:hover {
-              background: rgba(64, 28, 140, 0.18);
-              color: var(--color-primary-2);
-              border-color: rgba(64, 28, 140, 0.35);
+              background: rgba(49, 46, 140, 0.18);
+              color: var(--palette-indigo);
+              border-color: rgba(49, 46, 140, 0.35);
             }
 
             &.active {
-              background: rgba(4, 217, 217, 0.18);
-              color: var(--color-accent-1);
-              border-color: rgba(4, 217, 217, 0.45);
+              background: rgba(61, 144, 217, 0.18);
+              color: var(--palette-sky);
+              border-color: rgba(61, 144, 217, 0.45);
             }
           }
         }
@@ -741,20 +741,20 @@
         transform: translateY(-50%);
         width: 4px;
         height: 0;
-        background: var(--color-accent-1);
+        background: var(--palette-sky);
         border-radius: 2px;
         transition: height 0.3s ease;
       }
 
       &:hover {
-        background: rgba(64, 28, 140, 0.18);
-        color: var(--color-primary-2);
+        background: rgba(49, 46, 140, 0.18);
+        color: var(--palette-indigo);
       }
 
       &.active {
-        background: rgba(4, 217, 217, 0.18);
-        color: var(--color-accent-1);
-        box-shadow: 0 12px 28px rgba(4, 173, 191, 0.22);
+        background: rgba(61, 144, 217, 0.18);
+        color: var(--palette-sky);
+        box-shadow: 0 12px 28px rgba(61, 144, 217, 0.22);
       }
 
       &.active::before {
@@ -828,11 +828,11 @@
       border-radius: 10px;
       overflow: hidden;
       transition: background-color 0.3s ease;
-      border: 1px solid rgba(64, 28, 140, 0.25);
+      border: 1px solid rgba(49, 46, 140, 0.25);
 
       &.active {
-        background: rgba(4, 217, 217, 0.12);
-        border-color: rgba(4, 217, 217, 0.35);
+        background: rgba(61, 144, 217, 0.12);
+        border-color: rgba(61, 144, 217, 0.35);
       }
 
       .accordion-header {
@@ -850,7 +850,7 @@
         transition: color 0.3s ease;
 
         &:hover {
-          color: var(--color-primary-2);
+          color: var(--palette-indigo);
         }
       }
 
@@ -861,7 +861,7 @@
 
       &.active .accordion-icon {
         transform: rotate(180deg);
-        color: var(--color-accent-1);
+        color: var(--palette-sky);
       }
 
       .accordion-content {

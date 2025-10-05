@@ -6,35 +6,35 @@ $px-font: 'Space Grotesk', sans-serif !default;
 // Modern Dark Portfolio Design System
 // Primary Color Palette
 $px-bg: #0d0d0d;
-$px-bg-secondary: #161026;
-$px-bg-tertiary: #1f1536;
-$px-bg-quaternary: #261c44;
+$px-bg-secondary: #111123;
+$px-bg-tertiary: #141433;
+$px-bg-quaternary: #191947;
 
 // Text Colors
-$px-text-primary: #f5f5f5;
-$px-text-secondary: rgba(245, 245, 245, 0.85);
-$px-text-tertiary: rgba(245, 245, 245, 0.65);
-$px-text-muted: rgba(245, 245, 245, 0.55);
+$px-text-primary: #ffffff;
+$px-text-secondary: #c7d0ff;
+$px-text-tertiary: #9fb3ff;
+$px-text-muted: rgba(199, 208, 255, 0.65);
 
 // Accent Colors
-$px-accent-primary: #04d9d9;
-$px-accent-secondary: #04adbf;
+$px-accent-primary: #23b7d9;
+$px-accent-secondary: #774ad9;
 $px-accent-success: #10b981;
 $px-accent-warning: #f59e0b;
 $px-accent-error: #ef4444;
 
 // Surface Colors
-$px-surface-primary: rgba(4, 217, 217, 0.12);
-$px-surface-secondary: rgba(64, 28, 140, 0.22);
-$px-surface-hover: rgba(4, 173, 191, 0.3);
+$px-surface-primary: rgba(49, 46, 140, 0.35);
+$px-surface-secondary: rgba(61, 144, 217, 0.25);
+$px-surface-hover: rgba(35, 183, 217, 0.35);
 
 // Legacy variables for compatibility
 $px-theme: $px-accent-primary;
-$px-theme-rgb: 4, 217, 217;
+$px-theme-rgb: 35, 183, 217;
 $px-white: $px-text-primary;
 $px-black: $px-bg;
 
-$highlight-purple: #6f1fbf;
+$highlight-purple: #774ad9;
 $px-text: $px-text-secondary;
 $px-heading: #6f1fbf;
 

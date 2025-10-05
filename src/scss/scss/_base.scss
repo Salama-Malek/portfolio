@@ -135,26 +135,30 @@ img {
 ---------------------*/
 .section {
   --section-bg: var(--px-bg);
-  --section-label-color: rgba(111, 31, 191, 0.7);
-  --section-label-text: var(--color-accent-2);
+  --section-label-color: rgba(119, 74, 217, 0.7);
+  --section-label-text: var(--palette-cyan);
   --section-label-gradient: linear-gradient(
     135deg,
-    rgba(64, 28, 140, 0.32) 0%,
-    rgba(4, 173, 191, 0.32) 100%
+    rgba(49, 46, 140, 0.32) 0%,
+    rgba(61, 144, 217, 0.32) 100%
   );
-  --section-label-border: rgba(4, 173, 191, 0.45);
+  --section-label-border: rgba(61, 144, 217, 0.45);
   --section-label-hover-gradient: linear-gradient(
     135deg,
-    rgba(4, 217, 217, 0.4) 0%,
-    rgba(4, 173, 191, 0.45) 100%
+    rgba(35, 183, 217, 0.4) 0%,
+    rgba(61, 144, 217, 0.45) 100%
   );
-  --section-label-hover-border: rgba(4, 217, 217, 0.6);
-  --section-label-hover-shadow: 0 14px 40px rgba(64, 28, 140, 0.35);
-  --section-title-color: var(--color-primary-1);
-  --section-title-gradient: none;
-  --section-title-highlight: var(--color-primary-1);
-  --section-title-shadow: none;
-  --section-title-underline: var(--color-accent-1);
+  --section-label-hover-border: rgba(35, 183, 217, 0.6);
+  --section-label-hover-shadow: 0 14px 40px rgba(49, 46, 140, 0.35);
+  --section-title-color: transparent;
+  --section-title-gradient: linear-gradient(90deg, #774ad9 0%, #23b7d9 100%);
+  --section-title-highlight: linear-gradient(
+    90deg,
+    rgba(119, 74, 217, 0.95) 0%,
+    rgba(35, 183, 217, 0.95) 100%
+  );
+  --section-title-shadow: 0 20px 45px rgba(49, 46, 140, 0.35);
+  --section-title-underline: #3d90d9;
 
   padding: 100px 0;
   position: relative;
@@ -273,23 +277,28 @@ img {
 
 .about-section {
   --section-bg: var(--px-bg-secondary);
-  --section-label-color: rgba(111, 31, 191, 0.65);
-  --section-label-text: var(--color-accent-2);
+  --section-label-color: rgba(119, 74, 217, 0.65);
+  --section-label-text: var(--palette-cyan);
   --section-label-gradient: linear-gradient(
     135deg,
-    rgba(64, 28, 140, 0.28) 0%,
-    rgba(4, 173, 191, 0.28) 100%
+    rgba(49, 46, 140, 0.28) 0%,
+    rgba(61, 144, 217, 0.28) 100%
   );
   --section-label-hover-gradient: linear-gradient(
     135deg,
-    rgba(4, 217, 217, 0.35) 0%,
-    rgba(4, 173, 191, 0.4) 100%
+    rgba(35, 183, 217, 0.35) 0%,
+    rgba(61, 144, 217, 0.4) 100%
   );
-  --section-label-border: rgba(4, 173, 191, 0.4);
-  --section-label-hover-border: rgba(4, 217, 217, 0.55);
-  --section-label-hover-shadow: 0 18px 42px rgba(64, 28, 140, 0.35);
-  --section-title-color: var(--color-primary-1);
-  --section-title-underline: var(--color-accent-1);
+  --section-label-border: rgba(61, 144, 217, 0.4);
+  --section-label-hover-border: rgba(35, 183, 217, 0.55);
+  --section-label-hover-shadow: 0 18px 42px rgba(49, 46, 140, 0.35);
+  --section-title-gradient: linear-gradient(90deg, #774ad9 0%, #23b7d9 100%);
+  --section-title-highlight: linear-gradient(
+    90deg,
+    rgba(119, 74, 217, 0.95) 0%,
+    rgba(35, 183, 217, 0.95) 100%
+  );
+  --section-title-shadow: 0 24px 52px rgba(49, 46, 140, 0.35);
 
   background: var(--section-bg);
   position: relative;
