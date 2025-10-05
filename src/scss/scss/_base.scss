@@ -222,6 +222,157 @@ $col-breakpoints: (
   justify-content: space-between !important;
 }
 
+:root {
+  --layout-container-max: 75rem;
+  --layout-container-padding: clamp(1.5rem, 5vw, 3rem);
+  --layout-gap: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-weight: 700;
+  line-height: 1.1;
+  @include fluid-space(margin-bottom, 0.75rem, 1.5rem);
+}
+
+h1 {
+  @include fluid-type(2.75rem, 4.5rem);
+}
+
+h2 {
+  @include fluid-type(2.25rem, 3.5rem);
+}
+
+h3 {
+  @include fluid-type(1.875rem, 2.75rem);
+}
+
+h4 {
+  @include fluid-type(1.5rem, 2.125rem);
+}
+
+h5 {
+  @include fluid-type(1.25rem, 1.75rem);
+}
+
+h6 {
+  @include fluid-type(1rem, 1.25rem);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+p {
+  margin: 0;
+  @include fluid-space(margin-bottom, 1rem, 1.5rem);
+  @include fluid-type(0.95rem, 1.1rem);
+  line-height: 1.7;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+.subtitle,
+.section-subtitle {
+  @include fluid-type(1.125rem, 1.5rem);
+  @include fluid-space(margin-bottom, 0.75rem, 1rem);
+  color: var(--px-text-secondary);
+}
+
+.container {
+  width: min(100%, var(--layout-container-max));
+  margin-inline: auto;
+  padding-inline: var(--layout-container-padding);
+  display: grid;
+  grid-template-columns: 100%;
+  row-gap: var(--layout-gap);
+
+  @include respond-down(small) {
+    padding-inline: clamp(1rem, 6vw, 1.75rem);
+  }
+}
+
+.row {
+  @include flex-container();
+  width: 100%;
+  margin-inline: 0;
+}
+
+.row > * {
+  min-width: 0;
+  flex: 1 1 100%;
+}
+
+$grid-gap-utilities: (
+  4: clamp(1.5rem, 4vw, 2.5rem),
+  5: clamp(2rem, 5vw, 3rem)
+);
+
+@each $key, $value in $grid-gap-utilities {
+  .gy-#{$key} {
+    row-gap: $value;
+  }
+
+  .gx-#{$key} {
+    column-gap: $value;
+  }
+}
+
+[class^='col-'],
+[class*=' col-'] {
+  min-width: 0;
+}
+
+@for $i from 1 through $grid-columns {
+  .col-#{$i} {
+    @include column-span($i);
+  }
+}
+
+$col-breakpoints: (
+  sm: small,
+  md: mobile,
+  lg: tablet,
+  xl: desktop
+);
+
+@each $prefix, $breakpoint in $col-breakpoints {
+  @for $i from 1 through $grid-columns {
+    .col-#{$prefix}-#{$i} {
+      @include column-span($i, $breakpoint);
+    }
+  }
+}
+
+.align-items-start {
+  align-items: flex-start !important;
+}
+
+.align-items-center {
+  align-items: center !important;
+}
+
+.align-items-end {
+  align-items: flex-end !important;
+}
+
+.justify-content-start {
+  justify-content: flex-start !important;
+}
+
+.justify-content-center {
+  justify-content: center !important;
+}
+
+.justify-content-between {
+  justify-content: space-between !important;
+}
+
 /* Remove the !important flag from outline */
 * {
   outline: none;
