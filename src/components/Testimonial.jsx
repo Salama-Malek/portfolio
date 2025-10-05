@@ -1,7 +1,6 @@
 import React, { useMemo, useRef } from 'react';
 import SectionHeading from './SectionHeading';
 import Slider from 'react-slick';
-import Ratings from './Ratings';
 import { Icon } from '@iconify/react';
 import { useTranslation } from 'react-i18next';
 
@@ -31,7 +30,7 @@ export default function Testimonial({ data = {} }) {
   const { i18n } = useTranslation();
   const isRTL = i18n.dir() === 'rtl';
 
-  const { sectionHeading = {}, allTestimonial = [] } = data;
+  const { sectionHeading = {} } = data;
   const sliderRef = useRef(null);
 
   const reviewImages = useMemo(
@@ -47,20 +46,11 @@ export default function Testimonial({ data = {} }) {
       return [];
     }
 
-    const hasTestimonials = allTestimonial.length > 0;
-
-    return reviewImages.map((image, index) => {
-      const testimonial = hasTestimonials
-        ? allTestimonial[index % allTestimonial.length]
-        : null;
-      return {
-        image,
-        testimonial,
-        altText:
-          testimonial?.avatarName || testimonial?.avatarCompany || `Client review ${index + 1}`,
-      };
-    });
-  }, [reviewImages, allTestimonial]);
+    return reviewImages.map((image, index) => ({
+      image,
+      altText: `Client review ${index + 1}`,
+    }));
+  }, [reviewImages]);
 
   if (!data || !sectionHeading || slides.length === 0) {
     return null;
@@ -86,31 +76,13 @@ export default function Testimonial({ data = {} }) {
         <div className="testimonial-slider-wrapper" data-aos="fade-up" data-aos-duration="800">
           <div className="testimonial-slider">
             <Slider {...settings} ref={sliderRef}>
-              {slides.map(({ image, testimonial, altText }, index) => (
+              {slides.map(({ image, altText }, index) => (
                 <div className="testimonial-card testimonial-card--enhanced" key={index}>
                   <div className="testimonial-media">
                     <div className="testimonial-image-wrapper" data-aos="zoom-in" data-aos-duration="900">
                       <span className="testimonial-image-overlay" />
                       <img className="testimonial-image" src={image} alt={altText} loading="lazy" />
                     </div>
-                    {testimonial && (
-                      <div className="testimonial-content">
-                        <div className="testimonial-icon">
-                          <Icon icon="bi:quote" />
-                        </div>
-                        <p className="testimonial-text">{testimonial.reviewText}</p>
-                        <div className="testimonial-author">
-                          <div className="author-img">
-                            <img src={testimonial.avatarImg} alt={testimonial.avatarName} loading="lazy" />
-                          </div>
-                          <div className="author-info">
-                            <h6 className="author-name">{testimonial.avatarName}</h6>
-                            <span className="author-company">{testimonial.avatarCompany}</span>
-                            <Ratings rating={testimonial.rating} />
-                          </div>
-                        </div>
-                      </div>
-                    )}
                   </div>
                 </div>
               ))}
