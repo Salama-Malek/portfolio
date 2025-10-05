@@ -28,7 +28,7 @@ export default function Hero({ data = {}, socialData = [] }) {
   }
 
   return (
-    <section className="hero-section" id="home" style={{ minHeight: '100vh', width: '100vw' }}>
+    <section className="hero-section" id="home">
       <Particles />
       <div className="hero-liquid-container">
         <LiquidEther

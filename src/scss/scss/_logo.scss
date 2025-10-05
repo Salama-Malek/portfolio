@@ -1,11 +1,11 @@
 /* Force header logo size with maximum specificity */
 .header .logo.logo--3d img.logo-3d-dark {
-  width: 80px !important;
-  height: 70px !important;
-  min-width: 80px !important;
-  min-height: 70px !important;
-  max-width: 80px !important;
-  max-height: 70px !important;
+  width: 5rem !important;
+  height: 4.375rem !important;
+  min-width: 5rem !important;
+  min-height: 4.375rem !important;
+  max-width: 5rem !important;
+  max-height: 4.375rem !important;
   border-radius: 50% !important;
   // object-fit: cover !important;
   display: block;
@@ -20,7 +20,7 @@
   }
   
   img, svg {
-    height: 40px;
+    height: 2.5rem;
     width: auto;
     transition: all 0.3s ease;
   }
@@ -28,14 +28,14 @@
   /* 3D Logo specific styles */
   &--3d {
     img, svg {
-      height: 50px;
-      filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+      height: 3.125rem;
+      filter: drop-shadow(0 0.25rem 0.5rem rgba(0, 0, 0, 0.1));
     }
     
     &:hover {
       transform: scale(1.08) rotateY(5deg);
       img, svg {
-        filter: drop-shadow(0 8px 16px rgba(119, 74, 217, 0.45));
+        filter: drop-shadow(0 0.5rem 1rem rgba(119, 74, 217, 0.45));
       }
     }
   }
@@ -43,13 +43,13 @@
   /* Coding theme logo */
   &--coding {
     img, svg {
-      height: 60px;
+      height: 3.75rem;
     }
     
     &:hover {
       transform: scale(1.1) rotateZ(2deg);
       img, svg {
-        filter: drop-shadow(0 10px 20px rgba(35, 183, 217, 0.4));
+        filter: drop-shadow(0 0.625rem 1.25rem rgba(35, 183, 217, 0.4));
       }
     }
   }
@@ -58,8 +58,8 @@
 /* Header logo specific styles */
 .header .logo {
   img, svg {
-    height: 35px;
-    max-height: 35px;
+    height: 2.1875rem;
+    max-height: 2.1875rem;
   }
 }
 
@@ -68,19 +68,20 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 140px;
-  height: 140px;
+  width: 8.75rem;
+  height: 8.75rem;
   border-radius: 50%;
   background: var(--px-surface-primary);
-  box-shadow: 0 4px 24px rgba(0,0,0,0.12);
-  margin: 0 auto 32px auto;
+  box-shadow: 0 0.25rem 1.5rem rgba(0,0,0,0.12);
+  margin: 0 auto;
+  @include fluid-space-auto(margin-bottom, 2rem, 0.75rem);
   img, svg {
-    height: 120px !important;
-    width: 120px !important;
-    min-width: 120px !important;
-    min-height: 120px !important;
-    max-width: 120px !important;
-    max-height: 120px !important;
+    height: 7.5rem !important;
+    width: 7.5rem !important;
+    min-width: 7.5rem !important;
+    min-height: 7.5rem !important;
+    max-width: 7.5rem !important;
+    max-height: 7.5rem !important;
     margin-bottom: 0;
     border-radius: 50% !important;
     object-fit: cover !important;
@@ -93,7 +94,7 @@
 /* Footer logo */
 .footer .logo {
   img, svg {
-    height: 30px;
+    height: 1.875rem;
     opacity: 0.8;
     
     &:hover {
@@ -150,16 +151,16 @@
 
 @keyframes logo3DFloat {
   0%, 100% {
-    transform: translateY(0px) rotateX(0deg);
+    transform: translateY(0rem) rotateX(0deg);
   }
   25% {
-    transform: translateY(-3px) rotateX(2deg);
+    transform: translateY(-0.1875rem) rotateX(2deg);
   }
   50% {
-    transform: translateY(-6px) rotateX(0deg);
+    transform: translateY(-0.375rem) rotateX(0deg);
   }
   75% {
-    transform: translateY(-3px) rotateX(-2deg);
+    transform: translateY(-0.1875rem) rotateX(-2deg);
   }
 }
 
@@ -174,10 +175,10 @@
 
 @keyframes codeGlow {
   0%, 100% {
-    filter: drop-shadow(0 4px 8px rgba(16, 185, 129, 0.2));
+    filter: drop-shadow(0 0.25rem 0.5rem rgba(16, 185, 129, 0.2));
   }
   50% {
-    filter: drop-shadow(0 8px 16px rgba(16, 185, 129, 0.4));
+    filter: drop-shadow(0 0.5rem 1rem rgba(16, 185, 129, 0.4));
   }
 }
 
@@ -197,25 +198,25 @@
 .logo-variant {
   &--small {
     img, svg {
-      height: 24px;
+      height: 1.5rem;
     }
   }
   
   &--medium {
     img, svg {
-      height: 40px;
+      height: 2.5rem;
     }
   }
   
   &--large {
     img, svg {
-      height: 60px;
+      height: 3.75rem;
     }
   }
   
   &--xl {
     img, svg {
-      height: 80px;
+      height: 5rem;
     }
   }
 }
@@ -227,53 +228,61 @@
 
 @keyframes logoFloat {
   0%, 100% {
-    transform: translateY(0px);
+    transform: translateY(0rem);
   }
   50% {
-    transform: translateY(-5px);
+    transform: translateY(-0.3125rem);
   }
 }
 
 /* Logo glow effect */
 .logo-glow {
-  filter: drop-shadow(0 0 10px rgba(119, 74, 217, 0.38));
+  filter: drop-shadow(0 0 0.625rem rgba(119, 74, 217, 0.38));
 
   &:hover {
-    filter: drop-shadow(0 0 20px rgba(35, 183, 217, 0.55));
+    filter: drop-shadow(0 0 1.25rem rgba(35, 183, 217, 0.55));
   }
 }
 
 /* Logo Showcase Styles */
 .logo-showcase {
-  padding: 80px 0;
+  padding: 5rem 0;
   background: var(--px-bg-secondary);
-  
+
+  .row {
+    @include auto-grid(16rem, clamp(1.5rem, 4vw, 2.5rem));
+  }
+
+  .row.align-items-center {
+    justify-items: center;
+  }
+
   .logo-card {
     background: var(--px-surface-primary);
-    border: 1px solid var(--px-border-primary);
-    border-radius: 16px;
-    padding: 30px;
+    border: 0.0625rem solid var(--px-border-primary);
+    border-radius: 1rem;
+    padding: 1.875rem;
     text-align: center;
     transition: all 0.3s ease;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(0.625rem);
     
     &:hover {
       background: var(--px-surface-hover);
-      transform: translateY(-8px);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+      transform: translateY(-0.5rem);
+      box-shadow: 0 1.25rem 2.5rem rgba(0, 0, 0, 0.1);
     }
     
     h5 {
       color: var(--px-text-primary);
       font-weight: 700;
-      margin-bottom: 20px;
-      font-size: 18px;
+      @include fluid-space-auto(margin-bottom, 1.25rem);
+      @include fluid-type-auto(1.125rem);
     }
     
     p {
       color: var(--px-text-secondary);
-      font-size: 14px;
-      margin-top: 15px;
+      @include fluid-type-auto(0.875rem);
+      @include fluid-space-auto(margin-top, 0.9375rem);
       line-height: 1.6;
     }
     
@@ -281,58 +290,58 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      min-height: 80px;
+      min-height: 5rem;
     }
   }
 }
 
 /* Responsive logo sizing */
-@media (max-width: 768px) {
+@include respond-down(mobile) {
   .header .logo {
     img, svg {
-      height: 30px;
+      height: 1.875rem;
     }
   }
   
   .mobile-menu .logo {
     img, svg {
-      height: 45px;
+      height: 2.8125rem;
     }
   }
   
   .logo-showcase {
-    padding: 60px 0;
+    padding: 3.75rem 0;
     
     .logo-card {
-      padding: 20px;
+      padding: 1.25rem;
       
       .logo {
-        min-height: 60px;
+        min-height: 3.75rem;
       }
     }
   }
 }
 
-@media (max-width: 480px) {
+@include respond-down(small) {
   .header .logo {
     img, svg {
-      height: 28px;
+      height: 1.75rem;
     }
   }
   
   .logo-showcase {
-    padding: 40px 0;
+    padding: 2.5rem 0;
     
     .logo-card {
-      padding: 15px;
+      padding: 0.9375rem;
       
       h5 {
-        font-size: 16px;
-        margin-bottom: 15px;
+        @include fluid-type-auto(1rem);
+        @include fluid-space-auto(margin-bottom, 0.9375rem);
       }
       
       p {
-        font-size: 12px;
+        @include fluid-type-auto(0.75rem);
       }
     }
   }

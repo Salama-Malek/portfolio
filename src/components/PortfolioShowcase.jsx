@@ -223,7 +223,7 @@ export default function PortfolioShowcase({ data = {} }) {
 
   return (
     <>
-      <section className="portfolio-showcase-section section" id="project" style={{ minHeight: '100vh', width: '100vw' }}>
+      <section className="portfolio-showcase-section section" id="project">
         <div className="container">
           <SectionHeading {...sectionHeading} />
           
