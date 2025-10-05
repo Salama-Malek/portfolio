@@ -12,6 +12,41 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   overflow-x: hidden;
+  background-color: var(--color-background);
+  color: var(--color-body-text);
+}
+
+h1,
+h2,
+.section-heading h2 {
+  color: var(--color-primary-1);
+  font-weight: 700;
+}
+
+h3,
+h4 {
+  color: var(--color-primary-2);
+  font-weight: 500;
+}
+
+p,
+li,
+blockquote {
+  color: var(--color-body-text);
+}
+
+label {
+  color: var(--color-body-text);
+}
+
+a {
+  color: var(--color-accent-1);
+  transition: color 0.3s ease;
+
+  &:hover,
+  &:focus-visible {
+    color: var(--color-accent-2);
+  }
 }
 
 /* Add a class to the body when a modal is open to prevent scrolling */
@@ -157,7 +192,7 @@ img {
     margin: 0 0 1rem;
     font-size: 0.875rem;
     font-weight: 600;
-    color: var(--section-label-color);
+    color: var(--color-primary-2);
     text-transform: uppercase;
     letter-spacing: 0.1em;
 
@@ -188,22 +223,14 @@ img {
 
   h2 {
     margin: 0;
-    font-weight: 800;
+    font-weight: 700;
     font-size: clamp(2rem, 5vw, 3.5rem);
     line-height: 1.2;
     color: var(--section-title-color);
-    background: var(--section-title-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    text-shadow: var(--section-title-shadow);
     position: relative;
 
     span {
-      background: var(--section-title-highlight);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+      color: inherit;
       position: relative;
 
       &::after {
@@ -215,7 +242,7 @@ img {
         height: 3px;
         background: var(--section-title-underline);
         border-radius: 2px;
-        opacity: 0.6;
+        opacity: 0.7;
       }
     }
 

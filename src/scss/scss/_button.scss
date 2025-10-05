@@ -66,12 +66,12 @@
   &.light {
     background: var(--px-surface-primary);
     border: 2px solid var(--px-border-primary);
-    color: var(--px-text-primary);
+    color: var(--color-body-text);
     backdrop-filter: blur(10px);
 
     &:hover {
       background: var(--px-surface-hover);
-      border-color: var(--px-accent-primary);
+      border-color: var(--color-accent-1);
       transform: translateY(-2px);
     }
   }
@@ -83,7 +83,7 @@
 
     &:hover {
       background: transparent;
-      color: var(--px-text-primary);
+      color: var(--color-body-text);
       transform: translateY(-2px);
     }
   }

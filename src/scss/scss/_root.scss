@@ -116,7 +116,7 @@
   --px-text-secondary: #{$px-text-secondary};
   --px-text-tertiary: #{$px-text-tertiary};
   --px-text-muted: #{$px-text-muted};
-  --px-heading: #{$px-text-primary};
+  --px-heading: #{$px-heading};
   --px-white: #{$px-white};
   --px-black: #{$px-bg};
   --px-dark: #{$px-bg};
@@ -129,9 +129,9 @@
   --px-gradient-alt: linear-gradient(135deg, #312e8c 0%, #3d90d9 100%);
   --gradient-brand: var(--px-gradient-brand);
   --gradient-contact: var(--px-gradient-alt);
-  --gradient-accent-soft: linear-gradient(135deg, rgba(119, 74, 217, 0.3) 0%, rgba(61, 144, 217, 0.3) 100%);
-  --tone-muted: rgba(148, 163, 184, 0.35);
-  --tone-line: rgba(148, 163, 184, 0.18);
+  --gradient-accent-soft: linear-gradient(135deg, rgba(111, 31, 191, 0.25) 0%, rgba(4, 173, 191, 0.25) 100%);
+  --tone-muted: rgba(120, 120, 150, 0.35);
+  --tone-line: rgba(120, 120, 150, 0.18);
   --surface: var(--px-surface-primary);
 }
 

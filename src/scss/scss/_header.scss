@@ -69,7 +69,7 @@
   .nav-link {
     padding: 10px 24px;
     text-transform: uppercase;
-    color: var(--px-text-primary);
+    color: var(--color-body-text);
     font-size: 14px;
     letter-spacing: 1px;
     font-weight: 600;
@@ -117,8 +117,8 @@
 
 .theme-switcher {
   background: var(--gradient-accent);
-  border: 1px solid rgba(119, 74, 217, 0.55);
-  color: var(--text-primary);
+  border: 1px solid rgba(111, 31, 191, 0.55);
+  color: var(--color-body-text);
   font-size: 20px;
   width: 45px;
   height: 45px;
@@ -135,7 +135,7 @@
   }
 
   svg {
-    color: var(--text-primary);
+    color: var(--color-body-text);
   }
 }
 

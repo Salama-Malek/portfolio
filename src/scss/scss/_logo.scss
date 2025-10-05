@@ -49,7 +49,7 @@
     &:hover {
       transform: scale(1.1) rotateZ(2deg);
       img, svg {
-        filter: drop-shadow(0 10px 20px rgba(35, 183, 217, 0.4));
+        filter: drop-shadow(0 10px 20px rgba(4, 217, 217, 0.4));
       }
     }
   }
@@ -236,17 +236,17 @@
 
 /* Logo glow effect */
 .logo-glow {
-  filter: drop-shadow(0 0 10px rgba(119, 74, 217, 0.38));
+  filter: drop-shadow(0 0 10px rgba(111, 31, 191, 0.38));
 
   &:hover {
-    filter: drop-shadow(0 0 20px rgba(35, 183, 217, 0.55));
+    filter: drop-shadow(0 0 20px rgba(4, 217, 217, 0.55));
   }
 }
 
 /* Logo Showcase Styles */
 .logo-showcase {
   padding: 80px 0;
-  background: var(--px-bg-secondary);
+  background: var(--color-background);
   
   .logo-card {
     background: var(--px-surface-primary);
