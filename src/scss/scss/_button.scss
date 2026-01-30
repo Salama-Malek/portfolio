@@ -8,7 +8,7 @@
   background: linear-gradient(90deg, #774ad9 0%, #23b7d9 100%);
   color: var(--px-text-primary);
   text-decoration: none;
-  transition: all 0.3s ease;
+  transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
   font-weight: 600;
   outline: none;
   box-shadow: 0 12px 30px rgba(49, 46, 140, 0.35);
@@ -18,6 +18,7 @@
   font-size: 14px;
   position: relative;
   overflow: hidden;
+  will-change: transform, box-shadow;
 
   &::before {
     content: '';
@@ -29,16 +30,16 @@
     background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
     transition: left 0.5s;
   }
-  
+
   &:hover::before {
     left: 100%;
   }
-  
+
   i {
     margin-left: 10px;
     transition: transform 0.3s ease;
   }
-  
+
   &:hover {
     background: linear-gradient(90deg, #3d90d9 0%, #23b7d9 100%);
     border-color: rgba(35, 183, 217, 0.95);
@@ -63,19 +64,6 @@
     }
   }
 
-  &.light {
-    background: var(--px-surface-primary);
-    border: 2px solid var(--px-border-primary);
-    color: var(--px-text-primary);
-    backdrop-filter: blur(10px);
-
-    &:hover {
-      background: var(--px-surface-hover);
-      border-color: var(--px-accent-primary);
-      transform: translateY(-2px);
-    }
-  }
-
   &.white {
     background: var(--px-text-primary);
     border: 2px solid var(--px-text-primary);
@@ -86,6 +74,19 @@
       color: var(--px-text-primary);
       transform: translateY(-2px);
     }
+  }
+}
+
+/* Compact button variant for tight spaces */
+.px-btn--compact {
+  padding: 10px 18px;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  box-shadow: 0 8px 18px rgba(49, 46, 140, 0.28);
+
+  @media (max-width: 576px) {
+    padding: 9px 14px;
+    font-size: 11px;
   }
 }
 
@@ -122,7 +123,7 @@
   display: flex;
   gap: 16px;
   flex-wrap: wrap;
-  
+
   .social-btn {
     width: 60px;
     height: 60px;
@@ -141,18 +142,18 @@
     animation: socialBtnFadeIn 0.6s ease-out forwards;
     opacity: 0;
     transform: translateY(20px);
-    
+
     &:hover {
       transform: translateY(-8px) scale(1.15);
       box-shadow: 0 20px 40px rgba(49, 46, 140, 0.35);
       border-color: transparent;
-      color: var(--palette-indigo);
+      color: var(--palette-sky);
     }
-    
+
     &:active {
       transform: translateY(-4px) scale(1.05);
     }
-    
+
     .social-btn-inner {
       position: relative;
       z-index: 2;
@@ -162,13 +163,13 @@
       width: 100%;
       height: 100%;
     }
-    
+
     .social-icon-svg {
       font-size: 24px;
       transition: all 0.3s ease;
       z-index: 3;
     }
-    
+
     .social-icon-img {
       width: 24px;
       height: 24px;
@@ -177,7 +178,7 @@
       z-index: 3;
       filter: none;
     }
-    
+
     .social-btn-ripple {
       position: absolute;
       top: 50%;
@@ -190,16 +191,16 @@
       transition: all 0.6s ease;
       z-index: 1;
     }
-    
+
     &:hover .social-btn-ripple {
       width: 120px;
       height: 120px;
       opacity: 0;
     }
-    
+
     &:hover .social-icon-svg {
       transform: scale(1.2) rotate(5deg);
-      color: var(--palette-indigo);
+      color: var(--palette-sky);
     }
 
     &:hover .social-icon-img {
@@ -207,135 +208,136 @@
       filter: drop-shadow(0 4px 8px rgba(49, 46, 140, 0.35));
     }
   }
-  
+
   @keyframes socialBtnFadeIn {
     from {
       opacity: 0;
       transform: translateY(20px) scale(0.8);
     }
+
     to {
       opacity: 1;
       transform: translateY(0) scale(1);
     }
   }
-    
-    &.dribbble {
-      background: var(--gradient-brand-dribbble);
-      border-color: var(--brand-dribbble-border);
-      color: white;
-      
-      &:hover {
-        background: var(--gradient-brand-dribbble-reverse);
-        box-shadow: 0 20px 40px rgba(242, 103, 152, 0.4);
-        border-color: transparent;
-      }
-      
-      .social-btn-ripple {
-        background: rgba(255, 255, 255, 0.4);
-      }
+
+  &.dribbble {
+    background: var(--gradient-brand-dribbble);
+    border-color: var(--brand-dribbble-border);
+    color: white;
+
+    &:hover {
+      background: var(--gradient-brand-dribbble-reverse);
+      box-shadow: 0 20px 40px rgba(242, 103, 152, 0.4);
+      border-color: transparent;
     }
-    
-    &.facebook {
-      background: var(--gradient-brand-facebook);
-      border-color: var(--brand-facebook-border);
-      color: white;
-      
-      &:hover {
-        background: var(--gradient-brand-facebook-reverse);
-        box-shadow: 0 20px 40px rgba(24, 119, 242, 0.4);
-        border-color: transparent;
-      }
-      
-      .social-btn-ripple {
-        background: rgba(255, 255, 255, 0.4);
-      }
-    }
-    
-    &.linkedin {
-      background: var(--gradient-brand-linkedin);
-      border-color: var(--brand-linkedin-border);
-      color: white;
-      
-      &:hover {
-        background: var(--gradient-brand-linkedin-reverse);
-        box-shadow: 0 20px 40px rgba(18, 117, 177, 0.4);
-        border-color: transparent;
-      }
-      
-      .social-btn-ripple {
-        background: rgba(255, 255, 255, 0.4);
-      }
-    }
-    
-    &.github {
-      background: var(--gradient-brand-github);
-      border-color: var(--brand-github-border);
-      color: white;
-      
-      &:hover {
-        background: var(--gradient-brand-github-reverse);
-        box-shadow: 0 20px 40px rgba(51, 51, 51, 0.4);
-        border-color: transparent;
-      }
-      
-      .social-btn-ripple {
-        background: rgba(255, 255, 255, 0.4);
-      }
-    }
-    
-    &.khamsat {
-      background: var(--gradient-brand-producthunt);
-      border-color: var(--brand-producthunt-border);
-      color: white;
-      
-      &:hover {
-        background: var(--gradient-brand-producthunt-reverse);
-        box-shadow: 0 20px 40px rgba(255, 107, 53, 0.4);
-        border-color: transparent;
-      }
-      
-      .social-btn-ripple {
-        background: rgba(255, 255, 255, 0.4);
-      }
-    }
-    
-    &.twitter {
-      background: var(--gradient-brand-twitter);
-      border-color: var(--brand-twitter-border);
-      color: white;
-      
-      &:hover {
-        background: var(--gradient-brand-twitter-reverse);
-        box-shadow: 0 20px 40px rgba(29, 161, 242, 0.4);
-        border-color: transparent;
-      }
-      
-      .social-btn-ripple {
-        background: rgba(255, 255, 255, 0.4);
-      }
+
+    .social-btn-ripple {
+      background: rgba(255, 255, 255, 0.4);
     }
   }
+
+  &.facebook {
+    background: var(--gradient-brand-facebook);
+    border-color: var(--brand-facebook-border);
+    color: white;
+
+    &:hover {
+      background: var(--gradient-brand-facebook-reverse);
+      box-shadow: 0 20px 40px rgba(24, 119, 242, 0.4);
+      border-color: transparent;
+    }
+
+    .social-btn-ripple {
+      background: rgba(255, 255, 255, 0.4);
+    }
+  }
+
+  &.linkedin {
+    background: var(--gradient-brand-linkedin);
+    border-color: var(--brand-linkedin-border);
+    color: white;
+
+    &:hover {
+      background: var(--gradient-brand-linkedin-reverse);
+      box-shadow: 0 20px 40px rgba(18, 117, 177, 0.4);
+      border-color: transparent;
+    }
+
+    .social-btn-ripple {
+      background: rgba(255, 255, 255, 0.4);
+    }
+  }
+
+  &.github {
+    background: var(--gradient-brand-github);
+    border-color: var(--brand-github-border);
+    color: white;
+
+    &:hover {
+      background: var(--gradient-brand-github-reverse);
+      box-shadow: 0 20px 40px rgba(51, 51, 51, 0.4);
+      border-color: transparent;
+    }
+
+    .social-btn-ripple {
+      background: rgba(255, 255, 255, 0.4);
+    }
+  }
+
+  &.khamsat {
+    background: var(--gradient-brand-producthunt);
+    border-color: var(--brand-producthunt-border);
+    color: white;
+
+    &:hover {
+      background: var(--gradient-brand-producthunt-reverse);
+      box-shadow: 0 20px 40px rgba(255, 107, 53, 0.4);
+      border-color: transparent;
+    }
+
+    .social-btn-ripple {
+      background: rgba(255, 255, 255, 0.4);
+    }
+  }
+
+  &.twitter {
+    background: var(--gradient-brand-twitter);
+    border-color: var(--brand-twitter-border);
+    color: white;
+
+    &:hover {
+      background: var(--gradient-brand-twitter-reverse);
+      box-shadow: 0 20px 40px rgba(29, 161, 242, 0.4);
+      border-color: transparent;
+    }
+
+    .social-btn-ripple {
+      background: rgba(255, 255, 255, 0.4);
+    }
+  }
+}
 
 /* Responsive Design for Social Buttons */
 @media (max-width: 768px) {
   .social-icon {
     gap: 12px;
     justify-content: center;
-    
+
     .social-btn {
       width: 50px;
       height: 50px;
       border-radius: 15px;
-      
+
       .social-icon-svg {
         font-size: 20px;
       }
-      
+
       .social-icon-img {
         width: 20px;
         height: 20px;
       }
-      
+
       &:hover {
         transform: translateY(-6px) scale(1.1);
       }
@@ -346,16 +348,16 @@
 @media (max-width: 480px) {
   .social-icon {
     gap: 10px;
-    
+
     .social-btn {
       width: 45px;
       height: 45px;
       border-radius: 12px;
-      
+
       .social-icon-svg {
         font-size: 18px;
       }
-      
+
       .social-icon-img {
         width: 18px;
         height: 18px;
@@ -373,7 +375,7 @@
       transform: rotate(180deg);
     }
   }
-  
+
   .social-icon {
     .social-btn {
       margin-right: 0;

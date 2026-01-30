@@ -4,6 +4,7 @@
       "home": "الرئيسية",
       "about": "عني",
       "portfolio": "المحفظة",
+      "services": "Services",
       "experience": "الخبرة",
       "testimonials": "التوصيات",
       "contact": "التواصل"
@@ -89,12 +90,7 @@
       "imgUrl": "/images/home-banner.png",
       "name": "سلامة مالك",
       "heading": "مرحباً! أنا سلامة",
-      "typingText": [
-        "مطور برمجيات",
-        1500,
-        "مستقل",
-        1500
-      ],
+      "typingText": ["مطور برمجيات", 1500, "مستقل", 1500],
       "description": "خريج معهد تكنولوجيا المعلومات ومطور ويب متمرس متخصص في تطوير البرمجيات. أبحث عن فرص للعمل في تطوير تطبيقات الويب الكاملة باستخدام تقنيات MEAN stack، والبرمجة الخلفية والأمامية، وتطوير تطبيقات الهاتف المحمول.",
       "btnText": "تواصل معي",
       "btnUrl": "contactus"
@@ -118,36 +114,36 @@
     ],
     "brands": [
       {
-        "src": "/images/brand-1.svg",
-        "alt": "شعار العلامة التجارية"
+        "src": "https://cdn.simpleicons.org/react/61DAFB",
+        "alt": "React"
       },
       {
-        "src": "/images/brand-2.svg",
-        "alt": "شعار العلامة التجارية"
+        "src": "https://cdn.simpleicons.org/angular/DD0031",
+        "alt": "Angular"
       },
       {
-        "src": "/images/brand-1.svg",
-        "alt": "شعار العلامة التجارية"
+        "src": "https://cdn.simpleicons.org/nodedotjs/5FA04E",
+        "alt": "Node.js"
       },
       {
-        "src": "/images/brand-2.svg",
-        "alt": "شعار العلامة التجارية"
+        "src": "https://cdn.simpleicons.org/mongodb/4DB33D",
+        "alt": "MongoDB"
       },
       {
-        "src": "/images/brand-1.svg",
-        "alt": "شعار العلامة التجارية"
+        "src": "https://cdn.simpleicons.org/amazonaws/FF9900",
+        "alt": "AWS"
       },
       {
-        "src": "/images/brand-2.svg",
-        "alt": "شعار العلامة التجارية"
+        "src": "https://cdn.simpleicons.org/docker/2496ED",
+        "alt": "Docker"
       },
       {
-        "src": "/images/brand-1.svg",
-        "alt": "شعار العلامة التجارية"
+        "src": "https://cdn.simpleicons.org/python/3776AB",
+        "alt": "Python"
       },
       {
-        "src": "/images/brand-2.svg",
-        "alt": "شعار العلامة التجارية"
+        "src": "https://cdn.simpleicons.org/firebase/FFCA28",
+        "alt": "Firebase"
       }
     ],
     "about": {
@@ -179,7 +175,7 @@
       },
       "allProjects": [
         {
-          "thumbUrl": "/images/popup-project-1.jpg",
+          "thumbUrl": "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1200&q=80",
           "title": "تطبيق MEAN Stack",
           "subTitle": "تطوير الويب، تطوير كامل",
           "details": {
@@ -189,11 +185,13 @@
             "langages": "JavaScript, TypeScript, HTML, CSS",
             "platform": "MEAN Stack",
             "country": "مصر",
-            "url": "www.example.com"
-          }
+            "url": "https://sm4tech.com/projects/mean-stack"
+          },
+          "demoUrl": "https://sm4tech.com/projects/mean-stack",
+          "githubUrl": "https://sm4tech.com/projects/mean-stack"
         },
         {
-          "thumbUrl": "/images/popup-project-2.jpg",
+          "thumbUrl": "https://images.unsplash.com/photo-1506617420156-8e4536971650?auto=format&fit=crop&w=1200&q=80",
           "title": "تطبيق React Native للهاتف المحمول",
           "subTitle": "تطوير الهاتف المحمول، الواجهة الأمامية",
           "details": {
@@ -203,11 +201,13 @@
             "langages": "JavaScript, React Native",
             "platform": "iOS, Android",
             "country": "مصر",
-            "url": "www.example.com"
-          }
+            "url": "https://sm4tech.com/projects/react-native"
+          },
+          "demoUrl": "https://sm4tech.com/projects/react-native",
+          "githubUrl": "https://sm4tech.com/projects/react-native"
         },
         {
-          "thumbUrl": "/images/popup-project-3.jpg",
+          "thumbUrl": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80",
           "title": "تصميم لوحة التحكم",
           "subTitle": "تطوير الويب، الواجهة الأمامية",
           "details": {
@@ -217,11 +217,13 @@
             "langages": "TypeScript, HTML, CSS, Angular",
             "platform": "الويب",
             "country": "مصر",
-            "url": "www.example.com"
-          }
+            "url": "https://sm4tech.com/projects/project"
+          },
+          "demoUrl": "https://sm4tech.com/projects/project",
+          "githubUrl": "https://sm4tech.com/projects/project"
         },
         {
-          "thumbUrl": "/images/popup-project-4.jpg",
+          "thumbUrl": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80",
           "title": "تطبيق ويب Laravel",
           "subTitle": "تطوير الويب، الخلفية",
           "details": {
@@ -231,11 +233,13 @@
             "langages": "PHP, HTML, CSS, JS",
             "platform": "Laravel",
             "country": "مصر",
-            "url": "www.example.com"
-          }
+            "url": "https://sm4tech.com/projects/laravel"
+          },
+          "demoUrl": "https://sm4tech.com/projects/laravel",
+          "githubUrl": "https://sm4tech.com/projects/laravel"
         },
         {
-          "thumbUrl": "/images/popup-project-5.jpg",
+          "thumbUrl": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80",
           "title": "مدونة MERN Stack",
           "subTitle": "تطوير الويب، تطوير كامل",
           "details": {
@@ -245,11 +249,13 @@
             "langages": "JavaScript, React, Node.js",
             "platform": "MERN Stack",
             "country": "مصر",
-            "url": "www.example.com"
-          }
+            "url": "https://sm4tech.com/projects/mern-stack"
+          },
+          "demoUrl": "https://sm4tech.com/projects/mern-stack",
+          "githubUrl": "https://sm4tech.com/projects/mern-stack"
         },
         {
-          "thumbUrl": "/images/popup-project-6.jpg",
+          "thumbUrl": "https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=1200&q=80",
           "title": "موقع WordPress",
           "subTitle": "تطوير الويب، نظام إدارة المحتوى",
           "details": {
@@ -259,8 +265,10 @@
             "langages": "PHP, HTML, CSS, JS",
             "platform": "WordPress",
             "country": "مصر",
-            "url": "www.example.com"
-          }
+            "url": "https://sm4tech.com/projects/wordpress"
+          },
+          "demoUrl": "https://sm4tech.com/projects/wordpress",
+          "githubUrl": "https://sm4tech.com/projects/wordpress"
         }
       ]
     },
@@ -271,28 +279,28 @@
       },
       "allService": [
         {
-          "imgUrl": "/images/service-01.jpg",
+          "imgUrl": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80",
           "title": "التطوير الكامل",
           "subTitle": "خبير في تطوير MEAN stack، بناء تطبيقات ويب كاملة باستخدام MongoDB و Express.js و Angular و Node.js.",
           "icon": "bi:code-square",
           "ratings": 5
         },
         {
-          "imgUrl": "/images/service-02.jpg",
+          "imgUrl": "https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=1200&q=80",
           "title": "تطوير الواجهة الأمامية",
           "subTitle": "إنشاء واجهات مستخدم تفاعلية ومتجاوبة باستخدام React و Angular و Vue.js وتقنيات الواجهة الأمامية الحديثة الأخرى.",
           "icon": "bi:laptop",
           "ratings": 5
         },
         {
-          "imgUrl": "/images/service-03.jpg",
+          "imgUrl": "https://images.unsplash.com/photo-1505685296765-3a2736de412f?auto=format&fit=crop&w=1200&q=80",
           "title": "تطوير تطبيقات الهاتف المحمول",
           "subTitle": "بناء تطبيقات هاتف محمول متعددة المنصات باستخدام React Native مع التركيز على الأداء وتجربة المستخدم.",
           "icon": "bi:phone",
           "ratings": 4.5
         },
         {
-          "imgUrl": "/images/service-04.jpg",
+          "imgUrl": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80",
           "title": "إدارة المحتوى",
           "subTitle": "تنفيذ حلول نظام إدارة المحتوى باستخدام WordPress مع سمات وملحقات مخصصة لتلبية متطلبات العميل المحددة.",
           "icon": "bi:file-earmark-text",
@@ -300,64 +308,156 @@
         }
       ]
     },
+
     "experience": {
       "sectionHeading": {
-        "miniTitle": "الخبرة",
-        "title": "خبرتي <span>العملية</span>"
+        "miniTitle": "الخبرات",
+        "title": "خبراتي <span>العملية</span>"
       },
       "allExperience": [
         {
-          "designation": "مطور مستقل",
-          "company": "خمسات | عن بُعد",
-          "duration": "أبريل 2023 - الحالي",
-          "jobType": "عمل مستقل",
-          "companyTitle": "عن الشركة",
-          "companyDescription": "أكملت بنجاح مشاريع تطوير ويب وبرمجيات متنوعة على خمسات، مقدماً حلول رقمية مخصصة للعملاء مع التركيز على الجودة والتواصل ورضا العميل. المساهمات الرئيسية تشمل التعاون مع العملاء لفهم المتطلبات وتقديم حلول مخصصة، تطوير المواقع والتطبيقات والخدمات الأخرى عبر تقنيات مختلفة، وضمان التسليم في الوقت المحدد ورضا العميل العالي من خلال عمليات فعالة وتواصل واضح."
+          "designation": "مطور برمجيات متكامل (Freelance)",
+          "company": "عمل حر",
+          "duration": "2023 - حتى الآن",
+          "jobType": "عمل حر",
+          "companyDescription": "تصميم وتطوير تطبيقات ويب متكاملة لعملاء من مجالات متعددة. بناء واجهات مستخدم حديثة باستخدام React و TypeScript، وتطوير خدمات خلفية قوية باستخدام Node.js وواجهات REST. التكامل مع قواعد البيانات والخدمات الخارجية. العمل المباشر مع العملاء لفهم المتطلبات، اقتراح الحلول التقنية، وتنفيذ ميزات عالية الجودة. صيانة التطبيقات في بيئة الإنتاج، تحسين الأداء، وتقديم دعم مستمر بناءً على ملاحظات العملاء."
         },
         {
-          "designation": "مساعد مدير المشروع",
-          "company": "متدرب في موسكو",
+          "designation": "قائد فريق الواجهة الأمامية",
+          "company": "Informa Core Technologies",
+          "duration": "فبراير 2025 - يناير 2026",
+          "jobType": "دوام كامل",
+          "companyDescription": "قيادة تطوير منصات ويب قابلة للتوسع باستخدام React و TypeScript. بناء وصيانة بنية الواجهة الأمامية بالتعاون الوثيق مع فرق التصميم والخلفية لتقديم حلول عالية الأداء ومركزة على المستخدم. ضمان جودة الكود وقابليته للصيانة والأداء."
+        },
+        {
+          "designation": "مساعد مدير مشروع",
+          "company": "ITSPORTS",
           "duration": "نوفمبر 2024 - يناير 2025",
-          "jobType": "تدريب",
-          "companyTitle": "عن المنصب",
-          "companyDescription": "دعم مهام إدارة المشروع، دمج الخبرة البرمجية مع التواصل مع العملاء لتقديم حلول تكنولوجيا المعلومات. تعاون مع الفرق لضمان تحقيق معالم المشروع بكفاءة وفعالية."
+          "jobType": "دوام كامل",
+          "companyDescription": "دعم تخطيط وتنفيذ المشاريع مع إدارة التواصل مع العملاء وعمليات الانضمام. التنسيق بين الفرق التقنية وأصحاب المصلحة لضمان تسليم مراحل المشروع في الوقت المحدد."
         },
         {
-          "designation": "مدرب مستقل",
-          "company": "شركة يوث للتعليم",
-          "duration": "ديسمبر 2023 - يونيو 2024",
+          "designation": "مدرب عمل حر",
+          "company": "EYouth",
+          "duration": "أكتوبر 2024 - ديسمبر 2024",
           "jobType": "دوام جزئي",
-          "companyTitle": "عن المنصب",
-          "companyDescription": "أجريت جلسات تدريبية لتعزيز مهارات طلاب تكنولوجيا المعلومات في البرمجة وأطر العمل، مقدماً إرشادات عملية للمشاريع ونصائح مهنية للاستعداد للعمل."
+          "companyDescription": "توجيه الخريجين في تطوير البرمجيات ومهارات العمل الحر. تقديم إرشاد حول مفاهيم الذكاء الاصطناعي والاستعداد المهني، ودعم التطور التقني والمهني للمتدربين."
         }
       ]
     },
-    "testimonial": {
-      "sectionHeading": {
-        "miniTitle": "آراء العملاء",
-        "title": "تعليقات <span>العملاء</span> <br /> من عملي"
-      },
-      "allTestimonial": [
-        {
-          "reviewText": "سلم سلامة تطبيق الويب في الوقت المحدد وبجودة استثنائية. خبرته في MEAN stack وقدرته على فهم متطلبات عملنا أدت إلى منتج تجاوز توقعاتنا. أوصي به بشدة لأي مشروع تطوير ويب.",
-          "avatarImg": "/images/avatar-1.jpg",
-          "avatarName": "أحمد حسن",
-          "avatarCompany": "شركة ناشئة تقنية"
-        },
-        {
-          "reviewText": "العمل مع سلامة كان تجربة رائعة. كان متجاوباً ومهنياً ومنتبهاً للتفاصيل. مهاراته التقنية مثيرة للإعجاب، وكان قادراً على اقتراح حلول لم نفكر فيها. سنعمل معه بالتأكيد في مشاريع مستقبلية.",
-          "avatarImg": "/images/avatar-2.jpg",
-          "avatarName": "ماريا إيفانوفا",
-          "avatarCompany": "شركة التجارة الإلكترونية"
-        },
-        {
-          "reviewText": "كمدرب، ساعد سلامة العديد من طلابنا في تطوير مهارات عملية عالية القيمة في الصناعة. نهجه التعليمي يجمع بين النظرية والمشاريع العملية، مما أدى إلى تحسين معدلات التوظيف لخريجينا.",
-          "avatarImg": "/images/avatar-3.jpg",
-          "avatarName": "محمود صالح",
-          "avatarCompany": "شركة يوث للتعليم"
-        }
-      ]
+
+"testimonial": {
+  "sectionHeading": {
+    "miniTitle": "آراء العملاء",
+    "title": "تعليقات <span>العملاء</span><br />من عملي"
+  },
+  "allTestimonial": [
+    {
+      "reviewText": "شغل احترافي ومبدع في العمل، سريع في التنفيذ، ومتعاون جداً في التصميم. تجربة ممتازة وأنصح بالتعامل معه.",
+      "avatarName": "Hr K.",
+      "avatarCompany": "عميل · خمسات",
+      "rating": 5
     },
+    {
+      "reviewText": "صاحب أخلاق ومهندس سلامة جميل وموفق وأمين وصبور علينا. صبر علينا صبر أيوب، فشكراً له ولن ننسى فضله.",
+      "avatarName": "Ali A.",
+      "avatarCompany": "عميل · خمسات",
+      "rating": 5
+    },
+    {
+      "reviewText": "شكراً لك مهندس سلامة، والله يعطيك العافية على تعاونك معي وتنفيذ الخدمة بدقة واحترافية وسرعة. أنصح بالتعامل معه.",
+      "avatarName": "Manal A.",
+      "avatarCompany": "عميل · خمسات",
+      "rating": 5
+    },
+    {
+      "reviewText": "ممتاز ويستقبل الرد والتعديلات بكل رحابة صدر.",
+      "avatarName": "معاذ",
+      "avatarCompany": "عميل · خمسات",
+      "rating": 5
+    },
+    {
+      "reviewText": "شكراً جزيلاً على العمل الجميل، مسرور جداً أني تعاملت مع شخص راقي مثلك وسريع في إنجاز العمل.",
+      "avatarName": "Anwar C.",
+      "avatarCompany": "عميل · خمسات",
+      "rating": 5
+    },
+    {
+      "reviewText": "تم تسليم العمل المطلوب بالكامل وفي وقت قياسي.",
+      "avatarName": "Panoramat T.",
+      "avatarCompany": "عميل · خمسات",
+      "rating": 5
+    },
+    {
+      "reviewText": "شكراً جداً لحضرتك وأكيد هيبقى في تعامل تاني قريب.",
+      "avatarName": "Taha A.",
+      "avatarCompany": "عميل · خمسات",
+      "rating": 5
+    },
+    {
+      "reviewText": "من أفضل الناس اللي تعاملت معاهم، متعاون جداً، وعنده خبرة ممتازة، وملتزم بالوقت المحدد.",
+      "avatarName": "Mohammad E.",
+      "avatarCompany": "عميل · خمسات",
+      "rating": 5
+    },
+    {
+      "reviewText": "نفس المطلوب وشرح واضح، يعطيك ألف عافية ما قصرت.",
+      "avatarName": "Loea A.",
+      "avatarCompany": "عميل · خمسات",
+      "rating": 5
+    },
+    {
+      "reviewText": "بائع رائع جداً، التعامل معه سهل ومريح جداً.",
+      "avatarName": "Musa A.",
+      "avatarCompany": "عميل · خمسات",
+      "rating": 5
+    },
+    {
+      "reviewText": "ممتاز جداً، ما شاء الله، متعاون ومبدع، ولن يكون التعامل الأخير معه.",
+      "avatarName": "Lulu A.",
+      "avatarCompany": "عميل · خمسات",
+      "rating": 5
+    },
+    {
+      "reviewText": "سريع جداً في أداء الطلب، شكراً لك.",
+      "avatarName": "Faisal F.",
+      "avatarCompany": "عميل · خمسات",
+      "rating": 5
+    },
+    {
+      "reviewText": "متعاون ومبدع وسريع التنفيذ.",
+      "avatarName": "سمحة ف.",
+      "avatarCompany": "عميل · خمسات",
+      "rating": 5
+    },
+    {
+      "reviewText": "ما شاء الله الأخ الكريم أدى عمله كما هو مطلوب وأكثر، مع تمنياتي له بالتوفيق.",
+      "avatarName": "يسرى س.",
+      "avatarCompany": "عميل · خمسات",
+      "rating": 5
+    },
+    {
+      "reviewText": "شكراً يا باشمهندس على مجهودك الرائع.",
+      "avatarName": "بدر س.",
+      "avatarCompany": "عميل · خمسات",
+      "rating": 5
+    },
+    {
+      "reviewText": "عمل متقن جداً وسريع، ولا يحتاج شرح كثير، تعامل احترافي.",
+      "avatarName": "نورة",
+      "avatarCompany": "عميل · خمسات",
+      "rating": 5
+    },
+    {
+      "reviewText": "شخص طيب ومبدع في العمل وسريع في التنفيذ، شكراً لك.",
+      "avatarName": "هشام ا.",
+      "avatarCompany": "عميل · خمسات",
+      "rating": 5
+    }
+  ]
+}
+,
+
     "portfolioShowcase": {
       "sectionHeading": {
         "miniTitle": "عرض المحفظة",
@@ -370,19 +470,13 @@
         },
         "allProjects": [
           {
-            "thumbUrl": "/images/popup-project-1.jpg",
+            "thumbUrl": "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1200&q=80",
             "title": "IntervueAI",
             "subTitle": "مقابلات وهمية في الوقت الفعلي مع الذكاء الاصطناعي، بدون نماذج أو نقرات، فقط محادثات طبيعية ومخصصة.",
             "category": "AI/ML",
             "status": "مباشر",
-            "technologies": [
-              "React",
-              "Node.js",
-              "OpenAI",
-              "WebRTC",
-              "MongoDB"
-            ],
-            "demoUrl": "https://intervueai-demo.vercel.app",
+            "technologies": ["React", "Node.js", "OpenAI", "WebRTC", "MongoDB"],
+            "demoUrl": "https://sm4tech.com/projects/intervueai",
             "githubUrl": "https://github.com/Salama-Malek/IntervueAI",
             "details": {
               "title": "منصة مقابلات مدعومة بالذكاء الاصطناعي",
@@ -391,11 +485,11 @@
               "languages": "JavaScript, TypeScript, HTML, CSS",
               "platform": "React, Node.js",
               "country": "مصر",
-              "url": "https://intervueai-demo.vercel.app"
+              "url": "https://sm4tech.com/projects/intervueai"
             }
           },
           {
-            "thumbUrl": "/images/popup-project-2.jpg",
+            "thumbUrl": "https://images.unsplash.com/photo-1506617420156-8e4536971650?auto=format&fit=crop&w=1200&q=80",
             "title": "منصة التجارة الإلكترونية",
             "subTitle": "سوق إلكتروني كامل الميزات مع معالجة متقدمة للمدفوعات وإدارة المخزون.",
             "category": "Full Stack",
@@ -407,7 +501,7 @@
               "Node.js",
               "Stripe"
             ],
-            "demoUrl": "https://ecommerce-demo.netlify.app",
+            "demoUrl": "https://sm4tech.com/projects/project",
             "githubUrl": "https://github.com/Salama-Malek/ECommerce-Platform",
             "details": {
               "title": "حل تجارة إلكترونية باستخدام MEAN Stack",
@@ -416,11 +510,11 @@
               "languages": "JavaScript, TypeScript, HTML, CSS",
               "platform": "MEAN Stack",
               "country": "مصر",
-              "url": "https://ecommerce-demo.netlify.app"
+              "url": "https://sm4tech.com/projects/project"
             }
           },
           {
-            "thumbUrl": "/images/popup-project-3.jpg",
+            "thumbUrl": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80",
             "title": "مدير TaskFlow",
             "subTitle": "أداة إدارة مشاريع تعاونية مع تحديثات في الوقت الفعلي وميزات التواصل الجماعي.",
             "category": "Web App",
@@ -432,7 +526,7 @@
               "Express.js",
               "Redis"
             ],
-            "demoUrl": "https://taskflow-manager.herokuapp.com",
+            "demoUrl": "https://sm4tech.com/projects/taskflow",
             "githubUrl": "https://github.com/Salama-Malek/TaskFlow-Manager",
             "details": {
               "title": "منصة إدارة مشاريع في الوقت الفعلي",
@@ -441,11 +535,11 @@
               "languages": "JavaScript, TypeScript, HTML, CSS",
               "platform": "React, Node.js",
               "country": "مصر",
-              "url": "https://taskflow-manager.herokuapp.com"
+              "url": "https://sm4tech.com/projects/taskflow"
             }
           },
           {
-            "thumbUrl": "/images/popup-project-4.jpg",
+            "thumbUrl": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80",
             "title": "لوحة تحليل الطقس",
             "subTitle": "تصور متقدم لبيانات الطقس مع التحليلات التنبؤية والرسوم البيانية التفاعلية.",
             "category": "Data Viz",
@@ -457,7 +551,7 @@
               "Chart.js",
               "OpenWeather API"
             ],
-            "demoUrl": "https://weather-analytics-dashboard.vercel.app",
+            "demoUrl": "https://sm4tech.com/projects/project",
             "githubUrl": "https://github.com/Salama-Malek/Weather-Analytics",
             "details": {
               "title": "تصور تفاعلي لبيانات الطقس",
@@ -466,11 +560,11 @@
               "languages": "JavaScript, Python, HTML, CSS",
               "platform": "Flask, D3.js",
               "country": "مصر",
-              "url": "https://weather-analytics-dashboard.vercel.app"
+              "url": "https://sm4tech.com/projects/project"
             }
           },
           {
-            "thumbUrl": "/images/popup-project-5.jpg",
+            "thumbUrl": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80",
             "title": "تحليلات وسائل التواصل الاجتماعي",
             "subTitle": "منصة شاملة لمراقبة وتحليل وسائل التواصل الاجتماعي مع تحليل المشاعر.",
             "category": "Analytics",
@@ -482,7 +576,7 @@
               "TensorFlow",
               "PostgreSQL"
             ],
-            "demoUrl": "https://social-analytics-platform.netlify.app",
+            "demoUrl": "https://sm4tech.com/projects/project",
             "githubUrl": "https://github.com/Salama-Malek/Social-Analytics",
             "details": {
               "title": "تحليلات وسائل التواصل الاجتماعي مدعومة بالذكاء الاصطناعي",
@@ -491,11 +585,11 @@
               "languages": "JavaScript, Python, HTML, CSS",
               "platform": "Django, React",
               "country": "مصر",
-              "url": "https://social-analytics-platform.netlify.app"
+              "url": "https://sm4tech.com/projects/project"
             }
           },
           {
-            "thumbUrl": "/images/popup-project-6.jpg",
+            "thumbUrl": "https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=1200&q=80",
             "title": "تطبيق تتبع اللياقة البدنية",
             "subTitle": "تطبيق تتبع اللياقة البدنية متعدد المنصات مع خطط التمارين ومراقبة التقدم.",
             "category": "Mobile",
@@ -507,7 +601,7 @@
               "Expo",
               "Charts"
             ],
-            "demoUrl": null,
+            "demoUrl": "https://sm4tech.com/projects/project",
             "githubUrl": "https://github.com/Salama-Malek/Fitness-Tracker-App",
             "details": {
               "title": "تطبيق تتبع اللياقة البدنية متعدد المنصات",
@@ -516,7 +610,7 @@
               "languages": "JavaScript, React Native",
               "platform": "iOS, Android",
               "country": "مصر",
-              "url": "https://github.com/Salama-Malek/Fitness-Tracker-App"
+              "url": "https://sm4tech.com/projects/project"
             }
           }
         ]
@@ -528,7 +622,7 @@
         },
         "allService": [
           {
-            "imgUrl": "/images/service-01.jpg",
+            "imgUrl": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80",
             "title": "تطوير المكدس الكامل",
             "subTitle": "خبير في تطوير MEAN stack، بناء تطبيقات ويب كاملة باستخدام MongoDB و Express.js و Angular و Node.js.",
             "icon": "bi:code-square",
@@ -544,7 +638,7 @@
             ]
           },
           {
-            "imgUrl": "/images/service-02.jpg",
+            "imgUrl": "https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=1200&q=80",
             "title": "تطوير الواجهة الأمامية",
             "subTitle": "إنشاء واجهات مستخدم تفاعلية ومتجاوبة باستخدام React و Angular و Vue.js وتقنيات الواجهة الأمامية الحديثة الأخرى.",
             "icon": "bi:laptop",
@@ -560,7 +654,7 @@
             ]
           },
           {
-            "imgUrl": "/images/service-03.jpg",
+            "imgUrl": "https://images.unsplash.com/photo-1505685296765-3a2736de412f?auto=format&fit=crop&w=1200&q=80",
             "title": "تطوير تطبيقات الهاتف المحمول",
             "subTitle": "بناء تطبيقات الهاتف المحمول متعددة المنصات باستخدام React Native مع التركيز على الأداء وتجربة المستخدم.",
             "icon": "bi:phone",
@@ -582,29 +676,33 @@
           "title": "تطوير الويب المكدس الكامل",
           "issuer": "معهد تكنولوجيا المعلومات (ITI)",
           "date": "2023",
-          "image": "/images/certificate-1.jpg",
-          "credentialId": "ITI-FSWD-2023-001"
+          "image": "https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=1200&q=80",
+          "credentialId": "ITI-FSWD-2023-001",
+          "url": "https://sm4tech.com/certificates"
         },
         {
           "title": "تطوير MEAN Stack",
           "issuer": "Coursera",
           "date": "2023",
-          "image": "/images/certificate-2.jpg",
-          "credentialId": "COURSERA-MEAN-2023-002"
+          "image": "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1200&q=80",
+          "credentialId": "COURSERA-MEAN-2023-002",
+          "url": "https://sm4tech.com/certificates"
         },
         {
           "title": "تطوير React",
           "issuer": "Meta",
           "date": "2022",
-          "image": "/images/certificate-3.jpg",
-          "credentialId": "META-REACT-2022-003"
+          "image": "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1200&q=80",
+          "credentialId": "META-REACT-2022-003",
+          "url": "https://sm4tech.com/certificates"
         },
         {
           "title": "تطوير Node.js الخلفي",
           "issuer": "Udemy",
           "date": "2022",
-          "image": "/images/certificate-4.jpg",
-          "credentialId": "UDEMY-NODE-2022-004"
+          "image": "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=1200&q=80",
+          "credentialId": "UDEMY-NODE-2022-004",
+          "url": "https://sm4tech.com/certificates"
         }
       ],
       "techStack": [
@@ -646,11 +744,11 @@
         "title": "دعنا نناقش <span>مشروعك</span>",
         "subTitle": "متاح للعمل المستقل إذا جاء المشروع المناسب. لا تتردد في التواصل معي لمناقشة احتياجاتك في تطوير الويب."
       },
-      "contactImg": "/images/contact-us.png",
+      "contactImg": "https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1200&q=80",
       "contactInfo": [
         {
           "title": "اكتب بريد إلكتروني",
-          "email": "salamahassanein@gmail.com"
+          "email": "hello@sm4tech.com"
         },
         {
           "title": "اتصل بي مباشرة",
@@ -682,9 +780,6 @@
       "de": "الألمانية",
       "fr": "الفرنسية"
     }
-  },
-  "themeSwitcher": {
-    "darkModeLabel": "الوضع الداكن مُفعّل"
   },
   "navigation": {
     "moreOptions": "خيارات إضافية",

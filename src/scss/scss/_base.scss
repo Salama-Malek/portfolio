@@ -1,10 +1,16 @@
 // Fallback for highlight color if variables partial is missing
-$highlight-magenta: #FF3CAC !default;
-$highlight-purple: #774AD9 !default;
+$highlight-magenta: #ff3cac !default;
+$highlight-purple: #774ad9 !default;
 @media (prefers-reduced-motion: no-preference) {
   :root {
     scroll-behavior: smooth;
   }
+}
+
+html {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 body {
@@ -12,6 +18,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
 }
 
 /* Add a class to the body when a modal is open to prevent scrolling */
@@ -44,10 +52,17 @@ body.modal-open {
   outline-offset: 2px;
 }
 
+// img {
+//   max-width: 100%;
+//   height: auto;
+//   vertical-align: middle;
+// }
+
 img {
+  display: block;
   max-width: 100%;
   height: auto;
-  vertical-align: middle;
+  object-fit: contain;
 }
 
 /* Remove the !important flag from outline */
@@ -84,6 +99,7 @@ img {
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(360deg);
   }
@@ -92,6 +108,7 @@ img {
 .gray-bg {
   background: rgba(var(--px-theme-rgb), 0.1);
 }
+
 .theme-bg {
   background: var(--px-theme);
 }
@@ -153,6 +170,7 @@ img {
     margin-bottom: 2rem;
   }
 
+  h2,
   h6 {
     margin: 0 0 1rem;
     font-size: 0.875rem;
@@ -182,11 +200,14 @@ img {
         transform: translateY(-2px);
         box-shadow: var(--section-label-hover-shadow);
         color: var(--palette-dark);
+        color: #ffffff !important;
+        -webkit-text-fill-color: #ffffff;
       }
     }
   }
 
-  h2 {
+  h2,
+  h3 {
     margin: 0;
     font-weight: 800;
     font-size: clamp(2rem, 5vw, 3.5rem);
@@ -228,6 +249,7 @@ img {
   &.text-center {
     text-align: center;
 
+    h2,
     h6 {
       span {
         margin: 0 auto;
@@ -239,6 +261,7 @@ img {
   &.text-left {
     text-align: left;
 
+    h2,
     h6 {
       span {
         margin: 0;
@@ -246,7 +269,6 @@ img {
     }
   }
 }
-
 
 .about-section {
   --section-bg: var(--px-bg-secondary);
@@ -276,62 +298,92 @@ img {
   background: var(--section-bg);
   position: relative;
   overflow: hidden;
+  padding: 60px 0;
 
   .container {
     position: relative;
     z-index: 2;
   }
 
+  
   .about-banner {
-    position: sticky;
-    top: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     img {
-      border-radius: 20px;
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      height: auto;
+      max-width: 380px;
+      border-radius: 16px;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+      &:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 25px 50px rgba(119, 74, 217, 0.2);
+      }
+    }
+
+    @include down-md {
+      margin-bottom: 15px;
     }
   }
 
   .about-funfacts {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap: 16px;
-    margin-top: 32px;
-    padding: 0 20px;
+    margin-top: 0;
+    padding: 0;
+    width: 100%;
 
     @include down-md {
       grid-template-columns: repeat(2, 1fr);
-      gap: 14px;
-      padding: 0 10px;
+      gap: 12px;
     }
 
     @include down-sm {
       grid-template-columns: 1fr;
-      gap: 12px;
-      padding: 0;
+      gap: 10px;
     }
   }
 
   .about-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    .section-heading {
+      margin-bottom: 20px;
+    }
+
     .px-btn {
-      margin-top: 24px;
+      margin-top: 18px;
+      align-self: flex-start;
     }
 
     p {
-      margin-bottom: 24px;
-      line-height: 1.7;
-      color: rgba(255, 255, 255, 0.8);
+      margin-bottom: 16px;
+      line-height: 1.6;
+      color: rgba(255, 255, 255, 0.85);
+      font-size: 15px;
     }
-
   }
 
   .about-details {
     margin-top: 50px;
-    padding-top: 50px;
+    padding-top: 40px;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 
     @include down-md {
-      margin-top: 40px;
-      padding-top: 40px;
+      margin-top: 30px;
+      padding-top: 30px;
+    }
+
+    @include down-sm {
+      margin-top: 20px;
+      padding-top: 20px;
     }
   }
 }
@@ -489,6 +541,7 @@ img {
       font-weight: 600;
       margin-bottom: 5px;
     }
+
     p {
       font-size: 1rem;
       color: var(--px-text);
@@ -529,12 +582,14 @@ img {
   opacity: 1;
   backdrop-filter: saturate(180%) blur(20px);
 }
+
 .px-modal {
   max-width: 1200px;
   margin: 0 auto;
   padding: 30px;
   background-color: var(--px-white);
   position: relative;
+
   @include down-lg {
     padding: 18px;
   }
@@ -544,15 +599,18 @@ img {
       padding: 0;
       margin: 0;
       list-style: none;
+
       li {
         padding: 5px 0;
       }
     }
+
     .col-4 {
       color: var(--text-primary);
     }
   }
 }
+
 .mfp-close {
   position: absolute;
   top: 0;
@@ -569,10 +627,12 @@ img {
   align-items: center;
   justify-content: center;
   transition: all 0.4s ease;
+
   &:hover {
     color: red;
   }
 }
+
 .single-project-box {
   h4 {
     margin-bottom: 12px;
@@ -811,5 +871,80 @@ img {
         }
       }
     }
+  }
+}
+
+
+
+// ssssssssss
+
+@media (min-width: 768px) and (max-width: 991px) {
+
+  /* Keep desktop untouched, only stack on mobile */
+  .about-section {
+    padding: 50px 0;
+  }
+
+  .about-section .row.align-items-center {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  /* ---- Image behavior on mobile ---- */
+  .about-banner {
+    margin-bottom: 24px;
+  }
+
+  .about-banner img {
+    max-width: 260px;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    object-fit: contain;
+  }
+
+  .about-banner > div {
+    padding-bottom: 32% !important; /* reduce height */
+  }
+  /* ---- Text alignment ---- */
+  .about-text {
+    align-items: center;
+  }
+
+  .about-text p {
+    text-align: center;
+  }
+
+  .about-text .px-btn {
+    align-self: center;
+  }
+
+  /* ---- Heading centering ---- */
+  .section-heading {
+    text-align: center;
+  }
+
+  .section-heading h2,
+  .section-heading h6 {
+    justify-content: center;
+  }
+  .about-banner img {
+    max-height: 320px;    
+    width: auto;
+    object-fit: contain;
+  }
+}
+
+
+@media (max-width: 480px) {
+
+  .about-banner img {
+    max-width: 220px;
+  }
+  .about-banner > div {
+    padding-bottom: 65%;
+  }
+  .about-funfacts {
+    grid-template-columns: 1fr;
   }
 }
