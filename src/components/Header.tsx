@@ -15,7 +15,7 @@ interface GooeyNavItem {
   href: string;
 }
 
-export default function Header(): JSX.Element {
+export default function Header(): React.JSX.Element {
   const { t } = useTranslation();
   const [isScrolled, setIsScrolled] = useState<boolean>(false);
 

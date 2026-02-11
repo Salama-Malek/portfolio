@@ -24,7 +24,7 @@ interface AboutProps {
   data?: AboutData;
 }
 
-export default function About({ data = {} }: AboutProps): JSX.Element | null {
+export default function About({ data = {} }: AboutProps): React.JSX.Element | null {
   const {
     imgSrc,
     miniTitle,

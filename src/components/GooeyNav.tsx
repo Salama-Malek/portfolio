@@ -37,7 +37,7 @@ export default function GooeyNav({
   colors = [1, 2, 3, 1, 2, 3, 1, 4],
   initialActiveIndex = 0,
   externalActiveIndex = null,
-}: GooeyNavProps): JSX.Element {
+}: GooeyNavProps): React.JSX.Element {
   const containerRef = useRef<HTMLDivElement>(null);
   const navRef = useRef<HTMLUListElement>(null);
   const filterRef = useRef<HTMLSpanElement>(null);

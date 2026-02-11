@@ -35,7 +35,7 @@ class ErrorBoundary extends React.Component<
     }
   }
 
-  render(): JSX.Element {
+  render(): React.JSX.Element {
     const { t, children } = this.props;
     if (this.state.hasError) {
       return (

@@ -12,7 +12,7 @@ interface FunFactProps {
   funfact: FunFactData;
 }
 
-export default function FunFact({ funfact }: FunFactProps): JSX.Element {
+export default function FunFact({ funfact }: FunFactProps): React.JSX.Element {
   const { number, title, icon } = funfact;
   return (
     <div className="funfact-card">

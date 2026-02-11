@@ -39,7 +39,7 @@ export const OptimizedImage = ({
   style = {},
   sources = [],
   ...props
-}: OptimizedImageProps): JSX.Element => {
+}: OptimizedImageProps): React.JSX.Element => {
   const handleLoad = (e: React.SyntheticEvent<HTMLImageElement>): void => {
     onLoad?.(e);
   };
@@ -63,7 +63,7 @@ export const OptimizedImage = ({
     objectPosition: "center",
   };
 
-  const renderImage = (extraStyles: React.CSSProperties = {}): JSX.Element => {
+  const renderImage = (extraStyles: React.CSSProperties = {}): React.JSX.Element => {
     const imgElement = (
       <img
         src={src}

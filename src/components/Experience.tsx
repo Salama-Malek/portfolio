@@ -26,7 +26,7 @@ interface ExperienceProps {
   data?: ExperienceData;
 }
 
-export default function Experience({ data = {} }: ExperienceProps): JSX.Element | null {
+export default function Experience({ data = {} }: ExperienceProps): React.JSX.Element | null {
   const { sectionHeading = {}, allExperience = [] } = data;
   const [activeExperience, setActiveExperience] = useState<number>(0);
 

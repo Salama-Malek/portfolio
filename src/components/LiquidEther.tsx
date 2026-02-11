@@ -52,7 +52,7 @@ export default function LiquidEther({
   takeoverDuration = 0.25,
   autoResumeDelay = 1000,
   autoRampDuration = 0.6,
-}: LiquidEtherProps): JSX.Element {
+}: LiquidEtherProps): React.JSX.Element {
   const mountRef = useRef<HTMLDivElement>(null);
   const webglRef = useRef<HTMLCanvasElement | null>(null);
   const resizeObserverRef = useRef<ResizeObserver | null>(null);

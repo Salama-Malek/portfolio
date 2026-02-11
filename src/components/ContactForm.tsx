@@ -11,7 +11,7 @@ interface FormData {
   message: string;
 }
 
-export default function ContactForm(): JSX.Element {
+export default function ContactForm(): React.JSX.Element {
   const { t } = useTranslation();
   const [formData, setFormData] = useState<FormData>({
     name: "",

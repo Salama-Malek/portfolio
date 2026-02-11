@@ -15,7 +15,7 @@ export default function Tooltip({
   content,
   children,
   placement = "top",
-}: TooltipProps): JSX.Element {
+}: TooltipProps): React.JSX.Element {
   const [visible, setVisible] = useState<boolean>(false);
   const [coords, setCoords] = useState<TooltipCoords>({ top: 0, left: 0 });
   const ref = useRef<HTMLSpanElement>(null);

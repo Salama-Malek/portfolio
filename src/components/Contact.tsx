@@ -33,7 +33,7 @@ interface ContactProps {
 export default function Contact({
   data = {},
   socialData = [],
-}: ContactProps): JSX.Element | null {
+}: ContactProps): React.JSX.Element | null {
   const { t } = useTranslation();
   const { sectionHeading = {}, contactInfo = [] } = data;
 

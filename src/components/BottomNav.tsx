@@ -19,7 +19,7 @@ interface MoreMenuSheetProps {
 const MoreMenuSheet: React.FC<MoreMenuSheetProps> = ({
   navLinks,
   onClose,
-}): JSX.Element => {
+}): React.JSX.Element => {
   const { t } = useTranslation();
   return (
     <>
@@ -68,7 +68,7 @@ const MoreMenuSheet: React.FC<MoreMenuSheetProps> = ({
   );
 };
 
-export default function BottomNav(): JSX.Element {
+export default function BottomNav(): React.JSX.Element {
   const { t } = useTranslation();
   const [isMoreMenuOpen, setIsMoreMenuOpen] = useState<boolean>(false);
 

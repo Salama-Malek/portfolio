@@ -15,7 +15,7 @@ const languages: Language[] = [
   { code: "fr", flag: "fr" },
 ];
 
-export default function LanguageSwitcher(): JSX.Element {
+export default function LanguageSwitcher(): React.JSX.Element {
   const { i18n, t } = useTranslation();
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const dropdownRef = useRef<HTMLDivElement>(null);

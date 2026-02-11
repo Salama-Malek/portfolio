@@ -8,7 +8,7 @@ interface FooterProps {
   socialData?: SocialLink[];
 }
 
-export default function Footer({ socialData = [] }: FooterProps): JSX.Element {
+export default function Footer({ socialData = [] }: FooterProps): React.JSX.Element {
   const { t } = useTranslation();
   const [showBackToTop, setShowBackToTop] = useState<boolean>(false);
 

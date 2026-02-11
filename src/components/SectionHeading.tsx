@@ -11,7 +11,7 @@ const SectionHeading = memo(function SectionHeading({
   miniTitle,
   title,
   variant,
-}: SectionHeadingProps): JSX.Element {
+}: SectionHeadingProps): React.JSX.Element {
   // Ensure title is a string before parsing
   const safeTitle = typeof title === "string" ? title : "";
   return (

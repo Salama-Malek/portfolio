@@ -54,7 +54,7 @@ const EFFECTS_DELAY_MS = 1200;
 export default function Hero({
   data = {},
   socialData = [],
-}: HeroProps): JSX.Element | null {
+}: HeroProps): React.JSX.Element | null {
   const {
     name,
     heading,

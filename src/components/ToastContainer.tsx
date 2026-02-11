@@ -1,7 +1,7 @@
 import React from "react";
 import { useToast } from "./ToastProvider";
 
-export default function ToastContainer(): JSX.Element {
+export default function ToastContainer(): React.JSX.Element {
   const { toasts, dismissToast } = useToast();
   return (
     <div className="toast-container">

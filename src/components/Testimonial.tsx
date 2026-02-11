@@ -21,7 +21,7 @@ interface TestimonialProps {
 
 export default function Testimonial({
   data = {},
-}: TestimonialProps): JSX.Element {
+}: TestimonialProps): React.JSX.Element {
   const { t, i18n } = useTranslation();
 
   const isRTL = i18n.dir() === "rtl";

@@ -19,7 +19,7 @@ interface ContactInfoProps {
 
 export default function ContactInfo({
   contactInfoData,
-}: ContactInfoProps): JSX.Element {
+}: ContactInfoProps): React.JSX.Element {
   const { t } = useTranslation();
   const { copy } = useCopyToClipboard();
   const { pushToast } = useToast();

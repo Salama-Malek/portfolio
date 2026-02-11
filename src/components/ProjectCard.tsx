@@ -22,7 +22,7 @@ interface ProjectCardProps {
 export default function ProjectCard({
   project,
   onClick,
-}: ProjectCardProps): JSX.Element {
+}: ProjectCardProps): React.JSX.Element {
   const { t, i18n } = useTranslation();
   const isRTL = i18n.dir() === "rtl";
   const {

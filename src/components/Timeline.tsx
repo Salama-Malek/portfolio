@@ -12,7 +12,7 @@ interface TimelineProps {
   data?: TimelineItem[];
 }
 
-const Timeline = memo(({ data = [] }: TimelineProps): JSX.Element | null => {
+const Timeline = memo(({ data = [] }: TimelineProps): React.JSX.Element | null => {
   const { t } = useTranslation();
   if (!data || data.length === 0) {
     return null;
