@@ -1,4 +1,4 @@
-import React, { useState, ImgHTMLAttributes } from "react";
+import React, { ImgHTMLAttributes } from "react";
 
 interface OptimizedImageProps extends Omit<
   ImgHTMLAttributes<HTMLImageElement>,
@@ -14,6 +14,12 @@ interface OptimizedImageProps extends Omit<
   onLoad?: (e: React.SyntheticEvent<HTMLImageElement>) => void;
   style?: React.CSSProperties;
   fetchpriority?: "high" | "low" | "auto";
+  sources?: Array<{
+    srcSet: string;
+    type?: string;
+    media?: string;
+    sizes?: string;
+  }>;
 }
 
 /**
@@ -31,13 +37,10 @@ export const OptimizedImage = ({
   loading = "lazy",
   onLoad,
   style = {},
+  sources = [],
   ...props
 }: OptimizedImageProps): JSX.Element => {
-  // Track loaded state for future enhancements (fade-in effects, etc.)
-  const [isLoaded, setIsLoaded] = useState<boolean>(false);
-
   const handleLoad = (e: React.SyntheticEvent<HTMLImageElement>): void => {
-    setIsLoaded(true);
     onLoad?.(e);
   };
 
@@ -60,6 +63,41 @@ export const OptimizedImage = ({
     objectPosition: "center",
   };
 
+  const renderImage = (extraStyles: React.CSSProperties = {}): JSX.Element => {
+    const imgElement = (
+      <img
+        src={src}
+        alt={alt}
+        width={width as number | undefined}
+        height={height as number | undefined}
+        loading={loading}
+        onLoad={handleLoad}
+        style={{ ...imgStyle, ...extraStyles }}
+        className={className}
+        {...props}
+      />
+    );
+
+    if (!sources.length) {
+      return imgElement;
+    }
+
+    return (
+      <picture>
+        {sources.map((source, index) => (
+          <source
+            key={`${source.srcSet}-${index}`}
+            srcSet={source.srcSet}
+            type={source.type}
+            media={source.media}
+            sizes={source.sizes}
+          />
+        ))}
+        {imgElement}
+      </picture>
+    );
+  };
+
   // Use aspect ratio container for flexible sizing
   if (aspectRatio && !height) {
     return (
@@ -71,39 +109,19 @@ export const OptimizedImage = ({
         }}
         className={className}
       >
-        <img
-          src={src}
-          alt={alt}
-          loading={loading}
-          onLoad={handleLoad}
-          style={{
-            ...imgStyle,
-            position: "absolute",
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-          }}
-          {...props}
-        />
+        {renderImage({
+          position: "absolute",
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+        })}
       </div>
     );
   }
 
   // Fixed dimensions
-  return (
-    <img
-      src={src}
-      alt={alt}
-      width={width as number | undefined}
-      height={height as number | undefined}
-      loading={loading}
-      onLoad={handleLoad}
-      style={imgStyle}
-      className={className}
-      {...props}
-    />
-  );
+  return renderImage();
 };
 
 export default OptimizedImage;

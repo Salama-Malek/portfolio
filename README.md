@@ -102,6 +102,14 @@ Update the translation files in `public/locales/en/translation.json` and other l
 
 Modify SCSS files in `src/scss/` to customize the appearance.
 
+
+## Image Format Policy
+
+- Use **WebP** for new raster images in `public/` by default.
+- Keep SVG for vector assets/logos/illustrations where appropriate.
+- Only keep PNG/JPEG when required for compatibility or lossless quality constraints.
+- Add explicit dimensions or aspect-ratio placeholders for key images to avoid layout shift.
+
 ## ?? Contact
 
 - **Email**: salamahassanein@gmail.com

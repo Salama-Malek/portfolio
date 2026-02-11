@@ -4,7 +4,7 @@ import React, {
   useState,
   useMemo,
   lazy,
-  Suspense
+  Suspense,
 } from "react";
 import { TypeAnimation } from "react-type-animation";
 import { Link as ScrollLink } from "react-scroll";
@@ -13,7 +13,6 @@ import { useTranslation } from "react-i18next";
 import OptimizedImage from "./OptimizedImage";
 import type { SocialLink, TypeAnimationSequence } from "../types/common";
 
-// 🔥 Heavy visual effects → lazy loaded
 const Particles = lazy(() => import("./Particles"));
 const LiquidEther = lazy(() => import("./LiquidEther"));
 
@@ -50,6 +49,8 @@ interface LiquidEtherConfig {
   autoRampDuration: number;
 }
 
+const EFFECTS_DELAY_MS = 1200;
+
 export default function Hero({
   data = {},
   socialData = [],
@@ -69,17 +70,77 @@ export default function Hero({
   const { t } = useTranslation();
   const heroImgRef = useRef<HTMLDivElement>(null);
 
-  // Control non-critical visuals
   const [showEffects, setShowEffects] = useState<boolean>(false);
   const [showTyping, setShowTyping] = useState<boolean>(false);
+  const [allowMotion, setAllowMotion] = useState<boolean>(true);
+  const [isHeroVisible, setIsHeroVisible] = useState<boolean>(false);
 
-  // Run heavy effects AFTER first paint & idle
   useEffect(() => {
-    requestIdleCallback(() => setShowEffects(true));
-    setTimeout(() => setShowTyping(true), 800);
+    if (typeof window === "undefined") return;
+
+    const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const updateMotionPreference = (): void => {
+      setAllowMotion(!mediaQuery.matches);
+    };
+
+    updateMotionPreference();
+    mediaQuery.addEventListener("change", updateMotionPreference);
+
+    return () => {
+      mediaQuery.removeEventListener("change", updateMotionPreference);
+    };
   }, []);
 
-  // Memoized LiquidEther config
+  useEffect(() => {
+    const target = heroImgRef.current;
+    if (!target) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsHeroVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.2 },
+    );
+
+    observer.observe(target);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
+  useEffect(() => {
+    const typingTimeout = window.setTimeout(() => setShowTyping(true), 800);
+
+    if (!allowMotion || !isHeroVisible) {
+      setShowEffects(false);
+      return () => {
+        window.clearTimeout(typingTimeout);
+      };
+    }
+
+    const activateEffects = (): void => {
+      window.setTimeout(() => setShowEffects(true), EFFECTS_DELAY_MS);
+    };
+
+    if (typeof window.requestIdleCallback === "function") {
+      const idleId = window.requestIdleCallback(activateEffects, { timeout: 2500 });
+      return () => {
+        window.clearTimeout(typingTimeout);
+        window.cancelIdleCallback(idleId);
+      };
+    }
+
+    const fallbackTimeout = window.setTimeout(activateEffects, 1200);
+    return () => {
+      window.clearTimeout(typingTimeout);
+      window.clearTimeout(fallbackTimeout);
+    };
+  }, [allowMotion, isHeroVisible]);
+
   const liquidEtherConfig = useMemo(
     (): LiquidEtherConfig => ({
       mouseForce: 20,
@@ -104,7 +165,6 @@ export default function Hero({
 
   return (
     <section className="hero-section" id="home">
-      {/* 🎨 Visual effects — deferred */}
       {showEffects && (
         <Suspense fallback={null}>
           <Particles />
@@ -116,15 +176,11 @@ export default function Hero({
 
       <div className="container">
         <div className="row align-items-center">
-          {/* TEXT CONTENT */}
           <div className="col-lg-7 col-xl-6">
             <div className="hero-text">
               <h6>{name}</h6>
-
-              {/* ⚠️ Heading must render immediately (LCP-safe) */}
               <h1>{heading}</h1>
 
-              {/* Typing animation deferred */}
               {showTyping && safeTypingText.length > 0 && (
                 <div className="typing-animation-wrapper">
                   <h2>
@@ -170,7 +226,6 @@ export default function Hero({
             </div>
           </div>
 
-          {/* HERO IMAGE (LCP ELEMENT) */}
           <div className="col-lg-5 col-xl-6">
             <div className="hero-img-wrapper" ref={heroImgRef}>
               <OptimizedImage
@@ -180,6 +235,7 @@ export default function Hero({
                 aspectRatio={1}
                 loading="eager"
                 fetchpriority="high"
+                sizes="(max-width: 575px) 90vw, (max-width: 991px) 70vw, 42vw"
               />
             </div>
           </div>
