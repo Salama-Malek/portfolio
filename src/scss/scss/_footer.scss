@@ -1,5 +1,5 @@
 .footer-section {
-  background: var(--px-dark);
+  background: var(--px-bg-quaternary);
   color: var(--px-gray-5);
   padding: 80px 0 0;
 
@@ -13,8 +13,12 @@
 
   .footer-logo {
     margin-bottom: 25px;
+
     img {
-      max-height: 35px;
+      width: 80px;
+      height: 80px;
+      max-height: 90px;
+      max-width: 100px;
     }
   }
 
@@ -33,13 +37,18 @@
   .footer-nav {
     list-style: none;
     padding: 0;
+
     li {
       margin-bottom: 12px;
-      a, span {
+
+      a,
+      span {
         color: var(--px-gray-5);
         text-decoration: none;
-        transition: all 0.3s ease;
+        transition: color 0.3s ease, padding-left 0.3s ease;
         cursor: pointer;
+        will-change: color, padding-left;
+
         &:hover {
           color: var(--px-primary);
           padding-left: 5px;
@@ -71,14 +80,27 @@
     border-radius: 50%;
     cursor: pointer;
     font-size: 18px;
-    transition: all 0.3s ease;
+    transition: background 0.3s ease, transform 0.3s ease;
     display: flex;
     align-items: center;
     justify-content: center;
+    position: fixed;
+    right: 32px;
+    bottom: 32px;
+    z-index: 1100;
+    margin-left: 0;
+    will-change: background, transform;
 
     &:hover {
       background: darken($px-theme, 10%);
       transform: translateY(-3px);
+    }
+  }
+
+  @media (max-width: 991px) {
+    .back-to-top {
+      bottom: 110px; // lift above Gooey/bottom nav on mobile
+      right: 20px;
     }
   }
 }

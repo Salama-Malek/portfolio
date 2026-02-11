@@ -4,6 +4,7 @@
       "home": "Accueil",
       "about": "À propos de moi",
       "portfolio": "Portfolio",
+      "services": "Services",
       "experience": "Expérience",
       "testimonials": "Témoignages",
       "contact": "Contact"
@@ -11,7 +12,15 @@
     "cta": "Parlons-en"
   },
   "footer": {
-    "copyright": "© 2023 tous droits réservés"
+    "copyright": "© 2023 tous droits réservés",
+    "description": "Développeur full stack passionné, dédié à la création d’applications web innovantes et conviviales.",
+    "widgets": {
+      "quickLinks": "Liens rapides",
+      "contact": "Prendre contact"
+    },
+    "cta": {
+      "description": "Vous avez un projet en tête ? Parlons-en."
+    }
   },
   "modal": {
     "type": "Type",
@@ -41,26 +50,40 @@
       "serviceDescription": "Description du service",
       "keyFeatures": "Fonctionnalités clés",
       "startProject": "Démarrer le projet",
-      "downloadPortfolio": "Télécharger le portfolio"
+      "downloadPortfolio": "Télécharger le portfolio",
+      "defaultCategory": "Développement",
+      "defaultDelivery": "2 à 4 semaines",
+      "ratingValue": "{{rating}}/5"
     },
     "projectModal": {
       "details": "Détails",
       "liveDemo": "DÉMO EN DIRECT",
       "sourceCode": "Code source",
       "technologiesUsed": "Technologies utilisées"
+    },
+    "projectCard": {
+      "details": "Détails",
+      "liveDemo": "Démo en direct",
+      "additionalTech": "{{count}} technologies supplémentaires"
     }
   },
   "contactForm": {
-    "nameLabel": "Votre nom",
-    "namePlaceholder": "Nom *",
-    "emailLabel": "Votre e-mail",
-    "emailPlaceholder": "E-mail *",
-    "subjectLabel": "Sujet",
-    "subjectPlaceholder": "Sujet *",
-    "messageLabel": "Votre message",
-    "messagePlaceholder": "Votre message *",
+    "nameLabel": "Nom complet",
+    "namePlaceholder": "Entrez votre nom complet",
+    "emailLabel": "Adresse e-mail",
+    "emailPlaceholder": "Entrez votre e-mail",
+    "subjectLabel": "Objet",
+    "subjectPlaceholder": "De quoi s'agit-il ?",
+    "messageLabel": "Message",
+    "messagePlaceholder": "Parlez-moi de votre projet...",
     "send": "Envoyer le message",
-    "sending": "Envoi..."
+    "sending": "Envoi...",
+    "title": "Envoyer un message",
+    "description": "Discutons de votre projet et donnons vie à vos idées",
+    "toast": {
+      "successTitle": "Message envoyé",
+      "successMessage": "Merci pour votre message !"
+    }
   },
   "homePage": {
     "hero": {
@@ -73,19 +96,55 @@
       "btnUrl": "contactus"
     },
     "socialBtns": [
-      { "icon": "fa-brands:github", "iconBgClass": "github", "href": "https://github.com/Salama-Malek" },
-      { "icon": "fa-brands:khamsat", "iconBgClass": "khamsat", "href": "https://khamsat.com/user/salamamalek" },
-      { "icon": "fa-brands:linkedin-in", "iconBgClass": "linkedin", "href": "https://www.linkedin.com/in/salama-malek" }
+      {
+        "icon": "fa-brands:github",
+        "iconBgClass": "github",
+        "href": "https://github.com/Salama-Malek"
+      },
+      {
+        "icon": "fa-brands:khamsat",
+        "iconBgClass": "khamsat",
+        "href": "https://khamsat.com/user/salamamalek"
+      },
+      {
+        "icon": "fa-brands:linkedin-in",
+        "iconBgClass": "linkedin",
+        "href": "https://www.linkedin.com/in/salama-malek"
+      }
     ],
     "brands": [
-      { "src": "/images/brand-1.svg", "alt": "Logolpsum" },
-      { "src": "/images/brand-2.svg", "alt": "Logolpsum" },
-      { "src": "/images/brand-1.svg", "alt": "Logolpsum" },
-      { "src": "/images/brand-2.svg", "alt": "Logolpsum" },
-      { "src": "/images/brand-1.svg", "alt": "Logolpsum" },
-      { "src": "/images/brand-2.svg", "alt": "Logolpsum" },
-      { "src": "/images/brand-1.svg", "alt": "Logolpsum" },
-      { "src": "/images/brand-2.svg", "alt": "Logolpsum" }
+      {
+        "src": "https://cdn.simpleicons.org/react/61DAFB",
+        "alt": "React"
+      },
+      {
+        "src": "https://cdn.simpleicons.org/angular/DD0031",
+        "alt": "Angular"
+      },
+      {
+        "src": "https://cdn.simpleicons.org/nodedotjs/5FA04E",
+        "alt": "Node.js"
+      },
+      {
+        "src": "https://cdn.simpleicons.org/mongodb/4DB33D",
+        "alt": "MongoDB"
+      },
+      {
+        "src": "https://cdn.simpleicons.org/amazonaws/FF9900",
+        "alt": "AWS"
+      },
+      {
+        "src": "https://cdn.simpleicons.org/docker/2496ED",
+        "alt": "Docker"
+      },
+      {
+        "src": "https://cdn.simpleicons.org/python/3776AB",
+        "alt": "Python"
+      },
+      {
+        "src": "https://cdn.simpleicons.org/firebase/FFCA28",
+        "alt": "Firebase"
+      }
     ],
     "about": {
       "imgSrc": "/new-images/about5.png",
@@ -93,9 +152,18 @@
       "title": "JE SUIS DISPONIBLE POUR DES PROJETS <span>FULL STACK</span>",
       "description": "Diplômé de l'ITI et développeur Full Stack qualifié, déterminé à fournir des solutions innovantes et à favoriser la croissance dans des environnements dynamiques et collaboratifs. Spécialisé dans le MEAN stack, mais également compétent avec d'autres technologies telles que Laravel, Ruby on Rails et Django.",
       "funfacts": [
-        { "title": "Langages de programmation", "number": 5 },
-        { "title": "Années d'expérience", "number": 2 },
-        { "title": "Frameworks", "number": 7 }
+        {
+          "title": "Langages de programmation",
+          "number": 5
+        },
+        {
+          "title": "Années d'expérience",
+          "number": 2
+        },
+        {
+          "title": "Frameworks",
+          "number": 7
+        }
       ],
       "btnText": "Contactez-moi",
       "btnUrl": "contactus"
@@ -107,7 +175,7 @@
       },
       "allProjects": [
         {
-          "thumbUrl": "/images/popup-project-1.jpg",
+          "thumbUrl": "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1200&q=80",
           "title": "Application MEAN Stack",
           "subTitle": "Développement Web, Full Stack",
           "details": {
@@ -117,11 +185,13 @@
             "langages": "JavaScript, TypeScript, HTML, CSS",
             "platform": "MEAN Stack",
             "country": "Égypte",
-            "url": "www.example.com"
-          }
+            "url": "https://sm4tech.com/projects/application-mean-stack"
+          },
+          "demoUrl": "https://sm4tech.com/projects/application-mean-stack",
+          "githubUrl": "https://sm4tech.com/projects/application-mean-stack"
         },
         {
-          "thumbUrl": "/images/popup-project-2.jpg",
+          "thumbUrl": "https://images.unsplash.com/photo-1506617420156-8e4536971650?auto=format&fit=crop&w=1200&q=80",
           "title": "Application mobile React Native",
           "subTitle": "Développement mobile, Front-End",
           "details": {
@@ -131,11 +201,13 @@
             "langages": "JavaScript, React Native",
             "platform": "iOS, Android",
             "country": "Égypte",
-            "url": "www.example.com"
-          }
+            "url": "https://sm4tech.com/projects/application-mobile-react-native"
+          },
+          "demoUrl": "https://sm4tech.com/projects/application-mobile-react-native",
+          "githubUrl": "https://sm4tech.com/projects/application-mobile-react-native"
         },
         {
-          "thumbUrl": "/images/popup-project-3.jpg",
+          "thumbUrl": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80",
           "title": "Conception de tableau de bord",
           "subTitle": "Développement Web, Front-End",
           "details": {
@@ -145,11 +217,13 @@
             "langages": "TypeScript, HTML, CSS, Angular",
             "platform": "Web",
             "country": "Égypte",
-            "url": "www.example.com"
-          }
+            "url": "https://sm4tech.com/projects/conception-de-tableau-de-bord"
+          },
+          "demoUrl": "https://sm4tech.com/projects/conception-de-tableau-de-bord",
+          "githubUrl": "https://sm4tech.com/projects/conception-de-tableau-de-bord"
         },
         {
-          "thumbUrl": "/images/popup-project-4.jpg",
+          "thumbUrl": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80",
           "title": "Application Web Laravel",
           "subTitle": "Développement Web, Back-End",
           "details": {
@@ -159,11 +233,13 @@
             "langages": "PHP, HTML, CSS, JS",
             "platform": "Laravel",
             "country": "Égypte",
-            "url": "www.example.com"
-          }
+            "url": "https://sm4tech.com/projects/application-web-laravel"
+          },
+          "demoUrl": "https://sm4tech.com/projects/application-web-laravel",
+          "githubUrl": "https://sm4tech.com/projects/application-web-laravel"
         },
         {
-          "thumbUrl": "/images/popup-project-5.jpg",
+          "thumbUrl": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80",
           "title": "Blog MERN Stack",
           "subTitle": "Développement Web, Full Stack",
           "details": {
@@ -173,11 +249,13 @@
             "langages": "JavaScript, React, Node.js",
             "platform": "MERN Stack",
             "country": "Égypte",
-            "url": "www.example.com"
-          }
+            "url": "https://sm4tech.com/projects/blog-mern-stack"
+          },
+          "demoUrl": "https://sm4tech.com/projects/blog-mern-stack",
+          "githubUrl": "https://sm4tech.com/projects/blog-mern-stack"
         },
         {
-          "thumbUrl": "/images/popup-project-6.jpg",
+          "thumbUrl": "https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=1200&q=80",
           "title": "Site WordPress",
           "subTitle": "Développement Web, CMS",
           "details": {
@@ -187,8 +265,10 @@
             "langages": "PHP, HTML, CSS, JS",
             "platform": "WordPress",
             "country": "Égypte",
-            "url": "www.example.com"
-          }
+            "url": "https://sm4tech.com/projects/site-wordpress"
+          },
+          "demoUrl": "https://sm4tech.com/projects/site-wordpress",
+          "githubUrl": "https://sm4tech.com/projects/site-wordpress"
         }
       ]
     },
@@ -199,28 +279,28 @@
       },
       "allService": [
         {
-          "imgUrl": "/images/service-01.jpg",
+          "imgUrl": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80",
           "title": "Développement Full Stack",
           "subTitle": "Expert en MEAN stack, création d'applications Web complètes avec MongoDB, Express.js, Angular et Node.js.",
           "icon": "bi:code-square",
           "ratings": 5
         },
         {
-          "imgUrl": "/images/service-02.jpg",
+          "imgUrl": "https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=1200&q=80",
           "title": "Développement Front-End",
           "subTitle": "Création d'interfaces utilisateur réactives et interactives avec React, Angular, Vue.js et d'autres technologies modernes.",
           "icon": "bi:laptop",
           "ratings": 5
         },
         {
-          "imgUrl": "/images/service-03.jpg",
+          "imgUrl": "https://images.unsplash.com/photo-1505685296765-3a2736de412f?auto=format&fit=crop&w=1200&q=80",
           "title": "Développement d'applications mobiles",
           "subTitle": "Création d'applications mobiles multiplateformes avec React Native, axées sur la performance et l'expérience utilisateur.",
           "icon": "bi:phone",
           "ratings": 4.5
         },
         {
-          "imgUrl": "/images/service-04.jpg",
+          "imgUrl": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80",
           "title": "Gestion de contenu",
           "subTitle": "Mise en œuvre de solutions CMS avec WordPress et des thèmes/plugins personnalisés pour répondre aux besoins spécifiques des clients.",
           "icon": "bi:file-earmark-text",
@@ -228,6 +308,7 @@
         }
       ]
     },
+
     "experience": {
       "sectionHeading": {
         "miniTitle": "Expérience",
@@ -235,54 +316,142 @@
       },
       "allExperience": [
         {
-          "designation": "Développeur freelance",
-          "company": "Khamsat | À distance",
-          "duration": "AVRIL 2023 - PRÉSENT",
+          "designation": "Développeur Full-Stack Freelance",
+          "company": "Indépendant",
+          "duration": "2023 – Présent",
           "jobType": "Freelance",
-          "companyTitle": "À propos de l'entreprise",
-          "companyDescription": "Réalisé avec succès divers projets de développement Web et logiciel sur Khamsat, fournissant des solutions numériques sur mesure avec un accent sur la qualité, la communication et la satisfaction client. Collaboration avec les clients pour comprendre leurs besoins, développement de sites Web et d'applications sur différentes technologies, et livraison ponctuelle grâce à des processus efficaces et une communication claire."
+          "companyDescription": "Conception et développement d’applications web full-stack pour des clients issus de divers secteurs. Création d’interfaces frontend modernes avec React et TypeScript, développement de services backend robustes avec Node.js et des API REST, et intégration de bases de données et de services tiers. Collaboration directe avec les clients pour comprendre les besoins, proposer des solutions techniques et livrer des fonctionnalités de haute qualité. Maintenance, optimisation des performances et support continu des applications en production."
         },
         {
-          "designation": "Assistant chef de projet",
-          "company": "Intern in Moscow",
-          "duration": "NOV 2024 - JAN 2025",
-          "jobType": "Stage",
-          "companyTitle": "À propos du poste",
-          "companyDescription": "Soutien aux tâches de gestion de projet, combinant expertise en programmation et communication client pour fournir des solutions informatiques. Collaboration avec les équipes pour atteindre efficacement les jalons du projet."
+          "designation": "Chef d’équipe Frontend",
+          "company": "Informa Core Technologies",
+          "duration": "Février 2025 – Janvier 2026",
+          "jobType": "Temps plein",
+          "companyDescription": "Pilotage du développement de plateformes web évolutives utilisant React et TypeScript. Mise en place et maintenance de l’architecture frontend en collaboration étroite avec les équipes design et backend. Garantie de la qualité du code, de la maintenabilité et des performances."
         },
         {
-          "designation": "Coach freelance",
-          "company": "EYOUTH Learning Company",
-          "duration": "DÉC 2023 - JUIN 2024",
+          "designation": "Assistant Chef de Projet",
+          "company": "ITSPORTS",
+          "duration": "Novembre 2024 – Janvier 2025",
+          "jobType": "Temps plein",
+          "companyDescription": "Soutien à la planification et à l’exécution des projets, gestion de la communication et de l’onboarding client. Coordination entre les équipes techniques et les parties prenantes afin d’assurer la livraison dans les délais."
+        },
+        {
+          "designation": "Coach Freelance",
+          "company": "EYouth",
+          "duration": "Octobre 2024 – Décembre 2024",
           "jobType": "Temps partiel",
-          "companyTitle": "À propos du poste",
-          "companyDescription": "Animé des sessions de coaching pour améliorer les compétences des étudiants en programmation et en frameworks, fournissant des conseils pratiques sur les projets et des conseils de carrière pour une meilleure employabilité."
+          "companyDescription": "Accompagnement de diplômés en développement logiciel et en freelancing. Conseils sur les bases de l’IA et la préparation de carrière, avec un focus sur la montée en compétences techniques et professionnelles."
         }
       ]
     },
     "testimonial": {
       "sectionHeading": {
-        "miniTitle": "Témoignages",
-        "title": "Retour <span>client</span> <br /> sur mon travail"
+        "miniTitle": "Avis Clients",
+        "title": "Ce que <span>les clients</span><br /> disent de mon travail"
       },
       "allTestimonial": [
         {
-          "reviewText": "Salama a livré notre application Web dans les délais avec une qualité exceptionnelle. Son expertise en MEAN stack et sa compréhension de nos besoins métier ont abouti à un produit qui a dépassé nos attentes. Fortement recommandé pour tout projet de développement Web.",
-          "avatarImg": "/images/avatar-1.jpg",
-          "avatarName": "Ahmed Hassan",
-          "avatarCompany": "Tech Startup"
+          "reviewText": "Travail très professionnel et créatif. Livraison rapide et excellente collaboration tout au long du projet. Je recommande vivement.",
+          "avatarName": "Hr K.",
+          "avatarCompany": "Client · Khamsat",
+          "rating": 5
         },
         {
-          "reviewText": "Travailler avec Salama a été une excellente expérience. Il est réactif, professionnel et attentif aux détails. Ses compétences techniques sont impressionnantes et il a su proposer des solutions auxquelles nous n'avions pas pensé. Nous travaillerons certainement à nouveau avec lui.",
-          "avatarImg": "/images/avatar-2.jpg",
-          "avatarName": "Maria Ivanova",
-          "avatarCompany": "E-commerce Company"
+          "reviewText": "Développeur honnête, patient et très professionnel. Il a fait preuve d’une grande compréhension. Une expérience que nous n’oublierons pas.",
+          "avatarName": "Ali A.",
+          "avatarCompany": "Client · Khamsat",
+          "rating": 5
         },
         {
-          "reviewText": "En tant que coach, Salama a aidé de nombreux étudiants à développer des compétences pratiques très appréciées dans l'industrie. Son approche pédagogique combine théorie et projets pratiques, ce qui a amélioré le taux d'insertion professionnelle de nos diplômés.",
-          "avatarImg": "/images/avatar-3.jpg",
-          "avatarName": "Mahmoud Saleh",
-          "avatarCompany": "EYOUTH Learning"
+          "reviewText": "Merci pour cette collaboration réussie. Travail précis, professionnel et rapide. Je recommande sans hésitation.",
+          "avatarName": "Manal A.",
+          "avatarCompany": "Client · Khamsat",
+          "rating": 5
+        },
+        {
+          "reviewText": "Excellent travail et très ouvert aux retours et aux ajustements.",
+          "avatarName": "Muadh",
+          "avatarCompany": "Client · Khamsat",
+          "rating": 5
+        },
+        {
+          "reviewText": "Merci pour ce beau travail. J’ai été très satisfait de collaborer avec une personne aussi professionnelle et rapide.",
+          "avatarName": "Anwar C.",
+          "avatarCompany": "Client · Khamsat",
+          "rating": 5
+        },
+        {
+          "reviewText": "Le travail demandé a été livré intégralement et exactement comme prévu.",
+          "avatarName": "Panoramat T.",
+          "avatarCompany": "Client · Khamsat",
+          "rating": 5
+        },
+        {
+          "reviewText": "Merci beaucoup. Je travaillerai certainement à nouveau avec lui très prochainement.",
+          "avatarName": "Taha A.",
+          "avatarCompany": "Client · Khamsat",
+          "rating": 5
+        },
+        {
+          "reviewText": "L’un des meilleurs développeurs avec qui j’ai travaillé. Très coopératif, compétent et respectueux des délais.",
+          "avatarName": "Mohammad E.",
+          "avatarCompany": "Client · Khamsat",
+          "rating": 5
+        },
+        {
+          "reviewText": "Explications claires et résultat parfaitement conforme à la demande. Merci pour l’excellent travail.",
+          "avatarName": "Loea A.",
+          "avatarCompany": "Client · Khamsat",
+          "rating": 5
+        },
+        {
+          "reviewText": "Un développeur exceptionnel. La collaboration a été fluide et agréable.",
+          "avatarName": "Musa A.",
+          "avatarCompany": "Client · Khamsat",
+          "rating": 5
+        },
+        {
+          "reviewText": "Absolument excellent ! Très coopératif et créatif. Ce ne sera certainement pas notre dernière collaboration.",
+          "avatarName": "Lulu A.",
+          "avatarCompany": "Client · Khamsat",
+          "rating": 5
+        },
+        {
+          "reviewText": "Livraison très rapide et travail de grande qualité. Merci beaucoup !",
+          "avatarName": "Faisal F.",
+          "avatarCompany": "Client · Khamsat",
+          "rating": 5
+        },
+        {
+          "reviewText": "Très coopératif, créatif et rapide dans l’exécution.",
+          "avatarName": "Samha F.",
+          "avatarCompany": "Client · Khamsat",
+          "rating": 5
+        },
+        {
+          "reviewText": "Le travail a été réalisé exactement comme demandé, voire au-delà de mes attentes. Bonne continuation.",
+          "avatarName": "Yusra S.",
+          "avatarCompany": "Client · Khamsat",
+          "rating": 5
+        },
+        {
+          "reviewText": "Merci beaucoup pour cet excellent travail.",
+          "avatarName": "Badr S.",
+          "avatarCompany": "Client · Khamsat",
+          "rating": 5
+        },
+        {
+          "reviewText": "Travail propre et rapide. Très peu d’explications nécessaires — un vrai professionnel.",
+          "avatarName": "Noura",
+          "avatarCompany": "Client · Khamsat",
+          "rating": 5
+        },
+        {
+          "reviewText": "Développeur sympathique, créatif et rapide dans l’exécution. Merci !",
+          "avatarName": "Hesham A.",
+          "avatarCompany": "Client · Khamsat",
+          "rating": 5
         }
       ]
     },
@@ -298,13 +467,13 @@
         },
         "allProjects": [
           {
-            "thumbUrl": "/images/popup-project-1.jpg",
+            "thumbUrl": "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1200&q=80",
             "title": "IntervueAI",
             "subTitle": "Entretiens simulés en temps réel avec l'IA, sans formulaires ni clics, juste des conversations naturelles et personnalisées.",
             "category": "AI/ML",
             "status": "En ligne",
             "technologies": ["React", "Node.js", "OpenAI", "WebRTC", "MongoDB"],
-            "demoUrl": "https://intervueai-demo.vercel.app",
+            "demoUrl": "https://sm4tech.com/projects/intervueai",
             "githubUrl": "https://github.com/Salama-Malek/IntervueAI",
             "details": {
               "title": "Plateforme d'entretiens alimentée par l'IA",
@@ -313,17 +482,23 @@
               "languages": "JavaScript, TypeScript, HTML, CSS",
               "platform": "React, Node.js",
               "country": "Égypte",
-              "url": "https://intervueai-demo.vercel.app"
+              "url": "https://sm4tech.com/projects/intervueai"
             }
           },
           {
-            "thumbUrl": "/images/popup-project-2.jpg",
+            "thumbUrl": "https://images.unsplash.com/photo-1506617420156-8e4536971650?auto=format&fit=crop&w=1200&q=80",
             "title": "Plateforme E-Commerce",
             "subTitle": "Marché en ligne complet avec traitement avancé des paiements et gestion des stocks.",
             "category": "Full Stack",
             "status": "En ligne",
-            "technologies": ["MongoDB", "Express.js", "Angular", "Node.js", "Stripe"],
-            "demoUrl": "https://ecommerce-demo.netlify.app",
+            "technologies": [
+              "MongoDB",
+              "Express.js",
+              "Angular",
+              "Node.js",
+              "Stripe"
+            ],
+            "demoUrl": "https://sm4tech.com/projects/plateforme-e-commerce",
             "githubUrl": "https://github.com/Salama-Malek/ECommerce-Platform",
             "details": {
               "title": "Solution E-Commerce avec MEAN Stack",
@@ -332,17 +507,23 @@
               "languages": "JavaScript, TypeScript, HTML, CSS",
               "platform": "MEAN Stack",
               "country": "Égypte",
-              "url": "https://ecommerce-demo.netlify.app"
+              "url": "https://sm4tech.com/projects/plateforme-e-commerce"
             }
           },
           {
-            "thumbUrl": "/images/popup-project-3.jpg",
+            "thumbUrl": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80",
             "title": "Gestionnaire TaskFlow",
             "subTitle": "Outil de gestion de projet collaboratif avec mises à jour en temps réel et fonctionnalités de communication d'équipe.",
             "category": "Web App",
             "status": "En ligne",
-            "technologies": ["React", "Socket.io", "PostgreSQL", "Express.js", "Redis"],
-            "demoUrl": "https://taskflow-manager.herokuapp.com",
+            "technologies": [
+              "React",
+              "Socket.io",
+              "PostgreSQL",
+              "Express.js",
+              "Redis"
+            ],
+            "demoUrl": "https://sm4tech.com/projects/gestionnaire-taskflow",
             "githubUrl": "https://github.com/Salama-Malek/TaskFlow-Manager",
             "details": {
               "title": "Plateforme de gestion de projet en temps réel",
@@ -351,17 +532,23 @@
               "languages": "JavaScript, TypeScript, HTML, CSS",
               "platform": "React, Node.js",
               "country": "Égypte",
-              "url": "https://taskflow-manager.herokuapp.com"
+              "url": "https://sm4tech.com/projects/gestionnaire-taskflow"
             }
           },
           {
-            "thumbUrl": "/images/popup-project-4.jpg",
+            "thumbUrl": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80",
             "title": "Tableau de bord analytique météo",
             "subTitle": "Visualisation avancée des données météorologiques avec analytique prédictive et graphiques interactifs.",
             "category": "Data Viz",
             "status": "En ligne",
-            "technologies": ["D3.js", "Python", "Flask", "Chart.js", "OpenWeather API"],
-            "demoUrl": "https://weather-analytics-dashboard.vercel.app",
+            "technologies": [
+              "D3.js",
+              "Python",
+              "Flask",
+              "Chart.js",
+              "OpenWeather API"
+            ],
+            "demoUrl": "https://sm4tech.com/projects/tableau-de-bord-analytique-m-t-o",
             "githubUrl": "https://github.com/Salama-Malek/Weather-Analytics",
             "details": {
               "title": "Visualisation interactive des données météorologiques",
@@ -370,17 +557,23 @@
               "languages": "JavaScript, Python, HTML, CSS",
               "platform": "Flask, D3.js",
               "country": "Égypte",
-              "url": "https://weather-analytics-dashboard.vercel.app"
+              "url": "https://sm4tech.com/projects/tableau-de-bord-analytique-m-t-o"
             }
           },
           {
-            "thumbUrl": "/images/popup-project-5.jpg",
+            "thumbUrl": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80",
             "title": "Analytique des médias sociaux",
             "subTitle": "Plateforme complète de surveillance et d'analytique des médias sociaux avec analyse des sentiments.",
             "category": "Analytics",
             "status": "En ligne",
-            "technologies": ["React", "Python", "Django", "TensorFlow", "PostgreSQL"],
-            "demoUrl": "https://social-analytics-platform.netlify.app",
+            "technologies": [
+              "React",
+              "Python",
+              "Django",
+              "TensorFlow",
+              "PostgreSQL"
+            ],
+            "demoUrl": "https://sm4tech.com/projects/analytique-des-m-dias-sociaux",
             "githubUrl": "https://github.com/Salama-Malek/Social-Analytics",
             "details": {
               "title": "Analytique des médias sociaux alimentée par l'IA",
@@ -389,17 +582,23 @@
               "languages": "JavaScript, Python, HTML, CSS",
               "platform": "Django, React",
               "country": "Égypte",
-              "url": "https://social-analytics-platform.netlify.app"
+              "url": "https://sm4tech.com/projects/analytique-des-m-dias-sociaux"
             }
           },
           {
-            "thumbUrl": "/images/popup-project-6.jpg",
+            "thumbUrl": "https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=1200&q=80",
             "title": "Suivi de fitness mobile",
             "subTitle": "Application de suivi de fitness multiplateforme avec plans d'entraînement et surveillance des progrès.",
             "category": "Mobile",
             "status": "En ligne",
-            "technologies": ["React Native", "Firebase", "Redux", "Expo", "Charts"],
-            "demoUrl": null,
+            "technologies": [
+              "React Native",
+              "Firebase",
+              "Redux",
+              "Expo",
+              "Charts"
+            ],
+            "demoUrl": "https://sm4tech.com/projects/suivi-de-fitness-mobile",
             "githubUrl": "https://github.com/Salama-Malek/Fitness-Tracker-App",
             "details": {
               "title": "Application de suivi de fitness multiplateforme",
@@ -408,7 +607,7 @@
               "languages": "JavaScript, React Native",
               "platform": "iOS, Android",
               "country": "Égypte",
-              "url": "https://github.com/Salama-Malek/Fitness-Tracker-App"
+              "url": "https://sm4tech.com/projects/suivi-de-fitness-mobile"
             }
           }
         ]
@@ -420,7 +619,7 @@
         },
         "allService": [
           {
-            "imgUrl": "/images/service-01.jpg",
+            "imgUrl": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80",
             "title": "Développement Full Stack",
             "subTitle": "Expert en MEAN stack, création d'applications Web complètes avec MongoDB, Express.js, Angular et Node.js.",
             "icon": "bi:code-square",
@@ -436,7 +635,7 @@
             ]
           },
           {
-            "imgUrl": "/images/service-02.jpg",
+            "imgUrl": "https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=1200&q=80",
             "title": "Développement Front-End",
             "subTitle": "Création d'interfaces utilisateur réactives et interactives avec React, Angular, Vue.js et d'autres technologies modernes.",
             "icon": "bi:laptop",
@@ -452,7 +651,7 @@
             ]
           },
           {
-            "imgUrl": "/images/service-03.jpg",
+            "imgUrl": "https://images.unsplash.com/photo-1505685296765-3a2736de412f?auto=format&fit=crop&w=1200&q=80",
             "title": "Développement d'applications mobiles",
             "subTitle": "Création d'applications mobiles multiplateformes avec React Native, axées sur la performance et l'expérience utilisateur.",
             "icon": "bi:phone",
@@ -474,29 +673,33 @@
           "title": "Développement Web Full Stack",
           "issuer": "Institut de Technologie de l'Information (ITI)",
           "date": "2023",
-          "image": "/images/certificate-1.jpg",
-          "credentialId": "ITI-FSWD-2023-001"
+          "image": "https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=1200&q=80",
+          "credentialId": "ITI-FSWD-2023-001",
+          "url": "https://sm4tech.com/certificates"
         },
         {
           "title": "Développement MEAN Stack",
           "issuer": "Coursera",
           "date": "2023",
-          "image": "/images/certificate-2.jpg",
-          "credentialId": "COURSERA-MEAN-2023-002"
+          "image": "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1200&q=80",
+          "credentialId": "COURSERA-MEAN-2023-002",
+          "url": "https://sm4tech.com/certificates"
         },
         {
           "title": "Développement React",
           "issuer": "Meta",
           "date": "2022",
-          "image": "/images/certificate-3.jpg",
-          "credentialId": "META-REACT-2022-003"
+          "image": "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1200&q=80",
+          "credentialId": "META-REACT-2022-003",
+          "url": "https://sm4tech.com/certificates"
         },
         {
           "title": "Développement Backend Node.js",
           "issuer": "Udemy",
           "date": "2022",
-          "image": "/images/certificate-4.jpg",
-          "credentialId": "UDEMY-NODE-2022-004"
+          "image": "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=1200&q=80",
+          "credentialId": "UDEMY-NODE-2022-004",
+          "url": "https://sm4tech.com/certificates"
         }
       ],
       "techStack": [
@@ -537,11 +740,67 @@
         "title": "Discutons de votre projet",
         "subTitle": "Disponible pour des missions freelance si le bon projet se présente. N'hésitez pas à me contacter pour discuter de vos besoins en développement Web."
       },
-      "contactImg": "/images/contact-us.png",
+      "contactImg": "https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1200&q=80",
       "contactInfo": [
-        { "title": "Écrivez un e-mail", "email": "salamahassanein@gmail.com" },
-        { "title": "Appelez-moi directement", "tel": "+7 993 287 3992" }
+        {
+          "title": "Écrivez un e-mail",
+          "email": "hello@sm4tech.com"
+        },
+        {
+          "title": "Appelez-moi directement",
+          "tel": "+7 993 287 3992"
+        }
       ]
     }
+  },
+  "common": {
+    "logoAlt": "Salama Malek – Développeur full stack",
+    "backToTop": "Retour en haut"
+  },
+  "contact": {
+    "followMe": "Suivez-moi",
+    "info": {
+      "heading": "Entrer en contact",
+      "description": "Prêt à lancer votre prochain projet ? Discutons de la meilleure façon de donner vie à vos idées.",
+      "copy": "Copier {{field}}",
+      "toastTitle": "Copié",
+      "toastDescription": "{{value}} copié dans le presse-papiers."
+    }
+  },
+  "languageSwitcher": {
+    "selectLanguage": "Choisir la langue",
+    "languageNames": {
+      "en": "Anglais",
+      "ar": "Arabe",
+      "ru": "Russe",
+      "de": "Allemand",
+      "fr": "Français"
+    }
+  },
+  "navigation": {
+    "moreOptions": "Plus d'options",
+    "close": "Fermer",
+    "openMore": "Ouvrir plus d'options",
+    "more": "Plus"
+  },
+  "hero": {
+    "downloadCv": "Télécharger le CV"
+  },
+  "social": {
+    "icons": {
+      "fallbackName": "lien social",
+      "open": "Ouvrir {{name}}",
+      "khamsatAlt": "Khamsat"
+    }
+  },
+  "loading": {
+    "aria": "Chargement",
+    "title": "Chargement…",
+    "description": "Veuillez patienter pendant que nous préparons votre expérience"
+  },
+  "errorBoundary": {
+    "title": "Un problème est survenu",
+    "description": "Une erreur inattendue s'est produite. Veuillez actualiser la page.",
+    "action": "Actualiser la page"
   }
 }

@@ -4,6 +4,7 @@
       "home": "Главная",
       "about": "Обо мне",
       "portfolio": "Портфолио",
+      "services": "Services",
       "experience": "Опыт",
       "testimonials": "Отзывы",
       "contact": "Контакты"
@@ -11,7 +12,15 @@
     "cta": "Давайте поговорим"
   },
   "footer": {
-    "copyright": "© 2023 все права защищены"
+    "copyright": "© 2023 все права защищены",
+    "description": "Увлеченный разработчик полного стека, создающий инновационные и удобные веб-приложения.",
+    "widgets": {
+      "quickLinks": "Быстрые ссылки",
+      "contact": "Связаться"
+    },
+    "cta": {
+      "description": "Есть идея проекта? Давайте обсудим."
+    }
   },
   "modal": {
     "type": "Тип",
@@ -41,26 +50,40 @@
       "serviceDescription": "Описание услуги",
       "keyFeatures": "Ключевые особенности",
       "startProject": "Начать проект",
-      "downloadPortfolio": "Скачать портфолио"
+      "downloadPortfolio": "Скачать портфолио",
+      "defaultCategory": "Разработка",
+      "defaultDelivery": "2–4 недели",
+      "ratingValue": "{{rating}}/5"
     },
     "projectModal": {
       "details": "Детали",
       "liveDemo": "ЖИВАЯ ДЕМО",
       "sourceCode": "Исходный код",
       "technologiesUsed": "Используемые технологии"
+    },
+    "projectCard": {
+      "details": "Подробнее",
+      "liveDemo": "Демо",
+      "additionalTech": "ещё {{count}} технологий"
     }
   },
   "contactForm": {
-    "nameLabel": "Ваше имя",
-    "namePlaceholder": "Имя *",
-    "emailLabel": "Ваш email",
-    "emailPlaceholder": "Email *",
+    "nameLabel": "Полное имя",
+    "namePlaceholder": "Введите полное имя",
+    "emailLabel": "Адрес электронной почты",
+    "emailPlaceholder": "Введите ваш email",
     "subjectLabel": "Тема",
-    "subjectPlaceholder": "Тема *",
-    "messageLabel": "Ваше сообщение",
-    "messagePlaceholder": "Ваше сообщение *",
+    "subjectPlaceholder": "О чём это?",
+    "messageLabel": "Сообщение",
+    "messagePlaceholder": "Расскажите о вашем проекте...",
     "send": "Отправить сообщение",
-    "sending": "Отправка..."
+    "sending": "Отправка...",
+    "title": "Отправить сообщение",
+    "description": "Давайте обсудим ваш проект и воплотим идеи в жизнь",
+    "toast": {
+      "successTitle": "Сообщение отправлено",
+      "successMessage": "Спасибо за ваше сообщение!"
+    }
   },
   "homePage": {
     "hero": {
@@ -73,19 +96,55 @@
       "btnUrl": "contactus"
     },
     "socialBtns": [
-      { "icon": "fa-brands:github", "iconBgClass": "github", "href": "https://github.com/Salama-Malek" },
-      { "icon": "fa-brands:khamsat", "iconBgClass": "khamsat", "href": "https://khamsat.com/user/salamamalek" },
-      { "icon": "fa-brands:linkedin-in", "iconBgClass": "linkedin", "href": "https://www.linkedin.com/in/salama-malek" }
+      {
+        "icon": "fa-brands:github",
+        "iconBgClass": "github",
+        "href": "https://github.com/Salama-Malek"
+      },
+      {
+        "icon": "fa-brands:khamsat",
+        "iconBgClass": "khamsat",
+        "href": "https://khamsat.com/user/salamamalek"
+      },
+      {
+        "icon": "fa-brands:linkedin-in",
+        "iconBgClass": "linkedin",
+        "href": "https://www.linkedin.com/in/salama-malek"
+      }
     ],
     "brands": [
-      { "src": "/images/brand-1.svg", "alt": "Logolpsum" },
-      { "src": "/images/brand-2.svg", "alt": "Logolpsum" },
-      { "src": "/images/brand-1.svg", "alt": "Logolpsum" },
-      { "src": "/images/brand-2.svg", "alt": "Logolpsum" },
-      { "src": "/images/brand-1.svg", "alt": "Logolpsum" },
-      { "src": "/images/brand-2.svg", "alt": "Logolpsum" },
-      { "src": "/images/brand-1.svg", "alt": "Logolpsum" },
-      { "src": "/images/brand-2.svg", "alt": "Logolpsum" }
+      {
+        "src": "https://cdn.simpleicons.org/react/61DAFB",
+        "alt": "React"
+      },
+      {
+        "src": "https://cdn.simpleicons.org/angular/DD0031",
+        "alt": "Angular"
+      },
+      {
+        "src": "https://cdn.simpleicons.org/nodedotjs/5FA04E",
+        "alt": "Node.js"
+      },
+      {
+        "src": "https://cdn.simpleicons.org/mongodb/4DB33D",
+        "alt": "MongoDB"
+      },
+      {
+        "src": "https://cdn.simpleicons.org/amazonaws/FF9900",
+        "alt": "AWS"
+      },
+      {
+        "src": "https://cdn.simpleicons.org/docker/2496ED",
+        "alt": "Docker"
+      },
+      {
+        "src": "https://cdn.simpleicons.org/python/3776AB",
+        "alt": "Python"
+      },
+      {
+        "src": "https://cdn.simpleicons.org/firebase/FFCA28",
+        "alt": "Firebase"
+      }
     ],
     "about": {
       "imgSrc": "/new-images/about5.png",
@@ -93,9 +152,18 @@
       "title": "Я ГОТОВ К <span>FULL STACK</span> ПРОЕКТАМ",
       "description": "Выпускник ITI и квалифицированный разработчик полного стека с стремлением к созданию программного обеспечения. Стремлюсь предоставлять инновационные решения и способствовать росту в динамичных и совместных средах. Специализируюсь на MEAN стеке, но также владею другими технологиями, такими как Laravel, Ruby on Rails и Django.",
       "funfacts": [
-        { "title": "Языки программирования", "number": 5 },
-        { "title": "Годы опыта", "number": 2 },
-        { "title": "Фреймворки", "number": 7 }
+        {
+          "title": "Языки программирования",
+          "number": 5
+        },
+        {
+          "title": "Годы опыта",
+          "number": 2
+        },
+        {
+          "title": "Фреймворки",
+          "number": 7
+        }
       ],
       "btnText": "Связаться",
       "btnUrl": "contactus"
@@ -107,7 +175,7 @@
       },
       "allProjects": [
         {
-          "thumbUrl": "/images/popup-project-1.jpg",
+          "thumbUrl": "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1200&q=80",
           "title": "Приложение на MEAN стеке",
           "subTitle": "Веб-разработка, полный стек",
           "details": {
@@ -117,11 +185,13 @@
             "langages": "JavaScript, TypeScript, HTML, CSS",
             "platform": "MEAN Stack",
             "country": "Египет",
-            "url": "www.example.com"
-          }
+            "url": "https://sm4tech.com/projects/mean"
+          },
+          "demoUrl": "https://sm4tech.com/projects/mean",
+          "githubUrl": "https://sm4tech.com/projects/mean"
         },
         {
-          "thumbUrl": "/images/popup-project-2.jpg",
+          "thumbUrl": "https://images.unsplash.com/photo-1506617420156-8e4536971650?auto=format&fit=crop&w=1200&q=80",
           "title": "Мобильное приложение на React Native",
           "subTitle": "Разработка мобильных приложений, фронт-энд",
           "details": {
@@ -131,11 +201,13 @@
             "langages": "JavaScript, React Native",
             "platform": "iOS, Android",
             "country": "Египет",
-            "url": "www.example.com"
-          }
+            "url": "https://sm4tech.com/projects/react-native"
+          },
+          "demoUrl": "https://sm4tech.com/projects/react-native",
+          "githubUrl": "https://sm4tech.com/projects/react-native"
         },
         {
-          "thumbUrl": "/images/popup-project-3.jpg",
+          "thumbUrl": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80",
           "title": "Дизайн панели управления",
           "subTitle": "Веб-разработка, фронт-энд",
           "details": {
@@ -145,11 +217,13 @@
             "langages": "TypeScript, HTML, CSS, Angular",
             "platform": "Web",
             "country": "Египет",
-            "url": "www.example.com"
-          }
+            "url": "https://sm4tech.com/projects/project"
+          },
+          "demoUrl": "https://sm4tech.com/projects/project",
+          "githubUrl": "https://sm4tech.com/projects/project"
         },
         {
-          "thumbUrl": "/images/popup-project-4.jpg",
+          "thumbUrl": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80",
           "title": "Веб-приложение на Laravel",
           "subTitle": "Веб-разработка, back-end",
           "details": {
@@ -159,11 +233,13 @@
             "langages": "PHP, HTML, CSS, JS",
             "platform": "Laravel",
             "country": "Египет",
-            "url": "www.example.com"
-          }
+            "url": "https://sm4tech.com/projects/laravel"
+          },
+          "demoUrl": "https://sm4tech.com/projects/laravel",
+          "githubUrl": "https://sm4tech.com/projects/laravel"
         },
         {
-          "thumbUrl": "/images/popup-project-5.jpg",
+          "thumbUrl": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80",
           "title": "Блог на MERN стеке",
           "subTitle": "Веб-разработка, полный стек",
           "details": {
@@ -173,11 +249,13 @@
             "langages": "JavaScript, React, Node.js",
             "platform": "MERN Stack",
             "country": "Египет",
-            "url": "www.example.com"
-          }
+            "url": "https://sm4tech.com/projects/mern"
+          },
+          "demoUrl": "https://sm4tech.com/projects/mern",
+          "githubUrl": "https://sm4tech.com/projects/mern"
         },
         {
-          "thumbUrl": "/images/popup-project-6.jpg",
+          "thumbUrl": "https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=1200&q=80",
           "title": "Сайт на WordPress",
           "subTitle": "Веб-разработка, CMS",
           "details": {
@@ -187,8 +265,10 @@
             "langages": "PHP, HTML, CSS, JS",
             "platform": "WordPress",
             "country": "Египет",
-            "url": "www.example.com"
-          }
+            "url": "https://sm4tech.com/projects/wordpress"
+          },
+          "demoUrl": "https://sm4tech.com/projects/wordpress",
+          "githubUrl": "https://sm4tech.com/projects/wordpress"
         }
       ]
     },
@@ -199,28 +279,28 @@
       },
       "allService": [
         {
-          "imgUrl": "/images/service-01.jpg",
+          "imgUrl": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80",
           "title": "Full Stack разработка",
           "subTitle": "Эксперт в разработке на MEAN стеке, создание полноценных веб-приложений на MongoDB, Express.js, Angular и Node.js.",
           "icon": "bi:code-square",
           "ratings": 5
         },
         {
-          "imgUrl": "/images/service-02.jpg",
+          "imgUrl": "https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=1200&q=80",
           "title": "Front-End разработка",
           "subTitle": "Создание адаптивных, интерактивных пользовательских интерфейсов с использованием React, Angular, Vue.js и других современных технологий фронт-энд.",
           "icon": "bi:laptop",
           "ratings": 5
         },
         {
-          "imgUrl": "/images/service-03.jpg",
+          "imgUrl": "https://images.unsplash.com/photo-1505685296765-3a2736de412f?auto=format&fit=crop&w=1200&q=80",
           "title": "Разработка мобильных приложений",
           "subTitle": "Создание кроссплатформенных мобильных приложений на React Native с упором на производительность и пользовательский опыт.",
           "icon": "bi:phone",
           "ratings": 4.5
         },
         {
-          "imgUrl": "/images/service-04.jpg",
+          "imgUrl": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80",
           "title": "Управление контентом",
           "subTitle": "Реализация CMS-решений на WordPress с пользовательскими темами и плагинами под конкретные требования клиента.",
           "icon": "bi:file-earmark-text",
@@ -228,6 +308,7 @@
         }
       ]
     },
+
     "experience": {
       "sectionHeading": {
         "miniTitle": "Опыт",
@@ -235,54 +316,142 @@
       },
       "allExperience": [
         {
-          "designation": "Фриланс-разработчик",
-          "company": "Khamsat | Удаленно",
-          "duration": "АПРЕЛЬ 2023 - НАСТОЯЩЕЕ ВРЕМЯ",
+          "designation": "Фриланс Full-Stack разработчик",
+          "company": "Самозанятый",
+          "duration": "2023 – настоящее время",
           "jobType": "Фриланс",
-          "companyTitle": "О компании",
-          "companyDescription": "Успешно завершил различные проекты по веб-разработке и программному обеспечению на Khamsat, предоставляя индивидуальные цифровые решения клиентам с упором на качество, коммуникацию и удовлетворенность клиентов. Ключевые достижения включают сотрудничество с клиентами для понимания требований и предоставления индивидуальных решений, разработку веб-сайтов, приложений и других услуг на разных технологиях, а также обеспечение своевременной доставки и высокой удовлетворенности клиентов благодаря эффективным процессам и четкому общению."
+          "companyDescription": "Проектирование и разработка full-stack веб-приложений для клиентов из различных отраслей. Создание современных пользовательских интерфейсов с использованием React и TypeScript, разработка серверных сервисов на Node.js и REST API, интеграция баз данных и сторонних сервисов. Прямое взаимодействие с клиентами для сбора требований, предложения технических решений и реализации качественного функционала. Поддержка и оптимизация продакшн-приложений."
+        },
+        {
+          "designation": "Руководитель frontend-команды",
+          "company": "Informa Core Technologies",
+          "duration": "Февраль 2025 – Январь 2026",
+          "jobType": "Полная занятость",
+          "companyDescription": "Руководство разработкой масштабируемых веб-платформ с использованием React и TypeScript. Построение и поддержка архитектуры frontend в тесном сотрудничестве с дизайнерами и backend-командами. Обеспечение качества кода, производительности и поддерживаемости."
         },
         {
           "designation": "Ассистент менеджера проекта",
-          "company": "Intern in Moscow",
-          "duration": "НОЯ 2024 - ЯНВ 2025",
-          "jobType": "Стажировка",
-          "companyTitle": "О позиции",
-          "companyDescription": "Поддерживал задачи управления проектами, совмещая навыки программирования и взаимодействия с клиентами для предоставления IT-решений. Сотрудничал с командами, чтобы обеспечить эффективное достижение этапов проекта."
+          "company": "ITSPORTS",
+          "duration": "Ноябрь 2024 – Январь 2025",
+          "jobType": "Полная занятость",
+          "companyDescription": "Поддержка планирования и реализации проектов, взаимодействие с клиентами и сопровождение onboarding-процессов. Координация между техническими командами и заинтересованными сторонами для своевременной реализации этапов проекта."
         },
         {
-          "designation": "Фриланс-тренер",
-          "company": "EYOUTH Learning Company",
-          "duration": "ДЕК 2023 - ИЮН 2024",
+          "designation": "Фриланс-наставник",
+          "company": "EYouth",
+          "duration": "Октябрь 2024 – Декабрь 2024",
           "jobType": "Частичная занятость",
-          "companyTitle": "О позиции",
-          "companyDescription": "Проводил коучинговые сессии для повышения навыков студентов в программировании и фреймворках, предоставляя практическое руководство по проектам и карьерные советы для готовности к работе."
+          "companyDescription": "Наставничество выпускников в области разработки ПО и фриланса. Консультирование по основам ИИ и карьерной подготовке, поддержка технического и профессионального роста."
         }
       ]
     },
     "testimonial": {
       "sectionHeading": {
-        "miniTitle": "Отзывы",
-        "title": "Отзывы <span>клиентов</span> <br /> О МОЕЙ РАБОТЕ"
+        "miniTitle": "Отзывы клиентов",
+        "title": "Что <span>клиенты</span><br /> говорят о моей работе"
       },
       "allTestimonial": [
         {
-          "reviewText": "Салама доставил наше веб-приложение вовремя и с исключительным качеством. Его опыт в MEAN стеке и умение понимать требования бизнеса привели к продукту, превзошедшему наши ожидания. Настоятельно рекомендуется для любых проектов веб-разработки.",
-          "avatarImg": "/images/avatar-1.jpg",
-          "avatarName": "Ahmed Hassan",
-          "avatarCompany": "Tech Startup"
+          "reviewText": "Очень профессиональная и креативная работа. Быстрая реализация и отличное взаимодействие на всех этапах проекта. Рекомендую.",
+          "avatarName": "Hr K.",
+          "avatarCompany": "Клиент · Khamsat",
+          "rating": 5
         },
         {
-          "reviewText": "Работа с Саламой была отличным опытом. Он отзывчивый, профессиональный и внимательный к деталям. Его технические навыки впечатляют, и он смог предложить решения, о которых мы не думали. Мы обязательно будем работать с ним снова в будущих проектах.",
-          "avatarImg": "/images/avatar-2.jpg",
-          "avatarName": "Maria Ivanova",
-          "avatarCompany": "E-commerce Company"
+          "reviewText": "Честный, терпеливый и высокопрофессиональный разработчик. Проявил полное понимание требований. Отличный опыт сотрудничества.",
+          "avatarName": "Ali A.",
+          "avatarCompany": "Клиент · Khamsat",
+          "rating": 5
         },
         {
-          "reviewText": "Как тренер, Салама помог многим нашим студентам развить практические навыки, высоко ценящиеся в индустрии. Его подход к обучению сочетает теорию с практическими проектами, что привело к повышению уровня трудоустройства наших выпускников.",
-          "avatarImg": "/images/avatar-3.jpg",
-          "avatarName": "Mahmoud Saleh",
-          "avatarCompany": "EYOUTH Learning"
+          "reviewText": "Спасибо за успешное сотрудничество. Работа выполнена точно, профессионально и в срок. Однозначно рекомендую.",
+          "avatarName": "Manal A.",
+          "avatarCompany": "Клиент · Khamsat",
+          "rating": 5
+        },
+        {
+          "reviewText": "Отличная работа. Открыт к правкам и всегда на связи.",
+          "avatarName": "Muadh",
+          "avatarCompany": "Клиент · Khamsat",
+          "rating": 5
+        },
+        {
+          "reviewText": "Большое спасибо за качественную работу. Было приятно сотрудничать с профессионалом, который быстро выполняет задачи.",
+          "avatarName": "Anwar C.",
+          "avatarCompany": "Клиент · Khamsat",
+          "rating": 5
+        },
+        {
+          "reviewText": "Работа была выполнена полностью и в точном соответствии с требованиями.",
+          "avatarName": "Panoramat T.",
+          "avatarCompany": "Клиент · Khamsat",
+          "rating": 5
+        },
+        {
+          "reviewText": "Большое спасибо. Обязательно буду сотрудничать снова в ближайшее время.",
+          "avatarName": "Taha A.",
+          "avatarCompany": "Клиент · Khamsat",
+          "rating": 5
+        },
+        {
+          "reviewText": "Один из лучших разработчиков, с которыми мне приходилось работать. Ответственный, компетентный и соблюдает сроки.",
+          "avatarName": "Mohammad E.",
+          "avatarCompany": "Клиент · Khamsat",
+          "rating": 5
+        },
+        {
+          "reviewText": "Четкие объяснения и результат полностью соответствует ожиданиям. Отличная работа.",
+          "avatarName": "Loea A.",
+          "avatarCompany": "Клиент · Khamsat",
+          "rating": 5
+        },
+        {
+          "reviewText": "Исключительный специалист. Сотрудничество прошло легко и комфортно.",
+          "avatarName": "Musa A.",
+          "avatarCompany": "Клиент · Khamsat",
+          "rating": 5
+        },
+        {
+          "reviewText": "Абсолютно отличный специалист! Очень отзывчивый и креативный. Это точно не последнее наше сотрудничество.",
+          "avatarName": "Lulu A.",
+          "avatarCompany": "Клиент · Khamsat",
+          "rating": 5
+        },
+        {
+          "reviewText": "Очень быстрая доставка и высокое качество работы. Спасибо!",
+          "avatarName": "Faisal F.",
+          "avatarCompany": "Клиент · Khamsat",
+          "rating": 5
+        },
+        {
+          "reviewText": "Очень кооперативный, креативный и быстрый в работе.",
+          "avatarName": "Samha F.",
+          "avatarCompany": "Клиент · Khamsat",
+          "rating": 5
+        },
+        {
+          "reviewText": "Работа выполнена именно так, как было нужно, и даже превзошла ожидания. Рекомендую.",
+          "avatarName": "Yusra S.",
+          "avatarCompany": "Клиент · Khamsat",
+          "rating": 5
+        },
+        {
+          "reviewText": "Большое спасибо за отличную работу.",
+          "avatarName": "Badr S.",
+          "avatarCompany": "Клиент · Khamsat",
+          "rating": 5
+        },
+        {
+          "reviewText": "Чистая и быстрая работа. Минимум объяснений — настоящий профессионал.",
+          "avatarName": "Noura",
+          "avatarCompany": "Клиент · Khamsat",
+          "rating": 5
+        },
+        {
+          "reviewText": "Дружелюбный, креативный и оперативный разработчик. Спасибо за отличную работу.",
+          "avatarName": "Hesham A.",
+          "avatarCompany": "Клиент · Khamsat",
+          "rating": 5
         }
       ]
     },
@@ -298,13 +467,13 @@
         },
         "allProjects": [
           {
-            "thumbUrl": "/images/popup-project-1.jpg",
+            "thumbUrl": "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1200&q=80",
             "title": "IntervueAI",
             "subTitle": "Мок-интервью в реальном времени с ИИ, без форм или кликов, только естественные, персонализированные разговоры.",
             "category": "AI/ML",
             "status": "Активно",
             "technologies": ["React", "Node.js", "OpenAI", "WebRTC", "MongoDB"],
-            "demoUrl": "https://intervueai-demo.vercel.app",
+            "demoUrl": "https://sm4tech.com/projects/intervueai",
             "githubUrl": "https://github.com/Salama-Malek/IntervueAI",
             "details": {
               "title": "Платформа интервью на базе ИИ",
@@ -313,17 +482,23 @@
               "languages": "JavaScript, TypeScript, HTML, CSS",
               "platform": "React, Node.js",
               "country": "Египет",
-              "url": "https://intervueai-demo.vercel.app"
+              "url": "https://sm4tech.com/projects/intervueai"
             }
           },
           {
-            "thumbUrl": "/images/popup-project-2.jpg",
+            "thumbUrl": "https://images.unsplash.com/photo-1506617420156-8e4536971650?auto=format&fit=crop&w=1200&q=80",
             "title": "Платформа электронной коммерции",
             "subTitle": "Полнофункциональный онлайн-рынок с продвинутой обработкой платежей и управлением запасами.",
             "category": "Full Stack",
             "status": "Активно",
-            "technologies": ["MongoDB", "Express.js", "Angular", "Node.js", "Stripe"],
-            "demoUrl": "https://ecommerce-demo.netlify.app",
+            "technologies": [
+              "MongoDB",
+              "Express.js",
+              "Angular",
+              "Node.js",
+              "Stripe"
+            ],
+            "demoUrl": "https://sm4tech.com/projects/project",
             "githubUrl": "https://github.com/Salama-Malek/ECommerce-Platform",
             "details": {
               "title": "Решение электронной коммерции на MEAN Stack",
@@ -332,17 +507,23 @@
               "languages": "JavaScript, TypeScript, HTML, CSS",
               "platform": "MEAN Stack",
               "country": "Египет",
-              "url": "https://ecommerce-demo.netlify.app"
+              "url": "https://sm4tech.com/projects/project"
             }
           },
           {
-            "thumbUrl": "/images/popup-project-3.jpg",
+            "thumbUrl": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80",
             "title": "Менеджер TaskFlow",
-            "subTitle": "Инструмент совместного управления проектами с обновлениями в реальном времени и функциями командного общения.",
+            "subTitle": "Инструмент совместного управления проектами с обновления в реальном времени и функциями командного общения.",
             "category": "Web App",
             "status": "Активно",
-            "technologies": ["React", "Socket.io", "PostgreSQL", "Express.js", "Redis"],
-            "demoUrl": "https://taskflow-manager.herokuapp.com",
+            "technologies": [
+              "React",
+              "Socket.io",
+              "PostgreSQL",
+              "Express.js",
+              "Redis"
+            ],
+            "demoUrl": "https://sm4tech.com/projects/taskflow",
             "githubUrl": "https://github.com/Salama-Malek/TaskFlow-Manager",
             "details": {
               "title": "Платформа управления проектами в реальном времени",
@@ -351,17 +532,23 @@
               "languages": "JavaScript, TypeScript, HTML, CSS",
               "platform": "React, Node.js",
               "country": "Египет",
-              "url": "https://taskflow-manager.herokuapp.com"
+              "url": "https://sm4tech.com/projects/taskflow"
             }
           },
           {
-            "thumbUrl": "/images/popup-project-4.jpg",
+            "thumbUrl": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80",
             "title": "Панель аналитики погоды",
             "subTitle": "Продвинутая визуализация данных о погоде с прогнозной аналитикой и интерактивными графиками.",
             "category": "Data Viz",
             "status": "Активно",
-            "technologies": ["D3.js", "Python", "Flask", "Chart.js", "OpenWeather API"],
-            "demoUrl": "https://weather-analytics-dashboard.vercel.app",
+            "technologies": [
+              "D3.js",
+              "Python",
+              "Flask",
+              "Chart.js",
+              "OpenWeather API"
+            ],
+            "demoUrl": "https://sm4tech.com/projects/project",
             "githubUrl": "https://github.com/Salama-Malek/Weather-Analytics",
             "details": {
               "title": "Интерактивная визуализация данных о погоде",
@@ -370,17 +557,23 @@
               "languages": "JavaScript, Python, HTML, CSS",
               "platform": "Flask, D3.js",
               "country": "Египет",
-              "url": "https://weather-analytics-dashboard.vercel.app"
+              "url": "https://sm4tech.com/projects/project"
             }
           },
           {
-            "thumbUrl": "/images/popup-project-5.jpg",
+            "thumbUrl": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80",
             "title": "Аналитика социальных сетей",
             "subTitle": "Комплексная платформа мониторинга и аналитики социальных сетей с анализом настроений.",
             "category": "Analytics",
             "status": "Активно",
-            "technologies": ["React", "Python", "Django", "TensorFlow", "PostgreSQL"],
-            "demoUrl": "https://social-analytics-platform.netlify.app",
+            "technologies": [
+              "React",
+              "Python",
+              "Django",
+              "TensorFlow",
+              "PostgreSQL"
+            ],
+            "demoUrl": "https://sm4tech.com/projects/project",
             "githubUrl": "https://github.com/Salama-Malek/Social-Analytics",
             "details": {
               "title": "Аналитика социальных сетей на базе ИИ",
@@ -389,17 +582,23 @@
               "languages": "JavaScript, Python, HTML, CSS",
               "platform": "Django, React",
               "country": "Египет",
-              "url": "https://social-analytics-platform.netlify.app"
+              "url": "https://sm4tech.com/projects/project"
             }
           },
           {
-            "thumbUrl": "/images/popup-project-6.jpg",
+            "thumbUrl": "https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=1200&q=80",
             "title": "Мобильный фитнес-трекер",
             "subTitle": "Кроссплатформенное приложение для отслеживания фитнеса с планами тренировок и мониторингом прогресса.",
             "category": "Mobile",
             "status": "Активно",
-            "technologies": ["React Native", "Firebase", "Redux", "Expo", "Charts"],
-            "demoUrl": null,
+            "technologies": [
+              "React Native",
+              "Firebase",
+              "Redux",
+              "Expo",
+              "Charts"
+            ],
+            "demoUrl": "https://sm4tech.com/projects/project",
             "githubUrl": "https://github.com/Salama-Malek/Fitness-Tracker-App",
             "details": {
               "title": "Кроссплатформенное приложение для отслеживания фитнеса",
@@ -408,7 +607,7 @@
               "languages": "JavaScript, React Native",
               "platform": "iOS, Android",
               "country": "Египет",
-              "url": "https://github.com/Salama-Malek/Fitness-Tracker-App"
+              "url": "https://sm4tech.com/projects/project"
             }
           }
         ]
@@ -420,7 +619,7 @@
         },
         "allService": [
           {
-            "imgUrl": "/images/service-01.jpg",
+            "imgUrl": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80",
             "title": "Full Stack разработка",
             "subTitle": "Эксперт в разработке на MEAN стеке, создание полноценных веб-приложений на MongoDB, Express.js, Angular и Node.js.",
             "icon": "bi:code-square",
@@ -436,7 +635,7 @@
             ]
           },
           {
-            "imgUrl": "/images/service-02.jpg",
+            "imgUrl": "https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=1200&q=80",
             "title": "Front-End разработка",
             "subTitle": "Создание адаптивных, интерактивных пользовательских интерфейсов с использованием React, Angular, Vue.js и других современных технологий фронт-энд.",
             "icon": "bi:laptop",
@@ -452,7 +651,7 @@
             ]
           },
           {
-            "imgUrl": "/images/service-03.jpg",
+            "imgUrl": "https://images.unsplash.com/photo-1505685296765-3a2736de412f?auto=format&fit=crop&w=1200&q=80",
             "title": "Разработка мобильных приложений",
             "subTitle": "Создание кроссплатформенных мобильных приложений на React Native с упором на производительность и пользовательский опыт.",
             "icon": "bi:phone",
@@ -474,29 +673,33 @@
           "title": "Full Stack веб-разработка",
           "issuer": "Институт информационных технологий (ITI)",
           "date": "2023",
-          "image": "/images/certificate-1.jpg",
-          "credentialId": "ITI-FSWD-2023-001"
+          "image": "https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=1200&q=80",
+          "credentialId": "ITI-FSWD-2023-001",
+          "url": "https://sm4tech.com/certificates"
         },
         {
           "title": "Разработка MEAN Stack",
           "issuer": "Coursera",
           "date": "2023",
-          "image": "/images/certificate-2.jpg",
-          "credentialId": "COURSERA-MEAN-2023-002"
+          "image": "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1200&q=80",
+          "credentialId": "COURSERA-MEAN-2023-002",
+          "url": "https://sm4tech.com/certificates"
         },
         {
           "title": "Разработка React",
           "issuer": "Meta",
           "date": "2022",
-          "image": "/images/certificate-3.jpg",
-          "credentialId": "META-REACT-2022-003"
+          "image": "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1200&q=80",
+          "credentialId": "META-REACT-2022-003",
+          "url": "https://sm4tech.com/certificates"
         },
         {
           "title": "Backend разработка Node.js",
           "issuer": "Udemy",
           "date": "2022",
-          "image": "/images/certificate-4.jpg",
-          "credentialId": "UDEMY-NODE-2022-004"
+          "image": "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=1200&q=80",
+          "credentialId": "UDEMY-NODE-2022-004",
+          "url": "https://sm4tech.com/certificates"
         }
       ],
       "techStack": [
@@ -537,11 +740,67 @@
         "title": "Обсудим ваш проект",
         "subTitle": "Доступен для фриланса, если появится подходящий проект. Свяжитесь со мной, чтобы обсудить ваши потребности в веб-разработке."
       },
-      "contactImg": "/images/contact-us.png",
+      "contactImg": "https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1200&q=80",
       "contactInfo": [
-        { "title": "Напишите письмо", "email": "salamahassanein@gmail.com" },
-        { "title": "Позвоните напрямую", "tel": "+7 993 287 3992" }
+        {
+          "title": "Напишите письмо",
+          "email": "hello@sm4tech.com"
+        },
+        {
+          "title": "Позвоните напрямую",
+          "tel": "+7 993 287 3992"
+        }
       ]
     }
+  },
+  "common": {
+    "logoAlt": "Салама Малек — разработчик полного стека",
+    "backToTop": "Наверх"
+  },
+  "contact": {
+    "followMe": "Подписывайтесь",
+    "info": {
+      "heading": "Связаться",
+      "description": "Готовы начать новый проект? Давайте обсудим, как я могу помочь воплотить ваши идеи.",
+      "copy": "Скопировать {{field}}",
+      "toastTitle": "Скопировано",
+      "toastDescription": "{{value}} скопировано в буфер."
+    }
+  },
+  "languageSwitcher": {
+    "selectLanguage": "Выберите язык",
+    "languageNames": {
+      "en": "Английский",
+      "ar": "Арабский",
+      "ru": "Русский",
+      "de": "Немецкий",
+      "fr": "Французский"
+    }
+  },
+  "navigation": {
+    "moreOptions": "Дополнительные опции",
+    "close": "Закрыть",
+    "openMore": "Открыть дополнительные опции",
+    "more": "Еще"
+  },
+  "hero": {
+    "downloadCv": "Скачать резюме"
+  },
+  "social": {
+    "icons": {
+      "fallbackName": "социальную ссылку",
+      "open": "Открыть {{name}}",
+      "khamsatAlt": "Khamsat"
+    }
+  },
+  "loading": {
+    "aria": "Загрузка",
+    "title": "Загрузка…",
+    "description": "Пожалуйста, подождите, мы подготавливаем ваш опыт"
+  },
+  "errorBoundary": {
+    "title": "Что-то пошло не так",
+    "description": "Произошла непредвиденная ошибка. Попробуйте обновить страницу.",
+    "action": "Обновить страницу"
   }
 }

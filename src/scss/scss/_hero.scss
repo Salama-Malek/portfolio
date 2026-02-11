@@ -3,12 +3,22 @@
 ---------------------------*/
 .hero-section {
   position: relative;
-  height: 100vh;
-  min-height: 800px;
+  background: var(--px-bg);
+  min-height: 100vh;
+  height: auto;
   display: flex;
   align-items: center;
   overflow: hidden;
-  padding-top: 84px; // Added padding for the fixed header
+  padding: 84px 0 60px 0;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(49, 46, 140, 0.85) 0%, rgba(35, 183, 217, 0.45) 100%);
+    opacity: 0.9;
+    z-index: -2;
+  }
 
   #tsparticles {
     position: absolute;
@@ -35,36 +45,37 @@
     }
 
     h1 {
-      font-size: clamp(2.5rem, 10vw, 5rem);
+      font-size: clamp(2.5rem, 8vw, 4.5rem);
       font-weight: 700;
       line-height: 1.2;
       margin-bottom: 20px;
-      background: var(--px-gradient-text);
+      background: linear-gradient(90deg, #774ad9 0%, #23b7d9 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
 
     h2 {
-      font-size: clamp(1.5rem, 6vw, 2.5rem);
+      font-size: clamp(1.3rem, 5vw, 2rem);
       font-weight: 500;
-      margin-bottom: 30px;
-      color: var(--px-text-primary);
+      margin-bottom: 25px;
+      color: var(--palette-sky);
     }
 
     p {
-      font-size: clamp(1rem, 4vw, 1.1rem);
-      line-height: 1.7;
-      margin-bottom: 40px;
-      max-width: 600px;
-      color: var(--px-text-secondary);
+      font-size: clamp(0.95rem, 3vw, 1rem);
+      line-height: 1.6;
+      margin-bottom: 30px;
+      max-width: 550px;
+      color: rgba(199, 208, 255, 0.75);
     }
   }
 
   .typing-animation-wrapper {
     position: relative;
     width: 100%;
-    min-height: 80px; // Adjust based on the tallest possible h2
+    min-height: 60px;
+
     h2 {
       position: absolute;
       top: 0;
@@ -78,25 +89,26 @@
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    gap: 20px;
-    margin-bottom: 30px;
+    gap: 15px;
+    margin-bottom: 25px;
   }
 
   .social-links {
-    margin-top: 40px;
+    margin-top: 30px;
     display: flex;
     justify-content: flex-start;
-    
+
     .social-icon {
       animation: socialLinksFadeIn 0.8s ease-out 0.6s both;
     }
   }
-  
+
   @keyframes socialLinksFadeIn {
     from {
       opacity: 0;
       transform: translateY(30px);
     }
+
     to {
       opacity: 1;
       transform: translateY(0);
@@ -113,8 +125,8 @@
       transform: translate(-50%, -50%);
       width: 90%;
       height: 90%;
-      background: var(--px-gradient-primary);
-      opacity: 0.1;
+      background: linear-gradient(135deg, rgba(49, 46, 140, 0.6) 0%, rgba(35, 183, 217, 0.45) 100%);
+      opacity: 0.18;
       border-radius: 40% 60% 60% 40% / 70% 30% 70% 30%;
       animation: blob 8s ease-in-out infinite;
     }
@@ -129,13 +141,16 @@
 }
 
 @keyframes blob {
+
   0%,
   100% {
     border-radius: 40% 60% 60% 40% / 70% 30% 70% 30%;
   }
+
   33% {
     border-radius: 70% 30% 50% 50% / 30% 30% 70% 70%;
   }
+
   66% {
     border-radius: 50% 50% 30% 70% / 60% 70% 30% 40%;
   }
@@ -153,6 +168,7 @@
     }
 
     .hero-text {
+
       h1,
       h2,
       p {
@@ -161,11 +177,11 @@
         margin-right: auto;
       }
     }
-    
+
     .btn-bar,
     .social-links {
       justify-content: center;
-      
+
       .social-icon {
         justify-content: center;
       }

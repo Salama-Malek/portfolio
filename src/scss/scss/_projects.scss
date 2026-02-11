@@ -58,7 +58,7 @@
 }
 
 .project-card {
-  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  background: var(--gradient-space);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 1.5rem;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
@@ -195,7 +195,7 @@
       
       svg {
         font-size: 0.875rem;
-        color: #ffc107;
+        color: var(--status-amber);
         
         &:last-child {
           color: rgba(255, 255, 255, 0.3);
@@ -240,7 +240,7 @@
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     
     .project-card-btn {
-      color: #7877c6;
+      color: var(--tone-purple);
       font-weight: 600;
       display: inline-flex;
       align-items: center;
@@ -261,7 +261,7 @@
       }
       
       &:hover {
-        color: #ff77c6;
+        color: var(--tone-magenta);
         
         span {
           text-decoration: underline;
@@ -274,7 +274,7 @@
     }
     
     .project-card-demo {
-      background: linear-gradient(135deg, #7877c6 0%, #ff77c6 100%);
+      background: var(--gradient-highlight-magenta);
       color: white;
       border: none;
       padding: 0.5rem 1rem;
@@ -439,8 +439,8 @@
 
 .project-counter-wrapper {
   .counter-card {
-    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
-    border: 2px solid #e9ecef;
+    background: var(--gradient-neutral);
+    border: 2px solid var(--tone-muted);
     border-radius: 20px;
     padding: 20px 30px;
     display: inline-flex;
@@ -458,7 +458,7 @@
     .counter-icon {
       width: 50px;
       height: 50px;
-      background: linear-gradient(135deg, var(--px-theme) 0%, #00d4ff 100%);
+      background: var(--gradient-accent-soft);
       border-radius: 50%;
       display: flex;
       align-items: center;
@@ -491,7 +491,7 @@
   position: relative;
   overflow: hidden;
   border-radius: 20px;
-  background: white;
+  background: var(--px-bg-tertiary);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   
@@ -531,7 +531,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(135deg, rgba(7, 136, 255, 0.95) 0%, rgba(0, 212, 255, 0.95) 100%);
+  background: var(--px-gradient-brand);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -546,7 +546,7 @@
     .action-btn {
       width: 60px;
       height: 60px;
-      background: white;
+      background: var(--px-bg-tertiary);
       border-radius: 50%;
       display: flex;
       align-items: center;
@@ -571,7 +571,7 @@
       }
       
       &.view-btn:hover {
-        background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+        background: var(--gradient-success);
         
         svg {
           color: white;
@@ -579,7 +579,7 @@
       }
       
       &.details-btn:hover {
-        background: linear-gradient(135deg, #6f42c1 0%, #e83e8c 100%);
+        background: var(--gradient-secondary);
         
         svg {
           color: white;
@@ -614,17 +614,17 @@
   }
   
   &.live {
-    background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+    background: var(--gradient-success);
     color: white;
   }
   
   &.in-progress {
-    background: linear-gradient(135deg, #ffc107 0%, #fd7e14 100%);
-    color: #212529;
+    background: var(--gradient-warning);
+    color: var(--text-primary);
   }
   
   &.completed {
-    background: linear-gradient(135deg, #17a2b8 0%, #6f42c1 100%);
+    background: var(--gradient-sky-violet);
     color: white;
   }
 }
@@ -655,7 +655,7 @@
 
 .project-body {
   padding: 25px;
-  background: white;
+  background: var(--px-bg-tertiary);
   
   .text {
     .project-header {
@@ -665,7 +665,7 @@
       margin-bottom: 12px;
       
       .project-title {
-        color: var(--px-black);
+        color: var(--px-text-primary);
         font-weight: 700;
         font-size: 18px;
         margin: 0;
@@ -678,10 +678,10 @@
         
         svg {
           font-size: 14px;
-          color: #ffc107;
+          color: var(--status-amber);
           
           &:last-child {
-            color: #e9ecef;
+            color: var(--tone-muted);
           }
         }
       }
@@ -722,25 +722,25 @@
     gap: 8px;
     
     .tech-tag {
-      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      background: linear-gradient(135deg, var(--surface) 0%, var(--tone-muted) 100%);
       color: var(--px-text);
       padding: 6px 12px;
       border-radius: 20px;
       font-size: 11px;
       font-weight: 600;
-      border: 1px solid #dee2e6;
+      border: 1px solid var(--tone-line);
       display: flex;
       align-items: center;
       gap: 5px;
       transition: all 0.3s ease;
       
       svg {
-        color: #28a745;
+        color: var(--status-green);
         font-size: 12px;
       }
       
       &:hover {
-        background: linear-gradient(135deg, var(--px-theme) 0%, #00d4ff 100%);
+        background: var(--gradient-accent-soft);
         color: white;
         border-color: transparent;
         transform: translateY(-2px);
@@ -752,7 +752,7 @@
       }
       
       &.more {
-        background: linear-gradient(135deg, var(--px-theme) 0%, #00d4ff 100%);
+        background: var(--gradient-accent-soft);
         color: white;
         border-color: transparent;
         
@@ -771,7 +771,7 @@
 .project-meta {
   margin-top: 25px;
   padding-top: 20px;
-  border-top: 2px solid #f8f9fa;
+  border-top: 2px solid var(--surface);
   position: relative;
   
   .project-actions-compact {
@@ -801,7 +801,7 @@
       
       /* Live Demo Button */
       &.demo-icon-btn {
-        background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+        background: var(--gradient-success);
         color: white;
         
         &:hover {
@@ -820,7 +820,7 @@
       
       /* Source Code Button */
       &.source-icon-btn {
-        background: linear-gradient(135deg, #6f42c1 0%, #e83e8c 100%);
+        background: var(--gradient-secondary);
         color: white;
         
         &:hover {
@@ -839,7 +839,7 @@
       
       /* No Demo Badge */
       &.no-demo-icon {
-        background: linear-gradient(135deg, #6c757d 0%, #495057 100%);
+        background: var(--gradient-steel);
         color: white;
         cursor: default;
         
@@ -871,7 +871,7 @@
       position: absolute;
       width: 50px;
       height: 50px;
-      background: linear-gradient(135deg, var(--px-theme) 0%, #00d4ff 100%);
+      background: var(--gradient-accent-soft);
       border: none;
       border-radius: 50%;
       color: white;
@@ -907,13 +907,13 @@
     .progress-bar {
       width: 100%;
       height: 4px;
-      background: #e9ecef;
+      background: var(--tone-muted);
       border-radius: 2px;
       overflow: hidden;
       
       .progress-fill {
         height: 100%;
-        background: linear-gradient(90deg, var(--px-theme) 0%, #00d4ff 100%);
+        background: var(--gradient-accent-horizontal);
         border-radius: 2px;
         animation: progress 5s linear infinite;
       }

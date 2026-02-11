@@ -7,11 +7,9 @@
   transform: translateX(-50%);
   width: calc(100% - 40px);
   max-width: 500px;
-  background: linear-gradient(
-    135deg,
-    rgba(20, 20, 30, 0.95) 0%,
-    rgba(30, 30, 45, 0.95) 100%
-  );
+  background: linear-gradient(135deg,
+      rgba(20, 20, 30, 0.95) 0%,
+      rgba(30, 30, 45, 0.95) 100%);
   backdrop-filter: saturate(180%) blur(20px);
   border-radius: 30px;
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -95,9 +93,10 @@
     font-size: 8px;
     font-weight: 600;
     cursor: pointer;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: background 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1), transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     padding: 8px 12px;
     border-radius: 16px;
+    will-change: background, transform, box-shadow;
     position: relative;
     overflow: hidden;
     min-width: 60px;
@@ -119,11 +118,9 @@
       left: 50%;
       width: 0;
       height: 0;
-      background: linear-gradient(
-        135deg,
-        rgba(102, 126, 234, 0.2) 0%,
-        rgba(118, 75, 162, 0.2) 100%
-      );
+      background: linear-gradient(135deg,
+          rgba(102, 126, 234, 0.2) 0%,
+          rgba(118, 75, 162, 0.2) 100%);
       border-radius: 50%;
       transform: translate(-50%, -50%);
       transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
@@ -154,11 +151,9 @@
 
     &.active {
       color: rgba(255, 255, 255, 1);
-      background: linear-gradient(
-        135deg,
-        rgba(102, 126, 234, 0.4) 0%,
-        rgba(118, 75, 162, 0.4) 100%
-      );
+      background: linear-gradient(135deg,
+          rgba(102, 126, 234, 0.4) 0%,
+          rgba(118, 75, 162, 0.4) 100%);
       box-shadow: 0 4px 20px rgba(102, 126, 234, 0.5),
         inset 0 1px 0 rgba(255, 255, 255, 0.2);
       transform: translateY(-2px);
@@ -185,11 +180,9 @@
   bottom: 0;
   left: 0;
   width: 100%;
-  background: linear-gradient(
-    135deg,
-    rgba(20, 20, 30, 0.95) 0%,
-    rgba(30, 30, 45, 0.95) 100%
-  );
+  background: linear-gradient(135deg,
+      rgba(20, 20, 30, 0.95) 0%,
+      rgba(30, 30, 45, 0.95) 100%);
   backdrop-filter: saturate(180%) blur(20px);
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
@@ -214,7 +207,7 @@
       font-weight: 700;
       font-size: 1.2rem;
       color: rgba(255, 255, 255, 0.9);
-      background: linear-gradient(135deg, #667eea, #764ba2);
+      background: var(--gradient-brand);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -270,11 +263,9 @@
 
     &:hover {
       color: rgba(255, 255, 255, 1);
-      background: linear-gradient(
-        135deg,
-        rgba(102, 126, 234, 0.3) 0%,
-        rgba(118, 75, 162, 0.3) 100%
-      );
+      background: linear-gradient(135deg,
+          rgba(102, 126, 234, 0.3) 0%,
+          rgba(118, 75, 162, 0.3) 100%);
       border-color: rgba(102, 126, 234, 0.5);
       transform: translateY(-2px);
       box-shadow: 0 4px 20px rgba(102, 126, 234, 0.4);
@@ -388,6 +379,7 @@
     opacity: 0;
     transform: translateX(-50%) translateY(100px) scale(0.8);
   }
+
   to {
     opacity: 1;
     transform: translateX(-50%) translateY(0) scale(1);

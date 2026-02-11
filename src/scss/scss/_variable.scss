@@ -1,43 +1,39 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+$highlight-magenta: #ff3cac;
 
 $px-font: 'Space Grotesk', sans-serif !default;
 
 // Modern Dark Portfolio Design System
 // Primary Color Palette
-$px-bg-primary: #0a0a0a;
-$px-bg-secondary: #1a1a1a;
-$px-bg-tertiary: #111827;
-$px-bg-quaternary: #1f2937;
+$px-bg: #0d0d0d;
+$px-bg-secondary: #111123;
+$px-bg-tertiary: #141433;
+$px-bg-quaternary: #191947;
 
 // Text Colors
 $px-text-primary: #ffffff;
-$px-text-secondary: #a0a0a0;
-$px-text-tertiary: #9ca3af;
-$px-text-muted: #6b7280;
+$px-text-secondary: #c7d0ff;
+$px-text-tertiary: #9fb3ff;
+$px-text-muted: rgba(199, 208, 255, 0.65);
 
 // Accent Colors
-$px-accent-primary: #3b82f6;
-$px-accent-secondary: #8b5cf6;
+$px-accent-primary: #23b7d9;
+$px-accent-secondary: #774ad9;
 $px-accent-success: #10b981;
 $px-accent-warning: #f59e0b;
 $px-accent-error: #ef4444;
 
-// Light Mode Colors (Complementary)
-$px-light-bg-primary: #ffffff;
-$px-light-bg-secondary: #f8fafc;
-$px-light-bg-tertiary: #f1f5f9;
-$px-light-bg-quaternary: #e2e8f0;
-
-$px-light-text-primary: #0f172a;
-$px-light-text-secondary: #475569;
-$px-light-text-tertiary: #64748b;
-$px-light-text-muted: #94a3b8;
+// Surface Colors
+$px-surface-primary: rgba(49, 46, 140, 0.35);
+$px-surface-secondary: rgba(61, 144, 217, 0.25);
+$px-surface-hover: rgba(35, 183, 217, 0.35);
 
 // Legacy variables for compatibility
 $px-theme: $px-accent-primary;
-$px-theme-rgb: 59, 130, 246;
+$px-theme-rgb: 35, 183, 217;
 $px-white: $px-text-primary;
-$px-black: $px-bg-primary;
+$px-black: $px-bg;
+
+$highlight-purple: #774ad9;
 $px-text: $px-text-secondary;
 $px-heading: $px-text-primary;
 

@@ -1,9 +1,11 @@
 /* Enhanced Contact Section Styles */
 
 .contact-section {
+  // --section-bg: var(--px-gradient-alt);
   position: relative;
   overflow: hidden;
-  
+  background: var(--section-bg);
+
   .contact-content {
     background: var(--px-surface-primary);
     border-radius: 24px;
@@ -19,7 +21,7 @@
   }
 
   .contact-info-wrapper {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: var(--px-gradient-brand);
     color: white;
     padding: 50px 40px;
     display: flex;
@@ -48,7 +50,7 @@
         right: -50px;
         width: 200px;
         height: 200px;
-        background: rgba(255, 255, 255, 0.1);
+        background: var(--px-surface-primary);
         border-radius: 50%;
         animation: float 6s ease-in-out infinite;
       }
@@ -59,7 +61,7 @@
         left: -30px;
         width: 150px;
         height: 150px;
-        background: rgba(255, 255, 255, 0.05);
+        background: var(--px-surface-secondary);
         border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
         animation: float 8s ease-in-out infinite reverse;
       }
@@ -68,7 +70,7 @@
 
   .contact-social {
     margin-top: 40px;
-    
+
     h4 {
       font-size: 1.2rem;
       font-weight: 600;
@@ -82,17 +84,17 @@
 .contact-info {
   .contact-info-header {
     margin-bottom: 40px;
-    
+
     h4 {
       font-size: 2rem;
       font-weight: 700;
       margin-bottom: 15px;
-      background: linear-gradient(45deg, #fff, #e0e7ff);
+      background: var(--gradient-brand-soft);
       -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      -webkit-text-fill-color: var(--px-white);
       background-clip: text;
     }
-    
+
     p {
       font-size: 1.1rem;
       opacity: 0.9;
@@ -111,23 +113,23 @@
     align-items: center;
     gap: 20px;
     padding: 20px;
-    background: rgba(255, 255, 255, 0.1);
+    background: var(--px-surface-primary);
     border-radius: 16px;
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid var(--px-border-primary);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     cursor: pointer;
 
     &:hover {
       transform: translateX(10px);
-      background: rgba(255, 255, 255, 0.15);
+      background: var(--px-surface-hover);
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     }
 
     .contact-info-icon {
       width: 50px;
       height: 50px;
-      background: rgba(255, 255, 255, 0.2);
+      background: var(--px-surface-secondary);
       border-radius: 12px;
       display: flex;
       align-items: center;
@@ -148,25 +150,32 @@
 
     .contact-info-text {
       flex: 1;
+      /* allow the text area to shrink in flex layout and wrap long words/emails */
+      min-width: 0;
 
       h6 {
         font-size: 0.9rem;
-        opacity: 0.8;
+        opacity: 0.85;
         margin-bottom: 5px;
         text-transform: uppercase;
         letter-spacing: 1px;
         font-weight: 600;
       }
 
-      a, span {
+      a,
+      span {
         font-weight: 500;
         color: white;
         text-decoration: none;
         font-size: 1rem;
         transition: all 0.3s ease;
+        /* allow long emails/URLs to wrap on small screens */
+        white-space: normal;
+        overflow-wrap: anywhere;
+        word-break: break-word;
 
         &:hover {
-          color: #e0e7ff;
+          color: var(--px-accent-primary);
           text-decoration: underline;
         }
       }
@@ -280,7 +289,7 @@
       font-weight: 600;
       border-radius: 12px;
       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      background: var(--px-gradient-brand);
       border: none;
       color: white;
       display: inline-flex;
@@ -321,9 +330,12 @@
 
 /* Animations */
 @keyframes float {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0px) rotate(0deg);
   }
+
   50% {
     transform: translateY(-20px) rotate(5deg);
   }
@@ -392,6 +404,7 @@
 
 @media (max-width: 480px) {
   .contact-section {
+
     .contact-info-wrapper,
     .contact-form-wrapper {
       padding: 25px 20px;

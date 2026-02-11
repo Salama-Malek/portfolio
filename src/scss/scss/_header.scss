@@ -8,6 +8,7 @@
   line-height: 1;
   position: relative;
   margin-left: 15px;
+
   span {
     position: absolute;
     top: 0;
@@ -30,13 +31,14 @@
   z-index: 1000;
   padding: 20px 0;
   transition: all 0.3s ease;
+  background: transparent;
 
   @media (max-width: 991px) {
     padding: 15px 0;
   }
 
   &.scrolled {
-    background-color: var(--px-surface-primary);
+    background-color: transparent;
     backdrop-filter: saturate(180%) blur(20px);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     border-bottom: 1px solid var(--px-border-primary);
@@ -46,6 +48,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 16px;
   }
 
   .logo {
@@ -78,12 +81,17 @@
     transition: all 0.3s ease;
     background: transparent;
 
-    &:hover,
-    &.active {
-      color: var(--px-accent-primary);
-      background: var(--px-surface-primary);
+    &:hover {
+      color: var(--palette-sky);
+      background: rgba(61, 144, 217, 0.12);
       transform: translateY(-2px);
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 10px 24px rgba(49, 46, 140, 0.25);
+    }
+
+    &.active {
+      color: var(--palette-sky);
+      background: rgba(35, 183, 217, 0.18);
+      box-shadow: 0 12px 26px rgba(35, 183, 217, 0.2);
     }
 
     &::after {
@@ -100,35 +108,57 @@
   // Mobile-specific header styling
   @media (max-width: 991px) {
     .header-content {
-      justify-content: center;
-      
+      justify-content: space-between;
+      gap: 12px;
+
       .logo {
-        margin: 0;
+        margin: 0 auto 0 0;
+
+        img {
+          max-height: 32px;
+        }
+      }
+    }
+  }
+}
+
+[dir='rtl'] {
+  .header {
+    .header-content {
+      flex-direction: row-reverse;
+
+      .logo {
+        margin: 0 0 0 auto;
+      }
+
+      .header-actions {
+        margin-right: auto;
       }
     }
   }
 }
 
 .theme-switcher {
-  background-color: var(--px-surface-primary);
-  border: 1px solid var(--px-border-primary);
-  color: var(--px-text-primary);
-  font-size: 20px;
-  cursor: pointer;
-  width: 45px;
-  height: 45px;
+  background: var(--gradient-accent);
+  border: 1px solid rgba(119, 74, 217, 0.55);
+  color: var(--text-primary);
+  font-size: 18px;
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.3s ease;
-  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 8px 24px rgba(13, 13, 13, 0.45);
+  pointer-events: auto;
 
-  &:hover {
-    color: var(--px-accent-primary);
-    background: var(--px-gradient-primary);
-    transform: rotate(15deg) scale(1.1);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  &--static {
+    cursor: default;
+  }
+
+  svg {
+    color: var(--text-primary);
   }
 }
 
@@ -140,6 +170,7 @@
   height: 24px;
   position: relative;
   cursor: pointer;
+  flex-shrink: 0;
 
   .bar {
     display: block;
@@ -187,7 +218,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: var(--px-surface-primary);
+  background-color: var(--px-bg-quaternary);
   backdrop-filter: saturate(180%) blur(20px);
   z-index: 1001;
   display: flex;
@@ -204,7 +235,8 @@
   }
 
   .mobile-menu-content {
-    padding: 30px;
+    padding: 30px 24px;
+    width: min(520px, 100%);
   }
 
   .mobile-nav-list {
@@ -239,10 +271,12 @@
     opacity: 0;
     transform: translateY(20px);
     animation: fadeIn-up 0.4s ease forwards;
+
     .social-btns {
       justify-content: center;
       margin-bottom: 25px;
     }
+
     .px-btn {
       width: 100%;
     }
@@ -272,7 +306,11 @@
 }
 
 .mobile-menu-overlay {
-  display: none; // No longer needed with the full-screen design
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(2px);
+  z-index: 1000;
 }
 
 .language-switcher-container {
@@ -314,7 +352,7 @@
   .arrow {
     font-size: 10px;
     transition: transform 0.3s ease;
-    
+
     &.open {
       transform: rotate(180deg);
     }
@@ -379,11 +417,20 @@
   }
 }
 
+@media (max-width: 991px) {
+  .language-dropdown {
+    top: auto;
+    bottom: calc(100% + 8px);
+    right: 0;
+  }
+}
+
 @keyframes dropdownFadeIn {
   from {
     opacity: 0;
     transform: translateY(-10px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -409,7 +456,7 @@
 
   .language-dropdown {
     min-width: 140px;
-    
+
     .language-option {
       padding: 10px 14px;
       font-size: 13px;

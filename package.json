@@ -1,5 +1,5 @@
 {
-  "name": "jenna-react",
+  "name": "sm4tech-portfolio",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -36,8 +36,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "eslint src/**/*.js",
-    "lint:fix": "eslint src/**/*.js --fix"
+    "lint": "eslint src/**/*.{js,ts,jsx,tsx}",
+    "lint:fix": "eslint src/**/*.{js,ts,jsx,tsx} --fix",
+    "type-check": "tsc --noEmit"
   },
   "eslintConfig": {
     "extends": [
@@ -60,6 +61,10 @@
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@iconify/react": "^4.1.1",
-    "sass": "^1.64.1"
+    "@types/node": "18.19.76",
+    "@types/react": "18.2.15",
+    "@types/react-dom": "18.2.7",
+    "sass": "^1.64.1",
+    "typescript": "4.9.5"
   }
 }
