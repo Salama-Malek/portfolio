@@ -1,4 +1,4 @@
-import React, { useEffect, useCallback, ReactNode } from "react";
+import React, { useEffect, useCallback, useId, useRef, ReactNode } from "react";
 import { Icon } from "@iconify/react";
 import { useTranslation } from "react-i18next";
 import TechIcon from "../utils/techIcons";
@@ -23,6 +23,9 @@ export default function ProjectModal({
   project,
   onClose,
 }: ProjectModalProps): ReactNode {
+  const dialogTitleId = useId();
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
+  const lastFocusedElementRef = useRef<HTMLElement | null>(null);
   const { t } = useTranslation();
   const {
     title,
@@ -35,11 +38,26 @@ export default function ProjectModal({
   } = project;
 
   useEffect(() => {
+    lastFocusedElementRef.current = document.activeElement as HTMLElement | null;
     document.body.style.overflow = "hidden";
+    closeButtonRef.current?.focus();
+
     return () => {
       document.body.style.overflow = "auto";
+      lastFocusedElementRef.current?.focus();
     };
   }, []);
+
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent): void => {
+      if (e.key === "Escape") {
+        onClose();
+      }
+    };
+
+    window.addEventListener("keydown", handleEscape);
+    return () => window.removeEventListener("keydown", handleEscape);
+  }, [onClose]);
 
   const handleBackdropClick = useCallback((): void => {
     onClose();
@@ -53,14 +71,26 @@ export default function ProjectModal({
   );
 
   return (
-    <div className="project-modal" onClick={handleBackdropClick}>
+    <div
+      className="project-modal"
+      onClick={handleBackdropClick}
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby={dialogTitleId}
+    >
       <div
         className="project-modal-content"
         onClick={handleModalClick}
         data-aos="fade-up"
         data-aos-duration="500"
       >
-        <button className="project-modal-close" onClick={onClose}>
+        <button
+          ref={closeButtonRef}
+          type="button"
+          className="project-modal-close"
+          onClick={onClose}
+          aria-label={t("navigation.close")}
+        >
           <Icon icon="bi:x" />
         </button>
         <div className="project-modal-img">
@@ -72,7 +102,7 @@ export default function ProjectModal({
           />
         </div>
         <div className="project-modal-info">
-          <h3 className="project-modal-title">{title}</h3>
+          <h3 id={dialogTitleId} className="project-modal-title">{title}</h3>
           <p className="project-modal-subtitle">{subTitle}</p>
           <p className="project-modal-description">{description}</p>
           <div className="project-modal-tech">

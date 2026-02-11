@@ -58,7 +58,12 @@ const MoreMenuSheet: React.FC<MoreMenuSheetProps> = ({
           </div>
         </div>
       </div>
-      <div className="sheet-overlay" onClick={onClose}></div>
+      <button
+        type="button"
+        className="sheet-overlay"
+        onClick={onClose}
+        aria-label={t("navigation.close")}
+      />
     </>
   );
 };
