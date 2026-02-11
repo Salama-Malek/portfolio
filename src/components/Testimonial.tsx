@@ -1,4 +1,4 @@
-import React, { useMemo, useRef, useCallback, ReactNode } from "react";
+import React, { useMemo, useRef, useCallback } from "react";
 import SectionHeading from "./SectionHeading";
 import Slider from "react-slick";
 import { Icon } from "@iconify/react";
@@ -21,7 +21,7 @@ interface TestimonialProps {
 
 export default function Testimonial({
   data = {},
-}: TestimonialProps): ReactNode {
+}: TestimonialProps): JSX.Element {
   const { t, i18n } = useTranslation();
 
   const isRTL = i18n.dir() === "rtl";

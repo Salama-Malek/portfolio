@@ -1,4 +1,4 @@
-import React, { useState, ReactNode, ImgHTMLAttributes } from "react";
+import React, { useState, ImgHTMLAttributes } from "react";
 
 interface OptimizedImageProps extends Omit<
   ImgHTMLAttributes<HTMLImageElement>,
@@ -32,7 +32,7 @@ export const OptimizedImage = ({
   onLoad,
   style = {},
   ...props
-}: OptimizedImageProps): ReactNode => {
+}: OptimizedImageProps): JSX.Element => {
   // Track loaded state for future enhancements (fade-in effects, etc.)
   const [isLoaded, setIsLoaded] = useState<boolean>(false);
 

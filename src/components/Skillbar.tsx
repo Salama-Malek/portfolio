@@ -1,4 +1,4 @@
-import React, { useEffect, useState, ReactNode } from "react";
+import React, { useEffect, useState } from "react";
 import SectionHeading from "./SectionHeading";
 
 interface SkillData {
@@ -10,7 +10,7 @@ interface SkillbarProps {
   data?: SkillData[];
 }
 
-export default function Skillbar({ data = [] }: SkillbarProps): ReactNode {
+export default function Skillbar({ data = [] }: SkillbarProps): JSX.Element | null {
   const [inView, setInView] = useState<boolean>(false);
 
   useEffect(() => {

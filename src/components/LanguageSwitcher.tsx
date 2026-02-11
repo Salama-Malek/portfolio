@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect, ReactNode } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import "flag-icons/css/flag-icons.min.css";
 
@@ -15,7 +15,7 @@ const languages: Language[] = [
   { code: "fr", flag: "fr" },
 ];
 
-export default function LanguageSwitcher(): ReactNode {
+export default function LanguageSwitcher(): JSX.Element {
   const { i18n, t } = useTranslation();
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const dropdownRef = useRef<HTMLDivElement>(null);

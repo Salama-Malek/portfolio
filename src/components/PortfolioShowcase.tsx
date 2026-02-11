@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useCallback, ReactNode } from "react";
+import React, { useState, useMemo, useCallback } from "react";
 import { Icon } from "@iconify/react";
 import { useTranslation } from "react-i18next";
 import SectionHeading from "./SectionHeading";
@@ -66,7 +66,7 @@ interface PortfolioShowcaseProps {
 
 export default function PortfolioShowcase({
   data = {},
-}: PortfolioShowcaseProps): ReactNode {
+}: PortfolioShowcaseProps): JSX.Element {
   const { t } = useTranslation();
   const {
     sectionHeading = {},
@@ -143,7 +143,7 @@ export default function PortfolioShowcase({
     setSelectedService(null);
   }, []);
 
-  const renderProjects = useCallback((): ReactNode => {
+  const renderProjects = useCallback((): JSX.Element => {
     if (!projects.allProjects || projects.allProjects.length === 0) {
       return (
         <div className="empty-state">
@@ -166,7 +166,7 @@ export default function PortfolioShowcase({
     );
   }, [projects.allProjects, t]);
 
-  const renderCertificates = useCallback((): ReactNode => {
+  const renderCertificates = useCallback((): JSX.Element => {
     if (!certificates || certificates.length === 0) {
       return (
         <div className="empty-state">
@@ -232,7 +232,7 @@ export default function PortfolioShowcase({
     );
   }, [certificates, t, handleCertificateDownload]);
 
-  const renderTechStack = useCallback((): ReactNode => {
+  const renderTechStack = useCallback((): JSX.Element => {
     const items = techStack as TechStackItem[];
     if (!items || items.length === 0) {
       return (
@@ -271,7 +271,7 @@ export default function PortfolioShowcase({
     );
   }, [techStack, t]);
 
-  const renderServices = useCallback((): ReactNode => {
+  const renderServices = useCallback((): JSX.Element => {
     if (!services.allService || services.allService.length === 0) {
       return (
         <div className="empty-state">

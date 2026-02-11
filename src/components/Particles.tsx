@@ -1,10 +1,10 @@
-import React, { useMemo, ReactNode } from "react";
+import React, { useMemo } from "react";
 import Particles from "@tsparticles/react";
 import { useThemeContext } from "../ThemeProvider";
 import particlesOptions from "../particles.json";
 import { getCssVariableValue } from "../utils/themeTokens";
 
-const ParticlesComponent = (): ReactNode => {
+const ParticlesComponent = (): JSX.Element => {
   const { theme } = useThemeContext();
 
   const particleColor = useMemo((): string => {

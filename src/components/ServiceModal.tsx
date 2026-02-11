@@ -1,4 +1,4 @@
-import React, { useEffect, useCallback, useRef, ReactNode } from "react";
+import React, { useEffect, useCallback, useRef } from "react";
 import { Icon } from "@iconify/react";
 import { useTranslation } from "react-i18next";
 import OptimizedImage from "./OptimizedImage";
@@ -24,7 +24,7 @@ interface ServiceModalProps {
 export default function ServiceModal({
   service,
   onClose,
-}: ServiceModalProps): ReactNode {
+}: ServiceModalProps): JSX.Element {
   const closeButtonRef = useRef<HTMLButtonElement>(null);
   const lastFocusedElementRef = useRef<HTMLElement | null>(null);
   const { t } = useTranslation();

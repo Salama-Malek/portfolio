@@ -1,4 +1,4 @@
-import React, { useEffect, useCallback, useId, useRef, ReactNode } from "react";
+import React, { useEffect, useCallback, useId, useRef } from "react";
 import { Icon } from "@iconify/react";
 import { useTranslation } from "react-i18next";
 import TechIcon from "../utils/techIcons";
@@ -22,7 +22,7 @@ interface ProjectModalProps {
 export default function ProjectModal({
   project,
   onClose,
-}: ProjectModalProps): ReactNode {
+}: ProjectModalProps): JSX.Element {
   const dialogTitleId = useId();
   const closeButtonRef = useRef<HTMLButtonElement>(null);
   const lastFocusedElementRef = useRef<HTMLElement | null>(null);

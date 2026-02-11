@@ -1,4 +1,4 @@
-import React, { useCallback, ReactNode } from "react";
+import React, { useCallback } from "react";
 import { Icon } from "@iconify/react";
 import { useTranslation } from "react-i18next";
 import TechIcon from "../utils/techIcons";
@@ -22,7 +22,7 @@ interface ProjectCardProps {
 export default function ProjectCard({
   project,
   onClick,
-}: ProjectCardProps): ReactNode {
+}: ProjectCardProps): JSX.Element {
   const { t, i18n } = useTranslation();
   const isRTL = i18n.dir() === "rtl";
   const {

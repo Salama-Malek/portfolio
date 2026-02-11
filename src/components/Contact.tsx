@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import React from "react";
 import SectionHeading from "./SectionHeading";
 import SocialBtns from "./SocialBtns";
 import ContactInfo from "./ContactInfo";
@@ -33,7 +33,7 @@ interface ContactProps {
 export default function Contact({
   data = {},
   socialData = [],
-}: ContactProps): ReactNode {
+}: ContactProps): JSX.Element | null {
   const { t } = useTranslation();
   const { sectionHeading = {}, contactInfo = [] } = data;
 

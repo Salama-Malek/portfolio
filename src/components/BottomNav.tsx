@@ -1,4 +1,4 @@
-import React, { useState, ReactNode } from "react";
+import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Link as ScrollLink } from "react-scroll";
 import { Icon } from "@iconify/react";
@@ -19,7 +19,7 @@ interface MoreMenuSheetProps {
 const MoreMenuSheet: React.FC<MoreMenuSheetProps> = ({
   navLinks,
   onClose,
-}): ReactNode => {
+}): JSX.Element => {
   const { t } = useTranslation();
   return (
     <>
@@ -68,7 +68,7 @@ const MoreMenuSheet: React.FC<MoreMenuSheetProps> = ({
   );
 };
 
-export default function BottomNav(): ReactNode {
+export default function BottomNav(): JSX.Element {
   const { t } = useTranslation();
   const [isMoreMenuOpen, setIsMoreMenuOpen] = useState<boolean>(false);
 

@@ -1,4 +1,4 @@
-import React, { useState, ReactNode, FormEvent, ChangeEvent } from "react";
+import React, { useState, FormEvent, ChangeEvent } from "react";
 import { Icon } from "@iconify/react";
 import { useToast } from "./ToastProvider";
 import { useDebounce } from "../hooks/useDebounce";
@@ -11,7 +11,7 @@ interface FormData {
   message: string;
 }
 
-export default function ContactForm(): ReactNode {
+export default function ContactForm(): JSX.Element {
   const { t } = useTranslation();
   const [formData, setFormData] = useState<FormData>({
     name: "",

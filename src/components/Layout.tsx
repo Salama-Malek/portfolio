@@ -1,4 +1,4 @@
-import React, { useEffect, ReactNode } from "react";
+import React, { useEffect } from "react";
 import { Outlet } from "react-router-dom";
 import Header from "./Header";
 import Footer from "./Footer";
@@ -7,7 +7,7 @@ import Aos from "aos";
 import BottomNav from "./BottomNav";
 import ToastContainer from "./ToastContainer";
 
-export default function Layout(): ReactNode {
+export default function Layout(): JSX.Element {
   useEffect(() => {
     window.scrollTo(0, 0);
     Aos.init({

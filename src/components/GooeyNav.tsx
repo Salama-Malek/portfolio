@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState, ReactNode } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import "./GooeyNav.css";
 
 interface GooeyNavItem {
@@ -37,7 +37,7 @@ export default function GooeyNav({
   colors = [1, 2, 3, 1, 2, 3, 1, 4],
   initialActiveIndex = 0,
   externalActiveIndex = null,
-}: GooeyNavProps): ReactNode {
+}: GooeyNavProps): JSX.Element {
   const containerRef = useRef<HTMLDivElement>(null);
   const navRef = useRef<HTMLUListElement>(null);
   const filterRef = useRef<HTMLSpanElement>(null);

@@ -1,4 +1,4 @@
-import React, { memo, ReactNode } from "react";
+import React, { memo } from "react";
 import parser from "html-react-parser";
 
 interface SectionHeadingProps {
@@ -11,7 +11,7 @@ const SectionHeading = memo(function SectionHeading({
   miniTitle,
   title,
   variant,
-}: SectionHeadingProps): ReactNode {
+}: SectionHeadingProps): JSX.Element {
   // Ensure title is a string before parsing
   const safeTitle = typeof title === "string" ? title : "";
   return (
