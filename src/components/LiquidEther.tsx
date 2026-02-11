@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useRef, ReactNode } from "react";
+import React, { useEffect, useMemo, useRef } from "react";
 import * as THREE from "three";
 import { useThemeContext } from "../ThemeProvider";
 import { resolvePalette } from "../utils/themeTokens";
@@ -52,7 +52,7 @@ export default function LiquidEther({
   takeoverDuration = 0.25,
   autoResumeDelay = 1000,
   autoRampDuration = 0.6,
-}: LiquidEtherProps): ReactNode {
+}: LiquidEtherProps): JSX.Element {
   const mountRef = useRef<HTMLDivElement>(null);
   const webglRef = useRef<HTMLCanvasElement | null>(null);
   const resizeObserverRef = useRef<ResizeObserver | null>(null);

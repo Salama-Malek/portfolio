@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useCallback, ReactNode } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import SocialBtns from "./SocialBtns"; 
@@ -8,7 +8,7 @@ interface FooterProps {
   socialData?: SocialLink[];
 }
 
-export default function Footer({ socialData = [] }: FooterProps): ReactNode {
+export default function Footer({ socialData = [] }: FooterProps): JSX.Element {
   const { t } = useTranslation();
   const [showBackToTop, setShowBackToTop] = useState<boolean>(false);
 

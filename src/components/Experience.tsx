@@ -1,4 +1,4 @@
-import React, { useState, ReactNode } from "react";
+import React, { useState } from "react";
 import SectionHeading from "./SectionHeading";
 import { Icon } from "@iconify/react";
 
@@ -26,7 +26,7 @@ interface ExperienceProps {
   data?: ExperienceData;
 }
 
-export default function Experience({ data = {} }: ExperienceProps): ReactNode {
+export default function Experience({ data = {} }: ExperienceProps): JSX.Element | null {
   const { sectionHeading = {}, allExperience = [] } = data;
   const [activeExperience, setActiveExperience] = useState<number>(0);
 

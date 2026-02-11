@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import React from "react";
 import { Icon } from "@iconify/react";
 import Tooltip from "./Tooltip";
 import { useCopyToClipboard } from "../hooks/useCopyToClipboard";
@@ -19,7 +19,7 @@ interface ContactInfoProps {
 
 export default function ContactInfo({
   contactInfoData,
-}: ContactInfoProps): ReactNode {
+}: ContactInfoProps): JSX.Element {
   const { t } = useTranslation();
   const { copy } = useCopyToClipboard();
   const { pushToast } = useToast();

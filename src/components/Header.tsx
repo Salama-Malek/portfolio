@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback, ReactNode } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { useTranslation } from "react-i18next";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { Link as ScrollLink } from "react-scroll";
@@ -15,7 +15,7 @@ interface GooeyNavItem {
   href: string;
 }
 
-export default function Header(): ReactNode {
+export default function Header(): JSX.Element {
   const { t } = useTranslation();
   const [isScrolled, setIsScrolled] = useState<boolean>(false);
 

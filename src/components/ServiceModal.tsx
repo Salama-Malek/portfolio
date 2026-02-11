@@ -1,4 +1,4 @@
-import React, { useEffect, useCallback, ReactNode } from "react";
+import React, { useEffect, useCallback, useRef } from "react";
 import { Icon } from "@iconify/react";
 import { useTranslation } from "react-i18next";
 import OptimizedImage from "./OptimizedImage";
@@ -24,7 +24,9 @@ interface ServiceModalProps {
 export default function ServiceModal({
   service,
   onClose,
-}: ServiceModalProps): ReactNode {
+}: ServiceModalProps): JSX.Element {
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
+  const lastFocusedElementRef = useRef<HTMLElement | null>(null);
   const { t } = useTranslation();
   const {
     imgUrl,
@@ -39,9 +41,13 @@ export default function ServiceModal({
   } = service;
 
   useEffect(() => {
+    lastFocusedElementRef.current = document.activeElement as HTMLElement | null;
     document.body.style.overflow = "hidden";
+    closeButtonRef.current?.focus();
+
     return () => {
       document.body.style.overflow = "auto";
+      lastFocusedElementRef.current?.focus();
     };
   }, []);
 
@@ -79,6 +85,7 @@ export default function ServiceModal({
         data-aos-duration="400"
       >
         <button
+          ref={closeButtonRef}
           type="button"
           className="service-modal-close"
           onClick={onClose}

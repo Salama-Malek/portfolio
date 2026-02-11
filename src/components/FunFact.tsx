@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import React from "react";
 import { Icon } from "@iconify/react";
 
 interface FunFactData {
@@ -12,7 +12,7 @@ interface FunFactProps {
   funfact: FunFactData;
 }
 
-export default function FunFact({ funfact }: FunFactProps): ReactNode {
+export default function FunFact({ funfact }: FunFactProps): JSX.Element {
   const { number, title, icon } = funfact;
   return (
     <div className="funfact-card">

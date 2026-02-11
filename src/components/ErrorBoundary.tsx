@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import React from "react";
 import { withTranslation, WithTranslation } from "react-i18next";
 
 interface ErrorBoundaryState {
@@ -35,7 +35,7 @@ class ErrorBoundary extends React.Component<
     }
   }
 
-  render(): ReactNode {
+  render(): JSX.Element {
     const { t, children } = this.props;
     if (this.state.hasError) {
       return (
@@ -60,7 +60,7 @@ class ErrorBoundary extends React.Component<
       );
     }
 
-    return children;
+    return <>{children}</>;
   }
 }
 

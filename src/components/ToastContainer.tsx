@@ -1,7 +1,7 @@
-import React, { ReactNode } from "react";
+import React from "react";
 import { useToast } from "./ToastProvider";
 
-export default function ToastContainer(): ReactNode {
+export default function ToastContainer(): JSX.Element {
   const { toasts, dismissToast } = useToast();
   return (
     <div className="toast-container">

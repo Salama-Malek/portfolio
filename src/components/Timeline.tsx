@@ -1,4 +1,4 @@
-import React, { memo, ReactNode } from "react";
+import React, { memo } from "react";
 import SectionHeading from "./SectionHeading";
 import { useTranslation } from "react-i18next";
 
@@ -12,7 +12,7 @@ interface TimelineProps {
   data?: TimelineItem[];
 }
 
-const Timeline = memo(({ data = [] }: TimelineProps): ReactNode => {
+const Timeline = memo(({ data = [] }: TimelineProps): JSX.Element | null => {
   const { t } = useTranslation();
   if (!data || data.length === 0) {
     return null;

@@ -1,11 +1,11 @@
-import React, { memo, ReactNode } from "react";
+import React, { memo } from "react";
 import { Icon } from "@iconify/react";
 
 interface RatingsProps {
   rating: number;
 }
 
-const Ratings = memo(function Ratings({ rating }: RatingsProps): ReactNode {
+const Ratings = memo(function Ratings({ rating }: RatingsProps): JSX.Element {
   const totalStars = 5;
   const filledStars = Math.round(rating);
 

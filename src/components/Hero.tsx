@@ -4,8 +4,7 @@ import React, {
   useState,
   useMemo,
   lazy,
-  Suspense,
-  ReactNode,
+  Suspense
 } from "react";
 import { TypeAnimation } from "react-type-animation";
 import { Link as ScrollLink } from "react-scroll";
@@ -54,7 +53,7 @@ interface LiquidEtherConfig {
 export default function Hero({
   data = {},
   socialData = [],
-}: HeroProps): ReactNode {
+}: HeroProps): JSX.Element | null {
   const {
     name,
     heading,
