@@ -4,7 +4,7 @@ import { useThemeContext } from "../ThemeProvider";
 import particlesOptions from "../particles.json";
 import { getCssVariableValue } from "../utils/themeTokens";
 
-const ParticlesComponent = (): JSX.Element => {
+const ParticlesComponent = (): React.JSX.Element => {
   const { theme } = useThemeContext();
 
   const particleColor = useMemo((): string => {

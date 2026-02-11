@@ -40,7 +40,7 @@ interface ToastProviderProps {
   children: ReactNode;
 }
 
-export function ToastProvider({ children }: ToastProviderProps): JSX.Element {
+export function ToastProvider({ children }: ToastProviderProps): React.JSX.Element {
   const [toasts, setToasts] = useState<Toast[]>([]);
   const timeoutsRef = useRef<Map<number, NodeJS.Timeout>>(new Map());
 

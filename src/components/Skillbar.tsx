@@ -10,7 +10,7 @@ interface SkillbarProps {
   data?: SkillData[];
 }
 
-export default function Skillbar({ data = [] }: SkillbarProps): JSX.Element | null {
+export default function Skillbar({ data = [] }: SkillbarProps): React.JSX.Element | null {
   const [inView, setInView] = useState<boolean>(false);
 
   useEffect(() => {

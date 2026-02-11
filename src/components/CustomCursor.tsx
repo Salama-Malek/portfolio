@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from "react";
 
-export default function CustomCursor(): JSX.Element | null {
+export default function CustomCursor(): React.JSX.Element | null {
   const cursorSm = useRef<HTMLDivElement>(null);
   const cursorLg = useRef<HTMLDivElement>(null);
   const rafId = useRef<number | null>(null);

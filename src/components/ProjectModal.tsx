@@ -22,7 +22,7 @@ interface ProjectModalProps {
 export default function ProjectModal({
   project,
   onClose,
-}: ProjectModalProps): JSX.Element {
+}: ProjectModalProps): React.JSX.Element {
   const dialogTitleId = useId();
   const closeButtonRef = useRef<HTMLButtonElement>(null);
   const lastFocusedElementRef = useRef<HTMLElement | null>(null);

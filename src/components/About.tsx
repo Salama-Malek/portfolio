@@ -1,4 +1,4 @@
-import React, { useMemo, lazy, Suspense } from "react";
+import React, { useMemo, lazy } from "react";
 import { Link as ScrollLink } from "react-scroll";
 import SectionHeading from "./SectionHeading";
 import OptimizedImage from "./OptimizedImage";
@@ -24,7 +24,7 @@ interface AboutProps {
   data?: AboutData;
 }
 
-export default function About({ data = {} }: AboutProps): JSX.Element | null {
+export default function About({ data = {} }: AboutProps): React.JSX.Element | null {
   const {
     imgSrc,
     miniTitle,
@@ -73,6 +73,7 @@ export default function About({ data = {} }: AboutProps): JSX.Element | null {
                 alt="Salama Malek - About Me"
                 aspectRatio={1}
                 loading="lazy"
+                sizes="(max-width: 575px) 90vw, (max-width: 991px) 75vw, 32vw"
               />
             </div>
           </div>

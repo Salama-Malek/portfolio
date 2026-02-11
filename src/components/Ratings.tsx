@@ -5,7 +5,7 @@ interface RatingsProps {
   rating: number;
 }
 
-const Ratings = memo(function Ratings({ rating }: RatingsProps): JSX.Element {
+const Ratings = memo(function Ratings({ rating }: RatingsProps): React.JSX.Element {
   const totalStars = 5;
   const filledStars = Math.round(rating);
 

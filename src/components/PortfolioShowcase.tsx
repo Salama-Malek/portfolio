@@ -66,7 +66,7 @@ interface PortfolioShowcaseProps {
 
 export default function PortfolioShowcase({
   data = {},
-}: PortfolioShowcaseProps): JSX.Element {
+}: PortfolioShowcaseProps): React.JSX.Element {
   const { t } = useTranslation();
   const {
     sectionHeading = {},
@@ -143,7 +143,7 @@ export default function PortfolioShowcase({
     setSelectedService(null);
   }, []);
 
-  const renderProjects = useCallback((): JSX.Element => {
+  const renderProjects = useCallback((): React.JSX.Element => {
     if (!projects.allProjects || projects.allProjects.length === 0) {
       return (
         <div className="empty-state">
@@ -166,7 +166,7 @@ export default function PortfolioShowcase({
     );
   }, [projects.allProjects, t]);
 
-  const renderCertificates = useCallback((): JSX.Element => {
+  const renderCertificates = useCallback((): React.JSX.Element => {
     if (!certificates || certificates.length === 0) {
       return (
         <div className="empty-state">
@@ -232,7 +232,7 @@ export default function PortfolioShowcase({
     );
   }, [certificates, t, handleCertificateDownload]);
 
-  const renderTechStack = useCallback((): JSX.Element => {
+  const renderTechStack = useCallback((): React.JSX.Element => {
     const items = techStack as TechStackItem[];
     if (!items || items.length === 0) {
       return (
@@ -271,7 +271,7 @@ export default function PortfolioShowcase({
     );
   }, [techStack, t]);
 
-  const renderServices = useCallback((): JSX.Element => {
+  const renderServices = useCallback((): React.JSX.Element => {
     if (!services.allService || services.allService.length === 0) {
       return (
         <div className="empty-state">

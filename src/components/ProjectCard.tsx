@@ -22,7 +22,7 @@ interface ProjectCardProps {
 export default function ProjectCard({
   project,
   onClick,
-}: ProjectCardProps): JSX.Element {
+}: ProjectCardProps): React.JSX.Element {
   const { t, i18n } = useTranslation();
   const isRTL = i18n.dir() === "rtl";
   const {
@@ -71,6 +71,7 @@ export default function ProjectCard({
           alt={title}
           aspectRatio={16 / 9}
           loading="lazy"
+          sizes="(max-width: 575px) 94vw, (max-width: 991px) 46vw, 31vw"
         />
         <div className="project-card-overlay">
           <div className="overlay-content">

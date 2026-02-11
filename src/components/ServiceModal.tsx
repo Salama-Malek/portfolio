@@ -24,7 +24,7 @@ interface ServiceModalProps {
 export default function ServiceModal({
   service,
   onClose,
-}: ServiceModalProps): JSX.Element {
+}: ServiceModalProps): React.JSX.Element {
   const closeButtonRef = useRef<HTMLButtonElement>(null);
   const lastFocusedElementRef = useRef<HTMLElement | null>(null);
   const { t } = useTranslation();

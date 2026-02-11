@@ -7,7 +7,7 @@ import Aos from "aos";
 import BottomNav from "./BottomNav";
 import ToastContainer from "./ToastContainer";
 
-export default function Layout(): JSX.Element {
+export default function Layout(): React.JSX.Element {
   useEffect(() => {
     window.scrollTo(0, 0);
     Aos.init({
