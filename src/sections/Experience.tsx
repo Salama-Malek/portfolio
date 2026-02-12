@@ -7,21 +7,23 @@ export function Experience() {
   return (
     <Section id="experience">
       <Container>
-        <Caption>{content.sections.experience.miniTitle}</Caption>
-        <H2>{content.sections.experience.title}</H2>
+        <Caption>Experience</Caption>
+        <H2>Professional timeline</H2>
         <div className="timeline">
           {content.experience.map((item, index) => (
-            <Reveal key={`${item.company}-${item.role}`} delayMs={index * 80}>
+            <Reveal key={`${item.company}-${item.role}`} delayMs={index * 90}>
               <article className="timeline-item">
-                <span className="timeline-period">
-                  {item.start} — {item.end}
-                </span>
+                <span className="timeline-period">{item.duration}</span>
                 <H4>
                   {item.role} · {item.company}
                 </H4>
-                {item.bullets.map((bullet) => (
-                  <Body key={bullet}>{bullet}</Body>
-                ))}
+                <ul className="timeline-list">
+                  {item.highlights.map((bullet) => (
+                    <li key={bullet}>
+                      <Body as="span">{bullet}</Body>
+                    </li>
+                  ))}
+                </ul>
               </article>
             </Reveal>
           ))}
