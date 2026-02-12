@@ -60,9 +60,9 @@ export default function ContactInfo({
   };
 
   return (
-    <div className="contact-info">
+    <div className="contact-info" itemScope itemType="https://schema.org/Person">
       <div className="contact-info-header">
-        <h4>{t("contact.info.heading")}</h4>
+        <h4 itemProp="name">{t("contact.info.heading")}</h4>
         <p>{t("contact.info.description")}</p>
       </div>
       <div className="contact-info-list">
@@ -92,9 +92,9 @@ export default function ContactInfo({
             </div>
             <div className="contact-info-text">
               <h6>{item.title}</h6>
-              {item.email && <a href={`mailto:${item.email}`}>{item.email}</a>}
-              {item.tel && <a href={`tel:${item.tel}`}>{item.tel}</a>}
-              {item.address && <span>{item.address}</span>}
+              {item.email && <a href={`mailto:${item.email}`} itemProp="email">{item.email}</a>}
+              {item.tel && <a href={`tel:${item.tel}`} itemProp="telephone">{item.tel}</a>}
+              {item.address && <span itemProp="address">{item.address}</span>}
             </div>
           </div>
         ))}

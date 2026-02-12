@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useCallback } from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
-import SocialBtns from "./SocialBtns"; 
+import SocialBtns from "./SocialBtns";
 import type { SocialLink } from "../types/common";
 
 interface FooterProps {
@@ -12,7 +12,6 @@ export default function Footer({ socialData = [] }: FooterProps): React.JSX.Elem
   const { t } = useTranslation();
   const [showBackToTop, setShowBackToTop] = useState<boolean>(false);
 
-  // Handle smooth scroll for anchor links
   const handleAnchorClick = useCallback(
     (e: React.MouseEvent<HTMLAnchorElement>): void => {
       const href = e.currentTarget.getAttribute("href");
@@ -33,7 +32,6 @@ export default function Footer({ socialData = [] }: FooterProps): React.JSX.Elem
     const handleScroll = (): void => {
       if (!ticking) {
         requestAnimationFrame(() => {
-          // Get hero section height
           const hero = document.getElementById("home");
           const heroHeight = hero ? hero.offsetHeight : 400;
           setShowBackToTop(window.scrollY > heroHeight);
@@ -63,11 +61,7 @@ export default function Footer({ socialData = [] }: FooterProps): React.JSX.Elem
                 <div className="footer-logo">
                   <Link to="/">
                     <div className="logo logo--3d">
-                      <img
-                        className="logo-3d-dark"
-                        src="/images/sm.png"
-                        alt={t("common.logoAlt")}
-                      />
+                      <img className="logo-3d-dark" src="/images/sm.png" alt={t("common.logoAlt")} />
                     </div>
                   </Link>
                 </div>
@@ -77,40 +71,14 @@ export default function Footer({ socialData = [] }: FooterProps): React.JSX.Elem
             </div>
             <div className="col-lg-4">
               <div className="footer-widget">
-                <h5 className="widget-title">
-                  {t("footer.widgets.quickLinks")}
-                </h5>
+                <h5 className="widget-title">{t("footer.widgets.quickLinks")}</h5>
                 <ul className="footer-nav">
-                  <li>
-                    <a href="#home" onClick={handleAnchorClick}>
-                      {t("header.nav.home")}
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#about" onClick={handleAnchorClick}>
-                      {t("header.nav.about")}
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#project" onClick={handleAnchorClick}>
-                      {t("header.nav.portfolio")}
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#experience" onClick={handleAnchorClick}>
-                      {t("header.nav.experience")}
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#testimonial" onClick={handleAnchorClick}>
-                      {t("header.nav.testimonials")}
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#contactus" onClick={handleAnchorClick}>
-                      {t("header.nav.contact")}
-                    </a>
-                  </li>
+                  <li><Link to="/">Salama Malek Developer Home</Link></li>
+                  <li><Link to="/about">About Salama Malek &amp; SM4Tech</Link></li>
+                  <li><Link to="/projects">React, Angular &amp; Node.js Projects</Link></li>
+                  <li><a href="#technical-expertise" onClick={handleAnchorClick}>Fullstack Technical Expertise</a></li>
+                  <li><a href="#faq" onClick={handleAnchorClick}>Fullstack Developer FAQ</a></li>
+                  <li><Link to="/contact">Hire Salama Malek</Link></li>
                 </ul>
               </div>
             </div>
@@ -118,11 +86,7 @@ export default function Footer({ socialData = [] }: FooterProps): React.JSX.Elem
               <div className="footer-widget">
                 <h5 className="widget-title">{t("footer.widgets.contact")}</h5>
                 <p className="footer-text">{t("footer.cta.description")}</p>
-                <a
-                  href="#contactus"
-                  onClick={handleAnchorClick}
-                  className="px-btn"
-                >
+                <a href="#contactus" onClick={handleAnchorClick} className="px-btn">
                   <span>{t("header.cta")}</span>
                 </a>
               </div>
