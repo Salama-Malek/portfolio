@@ -16,7 +16,7 @@ export function Hero() {
             <Body className="hero-copy">
               {contentMap.person.shortTagline} {contentMap.person.aboutShort}
             </Body>
-            <div className="hero-meta-row" aria-label="Portfolio quick stats">
+            <div className="hero-meta-row">
               {contentMap.stats.map((stat) => (
                 <div key={stat.label} className="hero-stat-pill">
                   <span className="hero-stat-value">{stat.value}</span>
@@ -35,18 +35,12 @@ export function Hero() {
           </div>
           <MotionSafe className="hero-visual" aria-hidden="true">
             <div className="hero-panel-grid">
-              <div className="hero-panel">
-                <span className="hero-panel-label">Focus</span>
-                <p>{contentMap.person.title}</p>
-              </div>
-              <div className="hero-panel">
-                <span className="hero-panel-label">Primary stack</span>
-                <p>{contentMap.skills.frontend.slice(0, 3).join(' · ')}</p>
-              </div>
-              <div className="hero-panel">
-                <span className="hero-panel-label">Availability</span>
-                <p>{contentMap.sections.about.title}</p>
-              </div>
+              {contentMap.stats.map((stat) => (
+                <div key={`panel-${stat.label}`} className="hero-panel">
+                  <span className="hero-panel-label">{stat.label}</span>
+                  <p>{stat.value}</p>
+                </div>
+              ))}
             </div>
             <div className="orb orb-a" />
             <div className="orb orb-b" />

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { contentMap } from '../content/contentMap';
 import { Container } from '../layout/Primitives';
 import { cn } from '../lib/motion';
@@ -14,6 +14,18 @@ const navItems = [
 
 export function Header() {
   const [active, setActive] = useState('#home');
+
+  const brandMark = useMemo(
+    () =>
+      contentMap.person.name
+        .split(' ')
+        .filter(Boolean)
+        .map((part) => part[0])
+        .join('')
+        .slice(0, 2)
+        .toUpperCase(),
+    [],
+  );
 
   useEffect(() => {
     const sections = navItems
@@ -38,11 +50,11 @@ export function Header() {
   return (
     <header className="site-header">
       <Container className="header-inner">
-        <a href="#home" className="brand" aria-label="Go to home section">
-          <span className="brand-mark">SM</span>
+        <a href="#home" className="brand">
+          <span className="brand-mark">{brandMark}</span>
           <span>{contentMap.person.name}</span>
         </a>
-        <nav aria-label="Primary navigation">
+        <nav>
           <ul className="nav-list">
             {navItems.map((item) => (
               <li key={item.href}>
