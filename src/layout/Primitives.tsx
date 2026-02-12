@@ -32,3 +32,19 @@ export function Grid({ className, children, ...props }: DivProps) {
     </div>
   );
 }
+
+export function Stack({ className, children, ...props }: DivProps) {
+  return (
+    <div className={cn('stack', className)} {...props}>
+      {children}
+    </div>
+  );
+}
+
+export function Flex({ className, children, ...props }: DivProps) {
+  return (
+    <div className={cn('flex', className)} {...props}>
+      {children}
+    </div>
+  );
+}

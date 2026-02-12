@@ -4,7 +4,6 @@ import { About } from './sections/About';
 import { Projects } from './sections/Projects';
 import { Experience } from './sections/Experience';
 import { Skills } from './sections/Skills';
-import { Testimonials } from './sections/Testimonials';
 import { Contact } from './sections/Contact';
 import { Footer } from './sections/Footer';
 
@@ -18,7 +17,6 @@ function App() {
         <Projects />
         <Experience />
         <Skills />
-        <Testimonials />
         <Contact />
       </main>
       <Footer />
