@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://salama.sm4tech.com/sitemap.xml
