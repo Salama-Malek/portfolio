@@ -1,24 +1,34 @@
-import type { ReactNode } from 'react';
+import type { HTMLAttributes, ReactNode } from 'react';
 import { cn } from '../lib/motion';
 
-type BasicProps = {
-  id?: string;
+type BaseProps = {
   className?: string;
   children: ReactNode;
 };
 
-export function Container({ className, children }: BasicProps) {
-  return <div className={cn('container', className)}>{children}</div>;
+type SectionProps = BaseProps & HTMLAttributes<HTMLElement>;
+type DivProps = BaseProps & HTMLAttributes<HTMLDivElement>;
+
+export function Container({ className, children, ...props }: DivProps) {
+  return (
+    <div className={cn('container', className)} {...props}>
+      {children}
+    </div>
+  );
 }
 
-export function Section({ id, className, children }: BasicProps) {
+export function Section({ id, className, children, ...props }: SectionProps) {
   return (
-    <section id={id} className={cn('section', className)}>
+    <section id={id} className={cn('section', className)} {...props}>
       {children}
     </section>
   );
 }
 
-export function Grid({ className, children }: BasicProps) {
-  return <div className={cn('grid', className)}>{children}</div>;
+export function Grid({ className, children, ...props }: DivProps) {
+  return (
+    <div className={cn('grid', className)} {...props}>
+      {children}
+    </div>
+  );
 }
