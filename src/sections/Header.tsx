@@ -1,13 +1,15 @@
 import { useEffect, useState } from 'react';
+import { content } from '../content/content';
 import { Container } from '../layout/Primitives';
 import { cn } from '../lib/motion';
 
 const navItems = [
-  { label: 'Home', href: '#home' },
-  { label: 'Projects', href: '#projects' },
-  { label: 'Experience', href: '#experience' },
-  { label: 'Skills', href: '#skills' },
-  { label: 'Contact', href: '#contact' },
+  { label: content.nav.home, href: '#home' },
+  { label: content.nav.about, href: '#about' },
+  { label: content.nav.portfolio, href: '#projects' },
+  { label: content.nav.experience, href: '#experience' },
+  { label: content.nav.testimonials, href: '#testimonials' },
+  { label: content.nav.contact, href: '#contact' },
 ];
 
 export function Header() {
@@ -37,7 +39,7 @@ export function Header() {
     <header className="site-header">
       <Container className="header-inner">
         <a href="#home" className="brand" aria-label="Go to home section">
-          SM4TECH
+          {content.person.name}
         </a>
         <nav aria-label="Primary navigation">
           <ul className="nav-list">

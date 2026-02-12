@@ -1,3 +1,4 @@
+import { content } from '../content/content';
 import { Container, Grid, Section } from '../layout/Primitives';
 import { Button } from '../ui/Button';
 import { MotionSafe } from '../ui/MotionSafe';
@@ -9,20 +10,17 @@ export function Hero() {
       <Container>
         <Grid className="hero-grid">
           <div>
-            <Caption className="eyebrow">Principal Frontend Engineer · Product Designer</Caption>
-            <Display>
-              I craft premium digital products where code, motion, and brand feel inseparable.
-            </Display>
+            <Caption className="eyebrow">{content.sections.hero.eyebrow}</Caption>
+            <Display>{content.person.name}</Display>
             <Body className="hero-copy">
-              I design and engineer high-performance experiences with a typography-first aesthetic,
-              purpose-driven animation, and scalable React architecture.
+              {content.person.shortTagline} {content.person.aboutShort}
             </Body>
             <div className="hero-cta-row">
               <Button variant="gradient" href="#projects">
-                Explore projects
+                {content.sections.hero.ctaPrimary}
               </Button>
               <Button variant="magnetic" href="#contact">
-                Book a strategy call
+                {content.sections.hero.ctaSecondary}
               </Button>
             </div>
           </div>
