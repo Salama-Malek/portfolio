@@ -8,9 +8,8 @@
     ],
     "jsx": "react-jsx",
     "module": "ESNext",
-    "moduleResolution": "node",
+    "moduleResolution": "Bundler",
     "resolveJsonModule": true,
-    "allowJs": true,
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
@@ -18,9 +17,6 @@
     "isolatedModules": true,
     "noEmit": true,
     "allowSyntheticDefaultImports": true,
-    "declaration": true,
-    "declarationMap": true,
-    "sourceMap": true,
     "baseUrl": ".",
     "paths": {
       "@/*": [
@@ -28,9 +24,7 @@
       ]
     },
     "types": [
-      "react",
-      "react-dom",
-      "node"
+      "vite/client"
     ]
   },
   "include": [
