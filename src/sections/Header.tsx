@@ -1,19 +1,31 @@
-import { useEffect, useState } from 'react';
-import { content } from '../content/content';
+import { useEffect, useMemo, useState } from 'react';
+import { contentMap } from '../content/contentMap';
 import { Container } from '../layout/Primitives';
 import { cn } from '../lib/motion';
 
 const navItems = [
-  { label: content.nav.home, href: '#home' },
-  { label: content.nav.about, href: '#about' },
-  { label: content.nav.portfolio, href: '#projects' },
-  { label: content.nav.experience, href: '#experience' },
-  { label: content.nav.testimonials, href: '#testimonials' },
-  { label: content.nav.contact, href: '#contact' },
+  { label: contentMap.nav.home, href: '#home' },
+  { label: contentMap.nav.about, href: '#about' },
+  { label: contentMap.nav.portfolio, href: '#projects' },
+  { label: contentMap.nav.experience, href: '#experience' },
+  { label: contentMap.nav.testimonials, href: '#testimonials' },
+  { label: contentMap.nav.contact, href: '#contact' },
 ];
 
 export function Header() {
   const [active, setActive] = useState('#home');
+
+  const brandMark = useMemo(
+    () =>
+      contentMap.person.name
+        .split(' ')
+        .filter(Boolean)
+        .map((part) => part[0])
+        .join('')
+        .slice(0, 2)
+        .toUpperCase(),
+    [],
+  );
 
   useEffect(() => {
     const sections = navItems
@@ -38,10 +50,11 @@ export function Header() {
   return (
     <header className="site-header">
       <Container className="header-inner">
-        <a href="#home" className="brand" aria-label="Go to home section">
-          {content.person.name}
+        <a href="#home" className="brand">
+          <span className="brand-mark">{brandMark}</span>
+          <span>{contentMap.person.name}</span>
         </a>
-        <nav aria-label="Primary navigation">
+        <nav>
           <ul className="nav-list">
             {navItems.map((item) => (
               <li key={item.href}>

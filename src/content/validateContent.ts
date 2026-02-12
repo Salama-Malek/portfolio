@@ -1,8 +1,8 @@
-import type { PortfolioContent } from './content';
+import type { PortfolioContentMap } from './contentMap';
 
 let hasWarned = false;
 
-export function validateContentModel(content: PortfolioContent) {
+export function validateContentModel(content: PortfolioContentMap) {
   if (import.meta.env.PROD || hasWarned) return;
 
   const isMissing =
@@ -14,6 +14,6 @@ export function validateContentModel(content: PortfolioContent) {
 
   if (isMissing) {
     hasWarned = true;
-    console.warn('[content] Missing required content fields. Please review src/content/content.ts');
+    console.warn('[content] Missing required content fields. Please review src/content/contentMap.ts');
   }
 }
